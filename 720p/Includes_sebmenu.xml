@@ -1,0 +1,1331 @@
+<includes>
+<include name="homesubmenu_animation">
+	<animation type="Conditional" condition="Skin.HasSetting(submenu)" reversible="false">
+		<effect type="fade" start="0" end="100" time="350" delay="0" />
+		<effect type="zoom" start="20" end="100" center="auto" time="350" delay="0" tween="Cubic" asing="inout" />
+	</animation>
+	<animation type="Hidden" reversible="false">
+		<effect type="fade" start="100" end="0" time="350" delay="0" />
+		<effect type="zoom" start="100" end="20" center="auto" time="350" delay="0" tween="Cubic" asing="inout" />
+	</animation>
+</include>
+<include name="homesubmenu_animation2">
+	<animation type="Conditional" condition="Skin.HasSetting(submenu)" reversible="false">
+		<effect type="zoom" start="100" end="200" center="auto" time="350" delay="0" tween="Cubic" asing="inout" />
+		<effect type="fade" start="100" end="0" time="400" delay="0" />
+	</animation>
+	<animation type="Conditional" condition="!Skin.HasSetting(submenu)" reversible="false">
+		<effect type="zoom" start="200" end="100" center="auto" time="350" delay="0" tween="Cubic" asing="inout" />
+		<effect type="fade" start="0" end="100" time="350" delay="0" />
+	</animation>
+</include>
+<include name="homesubmenu_but">
+	<texturefocus></texturefocus>
+	<texturenofocus></texturenofocus>
+	<onclick>-</onclick>
+	<label>-</label>
+	<posy>1280</posy>
+	<posx>2000</posx>
+</include>
+<include name="homesubmenu_anim">
+	<!-- OnUp -->
+	<control type="button" id="324">
+		<visible>Control.IsVisible(330)+!Skin.HasSetting(lowermainmenu)|Control.IsVisible(330)+Skin.HasSetting(CustomMenuanimation)</visible>
+		<visible>Container(300).HasFocus(22) | Container(300).HasFocus(6) | Container(300).HasFocus(7) | Container(300).HasFocus(1)| Container(300).HasFocus(2)</visible>
+		<include>homesubmenu_but</include>
+		<onfocus>SetFocus(325)</onfocus>
+		<onfocus>Skin.SetBool(submenu)</onfocus>
+	</control>
+	<control type="button" id="324">
+		<visible>Skin.HasSetting(lowermainmenu)+!Skin.HasSetting(CustomMenuanimation)</visible>
+		<include>homesubmenu_but</include>
+		<onfocus>SetFocus(300)</onfocus>
+		<onfocus>Skin.Reset(lowermainmenu)</onfocus>
+	</control>
+	<!-- OnUp end -->
+	<!-- Ondown -->
+	<control type="button" id="322">
+		<visible>Control.IsVisible(330)+Skin.HasSetting(lowermainmenu)|Control.IsVisible(330)+Skin.HasSetting(CustomMenuanimation)</visible>
+		<visible>Container(300).HasFocus(22) | Container(300).HasFocus(6) | Container(300).HasFocus(7) | Container(300).HasFocus(1)| Container(300).HasFocus(2)</visible>
+		<include>homesubmenu_but</include>
+		<onfocus>SetFocus(325)</onfocus>
+		<onfocus>Skin.SetBool(submenu)</onfocus>
+	</control>
+	<control type="button" id="322">
+		<visible>!Skin.HasSetting(lowermainmenu)+!Skin.HasSetting(CustomMenuanimation)</visible>
+		<include>homesubmenu_but</include>
+		<onfocus>SetFocus(300)</onfocus>
+		<onfocus>Skin.SetBool(lowermainmenu)</onfocus>
+	</control>
+	<!-- Ondown end -->
+
+	<!-- OnUp sub -->
+	<control type="button" id="321">
+		<visible>Control.IsVisible(330)+!Skin.HasSetting(lowermainmenu)|Control.IsVisible(330)+Skin.HasSetting(CustomMenuanimation)|Control.IsVisible(330)+Skin.HasSetting(CustomSubMenuanimation)</visible>
+		<include>homesubmenu_but</include>
+		<onfocus>SetFocus(300)</onfocus>
+		<onfocus>Skin.Reset(submenu)</onfocus>
+	</control>
+	<control type="button" id="321">
+		<visible>Skin.HasSetting(lowermainmenu)+!Skin.HasSetting(CustomMenuanimation)+!Skin.HasSetting(CustomSubMenuanimation)</visible>
+		<include>homesubmenu_but</include>
+		<onfocus>SetFocus(325)</onfocus>
+		<onfocus>Skin.Reset(lowermainmenu)</onfocus>
+	</control>
+	<!-- OnUp sub end -->
+	<!-- Ondown sub -->
+	<control type="button" id="320">
+		<visible>Skin.HasSetting(lowermainmenu)|Control.IsVisible(330)+Skin.HasSetting(CustomMenuanimation)|Control.IsVisible(330)+Skin.HasSetting(CustomSubMenuanimation)</visible>
+		<include>homesubmenu_but</include>
+		<onfocus>SetFocus(300)</onfocus>
+		<onfocus>Skin.Reset(submenu)</onfocus>
+	</control>
+	<control type="button" id="320">
+		<visible>!Skin.HasSetting(lowermainmenu)+!Skin.HasSetting(CustomMenuanimation)+!Skin.HasSetting(CustomSubMenuanimation)</visible>
+		<include>homesubmenu_but</include>
+		<onfocus>SetFocus(325)</onfocus>
+		<onfocus>Skin.SetBool(lowermainmenu)</onfocus>
+	</control>
+	<!-- Ondown sub end -->
+
+	<!-- Windowopen -->
+	<control type="button" id="323">
+		<include>homesubmenu_but</include>
+		<onfocus>SetFocus(325)</onfocus>
+		<onfocus>SetFocus(300)</onfocus>
+		<onfocus>Skin.Reset(submenu)</onfocus>
+	</control>
+	<!-- Windowopen -->
+</include>
+
+<include name="homesubmenu_main_fix">
+	<control type="label">
+		<visible>!Control.HasFocus(300)+!Skin.HasSetting(submenu)</visible>
+		<animation type="WindowOpen" condition="!Skin.HasSetting(nozooms)" reversible="false">
+			<effect type="slide" start="-1280" end="0" time="400" tween="quadratic" easing="out" />
+			<effect type="fade" start="0" end="100" time="400" />
+		</animation>
+		<animation effect="fade" start="0" end="0" time="1">WindowClose</animation>
+		<include>homesubmenu_animation2</include>
+		<animation effect="fade" start="100" end="99" time="300">Hidden</animation>
+		<label>$INFO[Container(300).ListItem.Label]</label>
+		<posy>0</posy>
+		<posx>500</posx>
+		<height>61</height>
+		<width>280</width>
+		<align>center</align>
+		<aligny>center</aligny>
+		<font>Font_MainMenu</font>
+		<textcolor>ffFFFFFF</textcolor>
+	</control>
+</include>
+
+<include name="homesubmenu">
+	<include>homesubmenu_anim</include>
+	<animation type="WindowOpen" condition="!Skin.HasSetting(nozooms)" reversible="false">
+		<effect type="slide" start="-1280" end="0" time="400" tween="quadratic" easing="out" />
+		<effect type="fade" start="0" end="100" time="400" />
+	</animation>
+	<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+
+	<control type="group" id="330">
+		<visible>!Skin.HasSetting(CustomMenuSub)</visible>
+
+		<control type="group">
+			<posx>500</posx>
+			<posy>-30</posy>
+			<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+			<control type="image">
+				<visible allowhiddenfocus="true">Skin.HasSetting(submenu)</visible>
+				<description>Panel</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<height>30</height>
+				<width>278</width>
+				<texture>osd/osd_button_paused.png</texture>
+				<colordiffuse>FFFFFFFF</colordiffuse>
+				<animation type="Conditional" condition="Skin.HasSetting(submenu)" reversible="false">
+					<effect type="fade" start="0" end="100" time="400" delay="0" />
+					<effect type="slide" start="0,20" end="0,0" time="300" delay="0" />
+					<effect type="zoom" start="20" end="100" center="auto" time="400" delay="0" tween="Cubic" asing="inout" />
+				</animation>
+				<animation type="Hidden" reversible="false">
+					<effect type="fade" start="100" end="0" time="400" delay="0" />
+					<effect type="slide" start="0,0" end="0,20" time="300" delay="0" />
+					<effect type="zoom" start="100" end="20" center="auto" time="400" delay="0" tween="Cubic" asing="inout" />
+				</animation>
+			</control>
+  			<control type="label">
+				<visible allowhiddenfocus="true">Skin.HasSetting(submenu)</visible>
+				<posx>20</posx>
+	    			<posy>0</posy>
+    				<width>238</width>
+    				<height>30</height>
+    				<font>Font_WeatherTitle</font>
+	    			<align>center</align>
+				<aligny>center</aligny>
+				<textcolor>a9000000</textcolor>
+    				<label>$INFO[Container(300).ListItem.Label]</label>
+				<animation type="Conditional" condition="Skin.HasSetting(submenu)" reversible="false">
+					<effect type="fade" start="0" end="100" time="400" delay="0" />
+					<effect type="slide" start="0,20" end="0,0" time="350" delay="0" />
+					<effect type="zoom" start="20" end="100" center="auto" time="400" delay="0" tween="Cubic" asing="inout" />
+				</animation>
+				<animation type="Hidden" reversible="false">
+					<effect type="fade" start="100" end="0" time="400" delay="0" />
+					<effect type="slide" start="0,0" end="0,20" time="350" delay="0" />
+					<effect type="zoom" start="100" end="20" center="auto" time="400" delay="0" tween="Cubic" asing="inout" />
+				</animation>	
+	  		</control>
+		</control>
+
+		<control type="image">
+			<visible allowhiddenfocus="true">Skin.HasSetting(submenu)</visible>
+			<posx>0</posx>
+			<posy>-41</posy>
+			<width>1280</width>
+			<height>150</height>
+			<texture>home/homemenu_back.png</texture>
+			<include>Animation_CommonFade</include>
+			<include>homesubmenu_animation</include>
+		</control>
+
+		<control type="wraplist" id="325">
+			<visible allowhiddenfocus="true">Skin.HasSetting(submenu)</visible>
+			<posx>0</posx>
+			<posy>0</posy>
+			<height>61</height>
+			<width>1280</width>
+			<onleft>300</onleft>
+			<onright>300</onright>
+			<viewtype>list</viewtype>
+			<orientation>horizontal</orientation>
+			<focusposition>2</focusposition>
+			<scrolltime>200</scrolltime>
+			<ondown>320</ondown>
+			<onup>321</onup>
+			<include>homesubmenu_animation</include> 
+			<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+			<itemlayout width="280" height="61">
+				<control type="label">
+					<include>MainMenu_Label</include>
+					<textcolor>48FFFFFF</textcolor>
+				</control>
+			</itemlayout>
+			<focusedlayout width="280" height="61">
+				<control type="label">
+					<include>MainMenu_Label</include>
+					<textcolor>48FFFFFF</textcolor>          
+				</control>
+				<control type="label">
+					<include>MainMenu_Label</include>
+					<textcolor>FFFFFFFF</textcolor>
+					<include>Animation_ButtonFocusFade</include>
+				</control>
+			</focusedlayout>
+			<content>
+				<!-- TV (7) -->
+				<item id="10">
+					<visible>Container(300).HasFocus(7)</visible>
+					<visible>!Skin.HasSetting(sub_tv_file)</visible>
+					<description>TV files</description>
+					<label>$LOCALIZE[744]</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.ActivateWindow(24)</onclick>
+				</item>
+				<item id="11">
+					<visible>Container(300).HasFocus(7)</visible>
+					<visible>!Skin.HasSetting(sub_tv_Genre)</visible>
+              				<description>By Genre</description>
+					<label>$LOCALIZE[135]</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.ActivateWindow(MyVideoLibrary,tvshowgenres,return)</onclick>
+		            	</item>
+	        	    	<item id="12">
+					<visible>Container(300).HasFocus(7)</visible>
+					<visible>!Skin.HasSetting(sub_tv_year)</visible>
+					<description>By Year</description>
+					<label>$LOCALIZE[345]</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.ActivateWindow(MyVideoLibrary,tvshowyears,return)</onclick>
+        		    	</item>
+				<item id="13">
+					<visible>Container(300).HasFocus(7)</visible>
+					<visible>!Skin.HasSetting(sub_tv_Actor)</visible>
+					<description>By Actor</description>
+					<label>$LOCALIZE[344]</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.ActivateWindow(MyVideoLibrary,tvshowactors,return)</onclick>
+				</item>
+				<item id="14">
+					<visible>Container(300).HasFocus(7)</visible>
+					<visible>!Skin.HasSetting(sub_tv_NEWEST)</visible>
+					<description>Recently Added</description>
+					<label>NEWEST</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.ActivateWindow(MyVideoLibrary,recentlyaddedepisodes,return)</onclick>
+				</item>
+				<item id="15">
+					<visible>Container(300).HasFocus(7)</visible>
+					<visible>!Skin.HasSetting(sub_tv_Plugins)</visible>
+					<description>Video Plugins $LOCALIZE[1037]</description>
+					<label>Plugins</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.ActivateWindow(MyVideoLibrary,plugins,return)</onclick>
+				</item>
+				<!-- TV Scripts -->
+				<item id="221">
+					<visible>Container(300).HasFocus(7)</visible>
+					<visible>Skin.HasSetting(tvscript1)</visible>
+					<description>scripts</description>
+					<label>$INFO[Skin.String(tvscript1name)]</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.RunScript($INFO[Skin.String(tvscript1path)])</onclick>
+				</item>
+				<item id="222">
+					<visible>Container(300).HasFocus(7)</visible>
+					<visible>Skin.HasSetting(tvscript2)</visible>
+					<description>scripts</description>
+					<label>$INFO[Skin.String(tvscript2name)]</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.RunScript($INFO[Skin.String(tvscript2path)])</onclick>
+				</item>
+				<!-- TV Scripts End -->
+				<!-- TV Plugin -->
+				<item id="223">
+					<visible>Container(300).HasFocus(7)</visible>
+					<visible>Skin.HasSetting(tvplugin1)</visible>
+					<description>plugin1</description>
+					<label>$INFO[Skin.String(tvplugin1name)]</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.ActivateWindow(24,plugin://video/$INFO[Skin.String(tvplugin1path)])</onclick>
+				</item>
+				<item id="224">
+					<visible>Container(300).HasFocus(7)</visible>
+					<visible>Skin.HasSetting(tvplugin2)</visible>
+					<description>plugin2</description>
+					<label>$INFO[Skin.String(tvplugin2name)]</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.ActivateWindow(24,plugin://video/$INFO[Skin.String(tvplugin2path)])</onclick>
+				</item>
+				<!--TV  Plugin End -->
+				<!-- TV (7) end -->
+				<!-- Movies (6) -->
+				<item id="20">
+					<visible>Container(300).HasFocus(6)</visible>
+					<visible>!Skin.HasSetting(sub_movies_files)</visible>
+					<description>movies files</description>
+					<label>$LOCALIZE[744]</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.ActivateWindow(24)</onclick>
+				</item>
+				<item id="21">
+					<visible>Container(300).HasFocus(6)</visible>
+					<visible>!Skin.HasSetting(sub_movies_Genre)</visible>
+					<description>By Genre</description>
+					<label>$LOCALIZE[135]</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.ActivateWindow(MyVideoLibrary,moviegenres,return)</onclick>
+				</item>
+				<item id="22">
+					<visible>Container(300).HasFocus(6)</visible>
+					<visible>!Skin.HasSetting(sub_movies_Year)</visible>
+					<description>By Year</description>
+					<label>$LOCALIZE[345]</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.ActivateWindow(MyVideoLibrary,movieyears,return)</onclick>
+				</item>
+				<item id="23">
+					<visible>Container(300).HasFocus(6)</visible>
+					<visible>!Skin.HasSetting(sub_movies_Actor)</visible>
+					<description>By Actor</description>
+					<label>$LOCALIZE[344]</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.ActivateWindow(MyVideoLibrary,movieactors,return)</onclick>
+				</item>
+				<item id="24">
+					<visible>Container(300).HasFocus(6)</visible>
+					<visible>!Skin.HasSetting(sub_movies_Director)</visible>
+					<description>By Director</description>
+					<label>$LOCALIZE[20339]</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.ActivateWindow(MyVideoLibrary,moviedirectors,return)</onclick>
+				</item>
+				<item id="25">
+					<visible>Container(300).HasFocus(6)</visible>
+					<visible>!Skin.HasSetting(sub_movies_Studio)</visible>
+					<description>By Studio</description>
+					<label>$LOCALIZE[20388]</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.ActivateWindow(MyVideoLibrary,moviestudios,return)</onclick>
+				</item>
+				<item id="26">
+					<visible>Container(300).HasFocus(6)</visible>
+					<visible>!Skin.HasSetting(sub_movies_NEWEST)</visible>
+					<description>Recently Added</description>
+					<label>NEWEST</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.ActivateWindow(MyVideoLibrary,recentlyaddedmovies,return)</onclick>
+				</item>
+				<item id="27">
+					<visible>Container(300).HasFocus(6)</visible>
+					<visible>!Skin.HasSetting(sub_movies_Plugins)</visible>
+					<description>Video Plugins$LOCALIZE[1037]</description>
+					<label>Plugins</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.ActivateWindow(MyVideoLibrary,plugins,return)</onclick>
+				</item>
+				<!-- Movies Scripts -->
+				<item id="221">
+					<visible>Container(300).HasFocus(6)</visible>
+					<visible>Skin.HasSetting(moviescript1)</visible>
+					<description>scripts</description>
+					<label>$INFO[Skin.String(moviescript1name)]</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.RunScript($INFO[Skin.String(moviescript1path)])</onclick>
+				</item>
+				<item id="222">
+					<visible>Container(300).HasFocus(6)</visible>
+					<visible>Skin.HasSetting(moviescript2)</visible>
+					<description>scripts</description>
+					<label>$INFO[Skin.String(moviescript2name)]</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.RunScript($INFO[Skin.String(moviescript2path)])</onclick>
+				</item>
+				<!-- Movies scripts End -->
+				<!-- Movies Plugin -->
+				<item id="223">
+					<visible>Container(300).HasFocus(6)</visible>
+					<visible>Skin.HasSetting(movieplugin1)</visible>
+					<description>plugin1</description>
+					<label>$INFO[Skin.String(movieplugin1name)]</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.ActivateWindow(24,plugin://video/$INFO[Skin.String(movieplugin1path)]/)</onclick>
+				</item>
+				<item id="224">
+					<visible>Container(300).HasFocus(6)</visible>
+					<visible>Skin.HasSetting(movieplugin2)</visible>
+					<description>plugin2</description>
+					<label>$INFO[Skin.String(movieplugin2name)]</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.ActivateWindow(24,plugin://video/$INFO[Skin.String(movieplugin2path)]/)</onclick>
+				</item>
+				<!-- Movies Plugin End -->
+				<!-- Movies (6) End -->
+				<!-- Music (1)  -->
+				<item id="41">
+					<visible>Container(300).HasFocus(1)</visible>
+					<visible>!Skin.HasSetting(sub_music_Party)</visible>
+					<description>Partymode</description>
+					<label>Party</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>PlayerControl(Partymode(music))</onclick>
+				</item>
+				<item id="42">
+					<visible>Container(300).HasFocus(1)</visible>
+					<visible>Skin.HasSetting(sub_music_fm)</visible>
+					<description>Last.FM</description>
+					<label>$LOCALIZE[15200]</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.ActivateWindow(MusicFiles,Last.FM)</onclick>
+				</item>
+				<item id="31">
+					<visible>Container(300).HasFocus(1)</visible>
+					<visible>!Skin.HasSetting(sub_music_files)</visible>
+					<description>Browse Button</description>
+					<label>$LOCALIZE[744]</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.ActivateWindow(501,return)</onclick>
+				</item>
+				<item id="32">
+					<visible>Container(300).HasFocus(1)</visible>
+					<visible>!Skin.HasSetting(sub_music_Playlists)</visible>
+					<description>Playlists</description>
+					<label>$LOCALIZE[136]</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>xbmc.activatewindow(musiclibrary,playlists,return)</onclick>
+				</item>
+				<item id="33">
+					<visible>Container(300).HasFocus(1)</visible>
+					<visible>!Skin.HasSetting(sub_music_Videos)</visible>
+					<description>Music Videos</description>
+					<label>$LOCALIZE[157]</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.ActivateWindow(MyVideoLibrary,musicvideos,return)</onclick>
+				</item>
+				<item id="34">
+					<visible>Container(300).HasFocus(1)</visible>
+					<visible>!Skin.HasSetting(sub_music_genres)</visible>
+					<description>genres</description>
+					<label>$LOCALIZE[135]</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>xbmc.activatewindow(musiclibrary,genres,return)</onclick>
+				</item>
+				<item id="35">
+					<visible>Container(300).HasFocus(1)</visible>
+					<visible>!Skin.HasSetting(sub_music_artists)</visible>
+					<description>artists</description>
+					<label>$LOCALIZE[133]</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>xbmc.activatewindow(musiclibrary,artists,return)</onclick>
+				</item>
+				<item id="36">
+					<visible>Container(300).HasFocus(1)</visible>
+					<visible>!Skin.HasSetting(sub_music_albums)</visible>
+					<description>albums</description>
+					<label>$LOCALIZE[132]</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>xbmc.activatewindow(musiclibrary,albums,return)</onclick>
+				</item>
+				<item id="37">
+					<visible>Container(300).HasFocus(1)</visible>
+					<visible>!Skin.HasSetting(sub_music_compilations)</visible>
+					<description>compilations</description>
+					<label>$LOCALIZE[521]</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>xbmc.activatewindow(musiclibrary,compilations,return)</onclick>
+				</item>
+				<item id="38">
+					<visible>Container(300).HasFocus(1)</visible>
+					<visible>!Skin.HasSetting(sub_music_top)</visible>
+					<description>top100</description>
+					<label>$LOCALIZE[271]</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>xbmc.activatewindow(musiclibrary,top100,return)</onclick>
+				</item>
+				<item id="39">
+					<visible>Container(300).HasFocus(1)</visible>
+					<visible>!Skin.HasSetting(sub_music_NEWEST)</visible>
+					<description>recently added albums</description>
+					<label>NEWEST</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>xbmc.activatewindow(musiclibrary,recentlyaddedalbums,return)</onclick>
+				</item>
+				<item id="40">
+					<visible>Container(300).HasFocus(1)</visible>
+					<visible>!Skin.HasSetting(sub_music_Plugins)</visible>
+					<description>Music Plugins$LOCALIZE[1038]</description>
+					<label>Plugins</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.ActivateWindow(musiclibrary,plugins,return)</onclick>
+				</item>
+				<!-- Music Scripts -->
+				<item id="241">
+					<visible>Container(300).HasFocus(1)</visible>
+					<visible>Skin.HasSetting(musicscript1)</visible>
+					<description>scripts</description>
+					<label>$INFO[Skin.String(musicscript1name)]</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.RunScript($INFO[Skin.String(musicscript1path)])</onclick>
+				</item>
+				<item id="242">
+					<visible>Container(300).HasFocus(1)</visible>
+					<visible>Skin.HasSetting(musicscript2)</visible>
+					<description>scripts</description>
+					<label>$INFO[Skin.String(musicscript2name)]</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.RunScript($INFO[Skin.String(musicscript2path)])</onclick>
+				</item>
+				<!-- Music Scripts End -->
+				<!-- Music Plugin -->
+				<item id="243">
+					<visible>Container(300).HasFocus(1)</visible>
+					<visible>Skin.HasSetting(musicplugin1)</visible>
+					<description>plugin1</description>
+					<label>$INFO[Skin.String(musicplugin1name)]</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.ActivateWindow(5,plugin://music/$INFO[Skin.String(musicplugin1path)]/)</onclick>
+				</item>
+				<item id="244">
+					<visible>Container(300).HasFocus(1)</visible>
+					<visible>Skin.HasSetting(musicplugin2)</visible>
+					<description>plugin2</description>
+					<label>$INFO[Skin.String(musicplugin2name)]</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.ActivateWindow(5,plugin://music/$INFO[Skin.String(musicplugin2path)]/)</onclick>
+				</item>
+				<!-- Music Plugin End -->
+				<!-- Music (1) end -->
+				<!-- Programs (2) -->
+				<item id="51">
+					<visible>Container(300).HasFocus(2)</visible>
+					<visible>!Skin.HasSetting(sub_Programs_Programs)</visible>
+					<description>Programs</description>
+					<label>$LOCALIZE[0]</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>xbmc.activatewindow(Programs)</onclick>
+				</item>	
+				<item id="52">
+					<visible>Container(300).HasFocus(2)</visible>
+					<visible>!Skin.HasSetting(sub_Programs_scripts)</visible>
+					<description>scripts</description>
+					<label>$LOCALIZE[247]</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>xbmc.activatewindow(20)</onclick>
+				</item>
+				<item id="53">
+					<label>$LOCALIZE[31016]</label>
+					<onclick>Skin.Reset(settingsfade)</onclick>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.ActivateWindow(4)</onclick>
+					<visible>Skin.HasSetting(nosettings)</visible>
+					<visible>Container(300).HasFocus(2)</visible>
+					<visible>!Skin.HasSetting(sub_Programs_settings)</visible>
+				</item>
+				<item id="54">
+					<visible>Container(300).HasFocus(2)</visible>
+					<visible>!Skin.HasSetting(sub_Programs_favourites)</visible>
+					<description>favourites</description>
+					<label>favourites</label>
+					<onclick>xbmc.activatewindow(134)</onclick>
+				</item>
+	 
+				<!-- Programs scripts -->
+				<item id="258">
+					<visible>Container(300).HasFocus(2)</visible>
+					<visible>Skin.HasSetting(gamescript1)</visible>
+					<description>scripts</description>
+					<label>$INFO[Skin.String(gamescript1name)]</label>
+					<onclick>XBMC.RunScript($INFO[Skin.String(gamescript1path)])</onclick>
+				</item>
+				<item id="257">
+					<visible>Container(300).HasFocus(2)</visible>
+					<visible>Skin.HasSetting(gamescript2)</visible>
+					<description>scripts</description>
+					<label>$INFO[Skin.String(gamescript2name)]</label>
+					<onclick>XBMC.RunScript($INFO[Skin.String(gamescript2path)])</onclick>
+				</item>
+				<!-- Programs scripts -->
+				<!-- Programs Plugin -->
+				<item id="256">
+					<visible>Container(300).HasFocus(2)</visible>
+					<visible>Skin.HasSetting(gamesplugin1)</visible>
+					<description>plugin1</description>
+					<label>$INFO[Skin.String(gamesplugin1name)]</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.ActivateWindow(1,plugin://programs/$INFO[Skin.String(gamesplugin1path)]/)</onclick>
+				</item>
+				<item id="255">
+					<visible>Container(300).HasFocus(2)</visible>
+					<visible>Skin.HasSetting(gamesplugin2)</visible>
+					<description>plugin2</description>
+					<label>$INFO[Skin.String(gamesplugin2name)]</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.ActivateWindow(1,plugin://programs/$INFO[Skin.String(gamesplugin2path)]/)</onclick>
+				</item>
+				<!-- Programs Plugin End-->
+			<!-- temp fix for focus bug -->
+				<item id="55">
+					<visible>Container(300).HasFocus(2)</visible>
+					<visible>!Skin.HasSetting(sub_Programs_Programs)</visible>
+					<description>Programs</description>
+					<label>$LOCALIZE[0]</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>xbmc.activatewindow(Programs)</onclick>
+				</item>	
+				<item id="56">
+					<visible>Container(300).HasFocus(2)</visible>
+					<visible>!Skin.HasSetting(sub_Programs_scripts)</visible>
+					<description>scripts</description>
+					<label>$LOCALIZE[247]</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>xbmc.activatewindow(20)</onclick>
+				</item>
+				<item id="57">
+					<visible>Container(300).HasFocus(2)</visible>
+					<label>$LOCALIZE[31016]</label>
+					<onclick>Skin.Reset(settingsfade)</onclick>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.ActivateWindow(4)</onclick>
+					<visible>Skin.HasSetting(nosettings)</visible>
+					<visible>!Skin.HasSetting(sub_Programs_settings)</visible>
+				</item>
+				<item id="58">
+					<visible>Container(300).HasFocus(2)</visible>
+					<visible>!Skin.HasSetting(sub_Programs_favourites)</visible>
+					<description>favourite</description>
+					<label>favourites</label>
+					<onclick>xbmc.activatewindow(134)</onclick>
+				</item>
+				<!-- Programs scripts -->
+				<item id="251">
+					<visible>Container(300).HasFocus(2)</visible>
+					<visible>Skin.HasSetting(gamescript1)</visible>
+					<description>scripts</description>
+					<label>$INFO[Skin.String(gamescript1name)]</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.RunScript($INFO[Skin.String(gamescript1path)])</onclick>
+				</item>
+				<item id="252">
+					<visible>Container(300).HasFocus(2)</visible>
+					<visible>Skin.HasSetting(gamescript2)</visible>
+					<description>scripts</description>
+					<label>$INFO[Skin.String(gamescript2name)]</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.RunScript($INFO[Skin.String(gamescript2path)])</onclick>
+				</item>
+				<!--Programs scripts End -->
+				<!-- Programs Plugin -->
+				<item id="253">
+					<visible>Container(300).HasFocus(2)</visible>
+					<visible>Skin.HasSetting(gamesplugin1)</visible>
+					<description>plugin1</description>
+					<label>$INFO[Skin.String(gamesplugin1name)]</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.ActivateWindow(1,plugin://programs/$INFO[Skin.String(gamesplugin1path)]/)</onclick>
+				</item>
+				<item id="254">
+					<visible>Container(300).HasFocus(2)</visible>
+					<visible>Skin.HasSetting(gamesplugin2)</visible>
+					<description>plugin2</description>
+					<label>$INFO[Skin.String(gamesplugin2name)]</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.ActivateWindow(1,plugin://programs/$INFO[Skin.String(gamesplugin2path)]/)</onclick>
+				</item>
+				<!-- Programs Plugin End-->
+			<!-- temp fix for focus bug End -->
+				<!-- Programs (2) End -->
+				<!-- Shutdown (22) -->
+				<item id="62">
+					<visible>Container(300).HasFocus(22)</visible>
+					<visible>!Skin.HasSetting(sub_Shutdown_Timer)</visible>
+					<description>Shutdown Timer</description>
+					<label>Timer</label>
+					<onclick>AlarmClock($LOCALIZE[20144],XBMC.Shutdown(),)</onclick>
+				</item>
+				<item id="62">
+					<visible>Container(300).HasFocus(22)</visible>
+					<visible>!Skin.HasSetting(sub_Shutdown_Restart)</visible>
+					<description>Restart Button</description>
+					<label>$LOCALIZE[13313]</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.Reset()</onclick>
+				</item>
+				<item id="63">
+					<visible>Container(300).HasFocus(22)</visible>
+					<visible>!Skin.HasSetting(sub_Shutdown_Reload)</visible>
+					<description>Reload Button</description>
+					<label>Reload</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.RestartApp()</onclick>
+				</item>
+				<item id="64">
+					<visible>Container(300).HasFocus(22)</visible>
+					<visible>!Skin.HasSetting(sub_Shutdown_Refresh)</visible>
+					<description>Refresh Button</description>
+					<label>$LOCALIZE[31607]</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.ReloadSkin()</onclick>
+				</item>
+				<item id="65">
+					<visible>Container(300).HasFocus(22)</visible>
+					<visible>!Skin.HasSetting(sub_Shutdown_Dashboard)</visible>
+					<description>Dashboard Button</description>
+					<label>$LOCALIZE[13006]</label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.Dashboard()</onclick>
+					<visible>System.Platform.Xbox</visible>
+				</item>
+				<item id="66">
+					<visible>Container(300).HasFocus(22)</visible>
+					<visible>!Skin.HasSetting(sub_Shutdown_Suspend)</visible>
+					<description>Suspend</description>
+					<label>$LOCALIZE[13011] </label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.Suspend()</onclick>
+					<visible>!System.Platform.Xbox</visible>
+				</item>
+				<item id="67">
+					<visible>Container(300).HasFocus(22)</visible>
+					<visible>!Skin.HasSetting(sub_Shutdown_Hibernate)</visible>
+					<description>Hibernate</description>
+					<label>$LOCALIZE[13010] </label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>XBMC.Hibernate()</onclick>
+					<visible>!System.Platform.Xbox</visible>
+				</item>
+				<item id="68">
+					<visible>Container(300).HasFocus(22)</visible>
+					<visible>!Skin.HasSetting(sub_Shutdown_Logout)</visible>
+					<description>Logout Button</description>
+					<label>$LOCALIZE[20126] </label>
+					<onclick>Skin.Reset(submenu)</onclick>
+					<onclick>System.LogOff</onclick>
+					<visible>System.HasLoginScreen</visible>
+				</item>
+				<!-- Shutdown (22) End -->
+			</content> 
+		</control> 
+	</control>
+
+	<control type="group">
+		
+		<control type="label">
+			<visible>!Control.HasFocus(325)+Skin.HasSetting(submenu)</visible>
+
+	<animation type="Hidden" condition="!Skin.HasSetting(submenu)">
+		<effect type="fade" start="100" end="0" time="200" delay="0" />
+		<effect type="zoom" start="100" end="20" center="auto" time="400" delay="0" tween="Cubic" asing="inout" />
+	</animation>
+			<animation effect="fade" start="100" end="99" time="200">Hidden</animation>
+			<label>$INFO[Container(325).ListItem.Label]</label>
+			<posy>0</posy>
+			<height>61</height>
+			<posx>500</posx>
+			<width>280</width>
+			<align>center</align>
+			<aligny>center</aligny>
+			<font>Font_MainMenu</font>
+			<textcolor>ffFFFFFF</textcolor>
+		</control>
+	</control>
+</include>
+
+<include name="homesubmenu_Plugins_button">
+	<control type="button" id="15">
+		<posy>290</posy>
+		<label>Sub menu</label>
+		<include>Objects_SettingsSectionMenuButton</include>
+		<onup>10</onup>
+		<ondown>6</ondown>
+		<onleft>9100</onleft>
+		<onright>9100</onright>
+		<onclick>SetFocus(9001)</onclick>
+		<visible allowhiddenfocus="true">![Control.HasFocus(15) | ControlGroup(9001).HasFocus]</visible>
+	</control>
+	<control type="button" id="15">
+		<posy>290</posy>
+		<label>Sub menu</label>
+		<include>Objects_SettingsSectionMenuButtonFocused</include>
+		<onup>10</onup>
+		<ondown>6</ondown>
+		<onleft>9100</onleft>
+		<onright>9100</onright>
+		<visible>Control.HasFocus(15) | ControlGroup(9001).HasFocus</visible>
+	</control>
+	<control type="label">
+		<description>Sub menu</description>
+		<posy>322</posy>
+		<label>Setting/scripts/plugins</label>
+		<textcolor>FFf5f5f5</textcolor>
+		<include>Objects_SettingsSectionMenuButtonSubtitle</include>
+		<visible>![Control.HasFocus(15) | ControlGroup(9001).HasFocus]</visible>
+	</control>
+	<control type="label">
+		<description>Sub menu</description>
+		<posy>322</posy>
+		<label>Setting/scripts/plugins</label>
+		<textcolor>FF262728</textcolor>
+		<include>Objects_SettingsSectionMenuButtonSubtitle</include>
+		<visible>Control.HasFocus(15) | ControlGroup(9001).HasFocus</visible>
+	</control>
+</include>
+
+<include name="homesubmenu_Plugins_Defaultbutton">
+	<description>Default Button</description>
+	<animation effect="fade" start="0" end="100" time="400">visible</animation>
+	<posx>0</posx>
+	<posy>0</posy>
+	<width>936</width>
+	<height>49</height>
+	<font>Font_SettingsOptions</font>
+	<texturefocus>settings/settings_radiobuttonofffocus.png</texturefocus>
+	<texturenofocus>settings/settings_radiobuttonoff.png</texturenofocus>
+	<textcolor>FF939597</textcolor>
+	<focusedcolor>FFFFFFFF</focusedcolor>
+	<pulseonselect>false</pulseonselect>
+	<textoffsetx>130</textoffsetx>
+	<aligny>center</aligny>
+	<include>Animation_SettingsButtonFade</include>
+</include>
+
+<include name="homesubmenu_Plugins_Defaultbutton1">
+	<description>Default Button</description>
+	<animation effect="fade" start="0" end="100" time="200">visible</animation>
+	<posx>0</posx>
+	<posy>0</posy>
+	<width>936</width>
+	<height>49</height>
+	<font>Font_SettingsOptions</font>
+	<texturefocus>settings/settings_radiobuttonofffocus.png</texturefocus>
+	<texturenofocus>settings/settings_radiobuttonoff.png</texturenofocus>
+	<textcolor>FF939597</textcolor>
+	<focusedcolor>FFFFFFFF</focusedcolor>
+	<pulseonselect>false</pulseonselect>
+	<textoffsetx>100</textoffsetx>
+	<aligny>center</aligny>
+	<include>Animation_SettingsButtonFade</include>
+</include>
+
+<include name="homesubmenu_Plugins_Defaultbutton2">
+	<description>Default Button</description>
+	<animation effect="fade" start="0" end="100" time="200">visible</animation>
+	<posx>0</posx>
+	<posy>0</posy>
+	<width>936</width>
+	<height>49</height>
+	<font>Font_SettingsOptions</font>
+	<texturefocus>settings/settings_radiobuttonofffocus.png</texturefocus>
+	<texturenofocus>settings/settings_radiobuttonoff.png</texturenofocus>
+	<textcolor>FF939597</textcolor>
+	<focusedcolor>FFFFFFFF</focusedcolor>
+	<pulseonselect>false</pulseonselect>
+	<textoffsetx>50</textoffsetx>
+	<aligny>center</aligny>
+	<include>Animation_SettingsButtonFade</include>
+</include>
+
+<include name="Objects_SettingsDefaultRadioButton1">
+	<description>Default RadioButton</description>
+	<posx>0</posx>
+	<posy>0</posy>
+	<width>936</width>
+	<height>49</height>
+	<font>Font_SettingsOptions</font>
+	<texturefocus>settings/settings_radiobuttonofffocus.png</texturefocus>
+	<texturenofocus>settings/settings_radiobuttonoff.png</texturenofocus>
+	<textcolor>FF939597</textcolor>
+	<focusedcolor>FFFFFFFF</focusedcolor>
+	<pulseonselect>false</pulseonselect>
+	<radiowidth>94</radiowidth>
+	<radioposx>850</radioposx>
+	<radioheight>65</radioheight>
+	<textoffsetx>100</textoffsetx>
+	<aligny>center</aligny>
+	<textureradiofocus>settings/settings_radiobuttononfocus.png</textureradiofocus>
+	<textureradionofocus>settings/settings_radiobuttonon.png</textureradionofocus>
+</include>
+
+<include name="homesubmenu_Plugins">
+	<control type="grouplist" id="9001">
+		<visible>Control.HasFocus(15) | ControlGroup(9001).HasFocus</visible>
+		<include>Objects_SettingsControlAreaVars</include>
+		<onup>9001</onup>
+		<ondown>9001</ondown>
+		<onleft>15</onleft>
+		<onright>15</onright>
+		<usecontrolcoords>true</usecontrolcoords>
+
+
+	<!-- Settings -->
+		<control type="button" id="9100">
+			<label>Setting</label>
+			<include>homesubmenu_Plugins_Defaultbutton2</include>
+			<selected>Skin.HasSetting(use_animation)</selected>
+			<onclick>Skin.ToggleSetting(use_animation)</onclick>
+			<onclick>Skin.Reset(usescripts_plugins)</onclick>
+		</control>
+		<!-- on/off -->
+		<control type="radiobutton" id="9110">
+			<visible>Skin.HasSetting(use_animation)</visible>
+			<include>Objects_SettingsDefaultRadioButton1</include>
+			<label>Sub Menu On/off... (genre, year, etc)</label>
+			<onclick>Skin.ToggleSetting(CustomMenuSub)</onclick>
+			<selected>!Skin.HasSetting(CustomMenuSub)</selected>
+		</control>			
+		<!-- on/off -->	
+		<control type="radiobutton" id="9111">
+			<visible>Skin.HasSetting(use_animation)</visible>
+			<include>Objects_SettingsDefaultRadioButton1</include>
+			<label>Home menu slide animation on/off...</label>
+			<onclick>Skin.ToggleSetting(CustomMenuanimation)</onclick>
+			<selected>!Skin.HasSetting(CustomMenuanimation)</selected>
+		</control>
+			
+		<control type="radiobutton" id="9112">
+			<visible>!Skin.HasSetting(CustomMenuSub)</visible>
+			<visible>!Skin.HasSetting(CustomMenuanimation)</visible>
+			<visible>Skin.HasSetting(use_animation)</visible>
+			<include>Objects_SettingsDefaultRadioButton1</include>
+			<label>Sub menu slide animation on/off...</label>
+			<onclick>Skin.ToggleSetting(CustomSubMenuanimation)</onclick>
+			<selected>!Skin.HasSetting(CustomSubMenuanimation)</selected>
+		</control>
+
+	<!-- animation -->
+	<!-- Scripts/Plugins -->
+		<control type="button" id="9102">
+			<visible>!Skin.HasSetting(CustomMenuSub)</visible>
+			<label>Scripts/Plugins</label>
+			<include>homesubmenu_Plugins_Defaultbutton2</include>
+			<selected>Skin.HasSetting(usescripts_plugins)</selected>
+			<onclick>Skin.ToggleSetting(usescripts_plugins)</onclick>
+			<onclick>Skin.Reset(use_animation)</onclick>
+		</control>
+
+
+		<!-- Movies -->
+		<control type="button" id="9200">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<label>Movies Scripts/Plugins</label>
+			<include>homesubmenu_Plugins_Defaultbutton1</include>
+			<selected>Skin.HasSetting(usemovie)</selected>
+			<onclick>Skin.ToggleSetting(usemovie)</onclick>
+			<onclick>Skin.Reset(usetv)</onclick>
+			<onclick>Skin.Reset(usegames)</onclick>
+			<onclick>Skin.Reset(usemusic)</onclick>
+		</control>
+		<!-- Movies Scripts -->
+		<control type="button" id="9201">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usemovie) + !Skin.HasSetting(moviescript1)</visible>
+			<label>Set Script One</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.SetString(moviescript1name)</onclick>
+			<onclick>Skin.SetFile(moviescript1path,.py,special://XBMC/scripts/)</onclick>
+			<onclick>Skin.SetBool(moviescript1)</onclick>
+		</control>
+		<control type="button" id="9202">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usemovie) + Skin.HasSetting(moviescript1)</visible>
+			<label>Clear Script: [COLOR FF262728]$INFO[Skin.String(moviescript1name)][/COLOR]</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.Reset(moviescript1name)</onclick>
+			<onclick>Skin.Reset(moviescript1path)</onclick>
+			<onclick>Skin.Reset(moviescript1)</onclick>
+		</control>
+		<control type="button" id="9203">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usemovie) + !Skin.HasSetting(moviescript2)</visible>
+			<label>Set Script Two</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.SetString(moviescript2name)</onclick>
+			<onclick>Skin.SetFile(moviescript2path,.py,special://XBMC/scripts/)</onclick>
+			<onclick>Skin.SetBool(moviescript2)</onclick>
+		</control>
+		<control type="button" id="9204">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usemovie) + Skin.HasSetting(moviescript2)</visible>
+			<label>Clear Script: [COLOR FF262728]$INFO[Skin.String(moviescript2name)][/COLOR]</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.Reset(moviescript2name)</onclick>
+			<onclick>Skin.Reset(moviescript2path)</onclick>
+			<onclick>Skin.Reset(moviescript2)</onclick>
+		</control>
+		<!-- Movies Scripts end -->
+		<!-- Movies Plugin -->
+		<control type="button" id="9205">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usemovie) + !Skin.HasSetting(movieplugin1)</visible>
+			<label>Set plugin One</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.SetString(movieplugin1name)</onclick>
+			<onclick>Skin.SetString(movieplugin1path)</onclick>
+			<onclick>Skin.SetBool(movieplugin1)</onclick>
+<onclick>Skin.ToggleSetting(CustomMenuSub)</onclick>
+<onclick>Skin.ToggleSetting(CustomMenuSub)</onclick>
+		</control>
+		<control type="button" id="9206">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usemovie) + Skin.HasSetting(movieplugin1)</visible>
+			<label>Clear plugin: [COLOR FF262728]$INFO[Skin.String(movieplugin1name)][/COLOR]</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.Reset(movieplugin1name)</onclick>
+			<onclick>Skin.Reset(movieplugin1path)</onclick>
+			<onclick>Skin.Reset(movieplugin1)</onclick>
+		</control>
+		<control type="button" id="9207">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usemovie) + !Skin.HasSetting(movieplugin2)</visible>
+			<label>Set plugin Two</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.SetString(movieplugin2name)</onclick>
+			<onclick>Skin.SetString(movieplugin2path)</onclick>
+			<onclick>Skin.SetBool(movieplugin2)</onclick>
+<onclick>Skin.ToggleSetting(CustomMenuSub)</onclick>
+<onclick>Skin.ToggleSetting(CustomMenuSub)</onclick>
+		</control>
+		<control type="button" id="9208">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usemovie) + Skin.HasSetting(movieplugin2)</visible>
+			<label>Clear plugin: [COLOR FF262728]$INFO[Skin.String(movieplugin2name)][/COLOR]</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.Reset(movieplugin2name)</onclick>
+			<onclick>Skin.Reset(movieplugin2path)</onclick>
+			<onclick>Skin.Reset(movieplugin2)</onclick>
+		</control>
+		<!-- Movies Plugin end -->
+		<!-- TV -->
+		<control type="button" id="9211">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<label>TV Scripts/Plugins</label>
+			<include>homesubmenu_Plugins_Defaultbutton1</include>
+			<selected>Skin.HasSetting(usetv)</selected>
+			<onclick>Skin.ToggleSetting(usetv)</onclick>
+			<onclick>Skin.Reset(usemovie)</onclick>
+			<onclick>Skin.Reset(usegames)</onclick>
+			<onclick>Skin.Reset(usemusic)</onclick>
+		</control>
+		<!-- TV Scripts -->
+		<control type="button" id="9212">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usetv) + !Skin.HasSetting(tvscript1)</visible>
+			<label>Set Script One</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.SetString(tvscript1name)</onclick>
+			<onclick>Skin.SetFile(tvscript1path,.py,special://XBMC/scripts/)</onclick>
+			<onclick>Skin.SetBool(tvscript1)</onclick>
+		</control>
+		<control type="button" id="9213">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usetv) + Skin.HasSetting(tvscript1)</visible>
+			<label>Clear Script: [COLOR FF262728]$INFO[Skin.String(tvscript1name)][/COLOR]</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.Reset(tvscript1name)</onclick>
+			<onclick>Skin.Reset(tvscript1path)</onclick>
+			<onclick>Skin.Reset(tvscript1)</onclick>
+		</control>
+		<control type="button" id="9214">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usetv) + !Skin.HasSetting(tvscript2)</visible>
+			<label>Set Script Two</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.SetString(tvscript2name)</onclick>
+			<onclick>Skin.SetFile(tvscript2path,.py,special://XBMC/scripts/)</onclick>
+			<onclick>Skin.SetBool(tvscript2)</onclick>
+		</control>
+		<control type="button" id="9215">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usetv) + Skin.HasSetting(tvscript2)</visible>
+			<label>Clear Script: [COLOR FF262728]$INFO[Skin.String(tvscript2name)][/COLOR]</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.Reset(tvscript2name)</onclick>
+			<onclick>Skin.Reset(tvscript2path)</onclick>
+			<onclick>Skin.Reset(tvscript2)</onclick>
+		</control>
+		<!-- TV Scripts end -->
+		<!-- TV Plugin -->
+		<control type="button" id="9216">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usetv) + !Skin.HasSetting(tvplugin1)</visible>
+			<label>Set plugin One</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.SetString(tvplugin1name)</onclick>
+			<onclick>Skin.SetString(tvplugin1path)</onclick>
+			<onclick>Skin.SetBool(tvplugin1)</onclick>
+<onclick>Skin.ToggleSetting(CustomMenuSub)</onclick>
+<onclick>Skin.ToggleSetting(CustomMenuSub)</onclick>
+
+		</control>
+		<control type="button" id="9217">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usetv) + Skin.HasSetting(tvplugin1)</visible>
+			<label>Clear plugin: [COLOR FF262728]$INFO[Skin.String(tvplugin1name)][/COLOR]</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.Reset(tvplugin1name)</onclick>
+			<onclick>Skin.Reset(tvplugin1path)</onclick>
+			<onclick>Skin.Reset(tvplugin1)</onclick>
+		</control>
+		<control type="button" id="9218">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usetv) + !Skin.HasSetting(tvplugin2)</visible>
+			<label>Set plugin Two</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.SetString(tvplugin2name)</onclick>
+			<onclick>Skin.SetString(tvplugin2path)</onclick>
+			<onclick>Skin.SetBool(tvplugin2)</onclick>
+
+<onclick>Skin.ToggleSetting(CustomMenuSub)</onclick>
+<onclick>Skin.ToggleSetting(CustomMenuSub)</onclick>
+		</control>
+		<control type="button" id="9219">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usetv) + Skin.HasSetting(tvplugin2)</visible>
+			<label>Clear plugin: [COLOR FF262728]$INFO[Skin.String(tvplugin2name)][/COLOR]</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.Reset(tvplugin2name)</onclick>
+			<onclick>Skin.Reset(tvplugin2path)</onclick>
+			<onclick>Skin.Reset(tvplugin2)</onclick>
+		</control>
+		<!-- TV Plugin end -->
+		<!-- Games/Apps -->
+		<control type="button" id="9221">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<label>Games Scripts/Plugins</label>
+			<include>homesubmenu_Plugins_Defaultbutton1</include>
+			<selected>Skin.HasSetting(usegames)</selected>
+			<onclick>Skin.ToggleSetting(usegames)</onclick>
+			<onclick>Skin.Reset(usemovie)</onclick>
+			<onclick>Skin.Reset(usetv)</onclick>
+			<onclick>Skin.Reset(usemusic)</onclick>
+		</control>
+		<!-- Games/Apps Scripts -->
+		<control type="button" id="9222">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usegames) + !Skin.HasSetting(gamescript1)</visible>
+			<label>Set Script One</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.SetString(gamescript1name)</onclick>
+			<onclick>Skin.SetFile(gamescript1path,.py,special://XBMC/scripts/)</onclick>
+			<onclick>Skin.SetBool(gamescript1)</onclick>
+		</control>
+		<control type="button" id="9223">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usegames) + Skin.HasSetting(gamescript1)</visible>
+			<label>Clear Script: [COLOR FF262728]$INFO[Skin.String(gamescript1name)][/COLOR]</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.Reset(gamescript1name)</onclick>
+			<onclick>Skin.Reset(gamescript1path)</onclick>
+			<onclick>Skin.Reset(gamescript1)</onclick>
+		</control>
+		<control type="button" id="9224">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usegames) + !Skin.HasSetting(gamescript2)</visible>
+			<label>Set Script Two</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.SetString(gamescript2name)</onclick>
+			<onclick>Skin.SetFile(gamescript2path,.py,special://XBMC/scripts/)</onclick>
+			<onclick>Skin.SetBool(gamescript2)</onclick>
+		</control>
+		<control type="button" id="9225">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usegames) + Skin.HasSetting(gamescript2)</visible>
+			<label>Clear Script: [COLOR FF262728]$INFO[Skin.String(gamescript2name)][/COLOR]</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.Reset(gamescript2name)</onclick>
+			<onclick>Skin.Reset(gamescript2path)</onclick>
+			<onclick>Skin.Reset(gamescript2)</onclick>
+		</control>
+		<!-- Games/Apps Scripts end -->
+		<!-- Games/Apps plugin -->
+		<control type="button" id="9226">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usegames) + !Skin.HasSetting(gamesplugin1)</visible>
+			<label>Set plugin One</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.SetString(gamesplugin1name)</onclick>
+			<onclick>Skin.SetString(gamesplugin1path)</onclick>
+			<onclick>Skin.SetBool(gamesplugin1)</onclick>
+
+<onclick>Skin.ToggleSetting(CustomMenuSub)</onclick>
+<onclick>Skin.ToggleSetting(CustomMenuSub)</onclick>
+		</control>
+		<control type="button" id="9227">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usegames) + Skin.HasSetting(gamesplugin1)</visible>
+			<label>Clear plugin: [COLOR FF262728]$INFO[Skin.String(gamesplugin1name)][/COLOR]</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.Reset(gamesplugin1name)</onclick>
+			<onclick>Skin.Reset(gamesplugin1path)</onclick>
+			<onclick>Skin.Reset(gamesplugin1)</onclick>
+		</control>
+		<control type="button" id="9228">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usegames) + !Skin.HasSetting(gamesplugin2)</visible>
+			<label>Set plugin Two</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.SetString(gamesplugin2name)</onclick>
+			<onclick>Skin.SetString(gamesplugin2path)</onclick>
+			<onclick>Skin.SetBool(gamesplugin2)</onclick>
+
+<onclick>Skin.ToggleSetting(CustomMenuSub)</onclick>
+<onclick>Skin.ToggleSetting(CustomMenuSub)</onclick>
+		</control>
+		<control type="button" id="9229">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usegames) + Skin.HasSetting(gamesplugin2)</visible>
+			<label>Clear plugin: [COLOR FF262728]$INFO[Skin.String(gamesplugin2name)][/COLOR]</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.Reset(gamesplugin2name)</onclick>
+			<onclick>Skin.Reset(gamesplugin2path)</onclick>
+			<onclick>Skin.Reset(gamesplugin2)</onclick>
+		</control>
+		<!-- Games/Apps Plugin end -->
+		<!-- Music -->
+		<control type="button" id="9231">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<label>Music Scripts/Plugins</label>
+			<include>homesubmenu_Plugins_Defaultbutton1</include>
+			<selected>Skin.HasSetting(usemusic)</selected>
+			<onclick>Skin.ToggleSetting(usemusic)</onclick>
+			<onclick>Skin.Reset(usemovie)</onclick>
+			<onclick>Skin.Reset(usetv)</onclick>
+			<onclick>Skin.Reset(usegames)</onclick>
+		</control>
+		<!-- Music Scripts -->
+		<control type="button" id="9232">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usemusic) + !Skin.HasSetting(musicscript1)</visible>
+			<label>Set Script One</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.SetString(musicscript1name)</onclick>
+			<onclick>Skin.SetFile(musicscript1path,.py,special://XBMC/scripts/)</onclick>
+			<onclick>Skin.SetBool(musicscript1)</onclick>
+		</control>
+		<control type="button" id="9233">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usemusic) + Skin.HasSetting(musicscript1)</visible>
+			<label>Clear Script: [COLOR FF262728]$INFO[Skin.String(musicscript1name)][/COLOR]</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.Reset(musicscript1name)</onclick>
+			<onclick>Skin.Reset(musicscript1path)</onclick>
+			<onclick>Skin.Reset(musicscript1)</onclick>
+		</control>
+		<control type="button" id="9234">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usemusic) + !Skin.HasSetting(musicscript2)</visible>
+			<label>Set Script Two</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.SetString(musicscript2name)</onclick>
+			<onclick>Skin.SetFile(musicscript2path,.py,special://XBMC/scripts/)</onclick>
+			<onclick>Skin.SetBool(musicscript2)</onclick>
+		</control>
+		<control type="button" id="9235">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usemusic) + Skin.HasSetting(musicscript2)</visible>
+			<label>Clear Script: [COLOR FF262728]$INFO[Skin.String(musicscript2name)][/COLOR]</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.Reset(musicscript2name)</onclick>
+			<onclick>Skin.Reset(musicscript2path)</onclick>
+			<onclick>Skin.Reset(musicscript2)</onclick>
+		</control>
+		<!-- Music Scripts end -->
+		<!-- Music plugin -->
+		<control type="button" id="9336">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usemusic) + !Skin.HasSetting(musicplugin1)</visible>
+			<label>Set plugin One</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.SetString(musicplugin1name)</onclick>
+			<onclick>Skin.SetString(musicplugin1path)</onclick>
+			<onclick>Skin.SetBool(musicplugin1)</onclick>
+
+<onclick>Skin.ToggleSetting(CustomMenuSub)</onclick>
+<onclick>Skin.ToggleSetting(CustomMenuSub)</onclick>
+		</control>
+		<control type="button" id="9337">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usemusic) + Skin.HasSetting(musicplugin1)</visible>
+			<label>Clear plugin: [COLOR FF262728]$INFO[Skin.String(musicplugin1name)][/COLOR]</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.Reset(musicplugin1name)</onclick>
+			<onclick>Skin.Reset(musicplugin1path)</onclick>
+			<onclick>Skin.Reset(musicplugin1)</onclick>
+		</control>
+		<control type="button" id="9338">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usemusic) + !Skin.HasSetting(musicplugin2)</visible>
+			<label>Set plugin Two</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.SetString(musicplugin2name)</onclick>
+			<onclick>Skin.SetString(musicplugin2path)</onclick>
+			<onclick>Skin.SetBool(musicplugin2)</onclick>
+
+<onclick>Skin.ToggleSetting(CustomMenuSub)</onclick>
+<onclick>Skin.ToggleSetting(CustomMenuSub)</onclick>
+		</control>
+		<control type="button" id="9339">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usemusic) + Skin.HasSetting(musicplugin2)</visible>
+			<label>Clear plugin: [COLOR FF262728]$INFO[Skin.String(musicplugin2name)][/COLOR]</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.Reset(musicplugin2name)</onclick>
+			<onclick>Skin.Reset(musicplugin2path)</onclick>
+			<onclick>Skin.Reset(musicplugin2)</onclick>
+		</control>
+		<!-- Music Plugin end -->
+	<!-- Scripts/Plugins -->
+	</control>
+</include>
+
+</includes>

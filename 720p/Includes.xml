@@ -1,0 +1,155 @@
+<includes>
+
+<include file="Defaults.xml" />
+<include file="Includes_Animations.xml" />
+<include file="Includes_Backgrounds.xml" />
+<include file="Includes_Conditions.xml" />
+<include file="Includes_Objects.xml" />
+<include file="Includes_Furniture.xml" />
+<include file="Includes_Colours.xml" />
+<include file="Includes_MainMenu.xml" />
+<include file="Includes_Reset.xml" />
+<include file="Includes_Assistant_LabelsButtons.xml" />
+<include file="Includes_Settings_LabelsButtons.xml" />
+<include file="Includes_Settings_Presets.xml" />
+<include file="Includes_Settings_Welcome.xml" />
+<include file="Includes_MediaFlags.xml" />
+<include file="Includes_ViewSelect.xml" />
+<include file="Viewtype_Showcase.xml" />
+<include file="Viewtype_StripShow.xml" />
+<include file="Viewtype_List.xml" />
+<include file="Viewtype_Wall.xml" />
+
+<include file="Includes_sebmenu.xml" /><!-- <<<<<< Add this -->
+<include file="Includes_Customise_sebmenu.xml" /><!-- <<<<<< Add this -->
+
+<include file="Includes_moviegenre.xml" /><!-- <<<<<< Add this -->
+
+<!-- Text colours ================================== -->
+
+<include name="subcolornofocus">
+	<textcolor>ff969696</textcolor>
+	<selectedcolor>ff969696</selectedcolor>
+</include>
+
+<include name="listcolornofocus">
+	<textcolor>dcffffff</textcolor>
+	<selectedcolor>dcffffff</selectedcolor>
+</include>
+
+<include name="subcolorfocus">
+	<textcolor>ff2e2e2e</textcolor>
+	<selectedcolor>ff2e2e2e</selectedcolor>
+</include>
+
+<include name="listcolorfocus">
+	<textcolor>ff2e2e2e</textcolor>
+	<selectedcolor>ff2e2e2e</selectedcolor>
+</include>
+
+<include name="detailcolornofocus">
+	<textcolor>dcbdbdbd</textcolor>
+	<selectedcolor>dcbdbdbd</selectedcolor>
+</include>
+
+<include name="listobjects">
+	<textcolor>ff969696</textcolor>
+</include>
+
+<include name="detailcolorfocus">
+	<textcolor>FF585858</textcolor>
+	<selectedcolor>FF585858</selectedcolor>
+</include>
+
+<include name="playsymbol">
+	<textcolor>00FFFFFF</textcolor>
+	<selectedcolor>10FFFFFF</selectedcolor>
+</include>
+
+<include name="playlistcolor1">
+	<textcolor>FFFFFFFF</textcolor>
+	<selectedcolor>e1b1e021</selectedcolor>
+</include>
+
+<include name="playlistcolor2">
+	<textcolor>FFFFFFFF</textcolor>
+	<selectedcolor>e1b1e021</selectedcolor>
+</include>
+
+<include name="settingsmenufont">
+	<textcolor>FFa8a8a8</textcolor>
+	<selectedcolor>e1b1e021</selectedcolor>
+	<focusedcolor>ffffffff</focusedcolor>
+</include>
+
+<include name="settingsmenubar">
+	<textcolor>FFffffff</textcolor>
+	<focusedcolor>FFffff00</focusedcolor>
+	<selectedcolor>FFffff00</selectedcolor>
+</include>
+
+<include name="osdfont">
+	<textcolor>FFffffff</textcolor>
+	<focusedcolor>FFababab</focusedcolor>
+	<selectedcolor>FFababab</selectedcolor>
+</include>
+
+<include name="osdfont2">
+	<textcolor>FFb8b8b8</textcolor>
+	<focusedcolor>FFFFFFFF</focusedcolor>
+	<selectedcolor>FFFFFFFF</selectedcolor>
+</include>
+
+<!-- Global time and weather panel ================================== -->
+
+<include name="Window-Files">
+	<control type="label" id="12">
+		<posx>70</posx>
+		<posy>580</posy>
+		<label>-</label>
+		<font>objects</font>
+		<textcolor>59FFFFFF</textcolor>
+		<include>common-fade-quick</include>
+		<visible>!Control.IsVisible(51) + !Control.IsVisible(57) + !Control.IsVisible(58) + !Control.IsVisible(53)</visible>
+	</control>
+</include>
+
+<!-- Menu styles ================================== -->
+
+<include name="filemanmenugroup">
+	<posx>67</posx>
+	<posy>597</posy>
+	<width>1145</width>
+	<height>40</height>
+	<itemgap>0</itemgap>
+	<orientation>horizontal</orientation>
+	<onup>21</onup>
+	<ondown>21</ondown>
+	<include>common-fade-quick</include>
+</include>
+
+<include name="browsermenugroup">
+	<posx>67</posx>
+	<posy>565</posy>
+	<width>1145</width>
+	<height>40</height>
+	<itemgap>0</itemgap>
+	<orientation>horizontal</orientation>
+	<onup>450</onup>
+	<ondown>450</ondown>
+	<include>common-fade-quick</include>
+</include>
+
+<include name="selectmenugroup">
+	<posx>302</posx>
+	<posy>565</posy>
+	<width>1145</width>
+	<height>40</height>
+	<itemgap>0</itemgap>
+	<orientation>horizontal</orientation>
+	<onup>450</onup>
+	<ondown>450</ondown>
+	<include>common-fade-quick</include>
+</include>
+
+</includes>
