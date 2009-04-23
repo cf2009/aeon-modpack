@@ -43,7 +43,8 @@
 	<include>Objects_WeatherPopup</include>
 	<include>Furniture_Time</include>
 	<include>Furniture_HomeRSS</include>
-
+	<include>Submenu</include>
+	
 	<control type="group">
 		<posx>0</posx>
 		<posy>0</posy>
@@ -74,6 +75,17 @@
 			<include>MainMenu</include>
 			<include>homesubmenu_main_fix</include><!-- <<<<<< Add this -->
 		</control>
+		
+		<control type="image">
+			<posx>0</posx>
+			<posy>302</posy>
+			<width>1280</width>
+			<height>150</height>
+			<texture>home/homemenu_gradient.png</texture>
+			<include>Animation_CommonFade</include>
+			<visible>!Skin.HasSetting(nohomegradient)</visible>
+			<colordiffuse>d0FFFFFF</colordiffuse>
+		</control>		
 
 	</control>
 
