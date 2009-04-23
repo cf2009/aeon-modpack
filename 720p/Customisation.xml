@@ -357,10 +357,7 @@
 			<selected>!Skin.HasSetting(nomenuthumbs)</selected>
 		</control>
 		
-	</control>
-
-
-	<include>homesubmenu_Plugins</include><!-- <<<<< ADD this -->	
+	</control>	
 
 	<include>Furniture_SettingsFrontPanel</include>
 	
