@@ -93,7 +93,7 @@
 	
     <include name="MusicShowcaseThumbReflectionDimensions">
         <posx>18</posx>
-        <posy>250</posy>
+        <posy>245</posy>
         <width>234</width>
         <height>234</height>
     </include>
@@ -114,14 +114,14 @@
         <include>MusicShowcaseThumbReflectionDimensions</include>
         <colordiffuse>d0FFFFFF</colordiffuse>
         <texture flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">defaultaudiobig.png</texture>
-        <aspectratio scalediffuse="false">scale</aspectratio>
+        <aspectratio>scale</aspectratio>
     </include>
 	
     <include name="MusicShowcaseThumbReflectionMain">
         <include>MusicShowcaseThumbReflectionDimensions</include>
         <colordiffuse>52FFFFFF</colordiffuse>
         <texture flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">defaultaudiobig.png</texture>
-        <aspectratio scalediffuse="false">scale</aspectratio>
+        <aspectratio>scale</aspectratio>
     </include>
 	
 <!-- Music Showcase Variables: Thumb glass overlays -->
@@ -1791,12 +1791,12 @@
                     <control type="image">
                         <include>MovieShowcaseThumbReflection</include>
                         <info>Container(57).ListItem(3).Icon</info>
-			<visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+						<visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
                     </control>
                     <control type="image">
                         <include>MovieShowcaseThumbReflection</include>
                         <info>Container(57).ListItem(3).Icon</info>
-			<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
 <include>mod_moviegenre_Showcase_ref10</include><!-- <<<<<< Add this -->
                 </control>
@@ -2734,220 +2734,211 @@
             <ondown>57</ondown>
         </control>		
 		
-	<control type="group">
-		<include>ShowcaseVisible</include>
-
-		<control type="wraplist" id="57">
-			<include condition="Window.IsActive(28) | Window.IsActive(24) | [Window.IsActive(25) + !Container.Content(episodes)] | Window.IsActive(1)">MovieShowcaseGroupVars</include>
-			<include condition="Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502) | Window.IsActive(2) | Window.IsActive(20)">MusicShowcaseGroupVars</include>
-			<onleft>57</onleft>
-			<onright>57</onright>
-			<onup>900</onup>
-			<ondown>60</ondown>
-			<viewtype label="Showcase">list</viewtype>
-			<pagecontrol>60</pagecontrol>
-			<orientation>horizontal</orientation>
-			<scrolltime>250</scrolltime>
-			<include>Animation_HideShowcase</include>
-			<focusposition>3</focusposition>
-			<visible>!Container.Content(episodes)</visible>
+        <control type="group">
+            <include>ShowcaseVisible</include>
+            <control type="wraplist" id="57">
+				<include condition="Window.IsActive(28) | Window.IsActive(24) | [Window.IsActive(25) + !Container.Content(episodes)] | Window.IsActive(1)">MovieShowcaseGroupVars</include>
+				<include condition="Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502) | Window.IsActive(2) | Window.IsActive(20)">MusicShowcaseGroupVars</include>
+                <onleft>57</onleft>
+                <onright>57</onright>
+                <onup>900</onup>
+                <ondown>60</ondown>
+                <viewtype label="Showcase">list</viewtype>
+                <pagecontrol>60</pagecontrol>
+                <orientation>horizontal</orientation>
+                <scrolltime>250</scrolltime>
+				<include>Animation_HideShowcase</include>
+                <focusposition>3</focusposition>
+				<visible>![Window.IsActive(25) + Skin.HasSetting(videotv)] | [Window.IsActive(25) + Skin.HasSetting(videotv) + Skin.HasSetting(unlockTVviews)]</visible>
+                <itemlayout height="350" width="196" condition="Window.IsActive(28) | Window.IsActive(24) | [Window.IsActive(25) + !Container.Content(episodes)] | Window.IsActive(1)">
+                    <control type="image">
+                        <include>MovieShowcaseThumbMain</include>
+                        <info>ListItem.Icon</info>
+						<visible>!Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenshowcase) + !Control.IsVisible(6000)</visible>
+                    </control>
+                    <control type="image">
+                        <include>MovieShowcaseThumbMain</include>
+                        <info>ListItem.Icon</info>
+						<visible>Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenshowcase) + !Control.IsVisible(6000)</visible>
+                    </control>
+                    <control type="image">
+                        <description>Glass overlay</description>
+                        <include>MovieShowcaseGlassOverlay</include>
+						<visible>!Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenshowcase) + !Control.IsVisible(6000)</visible>
+                    </control>
+                    <control type="image">
+                        <description>Black overlay</description>
+                        <include>MovieShowcaseOverlay</include>
+						<visible>!Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenshowcase) + !Control.IsVisible(6000)</visible>
+                    </control>
+                    <control type="image">
+                        <include>MovieShowcaseThumbReflection</include>
+                        <info>ListItem.Icon</info>
+						<visible>!Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenshowcase) + !Control.IsVisible(6000)</visible>
+                    </control>
+                    <control type="image">
+                        <include>MovieShowcaseThumbReflection</include>
+                        <info>ListItem.Icon</info>
+						<visible>Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenshowcase) + !Control.IsVisible(6000)</visible>
+                    </control>				
+				</itemlayout>
+                <focusedlayout height="350" width="196" condition="Window.IsActive(28) | Window.IsActive(24) | [Window.IsActive(25) + !Container.Content(episodes)] | Window.IsActive(1)">
+                    <control type="image">
+                        <include>MovieShowcaseThumbMain</include>
+                        <info>ListItem.Icon</info>
+						<visible>!Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenshowcase) + !Control.IsVisible(6000)</visible>
+						<animation effect="zoom" start="100" end="120" center="135,230" time="400" easing="out" reversible="false" tween="cubic">Focus</animation>
+						<animation effect="zoom" start="120" end="100" center="135,230" time="400" easing="out" reversible="false" tween="cubic" condition="!Control.HasFocus(57) + Skin.HasSetting(flattenshowcase)">Unfocus</animation>
+                    </control>
+                    <control type="image">
+                        <include>MovieShowcaseThumbMain</include>
+                        <info>ListItem.Icon</info>
+						<visible>Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenshowcase) + !Control.IsVisible(6000)</visible>
+						<animation effect="zoom" start="100" end="120" center="135,230" time="400" easing="out" reversible="false" tween="cubic">Focus</animation>
+						<animation effect="zoom" start="120" end="100" center="135,230" time="400" easing="out" reversible="false" tween="cubic" condition="!Control.HasFocus(57) + Skin.HasSetting(flattenshowcase)">Unfocus</animation>						
+                    </control>
+                    <control type="image">
+                        <description>Glass overlay</description>
+                        <include>MovieShowcaseGlassOverlay</include>
+						<visible>Skin.HasSetting(flattenshowcase) + !Control.IsVisible(6000)</visible>
+						<animation effect="zoom" start="100" end="120" center="135,230" time="400" easing="out" reversible="false" tween="cubic">Focus</animation>
+						<animation effect="zoom" start="120" end="100" center="135,230" time="400" easing="out" reversible="false" tween="cubic" condition="!Control.HasFocus(57) + Skin.HasSetting(flattenshowcase)">Unfocus</animation>						
+                    </control>
+                    <control type="image">
+                        <description>Black overlay</description>
+                        <include>MovieShowcaseOverlay</include>
+						<visible>Skin.HasSetting(flattenshowcase) + !Control.IsVisible(6000)</visible>
+						<animation effect="zoom" start="100" end="120" center="135,230" time="400" easing="out" reversible="false" tween="cubic">Focus</animation>
+						<animation effect="zoom" start="120" end="100" center="135,230" time="400" easing="out" reversible="false" tween="cubic" condition="!Control.HasFocus(57) + Skin.HasSetting(flattenshowcase)">Unfocus</animation>						
+                    </control>
+                    <control type="image">
+                        <include>MovieShowcaseThumbReflectionMain</include>
+                        <info>ListItem.Icon</info>
+						<visible>!Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenshowcase) + !Control.IsVisible(6000)</visible>
+						<animation effect="zoom" start="100" end="120" center="135,230" time="400" easing="out" reversible="false" tween="cubic">Focus</animation>
+						<animation effect="zoom" start="120" end="100" center="135,230" time="400" easing="out" reversible="false" tween="cubic" condition="!Control.HasFocus(57) + Skin.HasSetting(flattenshowcase)">Unfocus</animation>						
+                    </control>
+                    <control type="image">
+                        <include>MovieShowcaseThumbReflectionMain</include>
+                        <info>ListItem.Icon</info>
+						<visible>Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenshowcase) + !Control.IsVisible(6000)</visible>
+						<animation effect="zoom" start="100" end="130" center="135,230" time="400" easing="out" reversible="false" tween="cubic">Focus</animation>
+						<animation effect="zoom" start="120" end="100" center="135,230" time="400" easing="out" reversible="false" tween="cubic" condition="!Control.HasFocus(57) + Skin.HasSetting(flattenshowcase)">Unfocus</animation>						
+                    </control>					
+				</focusedlayout>
+                <itemlayout height="350" width="250" condition="Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502) | Window.IsActive(2) | Window.IsActive(20)">
+                    <control type="image">
+                        <include>MusicShowcaseThumbMain</include>
+                        <info>ListItem.Icon</info>
+						<visible>[[Skin.HasSetting(flattenshowcase) + !Control.IsVisible(970)] | Container.Content(episodes)]</visible>
+                    </control>
+                    <control type="image">
+                        <description>Glass overlay</description>
+                        <include>MusicShowcaseGlassOverlay</include>
+						<visible>[[Skin.HasSetting(flattenshowcase) + !Control.IsVisible(970)] | Container.Content(episodes)]</visible>
+                    </control>
+                    <control type="image">
+                        <description>Black overlay</description>
+                        <include>MusicShowcaseOverlay</include>
+						<visible>[[Skin.HasSetting(flattenshowcase) + !Control.IsVisible(970)] | Container.Content(episodes)]</visible>
+                    </control>
+                    <control type="image">
+                        <include>MusicShowcaseThumbReflection</include>
+                        <info>ListItem.Icon</info>
+						<visible>[[Skin.HasSetting(flattenshowcase) + !Control.IsVisible(970)] | Container.Content(episodes)]</visible>
+                    </control>				
+				</itemlayout>
+                <focusedlayout height="350" width="250" condition="Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502) | Window.IsActive(2) | Window.IsActive(20)">
+                    <control type="image">
+                        <include>MusicShowcaseThumbMain</include>
+                        <info>ListItem.Icon</info>
+						<visible>[[Skin.HasSetting(flattenshowcase) + !Control.IsVisible(970)] | Container.Content(episodes)]</visible>
+						<animation effect="zoom" start="100" end="110" center="135,230" time="400" easing="out" reversible="false" tween="cubic">Focus</animation>
+						<animation effect="zoom" start="110" end="100" center="135,230" time="400" easing="out" reversible="false" tween="cubic" condition="!Control.HasFocus(57) + [Skin.HasSetting(flattenshowcase) | Container.Content(episodes)]">Unfocus</animation>						
+                    </control>
+                    <control type="image">
+                        <description>Glass overlay</description>
+                        <include>MusicShowcaseGlassOverlay</include>
+						<visible>[[Skin.HasSetting(flattenshowcase) + !Control.IsVisible(970)] | Container.Content(episodes)]</visible>
+						<animation effect="zoom" start="100" end="110" center="135,230" time="400" easing="out" reversible="false" tween="cubic">Focus</animation>
+						<animation effect="zoom" start="110" end="100" center="135,230" time="400" easing="out" reversible="false" tween="cubic" condition="!Control.HasFocus(57) + [Skin.HasSetting(flattenshowcase) | Container.Content(episodes)]">Unfocus</animation>						
+                    </control>
+                    <control type="image">
+                        <description>Black overlay</description>
+                        <include>MusicShowcaseOverlay</include>
+						<visible>[[Skin.HasSetting(flattenshowcase) + !Control.IsVisible(970)] | Container.Content(episodes)]</visible>
+						<animation effect="zoom" start="100" end="110" center="135,230" time="400" easing="out" reversible="false" tween="cubic">Focus</animation>
+						<animation effect="zoom" start="110" end="100" center="135,230" time="400" easing="out" reversible="false" tween="cubic" condition="!Control.HasFocus(57) + [Skin.HasSetting(flattenshowcase) | Container.Content(episodes)]">Unfocus</animation>						
+                    </control>
+                    <control type="image">
+                        <include>MusicShowcaseThumbReflection</include>
+                        <info>ListItem.Icon</info>
+						<visible>[[Skin.HasSetting(flattenshowcase) + !Control.IsVisible(970)] | Container.Content(episodes)]</visible>
+						<animation effect="zoom" start="100" end="110" center="135,230" time="400" easing="out" reversible="false" tween="cubic">Focus</animation>
+						<animation effect="zoom" start="110" end="100" center="135,230" time="400" easing="out" reversible="false" tween="cubic" condition="!Control.HasFocus(57) + [Skin.HasSetting(flattenshowcase) | Container.Content(episodes)]">Unfocus</animation>						
+                    </control>					
+				</focusedlayout>				
+            </control>
 			
-			<itemlayout height="350" width="196" condition="Window.IsActive(28) | Window.IsActive(24) | [Window.IsActive(25) + !Container.Content(episodes)] | Window.IsActive(1)">
-				<control type="image">
-					<include>MovieShowcaseThumbMain</include>
-					<info>ListItem.Icon</info>
-					<visible>!Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenshowcase) + !Control.IsVisible(6000)</visible>
-                    		</control>
-                    		<control type="image">
-                        		<include>MovieShowcaseThumbMain</include>
-					<info>ListItem.Icon</info>
-					<visible>Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenshowcase) + !Control.IsVisible(6000)</visible>
-				</control>
-				<include>mod_moviegenre_Showcase21</include><!-- <<<<<< Add this -->
-				<control type="image">
-					<description>Glass overlay</description>
-					<include>MovieShowcaseGlassOverlay</include>
-					<visible>!Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenshowcase) + !Control.IsVisible(6000)</visible>
-				</control>
-				<control type="image">
-					<description>Black overlay</description>
-					<include>MovieShowcaseOverlay</include>
-					<visible>!Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenshowcase) + !Control.IsVisible(6000)</visible>
-				</control>
-				<control type="image">
-					<include>MovieShowcaseThumbReflection</include>
-					<info>ListItem.Icon</info>
-					<visible>!Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenshowcase) + !Control.IsVisible(6000)</visible>
-				</control>
-				<control type="image">
-					<include>MovieShowcaseThumbReflection</include>
-					<info>ListItem.Icon</info>
-					<visible>Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenshowcase) + !Control.IsVisible(6000)</visible>
-                    		</control>
-				<include>mod_moviegenre_Showcase_ref21</include><!-- <<<<<< Add this -->				
-			</itemlayout>
+            <control type="scrollbar" id="60">
+                <description>My first scroll bar control</description>
+                <posx>305</posx>
+                <posy>663</posy>
+                <width>670</width>
+                <height>41</height>
+                <visible allowhiddenfocus="true">Control.IsVisible(57) + Control.HasFocus(60)</visible>
+                <texturesliderbackground>windows/scrollbarbackshowcase.png</texturesliderbackground>
+                <texturesliderbar>-</texturesliderbar>
+                <texturesliderbarfocus>-</texturesliderbarfocus>
+                <textureslidernib>windows/scrollbarnub-nofocus.png</textureslidernib>
+                <textureslidernibfocus>windows/scrollbarnub-focus.png</textureslidernibfocus>
+                <pulseonselect></pulseonselect>
+                <orientation>horizontal</orientation>
+                <showonepage>false</showonepage>
+                <onup>57</onup>
+                <ondown>94</ondown>
+                <onleft>60</onleft>
+                <onright>60</onright>
+                <include>Animation_HideShowcase</include>
+				<include>Animation_CommonFade</include>
+            </control>
 
-                	<focusedlayout height="350" width="196" condition="Window.IsActive(28) | Window.IsActive(24) | [Window.IsActive(25) + !Container.Content(episodes)] | Window.IsActive(1)">
-				<control type="image">
-					<include>MovieShowcaseThumbMain</include>
-					<info>ListItem.Icon</info>
-					<visible>!Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenshowcase) + !Control.IsVisible(6000)</visible>
-					<animation effect="zoom" start="100" end="120" center="135,230" time="400" easing="out" reversible="false" tween="cubic">Focus</animation>
-					<animation effect="zoom" start="120" end="100" center="135,230" time="400" easing="out" reversible="false" tween="cubic" condition="!Control.HasFocus(57) + Skin.HasSetting(flattenshowcase)">Unfocus</animation>
-                    		</control>
-                    		<control type="image">
-                        		<include>MovieShowcaseThumbMain</include>
-                        		<info>ListItem.Icon</info>
-					<visible>Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenshowcase) + !Control.IsVisible(6000)</visible>
-					<animation effect="zoom" start="100" end="120" center="135,230" time="400" easing="out" reversible="false" tween="cubic">Focus</animation>
-					<animation effect="zoom" start="120" end="100" center="135,230" time="400" easing="out" reversible="false" tween="cubic" condition="!Control.HasFocus(57) + Skin.HasSetting(flattenshowcase)">Unfocus</animation>						
-                    		</control>
-				<include>mod_moviegenre_Showcase20</include><!-- <<<<<< Add this -->
-                    		<control type="image">
-                        		<description>Glass overlay</description>
-                       			<include>MovieShowcaseGlassOverlay</include>
-					<visible>Skin.HasSetting(flattenshowcase) + !Control.IsVisible(6000)</visible>
-					<animation effect="zoom" start="100" end="120" center="135,230" time="400" easing="out" reversible="false" tween="cubic">Focus</animation>
-					<animation effect="zoom" start="120" end="100" center="135,230" time="400" easing="out" reversible="false" tween="cubic" condition="!Control.HasFocus(57) + Skin.HasSetting(flattenshowcase)">Unfocus</animation>						
-                    		</control>
-                    		<control type="image">
-                        		<description>Black overlay</description>
-                        		<include>MovieShowcaseOverlay</include>
-					<visible>Skin.HasSetting(flattenshowcase) + !Control.IsVisible(6000)</visible>
-					<animation effect="zoom" start="100" end="120" center="135,230" time="400" easing="out" reversible="false" tween="cubic">Focus</animation>
-					<animation effect="zoom" start="120" end="100" center="135,230" time="400" easing="out" reversible="false" tween="cubic" condition="!Control.HasFocus(57) + Skin.HasSetting(flattenshowcase)">Unfocus</animation>						
-                    		</control>
-                    		<control type="image">
-                        		<include>MovieShowcaseThumbReflectionMain</include>
-                        		<info>ListItem.Icon</info>
-					<visible>!Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenshowcase) + !Control.IsVisible(6000)</visible>
-					<animation effect="zoom" start="100" end="120" center="135,230" time="400" easing="out" reversible="false" tween="cubic">Focus</animation>
-					<animation effect="zoom" start="120" end="100" center="135,230" time="400" easing="out" reversible="false" tween="cubic" condition="!Control.HasFocus(57) + Skin.HasSetting(flattenshowcase)">Unfocus</animation>						
-                    		</control>
-                    		<control type="image">
-                        		<include>MovieShowcaseThumbReflectionMain</include>
-                        		<info>ListItem.Icon</info>
-					<visible>Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenshowcase) + !Control.IsVisible(6000)</visible>
-					<animation effect="zoom" start="100" end="130" center="135,230" time="400" easing="out" reversible="false" tween="cubic">Focus</animation>
-					<animation effect="zoom" start="120" end="100" center="135,230" time="400" easing="out" reversible="false" tween="cubic" condition="!Control.HasFocus(57) + Skin.HasSetting(flattenshowcase)">Unfocus</animation>						
-                    		</control>
-				<include>mod_moviegenre_Showcase_ref20</include><!-- <<<<<< Add this -->					
-			</focusedlayout>
-
-			<itemlayout height="350" width="250" condition="Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502) | Window.IsActive(2) | Window.IsActive(20)">
-				<control type="image">
-					<include>MusicShowcaseThumbMain</include>
-					<info>ListItem.Icon</info>
-					<visible>[[Skin.HasSetting(flattenshowcase) + !Control.IsVisible(970)] | Container.Content(episodes)]</visible>
-                    		</control>
-                    		<control type="image">
-                        		<description>Glass overlay</description>
-                        		<include>MusicShowcaseGlassOverlay</include>
-					<visible>[[Skin.HasSetting(flattenshowcase) + !Control.IsVisible(970)] | Container.Content(episodes)]</visible>
-                    		</control>
-                    		<control type="image">
-                        		<description>Black overlay</description>
-                        		<include>MusicShowcaseOverlay</include>
-					<visible>[[Skin.HasSetting(flattenshowcase) + !Control.IsVisible(970)] | Container.Content(episodes)]</visible>
-                    		</control>
-                    		<control type="image">
-                        		<include>MusicShowcaseThumbReflection</include>
-                        		<info>ListItem.Icon</info>
-					<visible>[[Skin.HasSetting(flattenshowcase) + !Control.IsVisible(970)] | Container.Content(episodes)]</visible>
-                    		</control>				
-			</itemlayout>
-
-			<focusedlayout height="350" width="250" condition="Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502) | Window.IsActive(2) | Window.IsActive(20)">
-				<control type="image">
-					<include>MusicShowcaseThumbMain</include>
-					<info>ListItem.Icon</info>
-					<visible>[[Skin.HasSetting(flattenshowcase) + !Control.IsVisible(970)] | Container.Content(episodes)]</visible>
-					<animation effect="zoom" start="100" end="110" center="135,230" time="400" easing="out" reversible="false" tween="cubic">Focus</animation>
-					<animation effect="zoom" start="110" end="100" center="135,230" time="400" easing="out" reversible="false" tween="cubic" condition="!Control.HasFocus(57) + [Skin.HasSetting(flattenshowcase) | Container.Content(episodes)]">Unfocus</animation>						
-                    		</control>
-                    		<control type="image">
-                        		<description>Glass overlay</description>
-                        		<include>MusicShowcaseGlassOverlay</include>
-					<visible>[[Skin.HasSetting(flattenshowcase) + !Control.IsVisible(970)] | Container.Content(episodes)]</visible>
-					<animation effect="zoom" start="100" end="110" center="135,230" time="400" easing="out" reversible="false" tween="cubic">Focus</animation>
-					<animation effect="zoom" start="110" end="100" center="135,230" time="400" easing="out" reversible="false" tween="cubic" condition="!Control.HasFocus(57) + [Skin.HasSetting(flattenshowcase) | Container.Content(episodes)]">Unfocus</animation>						
-                   		</control>
-                    		<control type="image">
-                        		<description>Black overlay</description>
-                        		<include>MusicShowcaseOverlay</include>
-					<visible>[[Skin.HasSetting(flattenshowcase) + !Control.IsVisible(970)] | Container.Content(episodes)]</visible>
-					<animation effect="zoom" start="100" end="110" center="135,230" time="400" easing="out" reversible="false" tween="cubic">Focus</animation>
-					<animation effect="zoom" start="110" end="100" center="135,230" time="400" easing="out" reversible="false" tween="cubic" condition="!Control.HasFocus(57) + [Skin.HasSetting(flattenshowcase) | Container.Content(episodes)]">Unfocus</animation>						
-                    		</control>
-                    		<control type="image">
-                        		<include>MusicShowcaseThumbReflection</include>
-                        		<info>ListItem.Icon</info>
-					<visible>[[Skin.HasSetting(flattenshowcase) + !Control.IsVisible(970)] | Container.Content(episodes)]</visible>
-					<animation effect="zoom" start="100" end="110" center="135,230" time="400" easing="out" reversible="false" tween="cubic">Focus</animation>
-					<animation effect="zoom" start="110" end="100" center="135,230" time="400" easing="out" reversible="false" tween="cubic" condition="!Control.HasFocus(57) + [Skin.HasSetting(flattenshowcase) | Container.Content(episodes)]">Unfocus</animation>						
-                    		</control>					
-			</focusedlayout>				
-		</control>
+			<include>Furniture_ShowcaseMediaFlags</include>
 			
-		<control type="scrollbar" id="60">
-			<description>My first scroll bar control</description>
-			<posx>305</posx>
-			<posy>663</posy>
-			<width>670</width>
-			<height>41</height>
-			<visible allowhiddenfocus="true">Control.IsVisible(57) + Control.HasFocus(60)</visible>
-			<texturesliderbackground>windows/scrollbarbackshowcase.png</texturesliderbackground>
-			<texturesliderbar>-</texturesliderbar>
-			<texturesliderbarfocus>-</texturesliderbarfocus>
-			<textureslidernib>windows/scrollbarnub-nofocus.png</textureslidernib>
-			<textureslidernibfocus>windows/scrollbarnub-focus.png</textureslidernibfocus>
-			<pulseonselect></pulseonselect>
-			<orientation>horizontal</orientation>
-			<showonepage>false</showonepage>
-			<onup>57</onup>
-			<ondown>94</ondown>
-			<onleft>60</onleft>
-			<onright>60</onright>
-			<include>Animation_HideShowcase</include>
-			<include>Animation_CommonFade</include>
-		</control>
-
-		<include>Furniture_ShowcaseMediaFlags</include>
-			
-            	<control type="group">
-			<include>Animation_HideShowcase</include>
-                	<control type="fadelabel">
-                    		<label>31609</label>
-                    		<label>31610</label>					
-				<scrollout>false</scrollout>
-				<pauseatend>3000</pauseatend>
-				<scroll>false</scroll>
-                    		<include>ShowcaseMainLabel</include>
-				<visible>Window.IsActive(25) + stringcompare(container(57).numitems,0)</visible>
-                	</control>
-                	<control type="fadelabel">
-                    		<label>31609</label>
-                    		<label>31611</label>					
-				<scrollout>false</scrollout>
-				<pauseatend>3000</pauseatend>
-				<scroll>false</scroll>
-                    		<include>ShowcaseMainLabel</include>
-				<visible>Window.IsActive(502) + stringcompare(container(57).numitems,0)</visible>
-                	</control>				
-                	<control type="label">
-                    		<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
-                    		<include>ShowcaseMainLabel</include>
-				<visible>Container.Content(movies) + !Skin.HasSetting(nomediaflags) + !Window.IsActive(24)</visible>
-                	</control>
-                	<control type="label">
-                    		<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
-                    		<include>ShowcaseMainLabelWide</include>
-				<visible>[!Container.Content(movies) | Window.IsActive(24)] | [Container.Content(movies) + Skin.HasSetting(nomediaflags)]</visible>					
-                	</control>
-                	<control type="label">
-                    		<label>[UPPERCASE]$INFO[Container.NumItems] $LOCALIZE[31005][/UPPERCASE]</label>
-                    		<include>ShowcaseItemsLabel</include>
-                	</control>				
+            <control type="group">
+				<include>Animation_HideShowcase</include>
+                <control type="fadelabel">
+                    <label>31609</label>
+                    <label>31610</label>					
+					<scrollout>false</scrollout>
+					<pauseatend>3000</pauseatend>
+					<scroll>false</scroll>
+                    <include>ShowcaseMainLabel</include>
+					<visible>Window.IsActive(25) + stringcompare(container(57).numitems,0)</visible>
+                </control>
+                <control type="fadelabel">
+                    <label>31609</label>
+                    <label>31611</label>					
+					<scrollout>false</scrollout>
+					<pauseatend>3000</pauseatend>
+					<scroll>false</scroll>
+                    <include>ShowcaseMainLabel</include>
+					<visible>Window.IsActive(502) + stringcompare(container(57).numitems,0)</visible>
+                </control>				
+                <control type="label">
+                    <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+                    <include>ShowcaseMainLabel</include>
+					<visible>Container.Content(movies) + !Skin.HasSetting(nomediaflags) + !Window.IsActive(24)</visible>
+                </control>
+                <control type="label">
+                    <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+                    <include>ShowcaseMainLabelWide</include>
+					<visible>[!Container.Content(movies) | Window.IsActive(24)] | [Container.Content(movies) + Skin.HasSetting(nomediaflags)]</visible>					
+                </control>
+                <control type="label">
+                    <label>[UPPERCASE]$INFO[Container.NumItems] $LOCALIZE[31005][/UPPERCASE]</label>
+                    <include>ShowcaseItemsLabel</include>
+                </control>				
                 <control type="label" id="72">
                     <label>[UPPERCASE]$INFO[ListItem.Genre][/UPPERCASE]</label>
                     <include>ShowcaseDetailLabel</include>
