@@ -35,11 +35,11 @@
 	<include name="ListLabel_MainMusic">
 		<posx>105</posx>
 		<posy>0</posy>
-		<width>580</width>
+		<width>480</width>
 		<height>41</height>
 		<font>Font_List</font>
 		<aligny>center</aligny>
-		<animation effect="slide" start="0,10" end="0,10" time="0" condition="IsEmpty(ListItem.Artist)">Conditional</animation>		
+		<animation effect="slide" start="0,10" end="0,10" time="0" condition="IsEmpty(ListItem.Artist) | Container.Content(artists)">Conditional</animation>		
 	</include>	
 
 	<include name="ListLabel_Sub">
@@ -153,7 +153,7 @@
 	
 	<include name="List_NowPlaying">
 		<posx>860</posx>
-		<width>346</width>
+		<width>336</width>
 		<height>18</height>
 		<font>Font_ListPlaying</font>
 	</include>
@@ -238,6 +238,7 @@
 				<onright>61</onright>
 				<onup>50</onup>
 				<ondown>50</ondown>
+				<visible>![Window.IsActive(25) + Skin.HasSetting(videotv)] | [Window.IsActive(25) + Skin.HasSetting(videotv) + Skin.HasSetting(unlockTVviews)]</visible>
 				<itemlayout condition="[Window.IsActive(2) + !Skin.HasSetting(pictureslistfull)] | Window.IsActive(24) | [Window.IsActive(25) + !Skin.HasSetting(movieslistfull) + !Skin.HasSetting(videotv)] | [[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)] + !Skin.HasSetting(musiclistfull)]" height="40">
 					<control type="image">
 						<posx>12</posx>
@@ -440,7 +441,7 @@
 						<include>ListLabel_SubMusic</include>
 						<include>subcolornofocus</include>	
 						<label>$INFO[ListItem.Artist]</label>
-						<visible>[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)]</visible>					
+						<visible>[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)] + !Container.Content(artists)</visible>					
 					</control>					
 					<control type="label">
 						<include>ListLabel_DetailFull</include>
@@ -554,7 +555,7 @@
 						<include>ListLabel_SubMusic</include>
 						<include>subcolornofocus</include>	
 						<label>$INFO[ListItem.Artist]</label>
-						<visible>[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)]</visible>
+						<visible>[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)] + !Container.Content(artists)</visible>
 						<include>Animation_ButtonFocusFade_fix</include>						
 					</control>				
 					<control type="label">
@@ -647,7 +648,7 @@
 						<include>ListLabel_SubMusic</include>
 						<include>subcolorfocus</include>	
 						<label>$INFO[ListItem.Artist]</label>
-						<visible>[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)]</visible>
+						<visible>[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)] + !Container.Content(artists)</visible>
 						<include>Animation_ButtonFocusFade</include>						
 					</control>				
 					<control type="label">
@@ -714,7 +715,7 @@
 					<control type="label">
 						<include>ListLabel_Track</include>
 						<include>listcolornofocus</include>
-						<label>$INFO[ListItem.Episode]</label>
+						<label>$INFO[ListItem.Season].$INFO[ListItem.Episode]</label>
 						<visible>Container.Content(episodes)</visible>
 					</control>						
 					<control type="label">
@@ -732,13 +733,13 @@
 					<control type="label">
 						<include>ListLabel_SubTV</include>
 						<include>subcolornofocus</include>	
-						<label>$INFO[ListItem.Episode] EPISODES</label>
+						<label>$INFO[ListItem.Episode] $LOCALIZE[31938]</label>
 						<visible>!IsEmpty(ListItem.Episode) + !Container.Content(episodes)</visible>
 					</control>
 					<control type="label">
 						<include>ListLabel_SubTV</include>
 						<include>subcolornofocus</include>	
-						<label>$INFO[ListItem.Writer,WRITTEN BY: ,]</label>
+						<label>$INFO[ListItem.Writer,$LOCALIZE[31401]: ,]</label>
 						<visible>Container.Content(episodes) + !IsEmpty(ListItem.Writer)</visible>
 					</control>
 					<control type="label">
@@ -806,7 +807,7 @@
 						<include>ListLabel_Track</include>
 						<include>listcolornofocus</include>
 						<include>Animation_ButtonFocusFade_fix</include>						
-						<label>$INFO[ListItem.Episode]</label>
+						<label>$INFO[ListItem.Season].$INFO[ListItem.Episode]</label>
 						<visible>Container.Content(episodes)</visible>
 					</control>						
 					<control type="label">
@@ -826,14 +827,14 @@
 					<control type="label">
 						<include>ListLabel_SubTV</include>
 						<include>subcolornofocus</include>	
-						<label>$INFO[ListItem.Episode] EPISODES</label>
+						<label>$INFO[ListItem.Episode] $LOCALIZE[31938]</label>
 						<include>Animation_ButtonFocusFade_fix</include>						
 						<visible>!IsEmpty(ListItem.Episode) + !Container.Content(episodes)</visible>
 					</control>
 					<control type="label">
 						<include>ListLabel_SubTV</include>
 						<include>subcolornofocus</include>	
-						<label>$INFO[ListItem.Writer,WRITTEN BY: ,]</label>
+						<label>$INFO[ListItem.Writer,$LOCALIZE[31401]: ,]</label>
 						<include>Animation_ButtonFocusFade_fix</include>						
 						<visible>Container.Content(episodes) + !IsEmpty(ListItem.Writer)</visible>
 					</control>
@@ -890,7 +891,7 @@
 						<include>ListLabel_Track</include>
 						<include>listcolorfocus</include>
 						<include>Animation_ButtonFocusFade</include>						
-						<label>$INFO[ListItem.Episode]</label>
+						<label>$INFO[ListItem.Season].$INFO[ListItem.Episode]</label>
 						<visible>Container.Content(episodes)</visible>
 					</control>						
 					<control type="label">
@@ -910,14 +911,14 @@
 					<control type="label">
 						<include>ListLabel_SubTV</include>
 						<include>subcolorfocus</include>	
-						<label>$INFO[ListItem.Episode] EPISODES</label>
+						<label>$INFO[ListItem.Episode,, $LOCALIZE[31938]]</label>
 						<include>Animation_ButtonFocusFade</include>						
 						<visible>!IsEmpty(ListItem.Episode) + !Container.Content(episodes)</visible>
 					</control>
 					<control type="label">
 						<include>ListLabel_SubTV</include>
 						<include>subcolorfocus</include>	
-						<label>WRITTEN BY: $INFO[ListItem.Writer]</label>
+						<label>$INFO[ListItem.Writer,$LOCALIZE[31401]: ,]</label>
 						<include>Animation_ButtonFocusFade</include>						
 						<visible>Container.Content(episodes) + !IsEmpty(ListItem.Writer)</visible>
 					</control>
@@ -973,47 +974,47 @@
 
 			<control type="label" id="161">
 				<include>List_Objects</include>
-				<label>$INFO[Container(50).NumItems] EPISODES</label>
+				<label>$INFO[Container(50).NumItems] $LOCALIZE[31938]</label>
 				<visible>Container.Content(episodes)</visible>
 			</control>				
 			<control type="label" id="161">
 				<include>List_Objects</include>
-				<label>$INFO[Container(50).NumItems] MOVIES</label>
+				<label>$INFO[Container(50).NumItems] $LOCALIZE[31934]</label>
 				<visible>Container.Content(movies)</visible>
 			</control>
 			<control type="label" id="161">
 				<include>List_Objects</include>
-				<label>$INFO[Container(50).NumItems] ALBUMS</label>
+				<label>$INFO[Container(50).NumItems] $LOCALIZE[31928]</label>
 				<visible>Container.Content(albums)</visible>
 			</control>
 			<control type="label" id="161">
 				<include>List_Objects</include>
-				<label>$INFO[Container(50).NumItems] ARTISTS</label>
+				<label>$INFO[Container(50).NumItems] $LOCALIZE[31927]</label>
 				<visible>Container.Content(artists)</visible>
 			</control>
 			<control type="label" id="161">
 				<include>List_Objects</include>
-				<label>$INFO[Container(50).NumItems] SEASONS</label>
+				<label>$INFO[Container(50).NumItems] $LOCALIZE[31937]</label>
 				<visible>Container.Content(seasons)</visible>
 			</control>				
 			<control type="label" id="161">
 				<include>List_Objects</include>
-				<label>$INFO[Container(50).NumItems] SHOWS</label>
+				<label>$INFO[Container(50).NumItems] $LOCALIZE[31933]</label>
 				<visible>Container.Content(tvshows)</visible>
 			</control>				
 			<control type="label">
 				<include>List_Objects</include>
-				<label>$INFO[Container(50).NumItems] ITEMS</label>
+				<label>$INFO[Container(50).NumItems] $LOCALIZE[31935]</label>
 				<visible>!Control.IsVisible(161)</visible>				
 			</control>
 			<control type="label" id="161">
 				<include>List_Objects</include>
-				<label>$INFO[Container(50).NumItems] TRACKS</label>
+				<label>$INFO[Container(50).NumItems] $LOCALIZE[31936]</label>
 				<visible>Container.Content(songs)</visible>				
 			</control>
 			<control type="label" id="161">
 				<include>List_Objects</include>
-				<label>$INFO[Container(50).NumItems] YEARS</label>
+				<label>$INFO[Container(50).NumItems] $LOCALIZE[31923]</label>
 				<visible>Container.Content(years)</visible>				
 			</control>				
 		
@@ -1164,6 +1165,7 @@
 				<include>List_NowPlaying</include>
 				<posy>655</posy>
 				<textcolor>8f000000</textcolor>
+				<scroll>true</scroll>
 				<label>[UPPERCASE]$INFO[MusicPlayer.Artist] - "$INFO[MusicPlayer.Title]"[/UPPERCASE]</label>
 			</control>
 		</control>
@@ -1176,16 +1178,16 @@
 	
 	<control type="scrollbar" id="61">
       <description>My first scroll bar control</description>
-      <posx>786</posx>
-      <posy>188</posy>
-      <width>67</width>
-      <height>416</height>
+      <posx>778</posx>
+      <posy>108</posy>
+      <width>45</width>
+      <height>545</height>
       <visible>Control.IsVisible(50)</visible>
-      <texturesliderbackground>windows/scrollbarback_nofocus.png</texturesliderbackground>
+      <texturesliderbackground>-</texturesliderbackground>
       <texturesliderbar>-</texturesliderbar>
       <texturesliderbarfocus>-</texturesliderbarfocus>
-      <textureslidernib>windows/scrollbarnub-nofocus.png</textureslidernib>
-      <textureslidernibfocus>windows/scrollbarnub-focus.png</textureslidernibfocus>
+      <textureslidernib>-</textureslidernib>
+      <textureslidernibfocus>list/list_scrollclip.png</textureslidernibfocus>
       <pulseonselect></pulseonselect>
       <orientation>vertical</orientation>
       <showonepage>true</showonepage>
@@ -1194,7 +1196,7 @@
       <onleft>50</onleft>
       <onright>2</onright>
 	  <include>Animation_CommonFade</include>
-	  <visible>false</visible>
+	  <animation effect="fade" start="0" end="100" time="200">Focus</animation>
 	</control>
 	
 	<control type="label" id="217">

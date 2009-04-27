@@ -1,5 +1,11 @@
 <includes>
 <!-- Showcase -->
+    <include name="MovieShowcaseThumbDimensions_mod">
+        <posx>49</posx>
+        <posy>8</posy>
+        <width>173</width>
+        <height>254</height>
+    </include>
 <include name="mod_moviegenre_Showcase_image">
 	<posx>49</posx>
 	<posy>9</posy>
@@ -12,7 +18,7 @@
 
 <include name="mod_moviegenre_Showcase20">
 	<control type="image">
-		<include>MovieShowcaseThumbDimensions</include>
+		<include>MovieShowcaseThumbDimensions_mod</include>
 		<align>center</align>
 		<aspectratio scalediffuse="false">scale</aspectratio>
         	<texture diffuse="thumbs/movieposter_mask.png">moviegenre/default.jpg</texture>
@@ -22,7 +28,7 @@
 		<animation effect="zoom" start="120" end="100" center="135,230" time="400" easing="out" reversible="false" tween="cubic" condition="!Control.HasFocus(57) + Skin.HasSetting(flattenshowcase)">Unfocus</animation>
 	</control>
 	<control type="image">
-		<include>MovieShowcaseThumbDimensions</include>
+		<include>MovieShowcaseThumbDimensions_mod</include>
 		<align>center</align>
 		<aspectratio scalediffuse="false">scale</aspectratio>
         	<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem.Label].jpg</texture>
@@ -34,7 +40,7 @@
 
 <include name="mod_moviegenre_Showcase21">
 	<control type="image">
-		<include>MovieFlowThumbDimensions</include>
+		<include>MovieShowcaseThumbDimensions_mod</include>
 		<align>center</align>
 		<aspectratio scalediffuse="false">scale</aspectratio>
         	<texture diffuse="thumbs/movieposter_mask.png">moviegenre/default.jpg</texture>
@@ -42,7 +48,7 @@
 		<visible>!Skin.HasSetting(moviegenre_default_onoff)</visible>
 	</control>
 	<control type="image">
-		<include>MovieFlowThumbDimensions</include>
+		<include>MovieShowcaseThumbDimensions_mod</include>
 		<align>center</align>
 		<aspectratio scalediffuse="false">scale</aspectratio>
         	<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem.Label].jpg</texture>
@@ -362,6 +368,7 @@
 	</include>
 	<include name="mod_moviegenre_list2">
 		<control type="image">
+			<visible>Container.Content(genres)+!Skin.HasSetting(moviegenre_onoff)</visible>
 			<posy>513</posy>
 			<width>346</width>
 			<height>511</height>
@@ -370,4 +377,28 @@
 		</control>
 	</include>
 <!-- list End -->
+
+
+
+<!-- Multiplex End -->
+	<include name="mod_moviegenre_Multiplex1">
+		<control type="image">
+			<visible>Container.Content(genres)+!Skin.HasSetting(moviegenre_onoff)</visible>
+			<include>MultiplexIconDimensions</include>
+			
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture diffuse="list/list_movieicon_mask.png">moviegenre/$INFO[ListItem.Label].jpg</texture>
+		</control>
+	</include>
+
+	<include name="mod_moviegenre_Multiplex2">
+		<control type="image">
+			<visible>Container.Content(genres)+!Skin.HasSetting(moviegenre_onoff)</visible>
+			<include>MultiplexIconDimensions</include>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture diffuse="list/list_movieicon_mask.png">moviegenre/$INFO[ListItem.Label].jpg</texture>
+			<animation effect="zoom" center="45,75" start="100" end="120" time="400" easing="out" tween="cubic" reversible="false">Focus</animation>					
+		</control>
+	</include>
+<!-- Multiplex End -->
 </includes>
