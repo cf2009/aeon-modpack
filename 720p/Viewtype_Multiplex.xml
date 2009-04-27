@@ -705,7 +705,7 @@
 		
 		<include>Furniture_MultiplexMediaFlags</include>
 	
-		<control type="fixedlist" id="52">
+		<control type="wraplist" id="52">
 			<viewtype label="31757">wrap</viewtype>
 			<include condition="Skin.HasSetting(videomovies)">MultiplexMovieVarsWrap</include>
 			<include condition="Skin.HasSetting(videotv)">MultiplexTVVarsWrap</include>			
