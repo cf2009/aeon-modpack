@@ -261,7 +261,7 @@
 					<visible>Container(300).HasFocus(7)</visible>
 					<visible>!Skin.HasSetting(sub_tv_NEWEST)</visible>
 					<description>Recently Added</description>
-					<label>NEWEST</label>
+					<label>$LOCALIZE[31920]</label>
 					<onclick>Skin.Reset(submenu)</onclick>
 					<onclick>XBMC.ActivateWindow(MyVideoLibrary,recentlyaddedepisodes,return)</onclick>
 				</item>
@@ -363,7 +363,7 @@
 					<visible>Container(300).HasFocus(6)</visible>
 					<visible>!Skin.HasSetting(sub_movies_NEWEST)</visible>
 					<description>Recently Added</description>
-					<label>NEWEST</label>
+					<label>$LOCALIZE[31920]</label>
 					<onclick>Skin.Reset(submenu)</onclick>
 					<onclick>XBMC.ActivateWindow(MyVideoLibrary,recentlyaddedmovies,return)</onclick>
 				</item>
@@ -497,7 +497,7 @@
 					<visible>Container(300).HasFocus(1)</visible>
 					<visible>!Skin.HasSetting(sub_music_NEWEST)</visible>
 					<description>recently added albums</description>
-					<label>NEWEST</label>
+					<label>$LOCALIZE[31920]</label>
 					<onclick>Skin.Reset(submenu)</onclick>
 					<onclick>xbmc.activatewindow(musiclibrary,recentlyaddedalbums,return)</onclick>
 				</item>
@@ -701,6 +701,7 @@
 					<onclick>Skin.Reset(submenu)</onclick>
 					<onclick>XBMC.Reset()</onclick>
 				</item>
+<!--
 				<item id="63">
 					<visible>Container(300).HasFocus(22)</visible>
 					<visible>!Skin.HasSetting(sub_Shutdown_Reload)</visible>
@@ -709,6 +710,7 @@
 					<onclick>Skin.Reset(submenu)</onclick>
 					<onclick>XBMC.RestartApp()</onclick>
 				</item>
+-->
 				<item id="64">
 					<visible>Container(300).HasFocus(22)</visible>
 					<visible>!Skin.HasSetting(sub_Shutdown_Refresh)</visible>
@@ -806,7 +808,7 @@
 	<control type="label">
 		<description>Sub menu</description>
 		<posy>322</posy>
-		<label>Setting/scripts/plugins</label>
+		<label>$LOCALIZE[10004]/$LOCALIZE[10020]/plugins</label>
 		<textcolor>FFf5f5f5</textcolor>
 		<include>Objects_SettingsSectionMenuButtonSubtitle</include>
 		<visible>![Control.HasFocus(15) | ControlGroup(9001).HasFocus]</visible>
@@ -814,7 +816,7 @@
 	<control type="label">
 		<description>Sub menu</description>
 		<posy>322</posy>
-		<label>Setting/scripts/plugins</label>
+		<label>$LOCALIZE[10004]/$LOCALIZE[10020]/plugins</label>
 		<textcolor>FF262728</textcolor>
 		<include>Objects_SettingsSectionMenuButtonSubtitle</include>
 		<visible>Control.HasFocus(15) | ControlGroup(9001).HasFocus</visible>
@@ -909,7 +911,7 @@
 
 	<!-- Settings -->
 		<control type="button" id="9100">
-			<label>Setting</label>
+			<label>$LOCALIZE[10004]</label>
 			<include>homesubmenu_Plugins_Defaultbutton2</include>
 			<selected>Skin.HasSetting(use_animation)</selected>
 			<onclick>Skin.ToggleSetting(use_animation)</onclick>
@@ -919,7 +921,7 @@
 		<control type="radiobutton" id="9110">
 			<visible>Skin.HasSetting(use_animation)</visible>
 			<include>Objects_SettingsDefaultRadioButton1</include>
-			<label>Sub Menu On/off... (genre, year, etc)</label>
+			<label>Sub Menu $LOCALIZE[31077]/$LOCALIZE[351]...</label>
 			<onclick>Skin.ToggleSetting(CustomMenuSub)</onclick>
 			<selected>!Skin.HasSetting(CustomMenuSub)</selected>
 		</control>			
@@ -927,7 +929,7 @@
 		<control type="radiobutton" id="9111">
 			<visible>Skin.HasSetting(use_animation)</visible>
 			<include>Objects_SettingsDefaultRadioButton1</include>
-			<label>Home menu slide animation on/off...</label>
+			<label>Home menu slide animation $LOCALIZE[31077]/$LOCALIZE[351]...</label>
 			<onclick>Skin.ToggleSetting(CustomMenuanimation)</onclick>
 			<selected>!Skin.HasSetting(CustomMenuanimation)</selected>
 		</control>
@@ -937,7 +939,7 @@
 			<visible>!Skin.HasSetting(CustomMenuanimation)</visible>
 			<visible>Skin.HasSetting(use_animation)</visible>
 			<include>Objects_SettingsDefaultRadioButton1</include>
-			<label>Sub menu slide animation on/off...</label>
+			<label>Sub menu slide animation $LOCALIZE[31077]/$LOCALIZE[351]..</label>
 			<onclick>Skin.ToggleSetting(CustomSubMenuanimation)</onclick>
 			<selected>!Skin.HasSetting(CustomSubMenuanimation)</selected>
 		</control>
