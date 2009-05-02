@@ -153,10 +153,10 @@
 				<width>750</width>
 				<height>390</height>
 				<onleft>414</onleft>
-				<onright>414</onright>
+				<onright>61</onright>
 				<onup>451</onup>
 				<ondown>451</ondown>
-				<pagecontrol>-</pagecontrol>
+				<pagecontrol>61</pagecontrol>
 				<scrolltime>200</scrolltime>
 				<orientation>vertical</orientation>
 
@@ -504,9 +504,32 @@
 	
 
 	</control>
-
-
 	</control>
-	
+
+	<control type="scrollbar" id="61">
+		<description>scroll bar control</description>
+		<posx>790</posx>
+		<posy>60</posy>
+		<width>45</width>
+		<height>390</height>
+		<texturesliderbackground>-</texturesliderbackground>
+		<texturesliderbar>-</texturesliderbar>
+		<texturesliderbarfocus>-</texturesliderbarfocus>
+		<textureslidernib>-</textureslidernib>
+		<textureslidernibfocus>filebrowser/list_scrollclip.png</textureslidernibfocus>
+		<pulseonselect></pulseonselect>
+		<orientation>vertical</orientation>
+		<showonepage>true</showonepage>
+		<onup>61</onup>
+		<ondown>61</ondown>
+		<onleft>451</onleft>
+		<onright>414</onright>
+		<animation effect="fade" time="200">Visible</animation>
+		<animation effect="fade" time="200">Hidden</animation>
+		<animation effect="fade" time="500">WindowOpen</animation>
+		<animation effect="fade" time="200">WindowClose</animation>
+		<animation effect="fade" start="0" end="100" time="200">Focus</animation>
+	</control>
+
 	</controls>
 </window>
