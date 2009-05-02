@@ -1,0 +1,512 @@
+<window type="dialog" id="126">
+	<defaultcontrol>451</defaultcontrol>
+	<zorder>3</zorder>
+	<coordinates>
+	<system>1</system>
+	<posx>0</posx>
+	<posy>0</posy>
+	</coordinates>
+	<animation type="WindowOpen" reversible="false">
+		<effect type="zoom" start="80" end="100" center="640,360" delay="200" easing="out" tween="back" time="300" />
+		<effect type="fade" delay="200" start="0" end="100" time="300" />
+	</animation>
+	<animation type="WindowClose" reversible="false">
+		<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="300" />
+		<effect type="fade" start="100" end="0" time="300" />
+	</animation>	
+	<controls>
+
+
+	<control type="group">
+			<width>406</width>
+			<height>556</height>
+			<animation effect="slide" start="-410,0" end="0,0" time="400" delay="500" tween="cubic" easing="out">WindowOpen</animation>
+			<control type="image">
+				<posx>809</posx>
+				<posy>103</posy>
+				<width>406</width>
+				<height>556</height>
+				<texture>filebrowser/filebrowser_sidecar.png</texture>
+			</control>
+			<control type="image">
+				<width>286</width>
+				<height>286</height>
+				<posx>867</posx>
+				<posy>167</posy>
+				<fadetime>400</fadetime>
+				<texture>$INFO[ListItem.Icon]</texture>
+				<aspectratio aligny="bottom">keep</aspectratio>
+			</control>
+			<control type="image">
+				<width>286</width>
+				<height>286</height>
+				<posx>867</posx>
+				<posy>453</posy>
+				<fadetime>400</fadetime>				
+				<texture flipy="true" diffuse="filebrowser/Thumb_Mask6.png">$INFO[Container(451).ListItem.Thumb]</texture>
+				<aspectratio aligny="top">keep</aspectratio>
+			</control>	
+			
+			<control type="label">
+				<posx>867</posx>
+				<posy>540</posy>
+				<width>100</width>
+				<font>Font_FileBrowserDetail</font>
+				<label>MODIFIED:</label>
+			</control>
+			
+			<control type="label">
+				<posx>867</posx>
+				<posy>570</posy>
+				<width>100</width>
+				<font>Font_FileBrowserDetail</font>				
+				<label>TAKEN:</label>
+			</control>
+
+			<control type="label">
+				<posx>867</posx>
+				<posy>600</posy>
+				<width>100</width>
+				<font>Font_FileBrowserDetail</font>				
+				<label>RESOLUTION:</label>
+			</control>
+
+			<control type="label">
+				<posx>1153</posx>
+				<posy>540</posy>
+				<width>100</width>
+				<align>right</align>				
+				<font>Font_FileBrowserDetail</font>
+				<label fallback="31001">$INFO[Container(451).ListItem.Date]</label>
+			</control>
+			
+			<control type="label">
+				<posx>1153</posx>
+				<posy>570</posy>
+				<width>100</width>
+				<align>right</align>				
+				<font>Font_FileBrowserDetail</font>				
+				<label fallback="31001">$INFO[Container(451).ListItem.PictureDateTime]</label>
+			</control>
+
+			<control type="label">
+				<posx>1153</posx>
+				<posy>600</posy>
+				<width>100</width>
+				<align>right</align>				
+				<font>Font_FileBrowserDetail</font>				
+				<label fallback="31001">$INFO[Container(451).ListItem.PictureResolution]</label>
+			</control>			
+			
+		</control>
+
+
+
+	<control type="group">
+		<posx>50</posx>
+		<posy>0</posy>
+		<width>1065</width>
+		<height>550</height>
+	
+	<control type="image">
+		<description>background image</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>800</width>
+		<height>720</height>
+		<texture>filebrowser/filebrowser_backpanel.png</texture>
+	</control>
+	
+	<control type="label" id="411">
+		<posx>60</posx>
+		<posy>48</posy>
+		<width>771</width>
+		<font>Font_FileBrowserHeading</font>
+		<textcolor>aaFFFFFF</textcolor>
+	</control>
+
+	<control type="label" id="412">
+		<posx>60</posx>
+		<posy>540</posy>
+		<width>600</width>
+		<height>41</height>
+		<font>Font_FileBrowserPath</font>
+		<textcolor>aaFFFFFF</textcolor>
+		<label>$INFO[ListItem.Label]</label>
+		<aligny>center</aligny>
+	</control>
+	
+	<control type="label">
+		<posx>60</posx>
+		<posy>560</posy>
+		<width>390</width>
+		<height>41</height>
+		<font>Font_FileBrowserPath</font>
+		<textcolor>aaFFFFFF</textcolor>
+		<label>$INFO[Container(451).NumItems] objects</label>
+		<aligny>center</aligny>
+	</control>
+	
+			<control type="panel" id="451">
+				<posx>50</posx>
+				<posy>125</posy>
+				<width>750</width>
+				<height>390</height>
+				<onleft>414</onleft>
+				<onright>414</onright>
+				<onup>451</onup>
+				<ondown>451</ondown>
+				<pagecontrol>-</pagecontrol>
+				<scrolltime>200</scrolltime>
+				<orientation>vertical</orientation>
+
+				<itemlayout height="78" width="350">
+					<control type="image">
+						<posx>13</posx>
+						<posy>7</posy>
+						<width>63</width>
+						<height>63</height>
+						<colordiffuse>76FFFFFF</colordiffuse>						
+						<texture diffuse="filebrowser/cdcover_mask.png">$INFO[ListItem.Thumb]</texture>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+					</control>
+					<control type="image">
+						<posx>85</posx>
+						<posy>3</posy>
+						<width>259</width>
+						<height>71</height>
+						<texture>filebrowser/filebrowser_tilenf.png</texture>
+					</control>
+					<control type="label">
+						<posx>100</posx>
+						<posy>6</posy>
+						<width>229</width>
+						<height>63</height>
+						<font>Font_FileBrowserTile</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<include>Colour_Grey</include>
+						<label>$INFO[ListItem.Label]</label>
+						<visible>IsEmpty(ListItem.Size)</visible>
+						<scroll>false</scroll>						
+					</control>
+					
+					<control type="label">
+						<posx>100</posx>
+						<posy>10</posy>
+						<width>229</width>
+						<height>30</height>
+						<font>Font_FileBrowserTile</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<include>Colour_Grey</include>						
+						<label>$INFO[ListItem.Label]</label>
+						<visible>!IsEmpty(ListItem.Size)</visible>
+						<scroll>false</scroll>						
+					</control>
+					<control type="label">
+						<posx>100</posx>
+						<posy>30</posy>
+						<width>229</width>
+						<height>30</height>
+						<font>Font_FileBrowserTile</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<include>Colour_Grey</include>						
+						<label>$INFO[ListItem.Size]</label>
+						<visible>!IsEmpty(ListItem.Size)</visible>
+						<scroll>false</scroll>						
+					</control>
+				</itemlayout>
+				<focusedlayout height="78" width="350">
+					<control type="image">
+						<posx>13</posx>
+						<posy>7</posy>
+						<width>63</width>
+						<height>63</height>
+						<colordiffuse>76FFFFFF</colordiffuse>						
+						<texture diffuse="filebrowser/cdcover_mask.png">$INFO[ListItem.Icon]</texture>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+					</control>				
+					<control type="image">
+						<posx>13</posx>
+						<posy>7</posy>
+						<width>63</width>
+						<height>63</height>
+						<texture diffuse="filebrowser/cdcover_mask.png">$INFO[ListItem.Icon]</texture>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<include>Animation_ButtonFocusFade</include>
+					</control>
+					<control type="image">
+						<posx>85</posx>
+						<posy>3</posy>
+						<width>259</width>
+						<height>71</height>
+						<texture>filebrowser/filebrowser_tilenf.png</texture>
+					</control>						
+					<control type="image">
+						<posx>85</posx>
+						<posy>3</posy>
+						<width>259</width>
+						<height>71</height>
+						<texture>filebrowser/filebrowser_tile.png</texture>
+						<include>Animation_ButtonFocusFade</include>
+					</control>
+					<control type="label">
+						<posx>100</posx>
+						<posy>6</posy>
+						<width>229</width>
+						<height>63</height>
+						<font>Font_FileBrowserTile</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<include>Colour_Grey</include>
+						<label>$INFO[ListItem.Label]</label>
+						<visible>IsEmpty(ListItem.Size)</visible>
+						<scroll>false</scroll>
+		<animation effect="fade" start="100" end="0" time="200">Focus</animation>
+		<animation effect="fade" start="0" end="100" time="200">Unfocus</animation>					
+					</control>
+					
+					<control type="label">
+						<posx>100</posx>
+						<posy>10</posy>
+						<width>229</width>
+						<height>30</height>
+						<font>Font_FileBrowserTile</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<include>Colour_Grey</include>						
+						<label>$INFO[ListItem.Label]</label>
+						<visible>!IsEmpty(ListItem.Size)</visible>
+						<scroll>false</scroll>
+		<animation effect="fade" start="100" end="0" time="200">Focus</animation>
+		<animation effect="fade" start="0" end="100" time="200">Unfocus</animation>
+					</control>
+					<control type="label">
+						<posx>100</posx>
+						<posy>30</posy>
+						<width>229</width>
+						<height>30</height>
+						<font>Font_FileBrowserTile</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<include>Colour_Grey</include>						
+						<label>$INFO[ListItem.Size]</label>
+						<visible>!IsEmpty(ListItem.Size)</visible>
+						<scroll>false</scroll>
+		<animation effect="fade" start="100" end="0" time="200">Focus</animation>
+		<animation effect="fade" start="0" end="100" time="200">Unfocus</animation>
+					</control>	
+				
+					<control type="label">
+						<posx>100</posx>
+						<posy>6</posy>
+						<width>229</width>
+						<height>63</height>
+						<font>Font_FileBrowserTile</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<include>Colour_OffWhite</include>
+						<label>$INFO[ListItem.Label]</label>
+						<visible>IsEmpty(ListItem.Size)</visible>
+						<scroll>false</scroll>
+		<animation effect="fade" start="0" end="100" time="200">Focus</animation>
+		<animation effect="fade" start="100" end="0" time="200">Unfocus</animation>
+					</control>
+					
+					<control type="label">
+						<posx>100</posx>
+						<posy>10</posy>
+						<width>229</width>
+						<height>33</height>
+						<font>Font_FileBrowserTile</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<include>Colour_OffWhite</include>						
+						<label>$INFO[ListItem.Label]</label>
+						<visible>!IsEmpty(ListItem.Size)</visible>
+						<scroll>false</scroll>
+		<animation effect="fade" start="0" end="100" time="200">Focus</animation>
+		<animation effect="fade" start="100" end="0" time="200">Unfocus</animation>						
+					</control>
+					<control type="label">
+						<posx>100</posx>
+						<posy>30</posy>
+						<width>229</width>
+						<height>33</height>
+						<font>Font_FileBrowserTile</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<include>Colour_OffWhite</include>						
+						<label>$INFO[ListItem.Size]</label>
+						<visible>!IsEmpty(ListItem.Size)</visible>
+						<scroll>false</scroll>
+		<animation effect="fade" start="0" end="100" time="200">Focus</animation>
+		<animation effect="fade" start="100" end="0" time="200">Unfocus</animation>						
+					</control>					
+				</focusedlayout>
+			</control>
+	
+			<!--
+			<control type="image" id="102">
+				<posx>800</posx>
+				<posy>29</posy>
+				<width>352</width>
+				<height>398</height>
+				<texture>filebrowser/filebrowser_overlayright.png</texture>
+				<animation effect="fade" start="0" end="100" time="150" delay="0">WindowOpen</animation>
+			</control>
+			
+			<control type="image">
+				<posx>815</posx>
+				<posy>46</posy>
+				<width>322</width>
+				<height>378</height>
+				<texture>$INFO[ListItem.Icon]</texture>	
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="fade" start="0" end="100" time="150" delay="50">WindowOpen</animation>		
+			</control>
+			-->
+			
+				
+	<control type="group">
+		<posx>-39</posx>
+		<posy>609</posy>
+
+		<control type="button" id="413">
+			<posx>68</posx>
+			<posy>0</posy>
+			<width>132</width>
+			<height>77</height>
+			<texturefocus>-</texturefocus>
+			<texturenofocus>-</texturenofocus>
+			<font>Font_FileBrowserButton</font>
+			<label>186</label>
+			<align>center</align>
+			<textcolor>FFb3b3b3</textcolor>
+			<focusedcolor>FFFFFFFF</focusedcolor>
+			<selectedcolor>FF262728</selectedcolor>
+			<disabledcolor>FF5a5a5a</disabledcolor>
+			<onleft>451</onleft>
+			<onright>414</onright>
+			<onup>451</onup>
+			<ondown>451</ondown>			
+		</control>
+		
+		<control type="image">
+			<posx>68</posx>
+			<posy>0</posy>
+			<width>132</width>
+			<height>77</height>
+			<visible>Control.HasFocus(413)</visible>
+			<texture>filebrowser/filebrowser_button1down.png</texture>
+		<animation effect="fade" time="400">Visible</animation>
+		<animation effect="fade" time="400">Hidden</animation>
+		</control>
+
+		<control type="button" id="414">
+			<posx>201</posx>
+			<posy>0</posy>
+			<width>133</width>
+			<height>77</height>
+			<texturefocus>filebrowser/filebrowser_button2down.png</texturefocus>
+			<texturenofocus>-</texturenofocus>
+			<font>Font_FileBrowserButton</font>
+			<label>222</label>
+			<align>center</align>
+			<textcolor>FFb3b3b3</textcolor>
+			<focusedcolor>FFFFFFFF</focusedcolor>
+			<selectedcolor>FF262728</selectedcolor>
+			<disabledcolor>FF5a5a5a</disabledcolor>			
+			<onleft>413</onleft>
+			<onright>415</onright>
+			<onup>451</onup>
+			<ondown>451</ondown>			
+		</control>
+		
+		<control type="image">
+			<posx>201</posx>
+			<posy>0</posy>
+			<width>133</width>
+			<height>77</height>
+			<visible>Control.HasFocus(414)</visible>
+			<texture>filebrowser/filebrowser_button2down.png</texture>
+		<animation effect="fade" time="400">Visible</animation>
+		<animation effect="fade" time="400">Hidden</animation>
+		</control>		
+
+		<control type="button" id="415">
+			<posx>335</posx>
+			<posy>0</posy>
+			<width>133</width>
+			<height>77</height>
+			<texturefocus>filebrowser/filebrowser_button2down.png</texturefocus>
+			<texturenofocus>-</texturenofocus>
+			<font>Font_FileBrowserButton</font>
+			<label>119</label>
+			<align>center</align>
+			<textcolor>FFb3b3b3</textcolor>
+			<focusedcolor>FFFFFFFF</focusedcolor>
+			<selectedcolor>FF262728</selectedcolor>
+			<disabledcolor>FF5a5a5a</disabledcolor>			
+			<onleft>414</onleft>
+			<onright>499</onright>
+			<onup>451</onup>
+			<ondown>451</ondown>			
+		</control>
+		
+		<control type="image">
+			<posx>335</posx>
+			<posy>0</posy>
+			<width>133</width>
+			<height>77</height>
+			<visible>Control.HasFocus(415)</visible>
+			<texture>filebrowser/filebrowser_button2down.png</texture>
+		<animation effect="fade" time="400">Visible</animation>
+		<animation effect="fade" time="400">Hidden</animation>
+		</control>				
+
+		<control type="button" id="499">
+			<posx>469</posx>
+			<posy>0</posy>
+			<width>133</width>
+			<height>77</height>
+			<texturefocus>filebrowser/filebrowser_button2down.png</texturefocus>
+			<texturenofocus>-</texturenofocus>
+			<font>Font_FileBrowserButton</font>
+			<label>31004</label>
+			<align>center</align>
+			<textcolor>FFb3b3b3</textcolor>
+			<focusedcolor>FFFFFFFF</focusedcolor>
+			<selectedcolor>FF7b7b7b</selectedcolor>
+			<disabledcolor>FF5a5a5a</disabledcolor>			
+			<onleft>415</onleft>
+			<onright>451</onright>
+			<onup>451</onup>
+			<ondown>451</ondown>
+			<visible>Window.IsActive(604)</visible>
+			<onclick>Skin.Reset($INFO[Skin.String(customslideshow)])</onclick>
+			<onclick>Skin.Reset($INFO[Skin.String(customsingle)])</onclick>
+			<onclick>Dialog.Close(126)</onclick>
+		</control>
+		
+		<control type="image">
+			<posx>469</posx>
+			<posy>0</posy>
+			<width>133</width>
+			<height>77</height>
+			<visible>Control.HasFocus(499)</visible>
+			<texture>filebrowser/filebrowser_button2down.png</texture>
+		<animation effect="fade" time="400">Visible</animation>
+		<animation effect="fade" time="400">Hidden</animation>
+		</control>		
+	
+
+	</control>
+
+
+	</control>
+	
+	</controls>
+</window>
