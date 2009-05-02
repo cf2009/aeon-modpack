@@ -167,7 +167,7 @@
 						<width>63</width>
 						<height>63</height>
 						<colordiffuse>76FFFFFF</colordiffuse>						
-						<texture diffuse="filebrowser/cdcover_mask.png">$INFO[ListItem.Thumb]</texture>
+						<texture diffuse="filebrowser/cdcover_mask.png">$INFO[ListItem.Icon]</texture>
 						<aspectratio scalediffuse="false">scale</aspectratio>
 					</control>
 					<control type="image">
