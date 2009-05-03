@@ -170,7 +170,20 @@
 		<colordiffuse>d0FFFFFF</colordiffuse>
 		<label>$INFO[VideoPlayer.Time]</label>
 	</control>
-	
+
+<!-- Hitcher Movie title to the seekbar -->	
+	<control type="label">
+		<posx>0</posx>
+		<posy>58</posy>
+		<width>1280</width>
+		<height>25</height>
+		<align>center</align>
+		<aligny>center</aligny>
+		<font>Font_OSDMusicArtist</font>
+		<label>$INFO[VideoPlayer.Title]</label>			
+	</control>
+<!-- End -->
+
 	<control type="label">
 		<posx>1168</posx>
 		<posy>60</posy>
