@@ -33,8 +33,8 @@
 	
 	<control type="grouplist" id="20">
 		<include>Objects_SettingsControlAreaVars</include>
-		<onup>10</onup>
-		<ondown>10</ondown>
+		<onup>20</onup>
+		<ondown>20</ondown>
 		<onleft>6</onleft>
 		<onright>6</onright>
 		<visible>Control.HasFocus(6) | ControlGroup(20).HasFocus</visible>
@@ -127,6 +127,14 @@
 			<selected>Skin.HasSetting(CustomWeatherConditions)</selected>
 		</control>			
 <!-- <<<<< ADD this -->	
+<!-- MOD: Lock Home Menu -->
+		<control type="radiobutton" id="505">
+			<include>Objects_SettingsDefaultRadioButton</include>
+			<label>Allow Home Menu Bar Animation</label>
+			<onclick>Skin.ToggleSetting(HomeMenuBarAnimation)</onclick>
+			<selected>Skin.HasSetting(HomeMenuBarAnimation)</selected>
+		</control>			
+<!-- END MOD: Lock Home Menu -->
 
 		
 		
