@@ -182,6 +182,7 @@
 			<animation effect="slide" end="0,401" time="0" condition="Container(50).Row(10)">Conditional</animation>
 			<animation effect="slide" end="0,441" time="0" condition="Container(50).Row(11)">Conditional</animation>
 			<animation effect="slide" end="0,481" time="0" condition="Container(50).Row(12)">Conditional</animation>
+			<animation effect="slide" end="0,521" time="0" condition="Container(50).Row(13)">Conditional</animation>
 
 			<posx>68</posx>
 			<posy>102</posy>
@@ -202,6 +203,7 @@
 			<animation effect="slide" end="0,325" time="0" condition="Container(50).Row(5)">Conditional</animation>
 			<animation effect="slide" end="0,390" time="0" condition="Container(50).Row(6)">Conditional</animation>
 			<animation effect="slide" end="0,455" time="0" condition="Container(50).Row(7)">Conditional</animation>
+			<animation effect="slide" end="0,520" time="0" condition="Container(50).Row(8)">Conditional</animation>
 
 			<posx>68</posx>
 			<posy>102</posy>
@@ -220,6 +222,7 @@
 			<animation effect="slide" end="0,255" time="0" condition="Container(50).Row(3)">Conditional</animation>
 			<animation effect="slide" end="0,340" time="0" condition="Container(50).Row(4)">Conditional</animation>
 			<animation effect="slide" end="0,425" time="0" condition="Container(50).Row(5)">Conditional</animation>
+			<animation effect="slide" end="0,510" time="0" condition="Container(50).Row(6)">Conditional</animation>
 			
 
 			<posx>68</posx>
@@ -1150,7 +1153,7 @@
 				<height>511</height>
 				<fadetime>400</fadetime>			
 				<texture diffuse="list/list_movieicon_mask.png">$INFO[listitem.path,,movie.tbn]</texture>
-				<visible>Container.Content(movies)</visible>
+<visible>Control.IsVisible(102) + Container.Content(movies)</visible><!--  [Fix] Large thumbs don't disappear by Rand Al Thor -->
 <visible>!Container.Content(genres)|Skin.HasSetting(moviegenre_onoff)</visible><!-- <<<<<< Add this -->
 			</control>
 			
@@ -1159,10 +1162,22 @@
 				<height>511</height>
 				<fadetime>400</fadetime>			
 				<texture diffuse="list/list_movieicon_mask.png">$INFO[listitem.path,,folder.jpg]</texture>
-				<visible>Container.Content(tvshows)</visible>
+<visible>Control.IsVisible(102) + Container.Content(tvshows)</visible><!--  [Fix] Large thumbs don't disappear by Rand Al Thor -->
 <visible>!Container.Content(genres)|Skin.HasSetting(moviegenre_onoff)</visible><!-- <<<<<< Add this -->
 			</control>			
 <include>mod_moviegenre_list1</include><!-- <<<<<< Add this -->
+
+<!--  [Fix] Large thumbs don't disappear by Rand Al Thor -->
+<control type="image" id="102">
+	<posx>0</posx>
+	<posy>0</posy>
+	<width>0</width>
+	<height>0</height>
+        <texture>-</texture>
+ 	<visible>Control.HasFocus(50) + [!Container(50).OnNext + !Container(50).OnPrevious]</visible>
+	<animation effect="fade" start="0" end="100" time="150" >Visible</animation>
+</control>
+<!-- end -->
 			<control type="image">
 				<width>346</width>
 				<height>511</height>
