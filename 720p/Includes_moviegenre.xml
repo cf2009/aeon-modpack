@@ -355,9 +355,19 @@
 <!-- wall End -->
 <!-- List -->
 	<include name="mod_moviegenre_list1">
-        	<!-- bug with fade -->
-		<control type="image">
+
+        	<control type="image">
 			<visible>Container.Content(genres)+!Skin.HasSetting(moviegenre_onoff)</visible>
+			<visible>!Skin.HasSetting(moviegenre_default_onoff)</visible>
+			<width>346</width>
+			<height>511</height>
+			<fadetime>400</fadetime>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture diffuse="list/list_movieicon_mask.png">moviegenre/default.jpg</texture>
+			<bordertexture border="-28">list/list_movieicon_frame.png</bordertexture>
+		</control>
+		<control type="image">
+			<visible>Control.IsVisible(102) + Container.Content(genres)+!Skin.HasSetting(moviegenre_onoff)</visible>
 			<width>346</width>
 			<height>511</height>
 			<fadetime>400</fadetime>
@@ -367,8 +377,17 @@
 		</control>
 	</include>
 	<include name="mod_moviegenre_list2">
-		<control type="image">
+        	<control type="image">
 			<visible>Container.Content(genres)+!Skin.HasSetting(moviegenre_onoff)</visible>
+			<visible>!Skin.HasSetting(moviegenre_default_onoff)</visible>
+			<posy>513</posy>
+			<width>346</width>
+			<height>511</height>
+			<fadetime>400</fadetime>
+			<texture  flipy="true" diffuse="list/list_movieicon_flipmask.png">moviegenre/default.jpg</texture>
+		</control>
+		<control type="image">
+			<visible>Control.IsVisible(102) + Container.Content(genres)+!Skin.HasSetting(moviegenre_onoff)</visible>
 			<posy>513</posy>
 			<width>346</width>
 			<height>511</height>
