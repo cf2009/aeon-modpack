@@ -2581,6 +2581,7 @@
                         <info>ListItem.Icon</info>
 						<visible>Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenshowcase) + !Control.IsVisible(6000)</visible>
                     </control>
+<include>mod_moviegenre_Showcase21</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MovieShowcaseGlassOverlay</include>
@@ -2600,7 +2601,8 @@
                         <include>MovieShowcaseThumbReflection</include>
                         <info>ListItem.Icon</info>
 						<visible>Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenshowcase) + !Control.IsVisible(6000)</visible>
-                    </control>				
+                    </control>
+<include>mod_moviegenre_Showcase_ref21</include><!-- <<<<<< Add this -->				
 				</itemlayout>
                 <focusedlayout height="350" width="196" condition="Window.IsActive(28) | Window.IsActive(24) | [Window.IsActive(25) + !Container.Content(episodes)] | Window.IsActive(1)">
                     <control type="image">
@@ -2617,6 +2619,7 @@
 						<animation effect="zoom" start="100" end="120" center="135,230" time="400" easing="out" reversible="false" tween="cubic">Focus</animation>
 						<animation effect="zoom" start="120" end="100" center="135,230" time="400" easing="out" reversible="false" tween="cubic" condition="!Control.HasFocus(57) + Skin.HasSetting(flattenshowcase)">Unfocus</animation>						
                     </control>
+<include>mod_moviegenre_Showcase20</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MovieShowcaseGlassOverlay</include>
@@ -2644,7 +2647,8 @@
 						<visible>Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenshowcase) + !Control.IsVisible(6000)</visible>
 						<animation effect="zoom" start="100" end="130" center="135,230" time="400" easing="out" reversible="false" tween="cubic">Focus</animation>
 						<animation effect="zoom" start="120" end="100" center="135,230" time="400" easing="out" reversible="false" tween="cubic" condition="!Control.HasFocus(57) + Skin.HasSetting(flattenshowcase)">Unfocus</animation>						
-                    </control>					
+                    </control>
+<include>mod_moviegenre_Showcase_ref20</include><!-- <<<<<< Add this -->					
 				</focusedlayout>
                 <itemlayout height="350" width="250" condition="Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502) | Window.IsActive(2) | Window.IsActive(20)">
                     <control type="image">
