@@ -357,7 +357,7 @@
 	<include name="mod_moviegenre_list1">
 
         	<control type="image">
-			<visible>Container.Content(genres)+!Skin.HasSetting(moviegenre_onoff)+[Container.Content(movies)|Container.Content(tvshows)]</visible>
+			<visible>Container.Content(genres)+!Window.IsActive(502)+!Skin.HasSetting(moviegenre_onoff)</visible>
 			<visible>!Skin.HasSetting(moviegenre_default_onoff)</visible>
 			<width>346</width>
 			<height>511</height>
@@ -367,7 +367,7 @@
 			<bordertexture border="-28">list/list_movieicon_frame.png</bordertexture>
 		</control>
 		<control type="image">
-			<visible>Control.IsVisible(102) + Container.Content(genres)+!Skin.HasSetting(moviegenre_onoff)+[Container.Content(movies)|Container.Content(tvshows)]</visible>
+			<visible>Control.IsVisible(102)+Container.Content(genres)+!Window.IsActive(502)+!Skin.HasSetting(moviegenre_onoff)</visible>
 			<width>346</width>
 			<height>511</height>
 			<fadetime>400</fadetime>
@@ -375,10 +375,11 @@
 			<texture diffuse="list/list_movieicon_mask.png">moviegenre/$INFO[ListItem(0).Label].jpg</texture>
 			<bordertexture border="-28">list/list_movieicon_frame.png</bordertexture>
 		</control>
+
 	</include>
 	<include name="mod_moviegenre_list2">
         	<control type="image">
-			<visible>Container.Content(genres)+!Skin.HasSetting(moviegenre_onoff)+[Container.Content(movies)|Container.Content(tvshows)]</visible>
+			<visible>Container.Content(genres)+!Window.IsActive(502)+!Skin.HasSetting(moviegenre_onoff)</visible>
 			<visible>!Skin.HasSetting(moviegenre_default_onoff)</visible>
 			<posy>513</posy>
 			<width>346</width>
@@ -387,7 +388,7 @@
 			<texture  flipy="true" diffuse="list/list_movieicon_flipmask.png">moviegenre/default.jpg</texture>
 		</control>
 		<control type="image">
-			<visible>Control.IsVisible(102) + Container.Content(genres)+!Skin.HasSetting(moviegenre_onoff)+[Container.Content(movies)|Container.Content(tvshows)]</visible>
+			<visible>Control.IsVisible(102)+Container.Content(genres)+!Window.IsActive(502)+!Skin.HasSetting(moviegenre_onoff)</visible>
 			<posy>513</posy>
 			<width>346</width>
 			<height>511</height>
