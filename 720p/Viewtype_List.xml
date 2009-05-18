@@ -191,7 +191,7 @@
 
 			<texture>list/listpanel_selectbar.png</texture>
 			<visible>Control.IsVisible(50)</visible>
-			<visible>[Window.IsActive(2) + !Skin.HasSetting(pictureslistfull)] | Window.IsActive(24) | [Window.IsActive(25) + !Skin.HasSetting(movieslistfull) + !Skin.HasSetting(videotv)] | [[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)] + !Skin.HasSetting(musiclistfull)]</visible>
+			<visible>[Window.IsActive(2) + !Skin.HasSetting(pictureslistfull)] | Window.IsActive(1) | Window.IsActive(24) | [Window.IsActive(25) + !Skin.HasSetting(movieslistfull) + !Skin.HasSetting(videotv)] | [[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)] + !Skin.HasSetting(musiclistfull)]</visible>
 		</control>
 
 		<control type="image">
