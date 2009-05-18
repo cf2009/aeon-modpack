@@ -132,16 +132,16 @@
 		<visible>!Skin.HasSetting(CustomMenuSub)</visible>
 
 		<control type="group">
-			<posx>500</posx>
-			<posy>-30</posy>
+			<posx>509</posx>
+			<posy>-25</posy>
 			<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
 			<control type="image">
 				<visible allowhiddenfocus="true">Skin.HasSetting(submenu)</visible>
 				<description>Panel</description>
-				<posx>0</posx>
+				<posx>20</posx>
 				<posy>0</posy>
-				<height>30</height>
-				<width>278</width>
+				<height>25</height>
+				<width>220</width>
 				<texture>osd/osd_button_paused.png</texture>
 				<colordiffuse>FFFFFFFF</colordiffuse>
 				<animation type="Conditional" condition="Skin.HasSetting(submenu)" reversible="false">
@@ -157,11 +157,11 @@
 			</control>
   			<control type="label">
 				<visible allowhiddenfocus="true">Skin.HasSetting(submenu)</visible>
-				<posx>20</posx>
-	    			<posy>0</posy>
-    				<width>238</width>
+				<posx>30</posx>
+	    			<posy>-3</posy>
+    				<width>205</width>
     				<height>30</height>
-    				<font>Font_WeatherTitle</font>
+    				<font>Font_Time</font>
 	    			<align>center</align>
 				<aligny>center</aligny>
 				<textcolor>a9000000</textcolor>
@@ -571,12 +571,13 @@
 					<visible>Skin.HasSetting(nosettings)</visible>
 					<visible>Container(300).HasFocus(2)</visible>
 					<visible>!Skin.HasSetting(sub_Programs_settings)</visible>
+					<visible>!Skin.HasSetting(kiosk)</visible>
 				</item>
 				<item id="54">
 					<visible>Container(300).HasFocus(2)</visible>
 					<visible>!Skin.HasSetting(sub_Programs_favourites)</visible>
 					<description>favourites</description>
-					<label>favourites</label>
+					<label>$LOCALIZE[1036]</label>
 					<onclick>xbmc.activatewindow(134)</onclick>
 				</item>
 	 
@@ -639,12 +640,13 @@
 					<onclick>XBMC.ActivateWindow(4)</onclick>
 					<visible>Skin.HasSetting(nosettings)</visible>
 					<visible>!Skin.HasSetting(sub_Programs_settings)</visible>
+					<visible>!Skin.HasSetting(kiosk)</visible>
 				</item>
 				<item id="58">
 					<visible>Container(300).HasFocus(2)</visible>
 					<visible>!Skin.HasSetting(sub_Programs_favourites)</visible>
 					<description>favourite</description>
-					<label>favourites</label>
+					<label>$LOCALIZE[1036]</label>
 					<onclick>xbmc.activatewindow(134)</onclick>
 				</item>
 				<!-- Programs scripts -->
@@ -706,7 +708,7 @@
 					<visible>Container(300).HasFocus(22)</visible>
 					<visible>!Skin.HasSetting(sub_Shutdown_Reload)</visible>
 					<description>Reload Button</description>
-					<label>Reload</label>
+					<label>$LOCALIZE[31954]</label>
 					<onclick>Skin.Reset(submenu)</onclick>
 					<onclick>XBMC.RestartApp()</onclick>
 				</item>
@@ -732,7 +734,7 @@
 					<visible>Container(300).HasFocus(22)</visible>
 					<visible>!Skin.HasSetting(sub_Shutdown_Suspend)</visible>
 					<description>Suspend</description>
-					<label>$LOCALIZE[13011] </label>
+					<label>$LOCALIZE[13011]</label>
 					<onclick>Skin.Reset(submenu)</onclick>
 					<onclick>XBMC.Suspend()</onclick>
 					<visible>!System.Platform.Xbox</visible>
@@ -741,7 +743,7 @@
 					<visible>Container(300).HasFocus(22)</visible>
 					<visible>!Skin.HasSetting(sub_Shutdown_Hibernate)</visible>
 					<description>Hibernate</description>
-					<label>$LOCALIZE[13010] </label>
+					<label>$LOCALIZE[13010]</label>
 					<onclick>Skin.Reset(submenu)</onclick>
 					<onclick>XBMC.Hibernate()</onclick>
 					<visible>!System.Platform.Xbox</visible>
@@ -750,7 +752,7 @@
 					<visible>Container(300).HasFocus(22)</visible>
 					<visible>!Skin.HasSetting(sub_Shutdown_Logout)</visible>
 					<description>Logout Button</description>
-					<label>$LOCALIZE[20126] </label>
+					<label>$LOCALIZE[20126]</label>
 					<onclick>Skin.Reset(submenu)</onclick>
 					<onclick>System.LogOff</onclick>
 					<visible>System.HasLoginScreen</visible>
@@ -948,7 +950,7 @@
 	<!-- Scripts/Plugins -->
 		<control type="button" id="9102">
 			<visible>!Skin.HasSetting(CustomMenuSub)</visible>
-			<label>Scripts/Plugins</label>
+			<label>$LOCALIZE[10020]/Plugins</label>
 			<include>homesubmenu_Plugins_Defaultbutton2</include>
 			<selected>Skin.HasSetting(usescripts_plugins)</selected>
 			<onclick>Skin.ToggleSetting(usescripts_plugins)</onclick>
@@ -959,7 +961,7 @@
 		<!-- Movies -->
 		<control type="button" id="9200">
 			<visible>Skin.HasSetting(usescripts_plugins)</visible>
-			<label>Movies Scripts/Plugins</label>
+			<label>$LOCALIZE[20342] $LOCALIZE[10020]/Plugins</label>
 			<include>homesubmenu_Plugins_Defaultbutton1</include>
 			<selected>Skin.HasSetting(usemovie)</selected>
 			<onclick>Skin.ToggleSetting(usemovie)</onclick>
@@ -1014,8 +1016,6 @@
 			<onclick>Skin.SetString(movieplugin1name)</onclick>
 			<onclick>Skin.SetString(movieplugin1path)</onclick>
 			<onclick>Skin.SetBool(movieplugin1)</onclick>
-<onclick>Skin.ToggleSetting(CustomMenuSub)</onclick>
-<onclick>Skin.ToggleSetting(CustomMenuSub)</onclick>
 		</control>
 		<control type="button" id="9206">
 			<visible>Skin.HasSetting(usescripts_plugins)</visible>
@@ -1034,8 +1034,6 @@
 			<onclick>Skin.SetString(movieplugin2name)</onclick>
 			<onclick>Skin.SetString(movieplugin2path)</onclick>
 			<onclick>Skin.SetBool(movieplugin2)</onclick>
-<onclick>Skin.ToggleSetting(CustomMenuSub)</onclick>
-<onclick>Skin.ToggleSetting(CustomMenuSub)</onclick>
 		</control>
 		<control type="button" id="9208">
 			<visible>Skin.HasSetting(usescripts_plugins)</visible>
@@ -1050,7 +1048,7 @@
 		<!-- TV -->
 		<control type="button" id="9211">
 			<visible>Skin.HasSetting(usescripts_plugins)</visible>
-			<label>TV Scripts/Plugins</label>
+			<label>$LOCALIZE[20343] $LOCALIZE[10020]/Plugins</label>
 			<include>homesubmenu_Plugins_Defaultbutton1</include>
 			<selected>Skin.HasSetting(usetv)</selected>
 			<onclick>Skin.ToggleSetting(usetv)</onclick>
@@ -1105,9 +1103,6 @@
 			<onclick>Skin.SetString(tvplugin1name)</onclick>
 			<onclick>Skin.SetString(tvplugin1path)</onclick>
 			<onclick>Skin.SetBool(tvplugin1)</onclick>
-<onclick>Skin.ToggleSetting(CustomMenuSub)</onclick>
-<onclick>Skin.ToggleSetting(CustomMenuSub)</onclick>
-
 		</control>
 		<control type="button" id="9217">
 			<visible>Skin.HasSetting(usescripts_plugins)</visible>
@@ -1126,9 +1121,6 @@
 			<onclick>Skin.SetString(tvplugin2name)</onclick>
 			<onclick>Skin.SetString(tvplugin2path)</onclick>
 			<onclick>Skin.SetBool(tvplugin2)</onclick>
-
-<onclick>Skin.ToggleSetting(CustomMenuSub)</onclick>
-<onclick>Skin.ToggleSetting(CustomMenuSub)</onclick>
 		</control>
 		<control type="button" id="9219">
 			<visible>Skin.HasSetting(usescripts_plugins)</visible>
@@ -1143,7 +1135,7 @@
 		<!-- Games/Apps -->
 		<control type="button" id="9221">
 			<visible>Skin.HasSetting(usescripts_plugins)</visible>
-			<label>Games Scripts/Plugins</label>
+			<label>$LOCALIZE[15016] $LOCALIZE[10020]/Plugins</label>
 			<include>homesubmenu_Plugins_Defaultbutton1</include>
 			<selected>Skin.HasSetting(usegames)</selected>
 			<onclick>Skin.ToggleSetting(usegames)</onclick>
@@ -1198,9 +1190,6 @@
 			<onclick>Skin.SetString(gamesplugin1name)</onclick>
 			<onclick>Skin.SetString(gamesplugin1path)</onclick>
 			<onclick>Skin.SetBool(gamesplugin1)</onclick>
-
-<onclick>Skin.ToggleSetting(CustomMenuSub)</onclick>
-<onclick>Skin.ToggleSetting(CustomMenuSub)</onclick>
 		</control>
 		<control type="button" id="9227">
 			<visible>Skin.HasSetting(usescripts_plugins)</visible>
@@ -1219,9 +1208,6 @@
 			<onclick>Skin.SetString(gamesplugin2name)</onclick>
 			<onclick>Skin.SetString(gamesplugin2path)</onclick>
 			<onclick>Skin.SetBool(gamesplugin2)</onclick>
-
-<onclick>Skin.ToggleSetting(CustomMenuSub)</onclick>
-<onclick>Skin.ToggleSetting(CustomMenuSub)</onclick>
 		</control>
 		<control type="button" id="9229">
 			<visible>Skin.HasSetting(usescripts_plugins)</visible>
@@ -1236,7 +1222,7 @@
 		<!-- Music -->
 		<control type="button" id="9231">
 			<visible>Skin.HasSetting(usescripts_plugins)</visible>
-			<label>Music Scripts/Plugins</label>
+			<label>$LOCALIZE[10005] $LOCALIZE[10020]/Plugins</label>
 			<include>homesubmenu_Plugins_Defaultbutton1</include>
 			<selected>Skin.HasSetting(usemusic)</selected>
 			<onclick>Skin.ToggleSetting(usemusic)</onclick>
@@ -1291,9 +1277,6 @@
 			<onclick>Skin.SetString(musicplugin1name)</onclick>
 			<onclick>Skin.SetString(musicplugin1path)</onclick>
 			<onclick>Skin.SetBool(musicplugin1)</onclick>
-
-<onclick>Skin.ToggleSetting(CustomMenuSub)</onclick>
-<onclick>Skin.ToggleSetting(CustomMenuSub)</onclick>
 		</control>
 		<control type="button" id="9337">
 			<visible>Skin.HasSetting(usescripts_plugins)</visible>
@@ -1312,9 +1295,6 @@
 			<onclick>Skin.SetString(musicplugin2name)</onclick>
 			<onclick>Skin.SetString(musicplugin2path)</onclick>
 			<onclick>Skin.SetBool(musicplugin2)</onclick>
-
-<onclick>Skin.ToggleSetting(CustomMenuSub)</onclick>
-<onclick>Skin.ToggleSetting(CustomMenuSub)</onclick>
 		</control>
 		<control type="button" id="9339">
 			<visible>Skin.HasSetting(usescripts_plugins)</visible>
