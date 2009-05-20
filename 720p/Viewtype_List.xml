@@ -191,7 +191,7 @@
 
 			<texture>list/listpanel_selectbar.png</texture>
 			<visible>Control.IsVisible(50)</visible>
-			<visible>[Window.IsActive(2) + !Skin.HasSetting(pictureslistfull)] | Window.IsActive(1) | Window.IsActive(24) | [Window.IsActive(25) + !Skin.HasSetting(movieslistfull) + !Skin.HasSetting(videotv)] | [[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)] + !Skin.HasSetting(musiclistfull)]</visible>
+			<visible>[Window.IsActive(2) + !Skin.HasSetting(pictureslistfull)] | Window.IsActive(1) | Window.IsActive(20) | Window.IsActive(24) | [Window.IsActive(25) + !Skin.HasSetting(movieslistfull) + !Skin.HasSetting(videotv)] | [[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)] + !Skin.HasSetting(musiclistfull)]</visible>
 		</control>
 
 		<control type="image">
@@ -1134,8 +1134,7 @@
 				<texture diffuse="list/list_movieicon_mask.png">defaultvideobig.png</texture>
 				<info>ListItem.Icon</info>
 				<bordertexture border="-28">list/list_movieicon_frame.png</bordertexture>
-				<visible>[Window.IsActive(1) + !Skin.HasSetting(listgamessquare)] | [Window.IsActive(24) + !Skin.HasSetting(listvideosquare)] | [Window.IsActive(25) + !Container.Content(episodes) + !Container.Content(musicvideos)]</visible>
-<visible>!Container.Content(genres)|Skin.HasSetting(moviegenre_onoff)</visible><!-- <<<<<< Add this -->
+				<visible>[Window.IsActive(1) + !Skin.HasSetting(listgamessquare)] | [Window.IsActive(24) + !Skin.HasSetting(listvideosquare)] | [Window.IsActive(25) + !Container.Content(episodes) + !Container.Content(musicvideos)] + [!Container.Content(genres)|Skin.HasSetting(moviegenre_onoff)]</visible><!-- <<<<<< Add this -->
 			</control>
 			
 			<control type="image">
@@ -1144,17 +1143,15 @@
 				<height>511</height>
 				<fadetime>400</fadetime>
 				<texture flipy="true" diffuse="list/list_movieicon_flipmask.png">$INFO[ListItem.Icon]</texture>
-				<visible>[Window.IsActive(1) + !Skin.HasSetting(listgamessquare)] | [Window.IsActive(24) + !Skin.HasSetting(listvideosquare)] | [Window.IsActive(25) + !Container.Content(episodes) + !Container.Content(musicvideos)]</visible>				
-<visible>!Container.Content(genres)|Skin.HasSetting(moviegenre_onoff)</visible><!-- <<<<<< Add this -->
+				<visible>[Window.IsActive(1) + !Skin.HasSetting(listgamessquare)] | [Window.IsActive(24) + !Skin.HasSetting(listvideosquare)] | [Window.IsActive(25) + !Container.Content(episodes) + !Container.Content(musicvideos)]+ [!Container.Content(genres)|Skin.HasSetting(moviegenre_onoff)]</visible><!-- <<<<<< Add this -->
 			</control>			
-<include>mod_moviegenre_list2</include><!-- <<<<<< Add this -->
+				<include>mod_moviegenre_list2</include><!-- <<<<<< Add this -->
 			<control type="largeimage">
 				<width>346</width>
 				<height>511</height>
 				<fadetime>400</fadetime>			
 				<texture diffuse="list/list_movieicon_mask.png">$INFO[listitem.path,,movie.tbn]</texture>
-<visible>Control.IsVisible(102) + Container.Content(movies)</visible><!--  [Fix] Large thumbs don't disappear by Rand Al Thor -->
-<visible>!Container.Content(genres)|Skin.HasSetting(moviegenre_onoff)</visible><!-- <<<<<< Add this -->
+				<visible>!Window.IsActive(24)+Control.IsVisible(102) + Container.Content(movies) +[!Container.Content(genres)|Skin.HasSetting(moviegenre_onoff)]</visible><!-- <<<<<< Add this -->
 			</control>
 			
 			<control type="largeimage">
@@ -1162,22 +1159,21 @@
 				<height>511</height>
 				<fadetime>400</fadetime>			
 				<texture diffuse="list/list_movieicon_mask.png">$INFO[listitem.path,,folder.jpg]</texture>
-<visible>Control.IsVisible(102) + Container.Content(tvshows)</visible><!--  [Fix] Large thumbs don't disappear by Rand Al Thor -->
-<visible>!Container.Content(genres)|Skin.HasSetting(moviegenre_onoff)</visible><!-- <<<<<< Add this -->
+				<visible>!Window.IsActive(24)+Control.IsVisible(102) + Container.Content(tvshows)+ [!Container.Content(genres)|Skin.HasSetting(moviegenre_onoff)]</visible><!-- <<<<<< Add this -->
 			</control>			
-<include>mod_moviegenre_list1</include><!-- <<<<<< Add this -->
+				<include>mod_moviegenre_list1</include> <!--<<<<<< Add this -->
 
-<!--  [Fix] Large thumbs don't disappear by Rand Al Thor -->
-<control type="image" id="102">
-	<posx>0</posx>
-	<posy>0</posy>
-	<width>0</width>
-	<height>0</height>
-        <texture>-</texture>
- 	<visible>Control.HasFocus(50) + [!Container(50).OnNext + !Container(50).OnPrevious]</visible>
-	<animation effect="fade" start="0" end="100" time="150" >Visible</animation>
-</control>
-<!-- end -->
+			<!--  [Fix] Large thumbs don't disappear by Rand Al Thor -->
+			<control type="image" id="102">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>0</width>
+				<height>0</height>
+			        <texture>-</texture>
+			 	<visible>Control.HasFocus(50) + [!Container(50).OnNext + !Container(50).OnPrevious]</visible>
+				<animation effect="fade" start="0" end="100" time="150" >Visible</animation>
+			</control>
+			<!-- end -->
 			<control type="image">
 				<width>346</width>
 				<height>511</height>
@@ -1191,7 +1187,7 @@
 				<height>511</height>
 				<fadetime>400</fadetime>			
 				<texture diffuse="list/list_movieicon_mask.png">$INFO[listitem.path,,folder.jpg]</texture>
-				<visible>Container.Content(tvshows) | Container.Content(seasons)</visible>				
+				<visible>[Container.Content(tvshows) | Container.Content(seasons)] + !Skin.HasSetting(listvideosquare)</visible>				
 			</control>
 
 			<control type="image">
