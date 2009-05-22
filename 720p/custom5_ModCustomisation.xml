@@ -1,5 +1,5 @@
 <window id="57">
-	<defaultcontrol>6</defaultcontrol>
+	<defaultcontrol>1</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
 	<controls>
 
@@ -29,270 +29,203 @@
 		<font>Font_SettingsSectionTitle</font>
 	</control>
 
-		
-		<control type="group">
-			<include>Settings_ButtonGroupDimensionsXBMC</include>
-			<include>Animation_CommonFade</include>
-			<control type="button" id="6">
-				<description>Backdrops</description>
-				<posy>0</posy>
-				<label>31232</label>
-				<include>Objects_SettingsSectionMenuButton</include>
-				<onclick>SetFocus(400)</onclick>
-				<onleft>400</onleft>
-				<onright>400</onright>
-				<onup>15</onup><!-- <<<<< edit 9 to 15 mod -->
-				<ondown>7</ondown>
-				<visible allowhiddenfocus="true">![Control.HasFocus(6) | ControlGroup(20).HasFocus]</visible>
-			</control>
-			<control type="button" id="6">
-				<description>Backdrops</description>
-				<posy>0</posy>
-				<label>31232</label>
-				<include>Objects_SettingsSectionMenuButtonFocused</include>
-				<onclick>SetFocus(400)</onclick>
-				<onleft>400</onleft>
-				<onright>400</onright>
-				<onup>15</onup><!-- <<<<< edit 10 to 15 mod -->
-				<ondown>7</ondown>
-				<visible>Control.HasFocus(6) | ControlGroup(20).HasFocus</visible>
-			</control>
-			<control type="label">
-				<description>Backdrops Unfocused</description>
-				<posy>32</posy>
-				<label>31233</label>
-				<textcolor>FFf5f5f5</textcolor>
-				<include>Objects_SettingsSectionMenuButtonSubtitle</include>
-				<visible>![Control.HasFocus(6) | ControlGroup(20).HasFocus]</visible>
-			</control>
-			<control type="label">
-				<description>Backdrops Focused</description>
-				<posy>32</posy>
-				<label>31233</label>
-				<textcolor>FF262728</textcolor>
-				<include>Objects_SettingsSectionMenuButtonSubtitle</include>
-				<visible>Control.HasFocus(6) | ControlGroup(20).HasFocus</visible>
-			</control>
-			<control type="button" id="7">
-				<posy>58</posy>
-				<label>31234</label>
-				<include>Objects_SettingsSectionMenuButton</include>
-				<onup>6</onup>
-				<ondown>8</ondown>
-				<onleft>500</onleft>
-				<onright>500</onright>
-				<visible allowhiddenfocus="true">![Control.HasFocus(7) | ControlGroup(11).HasFocus]</visible>
-			</control>
-			<control type="button" id="7">
-				<posy>58</posy>
-				<label>31234</label>
-				<include>Objects_SettingsSectionMenuButtonFocused</include>
-				<onup>6</onup>
-				<ondown>8</ondown>
-				<onleft>500</onleft>
-				<onright>500</onright>
-				<visible>Control.HasFocus(7) | ControlGroup(11).HasFocus</visible>
-			</control>
-			<control type="label">
-				<description>Furniture Sub Unfocused</description>
-				<posy>90</posy>
-				<label>31235</label>
-				<textcolor>FFf5f5f5</textcolor>
-				<include>Objects_SettingsSectionMenuButtonSubtitle</include>
-				<visible>![Control.HasFocus(7) | ControlGroup(11).HasFocus]</visible>
-			</control>
-			<control type="label">
-				<description>Furniture Sub Unfocused</description>
-				<posy>90</posy>
-				<label>31235</label>
-				<textcolor>FF262728</textcolor>
-				<include>Objects_SettingsSectionMenuButtonSubtitle</include>
-				<visible>Control.HasFocus(7) | ControlGroup(11).HasFocus</visible>
-			</control>
-			<control type="button" id="8">
-				<posy>116</posy>
-				<label>31236</label>
-				<include>Objects_SettingsSectionMenuButton</include>
-				<onup>7</onup>
-				<ondown>9</ondown>
-				<onleft>600</onleft>
-				<onright>600</onright>
-				<onclick>SetFocus(600)</onclick>
-				<visible allowhiddenfocus="true">![Control.HasFocus(8) | ControlGroup(12).HasFocus]</visible>
-			</control>
-			<control type="button" id="8">
-				<posy>116</posy>
-				<label>31236</label>
-				<include>Objects_SettingsSectionMenuButtonFocused</include>
-				<onup>7</onup>
-				<ondown>9</ondown>
-				<onleft>600</onleft>
-				<onright>600</onright>
-				<visible>Control.HasFocus(8) | ControlGroup(12).HasFocus</visible>
-			</control>
-			<control type="label">
-				<description>My Programs Sub Unfocused</description>
-				<posy>148</posy>
-				<label>31237</label>
-				<textcolor>FFf5f5f5</textcolor>
-				<include>Objects_SettingsSectionMenuButtonSubtitle</include>
-				<visible>![Control.HasFocus(8) | ControlGroup(12).HasFocus]</visible>
-			</control>
-			<control type="label">
-				<description>My Programs Sub Unfocused</description>
-				<posy>148</posy>
-				<label>31237</label>
-				<textcolor>FF262728</textcolor>
-				<include>Objects_SettingsSectionMenuButtonSubtitle</include>
-				<visible>Control.HasFocus(8) | ControlGroup(12).HasFocus</visible>
-			</control>
-			<control type="button" id="9">
-				<description>Purge</description>
-				<posy>174</posy>
-				<label>31240</label>
-				<include>Objects_SettingsSectionMenuButton</include>
-				<onup>8</onup>
-				<ondown>10</ondown>
-				<onleft>700</onleft>
-				<onright>700</onright>
-				<visible allowhiddenfocus="true">![Control.HasFocus(9) | ControlGroup(13).HasFocus]</visible>
-			</control>
-			<control type="button">
-				<description>Purge</description>
-				<posy>174</posy>
-				<label>31240</label>
-				<include>Objects_SettingsSectionMenuButtonFocused</include>
-				<onup>8</onup>
-				<ondown>10</ondown>
-				<onleft>40</onleft>
-				<onright>40</onright>
-				<visible>Control.HasFocus(9) | ControlGroup(13).HasFocus</visible>
-			</control>
-			<control type="label">
-				<description>My Weather Sub Unfocused</description>
-				<posy>206</posy>
-				<label>31241</label>
-				<textcolor>FFf5f5f5</textcolor>
-				<include>Objects_SettingsSectionMenuButtonSubtitle</include>
-				<visible>![Control.HasFocus(9) | ControlGroup(13).HasFocus]</visible>
-			</control>
-			<control type="label">
-				<description>My Weather Sub Unfocused</description>
-				<posy>206</posy>
-				<label>31241</label>
-				<textcolor>FF262728</textcolor>
-				<include>Objects_SettingsSectionMenuButtonSubtitle</include>
-				<visible>Control.HasFocus(9) | ControlGroup(13).HasFocus</visible>
-			</control>
-			<control type="button" id="10">
-				<description>Purge</description>
-				<posy>232</posy>
-				<label>31244</label>
-				<include>Objects_SettingsSectionMenuButton</include>
-				<onup>9</onup>
-				<ondown>15</ondown><!-- <<<<< edit 11 to 15 mod -->
-				<onleft>800</onleft>
-				<onright>800</onright>
-				<visible allowhiddenfocus="true">![Control.HasFocus(10) | ControlGroup(14).HasFocus]</visible>
-			</control>
-			<control type="button">
-				<description>Purge</description>
-				<posy>232</posy>
-				<label>31244</label>
-				<include>Objects_SettingsSectionMenuButtonFocused</include>
-				<onup>9</onup>
-				<ondown>15</ondown><!-- <<<<< edit 6 to 15 mod -->
-				<onleft>40</onleft>
-				<onright>40</onright>
-				<visible>Control.HasFocus(10) | ControlGroup(14).HasFocus</visible>
-			</control>
-			<control type="label">
-				<description>My Weather Sub Unfocused</description>
-				<posy>264</posy>
-				<label>31245</label>
-				<textcolor>FFf5f5f5</textcolor>
-				<include>Objects_SettingsSectionMenuButtonSubtitle</include>
-				<visible>![Control.HasFocus(10) | ControlGroup(14).HasFocus]</visible>
-			</control>
-			<control type="label">
-				<description>My Weather Sub Unfocused</description>
-				<posy>264</posy>
-				<label>31245</label>
-				<textcolor>FF262728</textcolor>
-				<include>Objects_SettingsSectionMenuButtonSubtitle</include>
-				<visible>Control.HasFocus(10) | ControlGroup(14).HasFocus</visible>
-			</control>
 
-			<include>homesubmenu_Plugins_button</include><!-- <<<<< ADD this -->
+	<control type="group">
+		<include>Settings_ButtonGroupDimensionsXBMC</include>
+		<include>Animation_CommonFade</include>
 
+
+
+		<control type="button" id="1">
+			<description>Home</description>
+			<posy>0</posy>
+			<label>31234</label>
+			<include>Objects_SettingsSectionMenuButton</include>
+			<onup>5</onup>
+			<ondown>2</ondown>
+			<onleft>10</onleft>
+			<onright>10</onright>
+			<visible allowhiddenfocus="true">![Control.HasFocus(1) | ControlGroup(10).HasFocus]</visible>
 		</control>
+		<control type="button" id="1">
+			<description>Home</description>
+			<posy>0</posy>
+			<label>31234</label>
+			<include>Objects_SettingsSectionMenuButtonFocused</include>
+			<onup>5</onup>
+			<ondown>8</ondown>
+			<onleft>10</onleft>
+			<onright>10</onright>
+			<visible>Control.HasFocus(1) | ControlGroup(10).HasFocus</visible>
+		</control>
+		<control type="label">
+			<description>Home</description>
+			<posy>32</posy>
+			<label>31235</label>
+			<textcolor>FFf5f5f5</textcolor>
+			<include>Objects_SettingsSectionMenuButtonSubtitle</include>
+			<visible>![Control.HasFocus(1) | ControlGroup(10).HasFocus]</visible>
+		</control>
+		<control type="label">
+			<description>Home</description>
+			<posy>32</posy>
+			<label>31235</label>
+			<textcolor>FF262728</textcolor>
+			<include>Objects_SettingsSectionMenuButtonSubtitle</include>
+			<visible>Control.HasFocus(1) | ControlGroup(10).HasFocus</visible>
+		</control>
+
+		<control type="button" id="2">
+			<posy>58</posy>
+			<label>genre</label>
+			<include>Objects_SettingsSectionMenuButton</include>
+			<onup>1</onup>
+			<ondown>3</ondown>
+			<onleft>11</onleft>
+			<onright>11</onright>
+			<onclick>SetFocus(600)</onclick>
+			<visible allowhiddenfocus="true">![Control.HasFocus(2) | ControlGroup(11).HasFocus]</visible>
+		</control>
+		<control type="button" id="2">
+			<posy>58</posy>
+			<label>genre</label>
+			<include>Objects_SettingsSectionMenuButtonFocused</include>
+			<onup>1</onup>
+			<ondown>3</ondown>
+			<onleft>11</onleft>
+			<onright>11</onright>
+			<visible>Control.HasFocus(2) | ControlGroup(11).HasFocus</visible>
+		</control>
+		<control type="label">
+			<description>genre</description>
+			<posy>90</posy>
+			<label>setup your icons</label>
+			<textcolor>FFf5f5f5</textcolor>
+			<include>Objects_SettingsSectionMenuButtonSubtitle</include>
+			<visible>![Control.HasFocus(2) | ControlGroup(11).HasFocus]</visible>
+		</control>
+		<control type="label">
+			<description>genre</description>
+			<posy>90</posy>
+			<label>setup your icons</label>
+			<textcolor>FF262728</textcolor>
+			<include>Objects_SettingsSectionMenuButtonSubtitle</include>
+			<visible>Control.HasFocus(2) | ControlGroup(11).HasFocus</visible>
+		</control>
+
+		<control type="button" id="3">
+			<description>Purge</description>
+			<posy>116</posy>
+			<label>31240</label>
+			<include>Objects_SettingsSectionMenuButton</include>
+			<onup>2</onup>
+			<ondown>4</ondown>
+			<onleft>12</onleft>
+			<onright>12</onright>
+			<visible allowhiddenfocus="true">![Control.HasFocus(3) | ControlGroup(12).HasFocus]</visible>
+		</control>
+		<control type="button" id="3">
+			<description>Purge</description>
+			<posy>116</posy>
+			<label>31240</label>
+			<include>Objects_SettingsSectionMenuButtonFocused</include>
+			<onup>2</onup>
+			<ondown>4</ondown>
+			<onleft>12</onleft>
+			<onright>12</onright>
+			<visible>Control.HasFocus(3) | ControlGroup(12).HasFocus</visible>
+		</control>
+		<control type="label">
+			<description>My Weather Sub Unfocused</description>
+			<posy>148</posy>
+			<label>31241</label>
+			<textcolor>FFf5f5f5</textcolor>
+			<include>Objects_SettingsSectionMenuButtonSubtitle</include>
+			<visible>![Control.HasFocus(3) | ControlGroup(12).HasFocus]</visible>
+		</control>
+		<control type="label">
+			<description>My Weather Sub Unfocused</description>
+			<posy>148</posy>
+			<label>31241</label>
+			<textcolor>FF262728</textcolor>
+			<include>Objects_SettingsSectionMenuButtonSubtitle</include>
+			<visible>Control.HasFocus(3) | ControlGroup(12).HasFocus</visible>
+		</control>
+
+
+		<control type="button" id="4">
+			<posy>174</posy>
+			<label>Sub menu</label>
+			<include>Objects_SettingsSectionMenuButton</include>
+			<onup>3</onup>
+			<ondown>1</ondown>
+			<onleft>14</onleft>
+			<onright>14</onright>
+			<onclick>SetFocus(14)</onclick>
+			<visible allowhiddenfocus="true">![Control.HasFocus(4) | ControlGroup(14).HasFocus]</visible>
+		</control>
+		<control type="button" id="4">
+			<posy>174</posy>
+			<label>Sub menu</label>
+			<include>Objects_SettingsSectionMenuButtonFocused</include>
+			<onup>3</onup>
+			<ondown>1</ondown>
+			<onleft>14</onleft>
+			<onright>14</onright>
+			<visible>Control.HasFocus(4) | ControlGroup(14).HasFocus</visible>
+		</control>
+		<control type="label">
+			<description>Sub menu</description>
+			<posy>206</posy>
+			<label>$LOCALIZE[10004]/$LOCALIZE[10020]/plugins</label>
+			<textcolor>FFf5f5f5</textcolor>
+			<include>Objects_SettingsSectionMenuButtonSubtitle</include>
+			<visible>![Control.HasFocus(4) | ControlGroup(14).HasFocus]</visible>
+		</control>
+		<control type="label">
+			<description>Sub menu</description>
+			<posy>206</posy>
+			<label>$LOCALIZE[10004]/$LOCALIZE[10020]/plugins</label>
+			<textcolor>FF262728</textcolor>
+			<include>Objects_SettingsSectionMenuButtonSubtitle</include>
+			<visible>Control.HasFocus(4) | ControlGroup(14).HasFocus</visible>
+		</control>
+	</control>
+
 	
-	<control type="grouplist" id="20">
+
+
+<!-- -->
+
+
+	<control type="grouplist" id="10">
 		<include>Objects_SettingsControlAreaVars</include>
 		<onup>10</onup>
 		<ondown>10</ondown>
-		<onleft>6</onleft>
-		<onright>6</onright>
-		<visible>Control.HasFocus(6) | ControlGroup(20).HasFocus</visible>
-
-		<control type="radiobutton" id="400">
-			<include>Objects_SettingsDefaultRadioButton</include>
-			<label>31260</label>
-			<onclick>Skin.ToggleSetting(notime)</onclick>
-			<selected>!Skin.HasSetting(notime)</selected>
-		</control>
-		
-		
-		
-	</control>
-
-	<control type="grouplist" id="11">
-		<include>Objects_SettingsControlAreaVars</include>
-		<onup>11</onup>
-		<ondown>11</ondown>
-		<onleft>7</onleft>
-		<onright>7</onright>
-		<visible>Control.HasFocus(7) | ControlGroup(11).HasFocus</visible>
-
-<!-- ADD this> >>>>> -->
+		<onleft>1</onleft>
+		<onright>1</onright>
+		<visible>Control.HasFocus(1) | ControlGroup(10).HasFocus</visible>
 		<control type="radiobutton" id="500">
 			<include>Objects_SettingsDefaultRadioButton</include>
 			<label>Weather Backdrop by Current Weather Conditions</label>
 			<onclick>Skin.ToggleSetting(CustomWeatherConditions)</onclick>
 			<selected>Skin.HasSetting(CustomWeatherConditions)</selected>
 		</control>			
-<!-- <<<<< ADD this -->	
-
-		
-		
+		<control type="radiobutton" id="501">
+			<include>Objects_SettingsDefaultRadioButton</include>
+			<label>Home menu slide animation $LOCALIZE[31077]/$LOCALIZE[351]...</label>
+			<onclick>Skin.ToggleSetting(CustomMenuanimation)</onclick>
+			<selected>!Skin.HasSetting(CustomMenuanimation)</selected>
+		</control>
 	</control>
 	
-	<control type="grouplist" id="12">
+	<control type="grouplist" id="11">
 		<include>Objects_SettingsControlAreaVars</include>
-		<onup>12</onup>
-		<ondown>12</ondown>
-		<onleft>8</onleft>
-		<onright>8</onright>
-		<visible>Control.HasFocus(8) | ControlGroup(12).HasFocus</visible>
-
-		<control type="radiobutton" id="600">
-			<include>Objects_SettingsDefaultRadioButton</include>
-			<label>31271</label>
-			<onclick>Skin.ToggleSetting(fademenus)</onclick>
-			<selected>Skin.HasSetting(fademenus)</selected>
-		</control>		
-		
-	</control>
-
-	<control type="grouplist" id="13">
-		<include>Objects_SettingsControlAreaVars</include>
-		<onup>13</onup>
-		<ondown>13</ondown>
-		<onleft>9</onleft>
-		<onright>9</onright>
-		<visible>Control.HasFocus(9) | ControlGroup(13).HasFocus</visible>
-
-	<!-- ADD this >>>>> -->
+		<onup>11</onup>
+		<ondown>11</ondown>
+		<onleft>2</onleft>
+		<onright>2</onright>
+		<visible>Control.HasFocus(2) | ControlGroup(11).HasFocus</visible>
 		<control type="radiobutton" id="700">
 			<include>Objects_SettingsDefaultRadioButton</include>
 			<label>genre Mod on/off</label>
@@ -313,18 +246,15 @@
 			<onclick>Skin.ToggleSetting(genre_fanart_onoff)</onclick>
 			<selected>skin.HasSetting(genre_fanart_onoff)</selected>
 		</control>			
-	<!-- <<<<< ADD this -->
-				
-		
 	</control>
 	
-	<control type="grouplist" id="14">
+	<control type="grouplist" id="12">
 		<include>Objects_SettingsControlAreaVars</include>
-		<onup>14</onup>
-		<ondown>14</ondown>
-		<onleft>10</onleft>
-		<onright>10</onright>
-		<visible>Control.HasFocus(10) | ControlGroup(14).HasFocus</visible>
+		<onup>12</onup>
+		<ondown>12</ondown>
+		<onleft>3</onleft>
+		<onright>3</onright>
+		<visible>Control.HasFocus(3) | ControlGroup(12).HasFocus</visible>
 
 		<control type="radiobutton" id="800">
 			<include>Objects_SettingsDefaultRadioButton</include>
@@ -333,10 +263,413 @@
 			<selected>!Skin.HasSetting(nomenumoviesearch)</selected>
 		</control>		
 		
-	</control>	
+	</control>
+
+
+	<control type="grouplist" id="14">
+		<visible>Control.HasFocus(4) | ControlGroup(14).HasFocus</visible>
+		<include>Objects_SettingsControlAreaVars</include>
+		<onup>14</onup>
+		<ondown>14</ondown>
+		<onleft>4</onleft>
+		<onright>4</onright>
+		<usecontrolcoords>true</usecontrolcoords>
+
+
+	<!-- Settings -->
+		<control type="button" id="9100">
+			<label>$LOCALIZE[10004]</label>
+			<include>homesubmenu_Plugins_Defaultbutton2</include>
+			<selected>Skin.HasSetting(use_animation)</selected>
+			<onclick>Skin.ToggleSetting(use_animation)</onclick>
+			<onclick>Skin.Reset(usescripts_plugins)</onclick>
+		</control>
+		<!-- on/off -->
+		<control type="radiobutton" id="9110">
+			<visible>Skin.HasSetting(use_animation)</visible>
+			<include>Objects_SettingsDefaultRadioButton1</include>
+			<label>Sub Menu $LOCALIZE[31077]/$LOCALIZE[351]...</label>
+			<onclick>Skin.ToggleSetting(CustomMenuSub)</onclick>
+			<selected>!Skin.HasSetting(CustomMenuSub)</selected>
+		</control>			
+
+			
+		<control type="radiobutton" id="9112">
+			<visible>!Skin.HasSetting(CustomMenuSub)</visible>
+			<visible>!Skin.HasSetting(CustomMenuanimation)</visible>
+			<visible>Skin.HasSetting(use_animation)</visible>
+			<include>Objects_SettingsDefaultRadioButton1</include>
+			<label>Sub menu slide animation $LOCALIZE[31077]/$LOCALIZE[351]..</label>
+			<onclick>Skin.ToggleSetting(CustomSubMenuanimation)</onclick>
+			<selected>!Skin.HasSetting(CustomSubMenuanimation)</selected>
+		</control>
+
+	<!-- animation -->
+	<!-- Scripts/Plugins -->
+		<control type="button" id="9102">
+			<visible>!Skin.HasSetting(CustomMenuSub)</visible>
+			<label>$LOCALIZE[10020]/Plugins</label>
+			<include>homesubmenu_Plugins_Defaultbutton2</include>
+			<selected>Skin.HasSetting(usescripts_plugins)</selected>
+			<onclick>Skin.ToggleSetting(usescripts_plugins)</onclick>
+			<onclick>Skin.Reset(use_animation)</onclick>
+		</control>
+
+
+		<!-- Movies -->
+		<control type="button" id="9200">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<label>$LOCALIZE[20342] $LOCALIZE[10020]/Plugins</label>
+			<include>homesubmenu_Plugins_Defaultbutton1</include>
+			<selected>Skin.HasSetting(usemovie)</selected>
+			<onclick>Skin.ToggleSetting(usemovie)</onclick>
+			<onclick>Skin.Reset(usetv)</onclick>
+			<onclick>Skin.Reset(usegames)</onclick>
+			<onclick>Skin.Reset(usemusic)</onclick>
+		</control>
+		<!-- Movies Scripts -->
+		<control type="button" id="9201">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usemovie) + !Skin.HasSetting(moviescript1)</visible>
+			<label>Set Script One</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.SetString(moviescript1name)</onclick>
+			<onclick>Skin.SetFile(moviescript1path,.py,special://XBMC/scripts/)</onclick>
+			<onclick>Skin.SetBool(moviescript1)</onclick>
+		</control>
+		<control type="button" id="9202">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usemovie) + Skin.HasSetting(moviescript1)</visible>
+			<label>Clear Script: [COLOR FF262728]$INFO[Skin.String(moviescript1name)][/COLOR]</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.Reset(moviescript1name)</onclick>
+			<onclick>Skin.Reset(moviescript1path)</onclick>
+			<onclick>Skin.Reset(moviescript1)</onclick>
+		</control>
+		<control type="button" id="9203">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usemovie) + !Skin.HasSetting(moviescript2)</visible>
+			<label>Set Script Two</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.SetString(moviescript2name)</onclick>
+			<onclick>Skin.SetFile(moviescript2path,.py,special://XBMC/scripts/)</onclick>
+			<onclick>Skin.SetBool(moviescript2)</onclick>
+		</control>
+		<control type="button" id="9204">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usemovie) + Skin.HasSetting(moviescript2)</visible>
+			<label>Clear Script: [COLOR FF262728]$INFO[Skin.String(moviescript2name)][/COLOR]</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.Reset(moviescript2name)</onclick>
+			<onclick>Skin.Reset(moviescript2path)</onclick>
+			<onclick>Skin.Reset(moviescript2)</onclick>
+		</control>
+		<!-- Movies Scripts end -->
+		<!-- Movies Plugin -->
+		<control type="button" id="9205">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usemovie) + !Skin.HasSetting(movieplugin1)</visible>
+			<label>Set plugin One</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.SetString(movieplugin1name)</onclick>
+			<onclick>Skin.SetString(movieplugin1path)</onclick>
+			<onclick>Skin.SetBool(movieplugin1)</onclick>
+		</control>
+		<control type="button" id="9206">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usemovie) + Skin.HasSetting(movieplugin1)</visible>
+			<label>Clear plugin: [COLOR FF262728]$INFO[Skin.String(movieplugin1name)][/COLOR]</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.Reset(movieplugin1name)</onclick>
+			<onclick>Skin.Reset(movieplugin1path)</onclick>
+			<onclick>Skin.Reset(movieplugin1)</onclick>
+		</control>
+		<control type="button" id="9207">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usemovie) + !Skin.HasSetting(movieplugin2)</visible>
+			<label>Set plugin Two</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.SetString(movieplugin2name)</onclick>
+			<onclick>Skin.SetString(movieplugin2path)</onclick>
+			<onclick>Skin.SetBool(movieplugin2)</onclick>
+		</control>
+		<control type="button" id="9208">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usemovie) + Skin.HasSetting(movieplugin2)</visible>
+			<label>Clear plugin: [COLOR FF262728]$INFO[Skin.String(movieplugin2name)][/COLOR]</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.Reset(movieplugin2name)</onclick>
+			<onclick>Skin.Reset(movieplugin2path)</onclick>
+			<onclick>Skin.Reset(movieplugin2)</onclick>
+		</control>
+		<!-- Movies Plugin end -->
+		<!-- TV -->
+		<control type="button" id="9211">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<label>$LOCALIZE[20343] $LOCALIZE[10020]/Plugins</label>
+			<include>homesubmenu_Plugins_Defaultbutton1</include>
+			<selected>Skin.HasSetting(usetv)</selected>
+			<onclick>Skin.ToggleSetting(usetv)</onclick>
+			<onclick>Skin.Reset(usemovie)</onclick>
+			<onclick>Skin.Reset(usegames)</onclick>
+			<onclick>Skin.Reset(usemusic)</onclick>
+		</control>
+		<!-- TV Scripts -->
+		<control type="button" id="9212">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usetv) + !Skin.HasSetting(tvscript1)</visible>
+			<label>Set Script One</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.SetString(tvscript1name)</onclick>
+			<onclick>Skin.SetFile(tvscript1path,.py,special://XBMC/scripts/)</onclick>
+			<onclick>Skin.SetBool(tvscript1)</onclick>
+		</control>
+		<control type="button" id="9213">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usetv) + Skin.HasSetting(tvscript1)</visible>
+			<label>Clear Script: [COLOR FF262728]$INFO[Skin.String(tvscript1name)][/COLOR]</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.Reset(tvscript1name)</onclick>
+			<onclick>Skin.Reset(tvscript1path)</onclick>
+			<onclick>Skin.Reset(tvscript1)</onclick>
+		</control>
+		<control type="button" id="9214">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usetv) + !Skin.HasSetting(tvscript2)</visible>
+			<label>Set Script Two</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.SetString(tvscript2name)</onclick>
+			<onclick>Skin.SetFile(tvscript2path,.py,special://XBMC/scripts/)</onclick>
+			<onclick>Skin.SetBool(tvscript2)</onclick>
+		</control>
+		<control type="button" id="9215">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usetv) + Skin.HasSetting(tvscript2)</visible>
+			<label>Clear Script: [COLOR FF262728]$INFO[Skin.String(tvscript2name)][/COLOR]</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.Reset(tvscript2name)</onclick>
+			<onclick>Skin.Reset(tvscript2path)</onclick>
+			<onclick>Skin.Reset(tvscript2)</onclick>
+		</control>
+		<!-- TV Scripts end -->
+		<!-- TV Plugin -->
+		<control type="button" id="9216">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usetv) + !Skin.HasSetting(tvplugin1)</visible>
+			<label>Set plugin One</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.SetString(tvplugin1name)</onclick>
+			<onclick>Skin.SetString(tvplugin1path)</onclick>
+			<onclick>Skin.SetBool(tvplugin1)</onclick>
+		</control>
+		<control type="button" id="9217">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usetv) + Skin.HasSetting(tvplugin1)</visible>
+			<label>Clear plugin: [COLOR FF262728]$INFO[Skin.String(tvplugin1name)][/COLOR]</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.Reset(tvplugin1name)</onclick>
+			<onclick>Skin.Reset(tvplugin1path)</onclick>
+			<onclick>Skin.Reset(tvplugin1)</onclick>
+		</control>
+		<control type="button" id="9218">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usetv) + !Skin.HasSetting(tvplugin2)</visible>
+			<label>Set plugin Two</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.SetString(tvplugin2name)</onclick>
+			<onclick>Skin.SetString(tvplugin2path)</onclick>
+			<onclick>Skin.SetBool(tvplugin2)</onclick>
+		</control>
+		<control type="button" id="9219">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usetv) + Skin.HasSetting(tvplugin2)</visible>
+			<label>Clear plugin: [COLOR FF262728]$INFO[Skin.String(tvplugin2name)][/COLOR]</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.Reset(tvplugin2name)</onclick>
+			<onclick>Skin.Reset(tvplugin2path)</onclick>
+			<onclick>Skin.Reset(tvplugin2)</onclick>
+		</control>
+		<!-- TV Plugin end -->
+		<!-- Games/Apps -->
+		<control type="button" id="9221">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<label>$LOCALIZE[15016] $LOCALIZE[10020]/Plugins</label>
+			<include>homesubmenu_Plugins_Defaultbutton1</include>
+			<selected>Skin.HasSetting(usegames)</selected>
+			<onclick>Skin.ToggleSetting(usegames)</onclick>
+			<onclick>Skin.Reset(usemovie)</onclick>
+			<onclick>Skin.Reset(usetv)</onclick>
+			<onclick>Skin.Reset(usemusic)</onclick>
+		</control>
+		<!-- Games/Apps Scripts -->
+		<control type="button" id="9222">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usegames) + !Skin.HasSetting(gamescript1)</visible>
+			<label>Set Script One</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.SetString(gamescript1name)</onclick>
+			<onclick>Skin.SetFile(gamescript1path,.py,special://XBMC/scripts/)</onclick>
+			<onclick>Skin.SetBool(gamescript1)</onclick>
+		</control>
+		<control type="button" id="9223">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usegames) + Skin.HasSetting(gamescript1)</visible>
+			<label>Clear Script: [COLOR FF262728]$INFO[Skin.String(gamescript1name)][/COLOR]</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.Reset(gamescript1name)</onclick>
+			<onclick>Skin.Reset(gamescript1path)</onclick>
+			<onclick>Skin.Reset(gamescript1)</onclick>
+		</control>
+		<control type="button" id="9224">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usegames) + !Skin.HasSetting(gamescript2)</visible>
+			<label>Set Script Two</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.SetString(gamescript2name)</onclick>
+			<onclick>Skin.SetFile(gamescript2path,.py,special://XBMC/scripts/)</onclick>
+			<onclick>Skin.SetBool(gamescript2)</onclick>
+		</control>
+		<control type="button" id="9225">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usegames) + Skin.HasSetting(gamescript2)</visible>
+			<label>Clear Script: [COLOR FF262728]$INFO[Skin.String(gamescript2name)][/COLOR]</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.Reset(gamescript2name)</onclick>
+			<onclick>Skin.Reset(gamescript2path)</onclick>
+			<onclick>Skin.Reset(gamescript2)</onclick>
+		</control>
+		<!-- Games/Apps Scripts end -->
+		<!-- Games/Apps plugin -->
+		<control type="button" id="9226">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usegames) + !Skin.HasSetting(gamesplugin1)</visible>
+			<label>Set plugin One</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.SetString(gamesplugin1name)</onclick>
+			<onclick>Skin.SetString(gamesplugin1path)</onclick>
+			<onclick>Skin.SetBool(gamesplugin1)</onclick>
+		</control>
+		<control type="button" id="9227">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usegames) + Skin.HasSetting(gamesplugin1)</visible>
+			<label>Clear plugin: [COLOR FF262728]$INFO[Skin.String(gamesplugin1name)][/COLOR]</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.Reset(gamesplugin1name)</onclick>
+			<onclick>Skin.Reset(gamesplugin1path)</onclick>
+			<onclick>Skin.Reset(gamesplugin1)</onclick>
+		</control>
+		<control type="button" id="9228">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usegames) + !Skin.HasSetting(gamesplugin2)</visible>
+			<label>Set plugin Two</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.SetString(gamesplugin2name)</onclick>
+			<onclick>Skin.SetString(gamesplugin2path)</onclick>
+			<onclick>Skin.SetBool(gamesplugin2)</onclick>
+		</control>
+		<control type="button" id="9229">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usegames) + Skin.HasSetting(gamesplugin2)</visible>
+			<label>Clear plugin: [COLOR FF262728]$INFO[Skin.String(gamesplugin2name)][/COLOR]</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.Reset(gamesplugin2name)</onclick>
+			<onclick>Skin.Reset(gamesplugin2path)</onclick>
+			<onclick>Skin.Reset(gamesplugin2)</onclick>
+		</control>
+		<!-- Games/Apps Plugin end -->
+		<!-- Music -->
+		<control type="button" id="9231">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<label>$LOCALIZE[10005] $LOCALIZE[10020]/Plugins</label>
+			<include>homesubmenu_Plugins_Defaultbutton1</include>
+			<selected>Skin.HasSetting(usemusic)</selected>
+			<onclick>Skin.ToggleSetting(usemusic)</onclick>
+			<onclick>Skin.Reset(usemovie)</onclick>
+			<onclick>Skin.Reset(usetv)</onclick>
+			<onclick>Skin.Reset(usegames)</onclick>
+		</control>
+		<!-- Music Scripts -->
+		<control type="button" id="9232">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usemusic) + !Skin.HasSetting(musicscript1)</visible>
+			<label>Set Script One</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.SetString(musicscript1name)</onclick>
+			<onclick>Skin.SetFile(musicscript1path,.py,special://XBMC/scripts/)</onclick>
+			<onclick>Skin.SetBool(musicscript1)</onclick>
+		</control>
+		<control type="button" id="9233">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usemusic) + Skin.HasSetting(musicscript1)</visible>
+			<label>Clear Script: [COLOR FF262728]$INFO[Skin.String(musicscript1name)][/COLOR]</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.Reset(musicscript1name)</onclick>
+			<onclick>Skin.Reset(musicscript1path)</onclick>
+			<onclick>Skin.Reset(musicscript1)</onclick>
+		</control>
+		<control type="button" id="9234">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usemusic) + !Skin.HasSetting(musicscript2)</visible>
+			<label>Set Script Two</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.SetString(musicscript2name)</onclick>
+			<onclick>Skin.SetFile(musicscript2path,.py,special://XBMC/scripts/)</onclick>
+			<onclick>Skin.SetBool(musicscript2)</onclick>
+		</control>
+		<control type="button" id="9235">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usemusic) + Skin.HasSetting(musicscript2)</visible>
+			<label>Clear Script: [COLOR FF262728]$INFO[Skin.String(musicscript2name)][/COLOR]</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.Reset(musicscript2name)</onclick>
+			<onclick>Skin.Reset(musicscript2path)</onclick>
+			<onclick>Skin.Reset(musicscript2)</onclick>
+		</control>
+		<!-- Music Scripts end -->
+		<!-- Music plugin -->
+		<control type="button" id="9336">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usemusic) + !Skin.HasSetting(musicplugin1)</visible>
+			<label>Set plugin One</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.SetString(musicplugin1name)</onclick>
+			<onclick>Skin.SetString(musicplugin1path)</onclick>
+			<onclick>Skin.SetBool(musicplugin1)</onclick>
+		</control>
+		<control type="button" id="9337">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usemusic) + Skin.HasSetting(musicplugin1)</visible>
+			<label>Clear plugin: [COLOR FF262728]$INFO[Skin.String(musicplugin1name)][/COLOR]</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.Reset(musicplugin1name)</onclick>
+			<onclick>Skin.Reset(musicplugin1path)</onclick>
+			<onclick>Skin.Reset(musicplugin1)</onclick>
+		</control>
+		<control type="button" id="9338">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usemusic) + !Skin.HasSetting(musicplugin2)</visible>
+			<label>Set plugin Two</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.SetString(musicplugin2name)</onclick>
+			<onclick>Skin.SetString(musicplugin2path)</onclick>
+			<onclick>Skin.SetBool(musicplugin2)</onclick>
+		</control>
+		<control type="button" id="9339">
+			<visible>Skin.HasSetting(usescripts_plugins)</visible>
+			<visible>Skin.HasSetting(usemusic) + Skin.HasSetting(musicplugin2)</visible>
+			<label>Clear plugin: [COLOR FF262728]$INFO[Skin.String(musicplugin2name)][/COLOR]</label>
+			<include>homesubmenu_Plugins_Defaultbutton</include>
+			<onclick>Skin.Reset(musicplugin2name)</onclick>
+			<onclick>Skin.Reset(musicplugin2path)</onclick>
+			<onclick>Skin.Reset(musicplugin2)</onclick>
+		</control>
+		<!-- Music Plugin end -->
+	<!-- Scripts/Plugins -->
+	</control>
+
 
 	<include>Furniture_SettingsFrontPanel</include>
-	<include>homesubmenu_Plugins</include><!-- <<<<< ADD this -->	
+
 	<include>Background_ContextBlack</include>
 	<include>Furniture_Debug</include>
 	
