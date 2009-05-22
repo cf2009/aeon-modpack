@@ -464,7 +464,7 @@
 				<onclick>SetFocus(300)</onclick>
 				<onleft>300</onleft>
 				<onright>300</onright>
-				<onup>11</onup>
+				<onup>12</onup><!--MODs -->
 				<ondown>7</ondown>
 				<onfocus>Skin.Reset(bmtransit)</onfocus>
 				<visible allowhiddenfocus="true">![Control.HasFocus(6) | Control.HasFocus(300) | Control.HasFocus(92)]</visible>
@@ -477,7 +477,7 @@
 				<onclick>SetFocus(300)</onclick>
 				<onleft>300</onleft>
 				<onright>300</onright>
-				<onup>11</onup>
+				<onup>12</onup><!--MODs -->
 				<ondown>7</ondown>
 				<visible>Control.HasFocus(6) | Control.HasFocus(300) | Control.HasFocus(92)</visible>
 			</control>
@@ -669,7 +669,7 @@
 				<label>31158</label>
 				<include>Objects_SettingsSectionMenuButton</include>
 				<onup>10</onup>
-				<ondown>6</ondown>
+				<ondown>12</ondown><!--MODs -->
 				<onclick>XBMC.ActivateWindow(56)</onclick>
 				<visible allowhiddenfocus="true">!Control.HasFocus(11)</visible>
 			</control>
@@ -679,7 +679,7 @@
 				<label>31158</label>
 				<include>Objects_SettingsSectionMenuButtonFocused</include>
 				<onup>10</onup>
-				<ondown>6</ondown>
+				<ondown>12</ondown><!--MODs -->
 				<visible>Control.HasFocus(11)</visible>
 			</control>
 			<control type="label">
@@ -697,7 +697,46 @@
 				<textcolor>FF262728</textcolor>
 				<include>Objects_SettingsSectionMenuButtonSubtitle</include>
 				<visible>Control.HasFocus(11)</visible>
-			</control>			
+			</control>
+<!--MODs -->
+			<control type="button" id="12">
+				<description>Mods</description>
+				<posy>358</posy>
+				<label>Mods</label>
+				<include>Objects_SettingsSectionMenuButton</include>
+				<onup>11</onup>
+				<ondown>6</ondown>
+				<onclick>XBMC.ActivateWindow(57)</onclick>	
+				<visible allowhiddenfocus="true">!Control.HasFocus(12)</visible>
+			</control>
+			<control type="button">
+				<description>OSD</description>
+				<posy>358</posy>
+				<label>Mods</label>
+				<include>Objects_SettingsSectionMenuButtonFocused</include>
+				<onup>11</onup>
+				<ondown>6</ondown>
+				<onleft>60</onleft>
+				<onright>60</onright>				
+				<visible>Control.HasFocus(12)</visible>
+			</control>
+			<control type="label">
+				<description>OSD Sub Unfocused</description>
+				<posy>390</posy>
+				<label>31129</label>
+				<textcolor>FFf5f5f5</textcolor>
+				<include>Objects_SettingsSectionMenuButtonSubtitle</include>
+				<visible>!Control.HasFocus(12)</visible>
+			</control>
+			<control type="label">
+				<description>OSD Sub Unfocused</description>
+				<posy>390</posy>
+				<label>31129</label>
+				<textcolor>FF262728</textcolor>
+				<include>Objects_SettingsSectionMenuButtonSubtitle</include>
+				<visible>Control.HasFocus(12)</visible>
+			</control>
+<!-- end -->
 		</control>
 	</include>
 
@@ -796,7 +835,7 @@
 				<onclick>SetFocus(400)</onclick>
 				<onleft>400</onleft>
 				<onright>400</onright>
-				<onup>15</onup><!-- <<<<< edit 9 to 15 mod -->
+				<onup>10</onup>
 				<ondown>7</ondown>
 				<visible allowhiddenfocus="true">![Control.HasFocus(6) | ControlGroup(20).HasFocus]</visible>
 			</control>
@@ -808,7 +847,7 @@
 				<onclick>SetFocus(400)</onclick>
 				<onleft>400</onleft>
 				<onright>400</onright>
-				<onup>15</onup><!-- <<<<< edit 10 to 15 mod -->
+				<onup>10</onup>
 				<ondown>7</ondown>
 				<visible>Control.HasFocus(6) | ControlGroup(20).HasFocus</visible>
 			</control>
@@ -945,7 +984,7 @@
 				<label>31244</label>
 				<include>Objects_SettingsSectionMenuButton</include>
 				<onup>9</onup>
-				<ondown>15</ondown><!-- <<<<< edit 11 to 15 mod -->
+				<ondown>11</ondown>
 				<onleft>800</onleft>
 				<onright>800</onright>
 				<visible allowhiddenfocus="true">![Control.HasFocus(10) | ControlGroup(14).HasFocus]</visible>
@@ -956,7 +995,7 @@
 				<label>31244</label>
 				<include>Objects_SettingsSectionMenuButtonFocused</include>
 				<onup>9</onup>
-				<ondown>15</ondown><!-- <<<<< edit 6 to 15 mod -->
+				<ondown>6</ondown>
 				<onleft>40</onleft>
 				<onright>40</onright>
 				<visible>Control.HasFocus(10) | ControlGroup(14).HasFocus</visible>
@@ -977,9 +1016,6 @@
 				<include>Objects_SettingsSectionMenuButtonSubtitle</include>
 				<visible>Control.HasFocus(10) | ControlGroup(14).HasFocus</visible>
 			</control>
-
-			<include>homesubmenu_Plugins_button</include><!-- <<<<< ADD this -->
-
 		</control>
 	</include>
 

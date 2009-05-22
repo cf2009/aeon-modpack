@@ -400,25 +400,92 @@
 
 
 
+<!-- music genre  -->
+
+
+
 <!-- Multiplex End -->
-	<include name="mod_moviegenre_Multiplex1">
+	<include name="mod_musicgenre_Multiplex1">
 		<control type="image">
-			<visible>Container.Content(genres)+!Skin.HasSetting(moviegenre_onoff)</visible>
-			<include>MultiplexIconDimensions</include>
+			<visible>Container.Content(genres)+!Skin.HasSetting(musicgenre_onoff)</visible>
 			
-			<aspectratio scalediffuse="false">scale</aspectratio>
-			<texture diffuse="list/list_movieicon_mask.png">moviegenre/$INFO[ListItem.Label].jpg</texture>
+		<posx>0</posx>
+		<posy>20</posy>
+		<width>130</width>
+		<height>129</height>	
+			
+			<aspectratio scalediffuse="false">stretch</aspectratio>
+			<texture>musicgenre/$INFO[ListItem.Label].jpg</texture>
 		</control>
 	</include>
 
-	<include name="mod_moviegenre_Multiplex2">
+	<include name="mod_musicgenre_Multiplex2">
 		<control type="image">
-			<visible>Container.Content(genres)+!Skin.HasSetting(moviegenre_onoff)</visible>
-			<include>MultiplexIconDimensions</include>
-			<aspectratio scalediffuse="false">scale</aspectratio>
-			<texture diffuse="list/list_movieicon_mask.png">moviegenre/$INFO[ListItem.Label].jpg</texture>
+			<visible>Container.Content(genres)+!Skin.HasSetting(musicgenre_onoff)</visible>
+			
+		<posx>0</posx>
+		<posy>20</posy>
+		<width>130</width>
+		<height>129</height>	
+			<aspectratio scalediffuse="false">stretch</aspectratio>
+			<texture>musicgenre/$INFO[ListItem.Label].jpg</texture>
+			<bordertexture border="-28">multiplex2/multiplex2_iconframe.png</bordertexture>
 			<animation effect="zoom" center="45,75" start="100" end="120" time="400" easing="out" tween="cubic" reversible="false">Focus</animation>					
 		</control>
 	</include>
 <!-- Multiplex End -->
+
+<!-- List -->
+	<include name="mod_musicgenre_list1">
+
+		<control type="image">
+			<visible>Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)+Container.Content(genres)+!Skin.HasSetting(musicgenre_onoff)</visible><!-- <<<<<< Add this -->
+			<posy>165</posy>			
+			<width>346</width>
+			<height>346</height>
+			<fadetime>400</fadetime>
+			<aspectratio scalediffuse="false">stretch</aspectratio>			
+			<texture diffuse="list/list_musicicon_mask.png">musicgenre/$INFO[ListItem.Label].jpg</texture>
+			<bordertexture border="-32">list/list_musicicon_frame.png</bordertexture>
+		</control>
+
+	</include>
+	<include name="mod_musicgenre_list2">
+
+		<control type="image">
+			
+			<visible>Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)+Container.Content(genres)+!Skin.HasSetting(musicgenre_onoff)</visible><!-- <<<<<< Add this -->
+				<posy>513</posy>
+				<width>346</width>
+				<height>346</height>
+				<fadetime>400</fadetime>
+				<aspectratio scalediffuse="false">stretch</aspectratio>			
+				<texture flipy="true" diffuse="list/list_musicicon_flipmask.png">musicgenre/$INFO[ListItem(0).Label].jpg</texture>
+		</control>
+	</include>
+<!-- list End -->
+
+<!-- wall -->
+<include name="mod_musicgenre_wall_1">
+
+	<control type="image">
+		<visible> Window.IsActive(502)+Container.Content(genres)+!Skin.HasSetting(moviegenre_onoff)</visible>
+		<include>WallIconDimensionsSmall</include>
+		<texture diffuse="wall/wall_mask.png">musicgenre/$INFO[ListItem.Label].jpg</texture>
+		<aspectratio scalediffuse="false">scale</aspectratio>
+		<animation effect="zoom" center="51,51" start="100" end="190" time="400" easing="out" tween="cubic" reversible="false">Focus</animation>
+	</control>
+</include>
+<include name="mod_musicgenre_wall_2">
+
+	<control type="image">
+		<visible> Window.IsActive(502)+Container.Content(genres)+!Skin.HasSetting(musicgenre_onoff)</visible>
+		<include>WallIconDimensions</include>
+		<texture diffuse="wall/wall_mask.png">musicgenre/$INFO[ListItem.Label].jpg</texture>
+		<aspectratio scalediffuse="false">scale</aspectratio>
+		<animation effect="zoom" center="66,66" start="100" end="190" time="400" easing="out" tween="cubic" reversible="false">Focus</animation>
+	</control>
+</include>
+<!-- wall End -->
+
 </includes>

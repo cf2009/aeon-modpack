@@ -311,7 +311,6 @@
 				<visible>Window.IsActive(2) | [Window.IsActive(25) + Skin.HasSetting(videotv)] | [Window.IsActive(25) + Skin.HasSetting(videomovies) + Skin.HasSetting(movieslistfull)] | [[Window.IsActive(500) | Window.IsActive(501) | [Window.IsActive(502) + !Container.Content(artists) + !Container.Content(years) + !Container.Content(genres)]] + Skin.HasSetting(musiclistfull)]</visible>			
 				<visible>Control.IsVisible(50)</visible>
 			</control>
-
 		
 <include>list_bar_mod</include><!-- list_bar_mod End -->
 
@@ -374,7 +373,6 @@
 					</control>					
 				</itemlayout>
 				<focusedlayout condition="[Window.IsActive(2) + !Skin.HasSetting(pictureslistfull)] | Window.IsActive(24) | [Window.IsActive(25) + !Skin.HasSetting(movieslistfull) + !Skin.HasSetting(videotv)] | [[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)] + !Skin.HasSetting(musiclistfull)]" height="40">
-
 					<control type="image">
 						<posx>12</posx>
 						<posy>39</posy>
@@ -1227,9 +1225,9 @@
 				<aspectratio scalediffuse="false">stretch</aspectratio>			
 				<texture diffuse="list/list_musicicon_mask.png">$INFO[ListItem.Icon]</texture>
 				<bordertexture border="-32">list/list_musicicon_frame.png</bordertexture>
-				<visible>Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)</visible>
+				<visible>Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)+ [!Container.Content(genres)|Skin.HasSetting(musicgenre_onoff)]</visible><!-- <<<<<< Add this -->
 			</control>
-			
+<include>mod_musicgenre_list1</include> <!--<<<<<< Add this -->
 			<control type="image">
 				<posy>513</posy>
 				<width>346</width>
@@ -1237,9 +1235,9 @@
 				<fadetime>400</fadetime>
 				<aspectratio scalediffuse="false">stretch</aspectratio>			
 				<texture flipy="true" diffuse="list/list_musicicon_flipmask.png">$INFO[ListItem.Icon]</texture>
-				<visible>Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)</visible>
+				<visible>Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)+ [!Container.Content(genres)|Skin.HasSetting(musicgenre_onoff)]</visible><!-- <<<<<< Add this -->
 			</control>
-
+<include>mod_musicgenre_list2</include> <!--<<<<<< Add this -->
 			<control type="image">
 				<posy>165</posy>			
 				<width>346</width>
