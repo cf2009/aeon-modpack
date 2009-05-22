@@ -24,7 +24,7 @@
 
 <include file="Viewtype_Music_Multiplex.xml" /><!-- <<<<<< Add this -->
 <include file="Includes_submenu.xml" /><!-- <<<<<< Add this -->
-<include file="Includes_Customise_sebmenu.xml" /><!-- <<<<<< Add this -->
+<include file="Includes_Customise_submenu.xml" /><!-- <<<<<< Add this -->
 <include file="Includes_genre.xml" /><!-- <<<<<< Add this -->
 
 <!-- Text colours ================================== -->
