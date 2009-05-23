@@ -78,10 +78,19 @@
 				<control type="togglebutton" id="940">
 					<include>Objects_MediaMenuButton</include>				
 					<include>Objects_ListLayoutStrings</include>
-					<usealttexture>Skin.HasSetting(musiclistfull)</usealttexture>
-					<onclick>Skin.SetBool(musiclistfull)</onclick>
-					<altclick>Skin.Reset(musiclistfull)</altclick>
-					<visible>Control.IsVisible(50)</visible>
+					<usealttexture>Skin.HasSetting(musicalbumslistfull)</usealttexture>
+					<onclick>Skin.SetBool(musicalbumslistfull)</onclick>
+					<altclick>Skin.Reset(musicalbumslistfull)</altclick>
+					<visible>Control.IsVisible(50) + Container.Content(albums)</visible>
+				</control>
+
+				<control type="togglebutton" id="945">
+					<include>Objects_MediaMenuButton</include>				
+					<include>Objects_ListLayoutStrings</include>
+					<usealttexture>Skin.HasSetting(musicsongslistfull)</usealttexture>
+					<onclick>Skin.SetBool(musicsongslistfull)</onclick>
+					<altclick>Skin.Reset(musicsongslistfull)</altclick>
+					<visible>Control.IsVisible(50) + Container.Content(songs)</visible>
 				</control>
 
 				<include>Objects_PanelDensityButton</include>
@@ -94,6 +103,8 @@
 					<altclick>Skin.Reset(nomusicfanart)</altclick>
 					<visible>Control.IsVisible(57)</visible>
 				</control>
+				
+				<include condition="!Skin.HasSetting(nolightnightbuttons)">Objects_LightNightButtons</include>
 
 				<include>Objects_WallGridButton</include>
 				

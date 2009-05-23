@@ -99,6 +99,24 @@
 					<visible>Window.IsActive(25) + Skin.HasSetting(videomovies) + Control.IsVisible(50)</visible>
 				</control>
 				
+				<control type="togglebutton" id="943">
+					<include>Objects_MediaMenuButton</include>				
+					<include>Objects_ListLayoutStrings</include>
+					<usealttexture>Skin.HasSetting(tvshowslistfull)</usealttexture>
+					<onclick>Skin.SetBool(tvshowslistfull)</onclick>
+					<altclick>Skin.Reset(tvshowslistfull)</altclick>
+					<visible>[Window.IsActive(25) + Skin.HasSetting(videotv) + Control.IsVisible(50) + Container.Content(tvshows)]</visible>
+				</control>
+				
+				<control type="togglebutton" id="944">
+					<include>Objects_MediaMenuButton</include>				
+					<include>Objects_ListLayoutStrings</include>
+					<usealttexture>Skin.HasSetting(tvepisodeslistfull)</usealttexture>
+					<onclick>Skin.SetBool(tvepisodeslistfull)</onclick>
+					<altclick>Skin.Reset(tvepisodeslistfull)</altclick>
+					<visible>[Window.IsActive(25) + Skin.HasSetting(videotv) + Control.IsVisible(50) + Container.Content(episodes)]</visible>
+				</control>	
+	
 				<include>Objects_PanelDensityButton</include>				
 				
 				<control type="togglebutton" id="901">
@@ -107,7 +125,7 @@
 					<usealttexture>Skin.HasSetting(nomoviefanart)</usealttexture>
 					<onclick>Skin.SetBool(nomoviefanart)</onclick>
 					<altclick>Skin.Reset(nomoviefanart)</altclick>
-					<visible>Window.IsActive(25) + Skin.HasSetting(videomovies) + [Control.IsVisible(57) | Control.IsVisible(52)]</visible>
+					<visible>Window.IsActive(25) + Skin.HasSetting(videomovies) + [Control.IsVisible(50) | Control.IsVisible(57) | Control.IsVisible(52)]</visible>
 				</control>
 				
 				<control type="togglebutton" id="902">
@@ -141,7 +159,7 @@
 					<altlabel>$LOCALIZE[31066]: $LOCALIZE[31078]</altlabel>
 					<usealttexture>Skin.HasSetting(nooverlays)</usealttexture>
 					<onclick>Skin.ToggleSetting(nooverlays)</onclick>
-					<visible>Window.IsActive(25) + Skin.HasSetting(videotv)</visible>
+					<visible>[Window.IsActive(25) + Skin.HasSetting(videotv)] | [Window.IsActive(25) + Skin.HasSetting(videomovies)]</visible>
 				</control>				
 
 				<control type="button" id="8">
