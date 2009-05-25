@@ -228,7 +228,7 @@
 		<visible>Control.HasFocus(2) | ControlGroup(11).HasFocus</visible>
 		<control type="radiobutton" id="700">
 			<include>Objects_SettingsDefaultRadioButton</include>
-			<label>genre Mod on/off</label>
+			<label>Movie genre Icons on/off</label>
 			<onclick>Skin.ToggleSetting(moviegenre_onoff)</onclick>
 			<selected>!Skin.HasSetting(moviegenre_onoff)</selected>
 		</control>
@@ -236,16 +236,22 @@
 		<control type="radiobutton" id="701">
 			<visible>!Skin.HasSetting(moviegenre_onoff)</visible>
 			<include>Objects_SettingsDefaultRadioButton</include>
-			<label>Genre fallback image on/off</label>
+			<label>Movie Genre fallback image on/off</label>
 			<onclick>Skin.ToggleSetting(moviegenre_default_onoff)</onclick>
 			<selected>!Skin.HasSetting(moviegenre_default_onoff)</selected>
 		</control>
 		<control type="radiobutton" id="702">
 			<include>Objects_SettingsDefaultRadioButton</include>
-			<label>Genre fanart image on/off</label>
+			<label>Movie Genre fanart image on/off</label>
 			<onclick>Skin.ToggleSetting(genre_fanart_onoff)</onclick>
 			<selected>skin.HasSetting(genre_fanart_onoff)</selected>
 		</control>			
+		<control type="radiobutton" id="703">
+			<include>Objects_SettingsDefaultRadioButton</include>
+			<label>music genre Icons on/off</label>
+			<onclick>Skin.ToggleSetting(musicgenre_onoff)</onclick>
+			<selected>!Skin.HasSetting(musicgenre_onoff)</selected>
+		</control>
 	</control>
 	
 	<control type="grouplist" id="12">

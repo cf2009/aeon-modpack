@@ -469,7 +469,7 @@
 <include name="mod_musicgenre_wall_1">
 
 	<control type="image">
-		<visible> Window.IsActive(502)+Container.Content(genres)+!Skin.HasSetting(moviegenre_onoff)</visible>
+		<visible> Window.IsActive(502)+Container.Content(genres)+!Skin.HasSetting(musicgenre_onoff)</visible>
 		<include>WallIconDimensionsSmall</include>
 		<texture diffuse="wall/wall_mask.png">musicgenre/$INFO[ListItem.Label].jpg</texture>
 		<aspectratio scalediffuse="false">scale</aspectratio>

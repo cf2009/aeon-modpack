@@ -139,8 +139,52 @@
 				
 				<include condition="!Skin.HasSetting(nomediaflagsbutton)">Objects_FlagsButton</include>
 
-				<include condition="!Skin.HasSetting(nolightnightbuttons)">Objects_LightNightButtons</include>
+			<!--	<include condition="!Skin.HasSetting(nolightnightbuttons)">Objects_LightNightButtons</include>-->
 				
+
+		<control type="togglebutton" id="996">
+			<include>Objects_MediaMenuButton</include>				
+			<label>$LOCALIZE[31042]</label>
+			<altlabel>$LOCALIZE[31043]</altlabel>
+			<usealttexture>Skin.HasSetting(darkshowcase)</usealttexture>
+			<onclick>Skin.ToggleSetting(darkshowcase)</onclick>
+			<onclick>XBMC.ReloadSkin</onclick>
+			<visible>Control.IsVisible(57)+!Skin.HasSetting(nolightnightbuttons)</visible>
+		</control>
+		
+		<control type="togglebutton" id="997">
+			<include>Objects_MediaMenuButton</include>				
+			<label>$LOCALIZE[31042]</label>
+			<altlabel>$LOCALIZE[31043]</altlabel>
+			<usealttexture>Skin.HasSetting(darkmultiplex)</usealttexture>
+			<onclick>Skin.ToggleSetting(darkmultiplex)</onclick>
+			<onclick>XBMC.ReloadSkin</onclick>
+			<visible>Control.IsVisible(52)+!Skin.HasSetting(nolightnightbuttons)</visible>
+		</control>
+		
+		<control type="togglebutton" id="998">
+			<include>Objects_MediaMenuButton</include>				
+			<label>$LOCALIZE[31042]</label>
+			<altlabel>$LOCALIZE[31043]</altlabel>
+			<usealttexture>Skin.HasSetting(darklist)</usealttexture>
+			<onclick>Skin.ToggleSetting(darklist)</onclick>
+			<onclick>XBMC.ReloadSkin</onclick>
+			<visible>Control.IsVisible(50)+!Skin.HasSetting(nolightnightbuttons)</visible>
+		</control>
+
+		<control type="togglebutton" id="999">
+			<include>Objects_MediaMenuButton</include>				
+			<label>$LOCALIZE[31042]</label>
+			<altlabel>$LOCALIZE[31043]</altlabel>
+			<usealttexture>Skin.HasSetting(darklist)</usealttexture>
+			<onclick>Skin.ToggleSetting(darklist)</onclick>
+			<onclick>XBMC.ReloadSkin</onclick>
+			<visible>Control.IsVisible(25)+!Skin.HasSetting(nolightnightbuttons)</visible>
+		</control>		
+
+
+
+
 				<include>Objects_WallGridButton</include>
 				
 				<include>Objects_WallBackdropButton</include>
