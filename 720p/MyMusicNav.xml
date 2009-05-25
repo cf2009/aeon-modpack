@@ -3,6 +3,11 @@
 	<allowoverlay>yes</allowoverlay>
 	<controls>
 
+<!-- <<<<< ADD this -->
+	<control type="group">
+		<visible>[!Skin.HasSetting(musicgenre_fanart_onoff)+Container.Content(genres)] | !Container.Content(genres)</visible>
+<!-- ADD End -->
+
 	<control type="multiimage">
 		<include>Background_SingleImage</include>
 		<imagepath>backdrops/default_music</imagepath>
@@ -31,6 +36,16 @@
 		<texture>$INFO[container.property(fanart_image)]</texture>
 		<include>Animation_FanartFade</include>
 	</control>
+<!-- <<<<< ADD this -->
+	</control>
+	 
+	<control type="image">
+		<include>Background_ImageFolder</include>
+		<fadetime>400</fadetime>
+		<texture>musicgenrefanart/$INFO[ListItem.Label].jpg</texture>
+		<visible>[Skin.HasSetting(musicgenre_fanart_onoff)+Container.Content(genres)]</visible>
+	</control>
+<!-- ADD End -->
 	
 	<include>Furniture_WallBackground</include>	
 

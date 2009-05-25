@@ -436,6 +436,23 @@
 		</control>
 	</control>	
 
+<!--MODs -->
+	<control type="group">
+		<description>Settings Labels - Tier 1: Advanced Options</description>
+		<include>Labels_MainLabelGroup</include>
+		<visible>Control.HasFocus(12)</visible>
+
+		<control type="label">
+			<include>Labels_MainLabelBigVars</include>
+			<label>Mod Pack 0.4.5</label>
+		</control>
+
+		<control type="label">
+			<include>Labels_MainLabelSmallVars</include>
+			<label>31819</label>
+		</control>
+	</control>	
+<!--MODs ens -->
 </include>
 
 	<include name="Settings_ButtonGroupDimensions">
@@ -723,7 +740,7 @@
 			<control type="label">
 				<description>OSD Sub Unfocused</description>
 				<posy>390</posy>
-				<label>31129</label>
+				<label>EXTENDED MOD OPTIONs</label>
 				<textcolor>FFf5f5f5</textcolor>
 				<include>Objects_SettingsSectionMenuButtonSubtitle</include>
 				<visible>!Control.HasFocus(12)</visible>
@@ -731,7 +748,7 @@
 			<control type="label">
 				<description>OSD Sub Unfocused</description>
 				<posy>390</posy>
-				<label>31129</label>
+				<label>EXTENDED MOD OPTIONs</label>
 				<textcolor>FF262728</textcolor>
 				<include>Objects_SettingsSectionMenuButtonSubtitle</include>
 				<visible>Control.HasFocus(12)</visible>

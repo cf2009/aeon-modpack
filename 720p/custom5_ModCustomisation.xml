@@ -13,7 +13,7 @@
 
 	<control type="label">
 		<description>sectiontitle</description>
-		<label>31230</label>
+		<label>Mod Pack 0.4.5</label>
 		<include>Objects_SettingsSectionTitle</include>
 	</control>
 	
@@ -251,6 +251,12 @@
 			<label>music genre Icons on/off</label>
 			<onclick>Skin.ToggleSetting(musicgenre_onoff)</onclick>
 			<selected>!Skin.HasSetting(musicgenre_onoff)</selected>
+		</control>
+		<control type="radiobutton" id="704">
+			<include>Objects_SettingsDefaultRadioButton</include>
+			<label>music Genre fanart image on/off</label>
+			<onclick>Skin.ToggleSetting(musicgenre_fanart_onoff)</onclick>
+			<selected>skin.HasSetting(musicgenre_fanart_onoff)</selected>
 		</control>
 	</control>
 	
