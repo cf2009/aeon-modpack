@@ -119,7 +119,8 @@
         <include>MusicShowcaseThumbDimensions</include>
         <texture diffuse="thumbs/cdcover_mask.png">defaultaudiobig.png</texture>
 		<include condition="Window.IsActive(2)">MusicShowcaseThumbKeep</include>
-		<include condition="!Window.IsActive(2)">MusicShowcaseThumbStretch</include>		
+		<include condition="!Window.IsActive(2)">MusicShowcaseThumbStretch</include>	
+<visible>!Container.Content(genres)|Skin.HasSetting(musicgenre_onoff)</visible><!-- <<<<<< Add this -->	
     </include>
 	
     <include name="MusicShowcaseBlack">
@@ -134,7 +135,7 @@
 			<include>MusicShowcaseThumbReflectionDimensions</include>
 			<colordiffuse>d0FFFFFF</colordiffuse>
 			<texture flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">common/black.png</texture>
-			<animation effect="fade" start="50" end="50" time="0" condition="Skin.HasSetting(darkshowcase)">Conditional</animation>		
+			<animation effect="fade" start="50" end="50" time="0" condition="Skin.HasSetting(darkshowcase)">Conditional</animation>	
 		</control>
     </include>	
 	
@@ -142,7 +143,8 @@
         <include>MusicShowcaseThumbDimensions</include>
         <texture diffuse="thumbs/cdcover_mask.png">defaultaudiobig.png</texture>
 		<include condition="Window.IsActive(2)">MusicShowcaseThumbKeep</include>
-		<include condition="!Window.IsActive(2)">MusicShowcaseThumbStretch</include>	
+		<include condition="!Window.IsActive(2)">MusicShowcaseThumbStretch</include>
+<visible>!Container.Content(genres)|Skin.HasSetting(musicgenre_onoff)</visible><!-- <<<<<< Add this -->	
     </include>
 	
     <include name="MusicShowcaseThumbReflection">
@@ -151,7 +153,8 @@
         <texture flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">defaultaudiobig.png</texture>
 		<include condition="Window.IsActive(2)">MusicShowcaseThumbKeep</include>
 		<include condition="!Window.IsActive(2)">MusicShowcaseThumbStretch</include>	
-		<animation effect="fade" start="50" end="50" time="0" condition="Skin.HasSetting(darkshowcase)">Conditional</animation>		
+		<animation effect="fade" start="50" end="50" time="0" condition="Skin.HasSetting(darkshowcase)">Conditional</animation>	
+<visible>!Container.Content(genres)|Skin.HasSetting(musicgenre_onoff)</visible><!-- <<<<<< Add this -->	
     </include>
 	
     <include name="MusicShowcaseThumbReflectionMain">
@@ -161,6 +164,7 @@
 		<include condition="Window.IsActive(2)">MusicShowcaseThumbKeep</include>
 		<include condition="!Window.IsActive(2)">MusicShowcaseThumbStretch</include>	
 		<animation effect="fade" start="50" end="50" time="0" condition="Skin.HasSetting(darkshowcase)">Conditional</animation>	
+<visible>!Container.Content(genres)|Skin.HasSetting(musicgenre_onoff)</visible><!-- <<<<<< Add this -->
     </include>
 	
 <!-- Music Showcase Variables: Thumb glass overlays -->
@@ -306,6 +310,7 @@
                         <include>MusicShowcaseThumb</include>
                         <info>Container(57).ListItem(-6).Thumb</info>
                     </control>
+<include>genre_Showcase_1</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MusicShowcaseGlassOverlayAngled</include>
@@ -315,6 +320,7 @@
                         <include>MusicShowcaseThumbReflection</include>
                         <info>Container(57).ListItem(-6).Thumb</info>
                     </control>
+<include>genre_Showcase_ref_1</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -326,6 +332,7 @@
                         <include>MusicShowcaseThumb</include>
                         <info>Container(57).ListItem(-5).Thumb</info>
                     </control>
+<include>genre_Showcase_2</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MusicShowcaseGlassOverlayAngled</include>
@@ -335,6 +342,7 @@
                         <include>MusicShowcaseThumbReflection</include>
                         <info>Container(57).ListItem(-5).Thumb</info>
                     </control>
+<include>genre_Showcase_ref_2</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -346,6 +354,7 @@
                         <include>MusicShowcaseThumb</include>
                         <info>Container(57).ListItem(-4).Thumb</info>
                     </control>
+<include>genre_Showcase_3</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MusicShowcaseGlassOverlayAngled</include>
@@ -355,6 +364,7 @@
                         <include>MusicShowcaseThumbReflection</include>
                         <info>Container(57).ListItem(-4).Thumb</info>
                     </control>
+<include>genre_Showcase_ref_3</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -366,6 +376,7 @@
                         <include>MusicShowcaseThumb</include>
                         <info>Container(57).ListItem(-3).Thumb</info>
                     </control>
+<include>genre_Showcase_4</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MusicShowcaseGlassOverlayAngled</include>
@@ -375,6 +386,7 @@
                         <include>MusicShowcaseThumbReflection</include>
                         <info>Container(57).ListItem(-3).Thumb</info>
                     </control>
+<include>genre_Showcase_ref_4</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -386,6 +398,7 @@
                         <include>MusicShowcaseThumb</include>
                         <info>Container(57).ListItem(-2).Thumb</info>
                     </control>
+<include>genre_Showcase_5</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MusicShowcaseGlassOverlayAngled</include>
@@ -395,6 +408,7 @@
                         <include>MusicShowcaseThumbReflection</include>
                         <info>Container(57).ListItem(-2).Thumb</info>
                     </control>
+<include>genre_Showcase_ref_5</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -408,6 +422,7 @@
                         <include>MusicShowcaseThumb</include>
                         <info>Container(57).ListItem(5).Thumb</info>
                     </control>
+<include>genre_Showcase_12</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MusicShowcaseGlassOverlayAngled</include>
@@ -417,6 +432,7 @@
                         <include>MusicShowcaseThumbReflection</include>
                         <info>Container(57).ListItem(5).Thumb</info>
                     </control>
+<include>genre_Showcase_ref_12</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -428,6 +444,7 @@
                         <include>MusicShowcaseThumb</include>
                         <info>Container(57).ListItem(4).Thumb</info>
                     </control>
+<include>genre_Showcase_11</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MusicShowcaseGlassOverlayAngled</include>
@@ -437,6 +454,7 @@
                         <include>MusicShowcaseThumbReflection</include>
                         <info>Container(57).ListItem(4).Thumb</info>
                     </control>
+<include>genre_Showcase_ref_11</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -448,6 +466,7 @@
                         <include>MusicShowcaseThumb</include>
                         <info>Container(57).ListItem(3).Thumb</info>
                     </control>
+<include>genre_Showcase_10</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MusicShowcaseGlassOverlayAngled</include>
@@ -457,6 +476,7 @@
                         <include>MusicShowcaseThumbReflection</include>
                         <info>Container(57).ListItem(3).Thumb</info>
                     </control>
+<include>genre_Showcase_ref_10</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -468,6 +488,7 @@
                         <include>MusicShowcaseThumb</include>
                         <info>Container(57).ListItem(2).Thumb</info>
                     </control>
+<include>genre_Showcase_9</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MusicShowcaseGlassOverlayAngled</include>
@@ -477,6 +498,7 @@
                         <include>MusicShowcaseThumbReflection</include>
                         <info>Container(57).ListItem(2).Thumb</info>
                     </control>
+<include>genre_Showcase_ref_9</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -488,6 +510,7 @@
                         <include>MusicShowcaseThumb</include>
                         <info>Container(57).ListItem(1).Thumb</info>
                     </control>
+<include>genre_Showcase_8</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MusicShowcaseGlassOverlayAngled</include>
@@ -497,6 +520,7 @@
                         <include>MusicShowcaseThumbReflection</include>
                         <info>Container(57).ListItem(1).Thumb</info>
                     </control>
+<include>genre_Showcase_ref_8</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -513,6 +537,7 @@
                             <include>MusicShowcaseThumb</include>
                             <info>Container(57).ListItem(0).Thumb</info>
                         </control>
+<include>genre_Showcase_7</include><!-- <<<<<< Add this -->
                         <control type="image">
                             <description>Glass overlay</description>
                             <include>MusicShowcaseGlassOverlayAngled</include>
@@ -522,6 +547,7 @@
                             <include>MusicShowcaseThumbReflection</include>
                             <info>Container(57).ListItem(0).Thumb</info>
                         </control>
+<include>genre_Showcase_ref_7</include><!-- <<<<<< Add this -->
                     </control>
                 </control>
                 <control type="group">
@@ -534,6 +560,7 @@
                             <include>MusicShowcaseThumb</include>
                             <info>Container(57).ListItem(-1).Thumb</info>
                         </control>
+<include>genre_Showcase_6</include><!-- <<<<<< Add this -->
                         <control type="image">
                             <description>Glass overlay</description>
                             <include>MusicShowcaseGlassOverlayAngled</include>
@@ -543,6 +570,7 @@
                             <include>MusicShowcaseThumbReflection</include>
                             <info>Container(57).ListItem(-1).Thumb</info>
                         </control>
+<include>genre_Showcase_ref_6</include><!-- <<<<<< Add this -->
                     </control>
                 </control>
             </control>
@@ -563,6 +591,7 @@
                         <include>MusicShowcaseThumb</include>
                         <info>Container(57).ListItem(6).Thumb</info>
                     </control>
+<include>genre_Showcase_13</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MusicShowcaseGlassOverlayAngled</include>
@@ -572,6 +601,7 @@
                         <include>MusicShowcaseThumbReflection</include>
                         <info>Container(57).ListItem(6).Thumb</info>
                     </control>
+<include>genre_Showcase_ref_13</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -583,6 +613,7 @@
                         <include>MusicShowcaseThumb</include>
                         <info>Container(57).ListItem(5).Thumb</info>
                     </control>
+<include>genre_Showcase_12</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MusicShowcaseGlassOverlayAngled</include>
@@ -592,6 +623,7 @@
                         <include>MusicShowcaseThumbReflection</include>
                         <info>Container(57).ListItem(5).Thumb</info>
                     </control>
+<include>genre_Showcase_ref_12</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -603,6 +635,7 @@
                         <include>MusicShowcaseThumb</include>
                         <info>Container(57).ListItem(4).Thumb</info>
                     </control>
+<include>genre_Showcase_11</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MusicShowcaseGlassOverlayAngled</include>
@@ -612,6 +645,7 @@
                         <include>MusicShowcaseThumbReflection</include>
                         <info>Container(57).ListItem(4).Thumb</info>
                     </control>
+<include>genre_Showcase_ref_11</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -623,6 +657,7 @@
                         <include>MusicShowcaseThumb</include>
                         <info>Container(57).ListItem(3).Thumb</info>
                     </control>
+<include>genre_Showcase_10</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MusicShowcaseGlassOverlayAngled</include>
@@ -632,6 +667,7 @@
                         <include>MusicShowcaseThumbReflection</include>
                         <info>Container(57).ListItem(3).Thumb</info>
                     </control>
+<include>genre_Showcase_ref_10</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -643,6 +679,7 @@
                         <include>MusicShowcaseThumb</include>
                         <info>Container(57).ListItem(2).Thumb</info>
                     </control>
+<include>genre_Showcase_9</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MusicShowcaseGlassOverlayAngled</include>
@@ -652,6 +689,7 @@
                         <include>MusicShowcaseThumbReflection</include>
                         <info>Container(57).ListItem(2).Thumb</info>
                     </control>
+<include>genre_Showcase_ref_9</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -665,6 +703,7 @@
                         <include>MusicShowcaseThumb</include>
                         <info>Container(57).ListItem(-5).Thumb</info>
                     </control>
+<include>genre_Showcase_2</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MusicShowcaseGlassOverlayAngled</include>
@@ -674,6 +713,7 @@
                         <include>MusicShowcaseThumbReflection</include>
                         <info>Container(57).ListItem(-5).Thumb</info>
                     </control>
+<include>genre_Showcase_ref_2</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -685,6 +725,7 @@
                         <include>MusicShowcaseThumb</include>
                         <info>Container(57).ListItem(-4).Thumb</info>
                     </control>
+<include>genre_Showcase_3</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MusicShowcaseGlassOverlayAngled</include>
@@ -694,6 +735,7 @@
                         <include>MusicShowcaseThumbReflection</include>
                         <info>Container(57).ListItem(-4).Thumb</info>
                     </control>
+<include>genre_Showcase_ref_3</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -705,6 +747,7 @@
                         <include>MusicShowcaseThumb</include>
                         <info>Container(57).ListItem(-3).Thumb</info>
                     </control>
+<include>genre_Showcase_4</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MusicShowcaseGlassOverlayAngled</include>
@@ -714,6 +757,7 @@
                         <include>MusicShowcaseThumbReflection</include>
                         <info>Container(57).ListItem(-3).Thumb</info>
                     </control>
+<include>genre_Showcase_ref_4</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -725,6 +769,7 @@
                         <include>MusicShowcaseThumb</include>
                         <info>Container(57).ListItem(-2).Thumb</info>
                     </control>
+<include>genre_Showcase_5</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MusicShowcaseGlassOverlayAngled</include>
@@ -734,6 +779,7 @@
                         <include>MusicShowcaseThumbReflection</include>
                         <info>Container(57).ListItem(-2).Thumb</info>
                     </control>
+<include>genre_Showcase_ref_5</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -745,6 +791,7 @@
                         <include>MusicShowcaseThumb</include>
                         <info>Container(57).ListItem(-1).Thumb</info>
                     </control>
+<include>genre_Showcase_6</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MusicShowcaseGlassOverlayAngled</include>
@@ -754,6 +801,7 @@
                         <include>MusicShowcaseThumbReflection</include>
                         <info>Container(57).ListItem(-1).Thumb</info>
                     </control>
+<include>genre_Showcase_ref_6</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -770,6 +818,7 @@
                             <include>MusicShowcaseThumb</include>
                             <info>Container(57).ListItem(0).Thumb</info>
                         </control>
+<include>genre_Showcase_7</include><!-- <<<<<< Add this -->
                         <control type="image">
                             <description>Glass overlay</description>
                             <include>MusicShowcaseGlassOverlayAngled</include>
@@ -779,6 +828,7 @@
                             <include>MusicShowcaseThumbReflection</include>
                             <info>Container(57).ListItem(0).Thumb</info>
                         </control>
+<include>genre_Showcase_ref_7</include><!-- <<<<<< Add this -->
                     </control>
                 </control>
                 <control type="group">
@@ -791,6 +841,7 @@
                             <include>MusicShowcaseThumb</include>
                             <info>Container(57).ListItem(1).Thumb</info>
                         </control>
+<include>genre_Showcase_8</include><!-- <<<<<< Add this -->
                         <control type="image">
                             <description>Glass overlay</description>
                             <include>MusicShowcaseGlassOverlayAngled</include>
@@ -800,6 +851,7 @@
                             <include>MusicShowcaseThumbReflection</include>
                             <info>Container(57).ListItem(1).Thumb</info>
                         </control>
+<include>genre_Showcase_ref_8</include><!-- <<<<<< Add this -->
                     </control>
                 </control>
             </control>
@@ -828,6 +880,7 @@
                         <include>MusicShowcaseThumb</include>
                         <info>Container(57).ListItem(-5).Thumb</info>
                     </control>
+<include>genre_Showcase_2</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MusicShowcaseGlassOverlayAngled</include>
@@ -837,6 +890,7 @@
                         <include>MusicShowcaseThumbReflection</include>
                         <info>Container(57).ListItem(-5).Thumb</info>
                     </control>
+<include>genre_Showcase_ref_2</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -852,6 +906,7 @@
                         <include>MusicShowcaseThumb</include>
                         <info>Container(57).ListItem(-4).Thumb</info>
                     </control>
+<include>genre_Showcase_3</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MusicShowcaseGlassOverlayAngled</include>
@@ -861,6 +916,7 @@
                         <include>MusicShowcaseThumbReflection</include>
                         <info>Container(57).ListItem(-4).Thumb</info>
                     </control>
+<include>genre_Showcase_ref_3</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -876,6 +932,7 @@
                         <include>MusicShowcaseThumb</include>
                         <info>Container(57).ListItem(-3).Thumb</info>
                     </control>
+<include>genre_Showcase_4</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MusicShowcaseGlassOverlayAngled</include>
@@ -885,6 +942,7 @@
                         <include>MusicShowcaseThumbReflection</include>
                         <info>Container(57).ListItem(-3).Thumb</info>
                     </control>
+<include>genre_Showcase_ref_4</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -900,6 +958,7 @@
                         <include>MusicShowcaseThumb</include>
                         <info>Container(57).ListItem(-2).Thumb</info>
                     </control>
+<include>genre_Showcase_5</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MusicShowcaseGlassOverlayAngled</include>
@@ -909,6 +968,7 @@
                         <include>MusicShowcaseThumbReflection</include>
                         <info>Container(57).ListItem(-2).Thumb</info>
                     </control>
+<include>genre_Showcase_ref_5</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -924,6 +984,7 @@
                         <include>MusicShowcaseThumb</include>
                         <info>Container(57).ListItem(-1).Thumb</info>
                     </control>
+<include>genre_Showcase_6</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MusicShowcaseGlassOverlayAngled</include>
@@ -933,6 +994,7 @@
                         <include>MusicShowcaseThumbReflection</include>
                         <info>Container(57).ListItem(-1).Thumb</info>
                     </control>
+<include>genre_Showcase_ref_6</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -948,6 +1010,7 @@
                         <include>MusicShowcaseThumb</include>
                         <info>Container(57).ListItem(5).Thumb</info>
                     </control>
+<include>genre_Showcase_12</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MusicShowcaseGlassOverlayAngled</include>
@@ -957,6 +1020,7 @@
                         <include>MusicShowcaseThumbReflection</include>
                         <info>Container(57).ListItem(5).Thumb</info>
                     </control>
+<include>genre_Showcase_ref_12</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -972,6 +1036,7 @@
                         <include>MusicShowcaseThumb</include>
                         <info>Container(57).ListItem(4).Thumb</info>
                     </control>
+<include>genre_Showcase_11</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MusicShowcaseGlassOverlayAngled</include>
@@ -981,6 +1046,7 @@
                         <include>MusicShowcaseThumbReflection</include>
                         <info>Container(57).ListItem(4).Thumb</info>
                     </control>
+<include>genre_Showcase_ref_11</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -996,6 +1062,7 @@
                         <include>MusicShowcaseThumb</include>
                         <info>Container(57).ListItem(3).Thumb</info>
                     </control>
+<include>genre_Showcase_10</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MusicShowcaseGlassOverlayAngled</include>
@@ -1005,6 +1072,7 @@
                         <include>MusicShowcaseThumbReflection</include>
                         <info>Container(57).ListItem(3).Thumb</info>
                     </control>
+<include>genre_Showcase_ref_10</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -1020,6 +1088,7 @@
                         <include>MusicShowcaseThumb</include>
                         <info>Container(57).ListItem(2).Thumb</info>
                     </control>
+<include>genre_Showcase_9</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MusicShowcaseGlassOverlayAngled</include>
@@ -1029,6 +1098,7 @@
                         <include>MusicShowcaseThumbReflection</include>
                         <info>Container(57).ListItem(2).Thumb</info>
                     </control>
+<include>genre_Showcase_ref_9</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -1044,6 +1114,7 @@
                         <include>MusicShowcaseThumb</include>
                         <info>Container(57).ListItem(1).Thumb</info>
                     </control>
+<include>genre_Showcase_8</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MusicShowcaseGlassOverlayAngled</include>
@@ -1052,7 +1123,8 @@
                         <include>MusicShowcaseThumbReflection</include>
                         <info>Container(57).ListItem(1).Thumb</info>
                     </control>
-					<include condition="Window.IsActive(2)">MusicShowcaseBlackReflection</include>						
+					<include condition="Window.IsActive(2)">MusicShowcaseBlackReflection</include>	
+<include>genre_Showcase_ref_8</include><!-- <<<<<< Add this -->					
                 </control>
             </control>
             <control type="group">
@@ -1063,6 +1135,7 @@
                         <include>MusicShowcaseThumbMain</include>
                         <info>Container(57).ListItem(0).Thumb</info>
                     </control>
+<include>genre_Showcase_7</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MusicShowcaseGlassOverlayMain</include>
@@ -1071,7 +1144,8 @@
                         <include>MusicShowcaseThumbReflection</include>
                         <info>Container(57).ListItem(0).Thumb</info>
                     </control>
-					<include condition="Window.IsActive(2)">MusicShowcaseBlackReflection</include>						
+					<include condition="Window.IsActive(2)">MusicShowcaseBlackReflection</include>
+<include>genre_Showcase_ref_7</include><!-- <<<<<< Add this -->
                 </control>
             </control>
         </control>
@@ -1098,7 +1172,7 @@
                         <info>Container(57).ListItem(-7).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)]</visible>
                     </control>
-<include>mod_moviegenre_Showcase15</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_15</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MovieShowcaseGlassOverlayAngled</include>
@@ -1113,7 +1187,7 @@
                         <info>Container(57).ListItem(-7).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase_ref15</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_ref_15</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -1130,7 +1204,7 @@
                         <info>Container(57).ListItem(-6).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase1</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_1</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MovieShowcaseGlassOverlayAngled</include>
@@ -1145,7 +1219,7 @@
                         <info>Container(57).ListItem(-6).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase_ref1</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_ref_1</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -1162,7 +1236,7 @@
                         <info>Container(57).ListItem(-5).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase2</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_2</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MovieShowcaseGlassOverlayAngled</include>
@@ -1177,7 +1251,7 @@
                         <info>Container(57).ListItem(-5).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase_ref2</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_ref_2</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -1194,7 +1268,7 @@
                         <info>Container(57).ListItem(-4).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase3</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_3</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MovieShowcaseGlassOverlayAngled</include>
@@ -1209,7 +1283,7 @@
                         <info>Container(57).ListItem(-4).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase_ref3</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_ref_3</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -1226,7 +1300,7 @@
                         <info>Container(57).ListItem(-3).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase4</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_4</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MovieShowcaseGlassOverlayAngled</include>
@@ -1241,7 +1315,7 @@
                         <info>Container(57).ListItem(-3).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase_ref4</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_ref_4</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -1258,7 +1332,7 @@
                         <info>Container(57).ListItem(-2).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-					<include>mod_moviegenre_Showcase5</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_5</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MovieShowcaseGlassOverlayAngled</include>
@@ -1273,7 +1347,7 @@
                         <info>Container(57).ListItem(-2).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase_ref5</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_ref_5</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -1292,7 +1366,7 @@
                         <info>Container(57).ListItem(6).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase13</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_13</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MovieShowcaseGlassOverlayAngled</include>
@@ -1307,7 +1381,7 @@
                         <info>Container(57).ListItem(6).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase_ref13</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_ref_13</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -1324,7 +1398,7 @@
                         <info>Container(57).ListItem(5).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase12</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_12</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MovieShowcaseGlassOverlayAngled</include>
@@ -1339,7 +1413,7 @@
                         <info>Container(57).ListItem(5).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase_ref12</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_ref_12</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -1356,7 +1430,7 @@
                         <info>Container(57).ListItem(4).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase11</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_11</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MovieShowcaseGlassOverlayAngled</include>
@@ -1371,7 +1445,7 @@
                         <info>Container(57).ListItem(4).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase_ref11</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_ref_11</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -1388,7 +1462,7 @@
                         <info>Container(57).ListItem(3).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase10</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_10</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MovieShowcaseGlassOverlayAngled</include>
@@ -1403,7 +1477,7 @@
                         <info>Container(57).ListItem(3).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase_ref10</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_ref_10</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -1420,7 +1494,7 @@
                         <info>Container(57).ListItem(2).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase9</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_9</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MovieShowcaseGlassOverlayAngled</include>
@@ -1435,7 +1509,7 @@
                         <info>Container(57).ListItem(2).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase_ref9</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_ref_9</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -1452,7 +1526,7 @@
                         <info>Container(57).ListItem(1).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase8</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_8</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MovieShowcaseGlassOverlayAngled</include>
@@ -1467,7 +1541,7 @@
                         <info>Container(57).ListItem(1).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase_ref8</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_ref_8</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -1489,7 +1563,7 @@
                             <info>Container(57).ListItem(0).Thumb</info>
 							<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                         </control>
-<include>mod_moviegenre_Showcase7</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_7</include><!-- <<<<<< Add this -->
                         <control type="image">
                             <description>Glass overlay</description>
                             <include>MovieShowcaseGlassOverlayAngled</include>
@@ -1504,7 +1578,7 @@
                             <info>Container(57).ListItem(0).Thumb</info>
 							<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                         </control>
-<include>mod_moviegenre_Showcase_ref7</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_ref_7</include><!-- <<<<<< Add this -->
                     </control>
                 </control>
                 <control type="group">
@@ -1522,7 +1596,7 @@
                             <info>Container(57).ListItem(-1).Thumb</info>
 							<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                         </control>
-<include>mod_moviegenre_Showcase6</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_6</include><!-- <<<<<< Add this -->
                         <control type="image">
                             <description>Glass overlay</description>
                             <include>MovieShowcaseGlassOverlayAngled</include>
@@ -1537,7 +1611,7 @@
                             <info>Container(57).ListItem(-1).Thumb</info>
 							<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                         </control>
-<include>mod_moviegenre_Showcase_ref6</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_ref_6</include><!-- <<<<<< Add this -->
                     </control>
                 </control>
             </control>
@@ -1563,7 +1637,7 @@
                         <info>Container(57).ListItem(7).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-					<include>mod_moviegenre_Showcase14</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_14</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MovieShowcaseGlassOverlayAngled</include>
@@ -1578,7 +1652,7 @@
                         <info>Container(57).ListItem(7).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase_ref14</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_ref_14</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -1595,7 +1669,7 @@
                         <info>Container(57).ListItem(6).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase13</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_13</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MovieShowcaseGlassOverlayAngled</include>
@@ -1610,7 +1684,7 @@
                         <info>Container(57).ListItem(6).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase_ref13</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_ref_13</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -1627,7 +1701,7 @@
                         <info>Container(57).ListItem(5).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase12</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_12</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MovieShowcaseGlassOverlayAngled</include>
@@ -1642,7 +1716,7 @@
                         <info>Container(57).ListItem(5).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase_ref12</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_ref_12</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -1659,7 +1733,7 @@
                         <info>Container(57).ListItem(4).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase11</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_11</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MovieShowcaseGlassOverlayAngled</include>
@@ -1674,7 +1748,7 @@
                         <info>Container(57).ListItem(4).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase_ref11</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_ref_11</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -1691,7 +1765,7 @@
                         <info>Container(57).ListItem(3).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase10</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_10</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MovieShowcaseGlassOverlayAngled</include>
@@ -1706,7 +1780,7 @@
                         <info>Container(57).ListItem(3).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase_ref10</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_ref_10</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -1723,7 +1797,7 @@
                         <info>Container(57).ListItem(2).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-					<include>mod_moviegenre_Showcase9</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_9</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MovieShowcaseGlassOverlayAngled</include>
@@ -1738,7 +1812,7 @@
                         <info>Container(57).ListItem(2).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase_ref9</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_ref_9</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -1757,7 +1831,7 @@
                         <info>Container(57).ListItem(-6).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase1</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_1</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MovieShowcaseGlassOverlayAngled</include>
@@ -1772,7 +1846,7 @@
                         <info>Container(57).ListItem(-6).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase_ref1</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_ref_1</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -1789,7 +1863,7 @@
                         <info>Container(57).ListItem(-5).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase2</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_2</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MovieShowcaseGlassOverlayAngled</include>
@@ -1804,7 +1878,7 @@
                         <info>Container(57).ListItem(-5).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase_ref2</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_ref_2</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -1821,7 +1895,7 @@
                         <info>Container(57).ListItem(-4).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase3</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_3</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MovieShowcaseGlassOverlayAngled</include>
@@ -1836,7 +1910,7 @@
                         <info>Container(57).ListItem(-4).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase_ref3</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_ref_3</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -1853,7 +1927,7 @@
                         <info>Container(57).ListItem(-3).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase4</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_4</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MovieShowcaseGlassOverlayAngled</include>
@@ -1868,7 +1942,7 @@
                         <info>Container(57).ListItem(-3).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase_ref4</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_ref_4</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -1885,7 +1959,7 @@
                         <info>Container(57).ListItem(-2).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase5</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_5</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MovieShowcaseGlassOverlayAngled</include>
@@ -1900,7 +1974,7 @@
                         <info>Container(57).ListItem(-2).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase_ref5</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_ref_5</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -1917,7 +1991,7 @@
                         <info>Container(57).ListItem(-1).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase6</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_6</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MovieShowcaseGlassOverlayAngled</include>
@@ -1932,7 +2006,7 @@
                         <info>Container(57).ListItem(-1).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase_ref6</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_ref_6</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -1954,7 +2028,7 @@
                             <info>Container(57).ListItem(0).Thumb</info>
 							<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                         </control>
-<include>mod_moviegenre_Showcase7</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_7</include><!-- <<<<<< Add this -->
                         <control type="image">
                             <description>Glass overlay</description>
                             <include>MovieShowcaseGlassOverlay</include>
@@ -1969,7 +2043,7 @@
                             <info>Container(57).ListItem(0).Thumb</info>
 							<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                         </control>
-<include>mod_moviegenre_Showcase_ref7</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_ref_7</include><!-- <<<<<< Add this -->
                     </control>
                 </control>
                 <control type="group">
@@ -1987,7 +2061,7 @@
                             <info>Container(57).ListItem(1).Thumb</info>
 							<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                         </control>
-<include>mod_moviegenre_Showcase8</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_8</include><!-- <<<<<< Add this -->
                         <control type="image">
                             <description>Glass overlay</description>
                             <include>MovieShowcaseGlassOverlay</include>
@@ -2002,7 +2076,7 @@
                             <info>Container(57).ListItem(1).Thumb</info>
 							<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                         </control>
-<include>mod_moviegenre_Showcase_ref8</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_ref_8</include><!-- <<<<<< Add this -->
                     </control>
                 </control>
             </control>
@@ -2036,7 +2110,7 @@
                         <info>Container(57).ListItem(-6).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase1</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_1</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MovieShowcaseGlassOverlayAngled</include>
@@ -2051,7 +2125,7 @@
                         <info>Container(57).ListItem(-6).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase_ref1</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_ref_1</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -2072,7 +2146,7 @@
                         <info>Container(57).ListItem(-5).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase2</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_2</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MovieShowcaseGlassOverlayAngled</include>
@@ -2087,7 +2161,7 @@
                         <info>Container(57).ListItem(-5).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase_ref2</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_ref_2</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -2108,7 +2182,7 @@
                         <info>Container(57).ListItem(-4).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase3</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_3</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MovieShowcaseGlassOverlayAngled</include>
@@ -2123,7 +2197,7 @@
                         <info>Container(57).ListItem(-4).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase_ref3</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_ref_3</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -2144,7 +2218,7 @@
                         <info>Container(57).ListItem(-3).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase4</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_4</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MovieShowcaseGlassOverlayAngled</include>
@@ -2159,7 +2233,7 @@
                         <info>Container(57).ListItem(-3).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase_ref4</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_ref_4</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -2180,7 +2254,7 @@
                         <info>Container(57).ListItem(-2).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase5</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_5</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MovieShowcaseGlassOverlayAngled</include>
@@ -2195,7 +2269,7 @@
                         <info>Container(57).ListItem(-2).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase_ref5</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_ref_5</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -2216,7 +2290,7 @@
                         <info>Container(57).ListItem(-1).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase6</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_6</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MovieShowcaseGlassOverlayAngled</include>
@@ -2231,7 +2305,7 @@
                         <info>Container(57).ListItem(-1).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase_ref6</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_ref_6</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -2252,7 +2326,7 @@
                         <info>Container(57).ListItem(6).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase13</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_13</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MovieShowcaseGlassOverlayAngled</include>
@@ -2267,7 +2341,7 @@
                         <info>Container(57).ListItem(6).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase_ref13</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_ref_13</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -2288,7 +2362,7 @@
                         <info>Container(57).ListItem(5).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase12</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_12</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MovieShowcaseGlassOverlayAngled</include>
@@ -2303,7 +2377,7 @@
                         <info>Container(57).ListItem(5).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase_ref12</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_ref_12</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -2324,7 +2398,7 @@
                         <info>Container(57).ListItem(4).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase11</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_11</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MovieShowcaseGlassOverlayAngled</include>
@@ -2339,7 +2413,7 @@
                         <info>Container(57).ListItem(4).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase_ref11</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_ref_11</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -2360,7 +2434,7 @@
                         <info>Container(57).ListItem(3).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase10</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_10</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MovieShowcaseGlassOverlayAngled</include>
@@ -2375,7 +2449,7 @@
                         <info>Container(57).ListItem(3).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase_ref10</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_ref_10</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -2396,7 +2470,7 @@
                         <info>Container(57).ListItem(2).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase9</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_9</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MovieShowcaseGlassOverlayAngled</include>
@@ -2411,7 +2485,7 @@
                         <info>Container(57).ListItem(2).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase_ref9</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_ref_9</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -2432,7 +2506,7 @@
                         <info>Container(57).ListItem(1).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase8</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_8</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MovieShowcaseGlassOverlayAngled</include>
@@ -2447,7 +2521,7 @@
                         <info>Container(57).ListItem(1).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase_ref8</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_ref_8</include><!-- <<<<<< Add this -->
                 </control>
             </control>
             <control type="group">
@@ -2463,7 +2537,7 @@
                         <info>Container(57).ListItem(0).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase7</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_7</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MovieShowcaseGlassOverlay</include>
@@ -2478,7 +2552,7 @@
                         <info>Container(57).ListItem(0).Thumb</info>
 						<visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
                     </control>
-<include>mod_moviegenre_Showcase_ref7</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_ref_7</include><!-- <<<<<< Add this -->
                 </control>
             </control>
         </control>
@@ -2581,7 +2655,7 @@
                         <info>ListItem.Icon</info>
 						<visible>Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenshowcase) + !Control.IsVisible(6000)</visible>
                     </control>
-<include>mod_moviegenre_Showcase21</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_21</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MovieShowcaseGlassOverlay</include>
@@ -2602,7 +2676,7 @@
                         <info>ListItem.Icon</info>
 						<visible>Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenshowcase) + !Control.IsVisible(6000)</visible>
                     </control>
-<include>mod_moviegenre_Showcase_ref21</include><!-- <<<<<< Add this -->				
+<include>genre_Showcase_ref_21</include><!-- <<<<<< Add this -->				
 				</itemlayout>
                 <focusedlayout height="350" width="196" condition="Window.IsActive(28) | Window.IsActive(24) | [Window.IsActive(25) + !Container.Content(episodes)] | Window.IsActive(1)">
                     <control type="image">
@@ -2619,7 +2693,7 @@
 						<animation effect="zoom" start="100" end="120" center="135,230" time="400" easing="out" reversible="false" tween="cubic">Focus</animation>
 						<animation effect="zoom" start="120" end="100" center="135,230" time="400" easing="out" reversible="false" tween="cubic" condition="!Control.HasFocus(57) + Skin.HasSetting(flattenshowcase)">Unfocus</animation>						
                     </control>
-<include>mod_moviegenre_Showcase20</include><!-- <<<<<< Add this -->
+<include>genre_Showcase_20</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MovieShowcaseGlassOverlay</include>
@@ -2648,7 +2722,7 @@
 						<animation effect="zoom" start="100" end="130" center="135,230" time="400" easing="out" reversible="false" tween="cubic">Focus</animation>
 						<animation effect="zoom" start="120" end="100" center="135,230" time="400" easing="out" reversible="false" tween="cubic" condition="!Control.HasFocus(57) + Skin.HasSetting(flattenshowcase)">Unfocus</animation>						
                     </control>
-<include>mod_moviegenre_Showcase_ref20</include><!-- <<<<<< Add this -->					
+<include>genre_Showcase_ref20</include><!-- <<<<<< Add this -->					
 				</focusedlayout>
                 <itemlayout height="350" width="250" condition="Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502) | Window.IsActive(2) | Window.IsActive(20)">
                     <control type="image">
@@ -2656,6 +2730,7 @@
                         <info>ListItem.Icon</info>
 						<visible>[[Skin.HasSetting(flattenshowcase) + !Control.IsVisible(970)] | Container.Content(episodes)]</visible>
                     </control>
+<include>genre_Showcase_23</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MusicShowcaseGlassOverlay</include>
@@ -2680,6 +2755,8 @@
 						<animation effect="zoom" start="100" end="110" center="135,230" time="400" easing="out" reversible="false" tween="cubic">Focus</animation>
 						<animation effect="zoom" start="110" end="100" center="135,230" time="400" easing="out" reversible="false" tween="cubic" condition="!Control.HasFocus(57) + [Skin.HasSetting(flattenshowcase) | Container.Content(episodes)]">Unfocus</animation>						
                     </control>
+
+<include>genre_Showcase_22</include><!-- <<<<<< Add this -->
                     <control type="image">
                         <description>Glass overlay</description>
                         <include>MusicShowcaseGlassOverlay</include>
