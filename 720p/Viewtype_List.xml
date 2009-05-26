@@ -400,7 +400,7 @@
 						<include>ListLabel_Track</include>
 						<include>listcolornofocus</include>
 						<label>$INFO[ListItem.TrackNumber]</label>
-						<visible>!IsEmpty(ListItem.TrackNumber)+!Container.Content(albums)+!Container.Content(artists)</visible>
+						<visible>!IsEmpty(ListItem.TrackNumber)+!Container.Content(albums)+!Container.Content(artists)+!Container.Content(genres)</visible>
 					</control>
 				<!--playlistfix end-->
 					<control type="label">
@@ -499,14 +499,14 @@
 						<include>listcolornofocus</include>
 						<include>Animation_ButtonFocusFade_fix2</include><!-- list_bar_mod End -->						
 						<label>$INFO[ListItem.TrackNumber]</label>
-						<visible>!IsEmpty(ListItem.TrackNumber)+!Container.Content(albums)+!Container.Content(artists)</visible>
+						<visible>!IsEmpty(ListItem.TrackNumber)+!Container.Content(albums)+!Container.Content(artists)+!Container.Content(genres)</visible>
 					</control>
 					<control type="label">
 						<include>ListLabel_Track</include>
 						<include>listcolorfocus</include>
 						<include>Animation_ButtonFocusFade2</include><!-- list_bar_mod End -->						
 						<label>$INFO[ListItem.TrackNumber]</label>
-						<visible>!IsEmpty(ListItem.TrackNumber)+!Container.Content(albums)+!Container.Content(artists)</visible>
+						<visible>!IsEmpty(ListItem.TrackNumber)+!Container.Content(albums)+!Container.Content(artists)+!Container.Content(genres)</visible>
 					</control>
 					<control type="label">
 						<include>ListLabel_MainSmall</include>

@@ -3,7 +3,7 @@
 	<include name="Music_MultiplexInfoLabel">
 		<posx>0</posx>
 		<posy>0</posy>
-		<width>305</width>
+		<width>505</width>
 		<height>13</height>
 		<font>Font_MultiplexInfoLabel</font>	
 		<textcolor>abFFFFFF</textcolor>
@@ -12,7 +12,7 @@
 	<include name="Music_MultiplexInfoValue">
 		<posx>0</posx>	
 		<posy>17</posy>
-		<width>305</width>		
+		<width>505</width>		
 		<height>13</height>
 		<font>Font_MultiplexInfoValue</font>
 		<textcolor>FFFFFFFF</textcolor>		
@@ -258,11 +258,11 @@
 			</control>
 
 		<!-- ListItem.icon -->		
-			<!--
+
 			<control type="group">
-				<posx>250</posx>
-				<posy>18</posy>
-				
+				<posx>600</posx>
+				<posy>22</posy>
+				<visible>IsEmpty(Container(51).listitem.property(fanart_image))</visible>
 				<control type="image">
 					<posx>0</posx>
 					<posy>0</posy>
@@ -281,14 +281,47 @@
 					<fadetime>400</fadetime>
 					<timeperimage>4000</timeperimage>					
 					<imagepath>$INFO[Container(51).ListItem.icon]</imagepath>
-				</control>			
+				</control>
+			<!-- description -->
+				<control type="image">
+					<posx>355</posx>
+					<posy>0</posy>
+					<width>315</width>
+					<height>351</height>
+					<texture>common/black.png</texture>
+					<colordiffuse>b6FFFFFF</colordiffuse>			
+				</control>
+				<control type="textbox">
+					<visible>!IsEmpty(Container(51).ListItem.Property(description))</visible>
+					<posx>365</posx>
+					<posy>2</posy>
+					<width>305</width>
+					<height>341</height>
+					<font>Font_MultiplexPlot</font>				
+					<label fallback="31425">$INFO[Container(51).ListItem.Property(description)]</label>
+					<textcolor>d0FFFFFF</textcolor>
+					<autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
+				</control>
+				<control type="label">
+					<visible>IsEmpty(Container(51).ListItem.Property(description))</visible>
+					<posx>365</posx>
+					<posy>2</posy>
+					<width>305</width>
+					<height>341</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>Font_MultiplexPlot</font>
+					<textcolor>d0FFFFFF</textcolor>				
+					<label>31425</label>
+				</control>
+			
 			</control>
-			-->
+
 		<!-- Fanart -->	
 			<control type="group">
 				<posx>625</posx>
 				<posy>22</posy>
-
+				<visible>!IsEmpty(Container(51).listitem.property(fanart_image))</visible>
 				<control type="image">
 					<posx>0</posx>
 					<posy>0</posy>
