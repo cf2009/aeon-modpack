@@ -19,7 +19,7 @@
 	</control>
 	 
 	<control type="image">
-		<include>Background_ImageFolder</include>
+		<include>FullscreenDimensions</include>
 		<fadetime>400</fadetime>
 		<texture>genrefanart/$INFO[ListItem.Label].jpg</texture>
 		<visible>[Skin.HasSetting(genre_fanart_onoff)+Container.Content(genres)]</visible>
@@ -44,7 +44,7 @@
 		<include>Conditions_HiddenByInfoPages</include>
 		<include>Furniture_MediaPanel</include>
 		<include>Objects_ShowcaseMenuPanel</include>
-
+		<include>ListFade</include>
 		<include>Viewtype_Wall</include>
 		<include>Furniture_WallTime</include>
 		<include>Furniture_WallRSS</include>		

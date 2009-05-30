@@ -9,16 +9,8 @@
 <!-- ADD End -->
 
 	<control type="multiimage">
-		<include>Background_SingleImage</include>
-		<imagepath>backdrops/default_music</imagepath>
-		<info>Skin.String(CustomMusic)</info>
-		<visible>!Skin.String(CustomMusicFolder)</visible>
-	</control>
-
-	<control type="multiimage">
-		<include>Background_ImageFolder</include>
-		<info>Skin.String(CustomMusicFolder)</info>
-		<visible>Skin.String(CustomMusicFolder)</visible>
+		<include>BackgroundVarsGlobal</include>
+		<include>BackgroundVarsMusic</include>
 	</control>
 
 	<control type="largeimage" id="102">
@@ -40,7 +32,7 @@
 	</control>
 	 
 	<control type="image">
-		<include>Background_ImageFolder</include>
+		<include>FullscreenDimensions</include>
 		<fadetime>400</fadetime>
 		<texture>musicgenrefanart/$INFO[ListItem.Label].jpg</texture>
 		<visible>[Skin.HasSetting(musicgenre_fanart_onoff)+Container.Content(genres)]</visible>

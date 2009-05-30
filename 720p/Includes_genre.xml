@@ -8,9 +8,9 @@
 	</include>
 	<include name="music_ShowcaseThumbDimensions_mod">
 		<posx>18</posx>
-        	<posy>18</posy>
-        	<width>234</width>
-        	<height>234</height>
+		<posy>18</posy>
+		<width>234</width>
+		<height>234</height>
 	</include>
 
 
@@ -255,7 +255,7 @@
 	<include name="genre_Showcase_20">
 		<control type="image">
 			<include>movie_genre_Showcase_image_mod</include>
-        		<texture diffuse="thumbs/movieposter_mask.png">moviegenre/default.jpg</texture>
+			<texture diffuse="thumbs/movieposter_mask.png">moviegenre/default.jpg</texture>
 			<visible>Skin.HasSetting(flattenshowcase) + !Control.IsVisible(6000)+Container.Content(genres)+!Skin.HasSetting(moviegenre_onoff)</visible>
 			<visible>!Skin.HasSetting(moviegenre_default_onoff)</visible>
 			<animation effect="zoom" start="100" end="120" center="135,230" time="400" easing="out" reversible="false" tween="cubic">Focus</animation>
@@ -263,7 +263,7 @@
 		</control>
 		<control type="image">
 			<include>movie_genre_Showcase_image_mod</include>
-	        	<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem.Label].jpg</texture>
+			<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem.Label].jpg</texture>
 			<visible>Skin.HasSetting(flattenshowcase) + !Control.IsVisible(6000)+Container.Content(genres)+!Skin.HasSetting(moviegenre_onoff)</visible>
 			<animation effect="zoom" start="100" end="120" center="135,230" time="400" easing="out" reversible="false" tween="cubic">Focus</animation>
 			<animation effect="zoom" start="120" end="100" center="135,230" time="400" easing="out" reversible="false" tween="cubic" condition="!Control.HasFocus(57) + Skin.HasSetting(flattenshowcase)">Unfocus</animation>
@@ -272,13 +272,13 @@
 	<include name="genre_Showcase_21">
 		<control type="image">
 			<include>movie_genre_Showcase_image_mod</include>
-	        	<texture diffuse="thumbs/movieposter_mask.png">moviegenre/default.jpg</texture>
+			<texture diffuse="thumbs/movieposter_mask.png">moviegenre/default.jpg</texture>
 			<visible>Skin.HasSetting(flattenshowcase) + !Control.IsVisible(6000)+Container.Content(genres)+!Skin.HasSetting(moviegenre_onoff)</visible>
 			<visible>!Skin.HasSetting(moviegenre_default_onoff)</visible>
 		</control>
 		<control type="image">
 			<include>movie_genre_Showcase_image_mod</include>
-	  		<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem.Label].jpg</texture>
+			<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem.Label].jpg</texture>
 			<visible>Skin.HasSetting(flattenshowcase) + !Control.IsVisible(6000)+Container.Content(genres)+!Skin.HasSetting(moviegenre_onoff)</visible>
 		</control>
 	</include>
@@ -286,7 +286,7 @@
 	<include name="genre_Showcase_22">
 		<control type="image">
 			<include>music_genre_Showcase_image_mod</include>
-	        	<texture diffuse="thumbs/cdcover_mask.png">musicgenre/$INFO[ListItem.Label].jpg</texture>
+			<texture diffuse="thumbs/cdcover_mask.png">musicgenre/$INFO[ListItem.Label].jpg</texture>
 			<visible>[Skin.HasSetting(flattenshowcase) + !Control.IsVisible(970)]+Container.Content(genres)+!Skin.HasSetting(musicgenre_onoff)</visible>
 			<animation effect="zoom" start="100" end="110" center="135,230" time="400" easing="out" reversible="false" tween="cubic">Focus</animation>
 			<animation effect="zoom" start="110" end="100" center="135,230" time="400" easing="out" reversible="false" tween="cubic" condition="!Control.HasFocus(57) + [Skin.HasSetting(flattenshowcase) | Container.Content(episodes)]">Unfocus</animation>						
@@ -295,7 +295,7 @@
 	<include name="genre_Showcase_23">
 		<control type="image">
 			<include>music_genre_Showcase_image_mod</include>
-        		<texture diffuse="thumbs/cdcover_mask.png">musicgenre/$INFO[ListItem.Label].jpg</texture>
+			<texture diffuse="thumbs/cdcover_mask.png">musicgenre/$INFO[ListItem.Label].jpg</texture>
 			<visible>[Skin.HasSetting(flattenshowcase) + !Control.IsVisible(970)]+Container.Content(genres)+!Skin.HasSetting(musicgenre_onoff)</visible>
 		</control>
 	</include>
@@ -304,9 +304,9 @@
 <!-- Showcase reflection -->
 	<include name="movie_ShowcaseThumbDimensions_ref_mod">
 		<posx>49</posx>
-        	<posy>260</posy>
-        	<width>173</width>
-        	<height>254</height>
+		<posy>260</posy>
+		<width>173</width>
+		<height>254</height>
 	</include>
 	<include name="music_ShowcaseThumbDimensions_ref_mod">
 		<posx>18</posx>
@@ -512,7 +512,7 @@
 	</include>
 
 
-<include name="mod_moviegenre_Showcase_ref20">
+<include name="genre_Showcase_ref_20">
 	<control type="image">
 		<posx>49</posx>
         	<posy>260</posy>
@@ -539,7 +539,7 @@
 	</control>
 </include>
 
-<include name="mod_moviegenre_Showcase_ref21">
+<include name="genre_Showcase_ref_21">
 	<control type="image">
 		<posx>49</posx>
         	<posy>260</posy>
