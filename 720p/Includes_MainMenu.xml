@@ -175,7 +175,7 @@
 			</item>
 			<item id="10">
 <include condition="Skin.HasSetting(CustomWeatherConditions)">BackgroundVarsMusicWeather2</include><!--Weather Backdrop by Current Weather Conditions -->
-<include condition="Skin.HasSetting(CustomWeatherConditions)">BackgroundVarsMusicWeather</include><!--Weather Backdrop by Current Weather Conditions -->
+<include condition="!Skin.HasSetting(CustomWeatherConditions)">BackgroundVarsMusicWeather</include><!--Weather Backdrop by Current Weather Conditions -->
 				<description>Weather</description>
 				<label>31017</label>
 				<onclick>xbmc.activatewindow(2600)</onclick>
@@ -344,7 +344,7 @@
 				<label>31017</label>
 
 <include condition="Skin.HasSetting(CustomWeatherConditions)">BackgroundVarsMusicWeather2</include><!--Weather Backdrop by Current Weather Conditions -->
-<include condition="Skin.HasSetting(CustomWeatherConditions)">BackgroundVarsMusicWeather</include><!--Weather Backdrop by Current Weather Conditions -->					
+<include condition="!Skin.HasSetting(CustomWeatherConditions)">BackgroundVarsMusicWeather</include><!--Weather Backdrop by Current Weather Conditions -->					
 				<onclick>Skin.SetString(custom,CustomWeather)</onclick>
 				<onclick>SetFocus(92)</onclick>
 				<visible>Skin.HasSetting(weather)</visible>
@@ -526,7 +526,7 @@
 				<description>My Pictures</description>
 				<label>31017</label>
 <include condition="Skin.HasSetting(CustomWeatherConditions)">BackgroundVarsMusicWeather2</include><!--Weather Backdrop by Current Weather Conditions -->
-<include condition="Skin.HasSetting(CustomWeatherConditions)">BackgroundVarsMusicWeather</include><!--Weather Backdrop by Current Weather Conditions -->				
+<include condition="!Skin.HasSetting(CustomWeatherConditions)">BackgroundVarsMusicWeather</include><!--Weather Backdrop by Current Weather Conditions -->				
 				<onclick>Skin.Reset(weather)</onclick>
 				<visible>Skin.HasSetting(weather)</visible>
 			</item>
@@ -534,7 +534,7 @@
 				<description>My Pictures</description>
 				<label2>31017</label2>
 <include condition="Skin.HasSetting(CustomWeatherConditions)">BackgroundVarsMusicWeather2</include><!--Weather Backdrop by Current Weather Conditions -->
-<include condition="Skin.HasSetting(CustomWeatherConditions)">BackgroundVarsMusicWeather</include><!--Weather Backdrop by Current Weather Conditions -->				
+<include condition="!Skin.HasSetting(CustomWeatherConditions)">BackgroundVarsMusicWeather</include><!--Weather Backdrop by Current Weather Conditions -->				
 				<onclick>Skin.SetBool(weather)</onclick>
 				<visible>!Skin.HasSetting(weather)</visible>
 			</item>
