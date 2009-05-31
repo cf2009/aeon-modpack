@@ -45,7 +45,7 @@
     <include name="MovieShowcaseThumb">
         <include>MovieShowcaseThumbDimensions</include>
         <align>center</align>
-        <texture background="true" diffuse="thumbs/movieposter_mask.png">defaultvideobigposter.png</texture>
+        <texture diffuse="thumbs/movieposter_mask.png">defaultvideobigposter.png</texture>
         <aspectratio scalediffuse="false">stretch</aspectratio>
 <visible>!Container.Content(genres)|Skin.HasSetting(moviegenre_onoff)</visible><!-- <<<<<< Add this -->
     </include>
@@ -117,7 +117,7 @@
 
     <include name="MusicShowcaseThumb">
         <include>MusicShowcaseThumbDimensions</include>
-        <texture background="true" diffuse="thumbs/cdcover_mask.png">defaultaudiobig.png</texture>
+        <texture diffuse="thumbs/cdcover_mask.png">defaultaudiobig.png</texture>
 		<include condition="Window.IsActive(2)">MusicShowcaseThumbKeep</include>
 		<include condition="!Window.IsActive(2)">MusicShowcaseThumbStretch</include>	
 <visible>!Container.Content(genres)|Skin.HasSetting(musicgenre_onoff)</visible><!-- <<<<<< Add this -->	

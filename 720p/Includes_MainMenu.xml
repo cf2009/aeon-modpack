@@ -41,13 +41,12 @@
 
 
 <!--Weather Backdrop by Current Weather Conditions -->
-	<include name="BackgroundVarsMusicWeather2">
+	<include name="BackgroundVarsWeather2">
 		<thumb>$INFO[Skin.String(CustomWeatherFolder)]$INFO[Weather.FanartCode]</thumb>		
 	</include>
 
-	<include name="BackgroundVarsMusicWeather">
-		<icon>special://skin/media/backdrops/summer/summer.png</icon>
-		<thumb>$INFO[Skin.String(CustomWeather)]</thumb>
+	<include name="BackgroundVarsWeather">
+		<thumb>special://skin/media/backdrops/summer/summer.png</thumb>
 	</include>
 <!-- End-->
 
@@ -174,8 +173,8 @@
 				<visible>!Skin.HasSetting(novideos)</visible>
 			</item>
 			<item id="10">
-<include condition="Skin.HasSetting(CustomWeatherConditions)">BackgroundVarsMusicWeather2</include><!--Weather Backdrop by Current Weather Conditions -->
-<include condition="!Skin.HasSetting(CustomWeatherConditions)">BackgroundVarsMusicWeather</include><!--Weather Backdrop by Current Weather Conditions -->
+<include condition="Skin.HasSetting(CustomWeatherConditions)">BackgroundVarsWeather2</include><!--Weather Backdrop by Current Weather Conditions -->
+<include condition="!Skin.HasSetting(CustomWeatherConditions)">BackgroundVarsWeather</include><!--Weather Backdrop by Current Weather Conditions -->
 				<description>Weather</description>
 				<label>31017</label>
 				<onclick>xbmc.activatewindow(2600)</onclick>
@@ -343,8 +342,8 @@
 				<description>Weather</description>
 				<label>31017</label>
 
-<include condition="Skin.HasSetting(CustomWeatherConditions)">BackgroundVarsMusicWeather2</include><!--Weather Backdrop by Current Weather Conditions -->
-<include condition="!Skin.HasSetting(CustomWeatherConditions)">BackgroundVarsMusicWeather</include><!--Weather Backdrop by Current Weather Conditions -->					
+<include condition="Skin.HasSetting(CustomWeatherConditions)">BackgroundVarsWeather2</include><!--Weather Backdrop by Current Weather Conditions -->
+<include condition="!Skin.HasSetting(CustomWeatherConditions)">BackgroundVarsWeather</include><!--Weather Backdrop by Current Weather Conditions -->					
 				<onclick>Skin.SetString(custom,CustomWeather)</onclick>
 				<onclick>SetFocus(92)</onclick>
 				<visible>Skin.HasSetting(weather)</visible>
