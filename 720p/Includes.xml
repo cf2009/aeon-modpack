@@ -23,7 +23,6 @@
 <include file="Viewtype_Wall.xml" />
 
 <include file="Viewtype_Music_Multiplex.xml" /><!-- <<<<<< Add this -->
-<include file="Includes_submenu.xml" /><!-- <<<<<< Add this -->
 <include file="Includes_Customise_submenu.xml" /><!-- <<<<<< Add this -->
 <include file="Includes_genre.xml" /><!-- <<<<<< Add this -->
 
