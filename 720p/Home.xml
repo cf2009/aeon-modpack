@@ -40,7 +40,6 @@
 	<include>Objects_WeatherPopup</include>
 	<include>Furniture_Time</include>
 	<include>Furniture_HomeRSS</include>
-	<include>Submenu</include>
 	
 	<control type="group">
 		<posx>0</posx>

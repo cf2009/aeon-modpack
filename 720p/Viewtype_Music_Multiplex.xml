@@ -393,7 +393,7 @@
 			<control type="image" id="304">
 				<width>1280</width>
 				<height>274</height>
-				<texture>multiplex/multiplex_full_base.png</texture>
+				<texture>multiplex2/multiplex_full_base.png</texture>
 			</control>	
 			
 			<control type="image">
@@ -401,7 +401,7 @@
 				<posy>105</posy>
 				<width>1166</width>
 				<height>136</height>
-				<texture>multiplex/multiplex_frame.png</texture>
+				<texture>multiplex2/multiplex_frame.png</texture>
 				<animation effect="slide" start="0,0" end="0,-15" time="400" easing="inout" tween="cubic" condition="Control.HasFocus(60)">Conditional</animation>				
 				<animation effect="fade" start="50" end="50" time="0" condition="!Skin.HasSetting(darkmultiplex)">Conditional</animation>				
 			</control>
@@ -411,7 +411,7 @@
 				<posy>60</posy>
 				<width>19</width>
 				<height>221</height>
-				<texture flipx="true">multiplex/multiplex_arrow.png</texture>
+				<texture flipx="true">multiplex2/multiplex_arrow.png</texture>
 				<visible>Control.IsVisible(51)</visible>
 				<animation effect="slide" start="-100" end="0" delay="800" time="400" easing="out" tween="cubic">WindowOpen</animation>
 				<visible>!Control.IsVisible(105)</visible>
@@ -424,7 +424,7 @@
 				<posy>60</posy>
 				<width>19</width>
 				<height>221</height>
-				<texture>multiplex/multiplex_arrow.png</texture>
+				<texture>multiplex2/multiplex_arrow.png</texture>
 				<visible>Control.IsVisible(51)</visible>
 				<animation effect="slide" start="100" end="0" delay="800" time="400" easing="out" tween="cubic">WindowOpen</animation>
 				<visible>!Control.IsVisible(105)</visible>

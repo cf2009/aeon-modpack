@@ -36,7 +36,11 @@
 		</control>
 	</include>
 	<include name="music_genre_Showcase_default_mod">
-		<!-- NOT WORKING -->
+		<control type="image">
+			<visible>Window.IsActive(502)</visible>
+			<include>music_genre_Showcase_image_mod</include>
+			<texture diffuse="thumbs/cdcover_mask.png">defaultAlbumCover.png</texture>
+		</control>
 	</include>
 
 
