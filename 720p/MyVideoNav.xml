@@ -99,24 +99,6 @@
 					<visible>Window.IsActive(25) + Skin.HasSetting(videomovies) + Control.IsVisible(50)</visible>
 				</control>
 				
-				<control type="togglebutton" id="943">
-					<include>Objects_MediaMenuButton</include>				
-					<include>Objects_ListLayoutStrings</include>
-					<usealttexture>Skin.HasSetting(tvshowslistfull)</usealttexture>
-					<onclick>Skin.SetBool(tvshowslistfull)</onclick>
-					<altclick>Skin.Reset(tvshowslistfull)</altclick>
-					<visible>[Window.IsActive(25) + Skin.HasSetting(videotv) + Control.IsVisible(50) + Container.Content(tvshows)]</visible>
-				</control>
-				
-				<control type="togglebutton" id="944">
-					<include>Objects_MediaMenuButton</include>				
-					<include>Objects_ListLayoutStrings</include>
-					<usealttexture>Skin.HasSetting(tvepisodeslistfull)</usealttexture>
-					<onclick>Skin.SetBool(tvepisodeslistfull)</onclick>
-					<altclick>Skin.Reset(tvepisodeslistfull)</altclick>
-					<visible>[Window.IsActive(25) + Skin.HasSetting(videotv) + Control.IsVisible(50) + Container.Content(episodes)]</visible>
-				</control>	
-	
 				<include>Objects_PanelDensityButton</include>				
 				
 				<control type="togglebutton" id="901">
@@ -227,10 +209,12 @@
 		
 		<include>Viewtype_Showcase</include>
 		<include>Viewtype_List</include>
-		<include>Viewtype_Multiplex</include>		
+		<include condition="!Skin.HasSetting(oldmultiplex)">Viewtype_Multiplex</include>
+		<include condition="Skin.HasSetting(oldmultiplex)">Viewtype_MultiplexOld</include>
 		
 	</control>
 
+	<include condition="Skin.HasSetting(videomovies)">Furniture_ShowcaseMediaFlags</include>	
 	<include>ViewChange</include>
 	<include>Background_ContextBlack</include>
 	<include condition="Skin.HasSetting(debug)">Furniture_Debug</include>
