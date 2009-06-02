@@ -44,10 +44,6 @@
 	<include name="BackgroundVarsWeather2">
 		<thumb>$INFO[Skin.String(CustomWeatherFolder)]$INFO[Weather.FanartCode]</thumb>		
 	</include>
-
-	<include name="BackgroundVarsWeather">
-		<thumb>special://skin/media/backdrops/summer/summer.png</thumb>
-	</include>
 <!-- End-->
 
 
@@ -331,10 +327,9 @@
 				<visible>Skin.HasSetting(scripts)</visible>
 			</item>			
 			<item id="9">
-				<description>Settings</description>
 				<include>BackgroundVarsSettings</include>						
 				<onclick>Skin.SetString(custom,CustomSettings)</onclick>				
-				<onclick>SetFocus(300)</onclick>				
+				<onclick>SetFocus(92)</onclick>				
 				<label>31016</label>
 				<visible>!Skin.HasSetting(nosettings)</visible>
 			</item>
@@ -522,7 +517,6 @@
 				<visible>Skin.HasSetting(novideos)</visible>
 			</item>
 			<item id="10">
-				<description>My Pictures</description>
 				<label>31017</label>
 <include condition="Skin.HasSetting(CustomWeatherConditions)">BackgroundVarsMusicWeather2</include><!--Weather Backdrop by Current Weather Conditions -->
 <include condition="!Skin.HasSetting(CustomWeatherConditions)">BackgroundVarsMusicWeather</include><!--Weather Backdrop by Current Weather Conditions -->				
