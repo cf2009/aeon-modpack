@@ -34,7 +34,7 @@
 				<posx>867</posx>
 				<posy>167</posy>
 				<fadetime>400</fadetime>
-				<texture>$INFO[ListItem.Icon]</texture>
+				<texture background="true">$INFO[ListItem.Icon]</texture>
 				<aspectratio aligny="bottom">keep</aspectratio>
 			</control>
 			<control type="image">
@@ -43,7 +43,7 @@
 				<posx>867</posx>
 				<posy>453</posy>
 				<fadetime>400</fadetime>				
-				<texture flipy="true" diffuse="filebrowser/Thumb_Mask6.png">$INFO[Container(451).ListItem.Thumb]</texture>
+				<texture flipy="true" diffuse="filebrowser/Thumb_Mask6.png" background="true">$INFO[Container(451).ListItem.Thumb]</texture>
 				<aspectratio aligny="top">keep</aspectratio>
 			</control>	
 			
@@ -167,7 +167,7 @@
 						<width>63</width>
 						<height>63</height>
 						<colordiffuse>76FFFFFF</colordiffuse>						
-						<texture diffuse="filebrowser/cdcover_mask.png">$INFO[ListItem.Icon]</texture>
+						<texture background="true" diffuse="filebrowser/cdcover_mask.png">$INFO[ListItem.Icon]</texture>
 						<aspectratio scalediffuse="false">scale</aspectratio>
 					</control>
 					<control type="image">
@@ -486,8 +486,6 @@
 			<onup>451</onup>
 			<ondown>451</ondown>
 			<visible>Window.IsActive(604)</visible>
-			<onclick>Skin.Reset($INFO[Skin.String(customslideshow)])</onclick>
-			<onclick>Skin.Reset($INFO[Skin.String(customsingle)])</onclick>
 			<onclick>Dialog.Close(126)</onclick>
 		</control>
 		

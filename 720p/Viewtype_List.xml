@@ -1,5 +1,17 @@
 <includes>
 
+	<include name="listfade">
+		<control type="image" id="102">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>0</width>
+			<height>0</height>
+			<texture>-</texture>
+			<visible>Control.HasFocus(50) + [!Container(50).OnNext + !Container(50).OnPrevious]</visible>
+			<animation effect="fade" start="0" end="100" time="150" >Visible</animation>
+		</control>
+	</include>
+
 	<include name="ListLabel_Width">
 		<width>520</width>	
 	</include>
@@ -16,9 +28,7 @@
 		<height>41</height>
 		<font>Font_List</font>
 		<aligny>center</aligny>
-		<animation effect="slide" start="60,0" end="60,0" time="0" condition="[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502) | [Window.IsActive(25) + Skin.HasSetting(videotv)]]">Conditional</animation>			
-		<animation effect="slide" start="0,10" end="0,10" time="0" condition="[[Window.IsActive(501) | Window.IsActive(502)] + IsEmpty(ListItem.Artist)] | [Window.IsActive(25) + Skin.HasSetting(videomovies) + !Container.Content(movies)] | [Window.IsActive(2) + IsEmpty(ListItem.PictureDateTime)] | [Container.Content(seasons) + !IsEmpty(ListItem.Episode)] | [Container.Content(episodes) + [[IsEmpty(ListItem.Writer) + !IsEmpty(ListItem.Plot)] | [!IsEmpty(ListItem.Writer) + IsEmpty(ListItem.Plot)]]]">Conditional</animation>				
-		<animation effect="slide" start="0,20" end="0,20" time="0" condition="[Window.IsActive(25) + Skin.HasSetting(videotv) + ![Container.Content(seasons) | Container.Content(episodes) | Container.Content(tvshows)]] | [Container.Content(seasons) + IsEmpty(ListItem.Episode)] | [Container.Content(episodes) + IsEmpty(ListItem.Writer) + IsEmpty(ListItem.Plot)]">Conditional</animation>			
+		<animation effect="slide" start="60,0" end="60,0" time="0" condition="[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502) | [Window.IsActive(25) + Skin.HasSetting(videotv)]]">Conditional</animation>						
 	</include>
 	
 	<include name="ListLabel_MainSmall">
@@ -38,8 +48,7 @@
 		<width>480</width>
 		<height>41</height>
 		<font>Font_List</font>
-		<aligny>center</aligny>
-		<animation effect="slide" start="0,10" end="0,10" time="0" condition="IsEmpty(ListItem.Artist) | Container.Content(artists)">Conditional</animation>		
+		<aligny>center</aligny>		
 	</include>	
 
 	<include name="ListLabel_Sub">
@@ -71,9 +80,7 @@
 		<height>41</height>
 		<font>Font_ListSub</font>
 		<align>left</align>
-		<aligny>center</aligny>
-		<animation effect="slide" start="0,10" end="0,10" time="0" condition="Container.Content(seasons)">Conditional</animation>			
-		<animation effect="slide" start="0,-10" end="0,-10" time="0" condition="Container.Content(episodes) + [[IsEmpty(ListItem.Writer) + !IsEmpty(ListItem.Plot)] | [!IsEmpty(ListItem.Writer) + IsEmpty(ListItem.Plot)]]">Conditional</animation>		
+		<aligny>center</aligny>		
 	</include>	
 	
 	<include name="ListLabel_Main_Playlist">
@@ -104,11 +111,22 @@
 		<align>center</align>
 		<aligny>center</aligny>	
 	</include>
-
+	
 	<include name="ListLabel_DetailSmall">
 		<posx>683</posx>
 		<posy>0</posy>
 		<width>75</width>
+		<height>41</height>
+		<font>Font_ListDetailTV</font>
+		<align>center</align>
+		<aligny>center</aligny>
+		<animation effect="slide" start="-25,0" end="-25,0" time="0" condition="Window.IsActive(2)">Conditional</animation>
+	</include>
+
+	<include name="ListLabel_DetailSmall2">
+		<posx>656</posx>
+		<posy>0</posy>
+		<width>86</width>
 		<height>41</height>
 		<font>Font_ListDetailTV</font>
 		<align>center</align>
@@ -134,8 +152,7 @@
 		<font>Font_ListDetail</font>
 		<align>center</align>
 		<aligny>center</aligny>
-		<animation effect="slide" start="0,-11" end="0,-11" time="0" condition="!Skin.HasSetting(musiclistfull)">Conditional</animation>
-		<animation effect="slide" start="0,10" end="0,10" time="0" condition="Window.IsActive(25) + Skin.HasSetting(videotv)">Conditional</animation>		
+		<animation effect="slide" start="0,-11" end="0,-11" time="0" condition="!Skin.HasSetting(musicalbumslistfull) | !Skin.HasSetting(musicsongslistfull) | !Skin.HasSetting(musiclistfull) | !Skin.HasSetting(tvepisodeslistfull)">Conditional</animation>		
 	</include>	
 
 	<include name="List_Objects">
@@ -185,13 +202,13 @@
 			<animation effect="slide" end="0,521" time="0" condition="Container(50).Row(13)">Conditional</animation>
 
 			<posx>68</posx>
-			<posy>102</posy>
+			<posy>101</posy>
 			<width>743</width>
-			<height>45</height>
+			<height>46</height>
 
 			<texture>list/listpanel_selectbar.png</texture>
 			<visible>Control.IsVisible(50)</visible>
-			<visible>[Window.IsActive(2) + !Skin.HasSetting(pictureslistfull)] | Window.IsActive(1) | Window.IsActive(20) | Window.IsActive(24) | [Window.IsActive(25) + !Skin.HasSetting(movieslistfull) + !Skin.HasSetting(videotv)] | [[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)] + !Skin.HasSetting(musiclistfull)]</visible>
+			<visible>[Window.IsActive(1) | Window.IsActive(20) | Window.IsActive(2) + !Skin.HasSetting(pictureslistfull)] | Window.IsActive(24) | [Window.IsActive(25) + !Container.Content(movies)+ !Container.Content(tvshows)+ !Container.Content(episodes)] | [Window.IsActive(25) + !Skin.HasSetting(movieslistfull) + Container.Content(movies)] | [Window.IsActive(25) + Container.Content(tvshows) + !Skin.HasSetting(tvshowslistfull)] | [Window.IsActive(25) + Container.Content(episodes) + !Skin.HasSetting(tvepisodeslistfull)] | [Window.IsActive(500) | Window.IsActive(501) | [Window.IsActive(502) + !Container.Content(albums)+!Container.Content(songs)] |[Window.IsActive(502) + !Skin.HasSetting(musicalbumslistfull) + Container.Content(albums)] | [Window.IsActive(502) + !Skin.HasSetting(musicsongslistfull) + Container.Content(songs)]]</visible>
 		</control>
 
 		<control type="image">
@@ -206,15 +223,15 @@
 			<animation effect="slide" end="0,520" time="0" condition="Container(50).Row(8)">Conditional</animation>
 
 			<posx>68</posx>
-			<posy>102</posy>
+			<posy>100</posy>
 			<width>743</width>
-			<height>73</height>
+			<height>75</height>
 
 			<texture>list/listpanel_selectbar.png</texture>
 			<visible>Control.IsVisible(50)</visible>
-			<visible>[Window.IsActive(2) + Skin.HasSetting(pictureslistfull)] | [Window.IsActive(25) + Skin.HasSetting(movieslistfull) + !Skin.HasSetting(videotv)] | [[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)] + Skin.HasSetting(musiclistfull)]</visible>
+			<visible>[Window.IsActive(2) + Skin.HasSetting(pictureslistfull)] | [Window.IsActive(25) + Skin.HasSetting(movieslistfull) + Container.Content(movies)] | [Window.IsActive(25) + Skin.HasSetting(tvshowslistfull) + Container.Content(tvshows)] | [Window.IsActive(25) + Container.Content(episodes) + Skin.HasSetting(tvepisodeslistfull)] | [Window.IsActive(502) + Skin.HasSetting(musicalbumslistfull) + Container.Content(albums)] | [Window.IsActive(502) + Skin.HasSetting(musicsongslistfull) + Container.Content(songs)]</visible>
 		</control>
-
+<!--
 		<control type="image">
 			<animation effect="slide" end="0,0" time="0" condition="Container(50).Row(0)">Conditional</animation>
 			<animation effect="slide" end="0,85" time="0" condition="Container(50).Row(1)">Conditional</animation>
@@ -233,7 +250,8 @@
 			<texture>list/listpanel_selectbar.png</texture>
 			<visible>Control.IsVisible(50)</visible>
 			<visible>[Window.IsActive(25) + Skin.HasSetting(videotv)]</visible>
-		</control>	
+		</control>
+-->	
 	</include>
 
 	<include name="Animation_ButtonFocusFade_fix2">
@@ -248,7 +266,20 @@
 
 <!-- list_bar_mod End -->
 
-
+	<include name="WatchedOverlay">
+		<posx>688</posx>
+		<posy>1</posy>
+		<width>80</width>
+		<height>37</height>
+	</include>
+	
+	<include name="WatchedOverlay2">
+		<posx>688</posx>
+		<posy>13</posy>
+		<width>80</width>
+		<height>37</height>
+	</include>
+	
 	<include name="Viewtype_List">
 
 		<control type="image" id="232">
@@ -279,7 +310,16 @@
 				<width>759</width>
 				<height>647</height>
 				<texture>list/listpanel_back.png</texture>
-				<visible>Control.IsVisible(50)</visible>
+				<visible>Skin.HasSetting(darklist) + Control.IsVisible(50)</visible>
+			</control>
+			
+			<control type="image">
+				<posx>60</posx>
+				<posy>73</posy>
+				<width>759</width>
+				<height>647</height>
+				<texture>list/lite/listpanel_back.png</texture>
+				<visible>!Skin.HasSetting(darklist) + Control.IsVisible(50)</visible>
 			</control>
 
 			<control type="image">
@@ -298,17 +338,27 @@
 				<width>44</width>
 				<height>579</height>
 				<texture>list/listpanel_detailwide.png</texture>
-				<visible>[Window.IsActive(25) + Skin.HasSetting(videomovies) + !Skin.HasSetting(movieslistfull)] | [Window.IsActive(25) + Skin.HasSetting(videomovies) + !Skin.HasSetting(movieslistfull)] | [[Window.IsActive(500) | Window.IsActive(501) | [Window.IsActive(502) + !Container.Content(artists) + !Container.Content(years)]] + !Skin.HasSetting(musiclistfull)]</visible>
+				<visible>[Window.IsActive(25) + Skin.HasSetting(videomovies) + !Skin.HasSetting(movieslistfull)] | [Window.IsActive(25) + Container.Content(episodes) + !Skin.HasSetting(tvepisodeslistfull)] | [Window.IsActive(500) | Window.IsActive(501) | [Window.IsActive(502) + !Container.Content(artists) + !Container.Content(years) + !Skin.HasSetting(musicalbumslistfull) + Container.Content(albums)] | [Window.IsActive(502) + !Container.Content(artists) + !Container.Content(years) + !Skin.HasSetting(musicsongslistfull) + Container.Content(songs)]]</visible>
 				<visible>Control.IsVisible(50)</visible>
 			</control>
-			
+		<!--playlistfix-->
+			<control type="image">
+				<posx>722</posx>
+				<posy>82</posy>
+				<width>44</width>
+				<height>579</height>
+				<texture>list/listpanel_detailwide.png</texture>
+				<visible>![Container.Content(movies) | Container.Content(albums) | Container.Content(tvshows)]+!IsEmpty(ListItem.Label2)</visible>
+				<visible>Control.IsVisible(50)</visible>
+			</control>
+		<!--playlistfix end-->
 			<control type="image">
 				<posx>669</posx>
 				<posy>82</posy>
 				<width>97</width>
 				<height>567</height>
 				<texture>list/listpanel_detailwide.png</texture>
-				<visible>Window.IsActive(2) | [Window.IsActive(25) + Skin.HasSetting(videotv)] | [Window.IsActive(25) + Skin.HasSetting(videomovies) + Skin.HasSetting(movieslistfull)] | [[Window.IsActive(500) | Window.IsActive(501) | [Window.IsActive(502) + !Container.Content(artists) + !Container.Content(years) + !Container.Content(genres)]] + Skin.HasSetting(musiclistfull)]</visible>			
+				<visible>Window.IsActive(2) | [Window.IsActive(25) + Skin.HasSetting(videomovies) + Skin.HasSetting(movieslistfull)] | [Window.IsActive(25) + Container.Content(tvshows)] | [Window.IsActive(25) + Container.Content(episodes) + Skin.HasSetting(tvepisodeslistfull)] |[Window.IsActive(502) + !Container.Content(artists) + !Container.Content(years) + !Container.Content(genres) + Skin.HasSetting(musicalbumslistfull) + Container.Content(albums)] | [Window.IsActive(502) + !Container.Content(artists) + !Container.Content(years) + !Container.Content(genres) + Skin.HasSetting(musicsongslistfull) + Container.Content(songs)]</visible>			
 				<visible>Control.IsVisible(50)</visible>
 			</control>
 
@@ -328,53 +378,93 @@
 				<onup>50</onup>
 				<ondown>50</ondown>
 				<visible>![Window.IsActive(25) + Skin.HasSetting(videotv)] | [Window.IsActive(25) + Skin.HasSetting(videotv) + Skin.HasSetting(unlockTVviews)]</visible>
-				<itemlayout condition="[Window.IsActive(2) + !Skin.HasSetting(pictureslistfull)] | Window.IsActive(24) | [Window.IsActive(25) + !Skin.HasSetting(movieslistfull) + !Skin.HasSetting(videotv)] | [[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)] + !Skin.HasSetting(musiclistfull)]" height="40">
+				<itemlayout condition="Window.IsActive(1) | Window.IsActive(20) | [Window.IsActive(2) + !Skin.HasSetting(pictureslistfull)] | Window.IsActive(24) | [Window.IsActive(25) + !Container.Content(movies)+ !Container.Content(tvshows)+ !Container.Content(episodes)] | [Window.IsActive(25) + !Skin.HasSetting(movieslistfull) + Container.Content(movies)] | [Window.IsActive(25) + Container.Content(tvshows) + !Skin.HasSetting(tvshowslistfull)] | [Window.IsActive(25) + Container.Content(episodes) + !Skin.HasSetting(tvepisodeslistfull)] | [Window.IsActive(500) | Window.IsActive(501) | [Window.IsActive(502) + !Container.Content(albums)+!Container.Content(songs)] | [Window.IsActive(502) + !Skin.HasSetting(musicalbumslistfull) + Container.Content(albums)] | [Window.IsActive(502) + !Skin.HasSetting(musicsongslistfull) + Container.Content(songs)]]" height="40">
 					<control type="image">
 						<posx>12</posx>
 						<posy>39</posy>
 						<height>1</height>
 						<width>739</width>
 						<texture>list/listpanel_line.png</texture>
-					</control>			
+						<visible>Skin.HasSetting(darklist)</visible>
+					</control>
+					<control type="image">
+						<posx>12</posx>
+						<posy>39</posy>
+						<height>1</height>
+						<width>739</width>
+						<texture>list/lite/listpanel_line.png</texture>
+						<visible>!Skin.HasSetting(darklist)</visible>
+					</control>
+
+				<!--playlistfix-->
 					<control type="label">
 						<include>ListLabel_Track</include>
 						<include>listcolornofocus</include>
 						<label>$INFO[ListItem.TrackNumber]</label>
-						<visible>[Window.IsActive(500) | Window.IsActive(501) | Container.Content(songs)]</visible>
-					</control>					
+						<visible>!IsEmpty(ListItem.TrackNumber)+!Container.Content(albums)+!Container.Content(artists)+!Container.Content(genres)</visible>
+					</control>
+				<!--playlistfix end-->
+					<control type="label">
+						<include>ListLabel_Track</include>
+						<include>listcolornofocus</include>
+						<label>$INFO[ListItem.Season].$INFO[ListItem.Episode]</label>
+						<visible>Container.Content(episodes)</visible>
+					</control>
+
+
 					<control type="label">
 						<include>ListLabel_MainSmall</include>
 						<include>listcolornofocus</include>
 						<label>$INFO[ListItem.Artist] - $INFO[ListItem.Title]</label>
 						<visible>[Window.IsActive(500) | Window.IsActive(501) | Container.Content(songs)] + !IsEmpty(ListItem.Artist)</visible>
-					</control>					
+					</control>
 					<control type="label">
 						<include>ListLabel_MainSmall</include>
 						<include>listcolornofocus</include>
 						<info>ListItem.Label</info>
-						<visible>[![Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)]] | [[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)] + IsEmpty(ListItem.Artist)] | Container.Content(artists)</visible>
+						<visible>[[[![Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)]] | [[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)] + IsEmpty(ListItem.Artist)] | Container.Content(artists)] + !Container.Content(episodes)] |![Window.IsActive(500) | Window.IsActive(501) | Container.Content(songs)] +!Container.Content(episodes)+!Container.Content(albums)</visible><!--playlistfix-->
+					</control>
+					<control type="label">
+						<include>ListLabel_MainSmall</include>
+						<include>listcolornofocus</include>
+						<info>ListItem.Title</info>
+						<visible>Container.Content(episodes)</visible>
 					</control>
 					<control type="label">
 						<include>ListLabel_MainSmall</include>
 						<include>listcolornofocus</include>
 						<label>$INFO[ListItem.Label2] - $INFO[ListItem.Label]</label>
 						<visible>Container.Content(albums) + !IsEmpty(ListItem.Label2)</visible>
-					</control>					
+					</control>
+
+					
 					<control type="label">
 						<include>ListLabel_DetailSmall</include>
 						<include>detailcolornofocus</include>
 						<label>[UPPERCASE]$INFO[ListItem.Year][/UPPERCASE]</label>
-						<visible>Container.Content(movies)</visible>
+						<visible>Container.Content(movies) | Container.Content(albums)</visible>
 					</control>
 					<control type="label">
 						<include>ListLabel_DetailSmall</include>
 						<include>detailcolornofocus</include>
 						<label>[UPPERCASE]$INFO[ListItem.Label2][/UPPERCASE]</label>
-						<visible>![Container.Content(movies) | Container.Content(albums)]</visible>
+						<visible>![Container.Content(movies) | Container.Content(albums) | Container.Content(tvshows)]</visible>
+					</control>
+					<control type="label">
+						<include>ListLabel_DetailSmall2</include>
+						<include>detailcolornofocus</include>
+						<label>[UPPERCASE]$INFO[ListItem.Label2][/UPPERCASE]</label>
+						<visible>Container.Content(tvshows)</visible>
+					</control>
+					<control type="image">
+						<include>WatchedOverlay</include>
+						<include>detailcolornofocus</include>
+						<info>ListItem.Overlay</info>
+						<visible>!Skin.HasSetting(nooverlays) + !IsEmpty(ListItem.Overlay)</visible>
+						<include>Animation_VisibleChange200</include>
 					</control>					
 				</itemlayout>
-				<focusedlayout condition="[Window.IsActive(2) + !Skin.HasSetting(pictureslistfull)] | Window.IsActive(24) | [Window.IsActive(25) + !Skin.HasSetting(movieslistfull) + !Skin.HasSetting(videotv)] | [[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)] + !Skin.HasSetting(musiclistfull)]" height="40">
-
+				<focusedlayout condition="Window.IsActive(1) | Window.IsActive(20) | [Window.IsActive(2) + !Skin.HasSetting(pictureslistfull)] | Window.IsActive(24) | [Window.IsActive(25) + !Container.Content(movies)+ !Container.Content(tvshows)+ !Container.Content(episodes)] | [Window.IsActive(25) + !Skin.HasSetting(movieslistfull) + Container.Content(movies)] | [Window.IsActive(25) + Container.Content(tvshows) + !Skin.HasSetting(tvshowslistfull)] | [Window.IsActive(25) + Container.Content(episodes) + !Skin.HasSetting(tvepisodeslistfull)] | [Window.IsActive(500) | Window.IsActive(501) | [Window.IsActive(502) + !Container.Content(albums)+!Container.Content(songs)] | [Window.IsActive(502) + !Skin.HasSetting(musicalbumslistfull) + Container.Content(albums)] | [Window.IsActive(502) + !Skin.HasSetting(musicsongslistfull) + Container.Content(songs)]]" height="40">
 					<control type="image">
 						<posx>12</posx>
 						<posy>39</posy>
@@ -383,7 +473,16 @@
 						<texture>list/listpanel_line.png</texture>
 	<include>Animation_ButtonFocusFade_fix2</include><!-- list_bar_mod End -->
 					</control>
-<!-- list_bar_mod End 	
+<!-- list_bar_mod End 
+
+					<control type="image">
+						<posx>12</posx>
+						<posy>39</posy>
+						<height>1</height>
+						<width>739</width>
+						<texture>list/lite/listpanel_line.png</texture>
+						<visible>!Skin.HasSetting(darklist)</visible>
+					</control>	
 					<control type="image">
 						<posx>8</posx>
 						<posy>-5</posy>
@@ -394,6 +493,40 @@
 						<visible>Control.IsVisible(50) | Window.IsActive(106) | Window.IsActive(129) | Window.IsActive(126) | Window.IsActive(601) | Window.IsActive(602) | Window.IsActive(111) | Window.IsActive(2003)</visible>
 					</control>
 -->
+
+				<!--playlistfix-->
+					<control type="label">
+						<include>ListLabel_Track</include>
+						<include>listcolornofocus</include>
+						<include>Animation_ButtonFocusFade_fix2</include><!-- list_bar_mod End -->						
+						<label>$INFO[ListItem.TrackNumber]</label>
+						<visible>!IsEmpty(ListItem.TrackNumber)+!Container.Content(albums)+!Container.Content(artists)+!Container.Content(genres)</visible>
+					</control>
+					<control type="label">
+						<include>ListLabel_Track</include>
+						<include>listcolorfocus</include>
+						<include>Animation_ButtonFocusFade2</include><!-- list_bar_mod End -->						
+						<label>$INFO[ListItem.TrackNumber]</label>
+						<visible>!IsEmpty(ListItem.TrackNumber)+!Container.Content(albums)+!Container.Content(artists)+!Container.Content(genres)</visible>
+					</control>
+					<control type="label">
+						<include>ListLabel_MainSmall</include>
+						<include>listcolornofocus</include>
+						<info>ListItem.Label</info>
+						<include>Animation_ButtonFocusFade_fix2</include><!-- list_bar_mod End -->
+						<visible>[[[![Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)]] | [[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)] + IsEmpty(ListItem.Artist)] | Container.Content(artists)] + !Container.Content(episodes)] |![Window.IsActive(500) | Window.IsActive(501) | Container.Content(songs)] +!Container.Content(episodes)+!Container.Content(albums)</visible>
+					</control>
+					<control type="label">
+						<include>ListLabel_MainSmall</include>
+						<include>listcolorfocus</include>
+						<info>ListItem.Label</info>
+						<include>Animation_ButtonFocusFade2</include><!-- list_bar_mod End -->
+						<visible>[[[![Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)]] | [[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)] + IsEmpty(ListItem.Artist)] | Container.Content(artists)] + !Container.Content(episodes)] |![Window.IsActive(500) | Window.IsActive(501) | Container.Content(songs)] +!Container.Content(episodes)+!Container.Content(albums)</visible>
+					</control>
+
+				<!--playlistfix end-->
+
+
 					<control type="label">
 						<include>ListLabel_MainSmall</include>
 						<include>listcolornofocus</include>
@@ -401,20 +534,22 @@
 						<label>$INFO[ListItem.Artist] - $INFO[ListItem.Title]</label>
 						<visible>[Window.IsActive(500) | Window.IsActive(501) | Container.Content(songs)] + !IsEmpty(ListItem.Artist)</visible>
 					</control>
-				
 					<control type="label">
 						<include>ListLabel_Track</include>
 						<include>listcolornofocus</include>
-						<include>Animation_ButtonFocusFade_fix2</include><!-- list_bar_mod End -->						
-						<label>$INFO[ListItem.TrackNumber]</label>
-						<visible>[Window.IsActive(500) | Window.IsActive(501) | Container.Content(songs)]</visible>
-					</control>						
+						<include>Animation_ButtonFocusFade_fix2</include><!-- list_bar_mod End -->
+						<label>$INFO[ListItem.Season].$INFO[ListItem.Episode]</label>
+						<visible>Container.Content(episodes)</visible>
+					</control>
+					
+
+
 					<control type="label">
 						<include>ListLabel_MainSmall</include>
 						<include>listcolornofocus</include>
-						<info>ListItem.Label</info>
+						<info>ListItem.Title</info>
 						<include>Animation_ButtonFocusFade_fix2</include><!-- list_bar_mod End -->						
-						<visible>[![Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)]] | [[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)] + IsEmpty(ListItem.Artist)] | Container.Content(artists)</visible>
+						<visible>Container.Content(episodes)</visible>
 					</control>
 					<control type="label">
 						<include>ListLabel_MainSmall</include>
@@ -428,14 +563,21 @@
 						<include>detailcolornofocus</include>
 						<include>Animation_ButtonFocusFade_fix2</include><!-- list_bar_mod End -->						
 						<label fallback="-">[UPPERCASE]$INFO[ListItem.Year][/UPPERCASE]</label>				
-						<visible>!Control.IsVisible(76) + Container.Content(movies)</visible>
+						<visible>!Control.IsVisible(76) + Container.Content(movies) | Container.Content(albums)</visible>
 					</control>
 					<control type="label">
 						<include>ListLabel_DetailSmall</include>
 						<include>detailcolornofocus</include>
 						<include>Animation_ButtonFocusFade_fix2</include><!-- list_bar_mod End -->						
 						<label fallback="-">[UPPERCASE]$INFO[ListItem.Label2][/UPPERCASE]</label>				
-						<visible>!Control.IsVisible(76) + ![Container.Content(movies) | Container.Content(albums)]</visible>
+						<visible>!Control.IsVisible(76) + ![Container.Content(movies) | Container.Content(albums) | Container.Content(tvshows)]</visible>
+					</control>
+					<control type="label">
+						<include>ListLabel_DetailSmall2</include>
+						<include>detailcolornofocus</include>
+						<include>Animation_ButtonFocusFade_fix2</include><!-- list_bar_mod End -->
+						<label fallback="-">[UPPERCASE]$INFO[ListItem.Label2][/UPPERCASE]</label>				
+						<visible>!Control.IsVisible(76) + Container.Content(tvshows)</visible>
 					</control>
 
 					<control type="label">
@@ -447,17 +589,18 @@
 					</control>					
 					<control type="label">
 						<include>ListLabel_Track</include>
-						<include>listcolorfocus</include>
-						<include>Animation_ButtonFocusFade2</include><!-- list_bar_mod End -->						
-						<label>$INFO[ListItem.TrackNumber]</label>
-						<visible>[Window.IsActive(500) | Window.IsActive(501) | Container.Content(songs)]</visible>
-					</control>						
+						<include>listcolorfocus</include>				
+						<include>Animation_ButtonFocusFade2</include><!-- list_bar_mod End -->
+						<label>$INFO[ListItem.Season].$INFO[ListItem.Episode]</label>
+						<visible>Container.Content(episodes)</visible>
+					</control>					
+
 					<control type="label">
 						<include>ListLabel_MainSmall</include>
 						<include>listcolorfocus</include>
-						<info>ListItem.Label</info>
+						<info>ListItem.Title</info>
 						<include>Animation_ButtonFocusFade2</include><!-- list_bar_mod End -->						
-						<visible>[![Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)]] | [[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)] + IsEmpty(ListItem.Artist)] | Container.Content(artists)</visible>
+						<visible>Container.Content(episodes)</visible>
 					</control>
 					<control type="label">
 						<include>ListLabel_MainSmall</include>
@@ -471,24 +614,48 @@
 						<include>detailcolorfocus</include>
 						<include>Animation_ButtonFocusFade2</include><!-- list_bar_mod End -->						
 						<label fallback="-">[UPPERCASE]$INFO[ListItem.Year][/UPPERCASE]</label>				
-						<visible>!Control.IsVisible(76) + Container.Content(movies)</visible>
+						<visible>!Control.IsVisible(76) + Container.Content(movies) | Container.Content(albums)</visible>
 					</control>
 					<control type="label">
 						<include>ListLabel_DetailSmall</include>
 						<include>detailcolorfocus</include>
 						<include>Animation_ButtonFocusFade2</include><!-- list_bar_mod End -->						
 						<label fallback="-">[UPPERCASE]$INFO[ListItem.Label2][/UPPERCASE]</label>				
-						<visible>!Control.IsVisible(76) + ![Container.Content(movies) | Container.Content(albums)]</visible>
+						<visible>!Control.IsVisible(76) + ![Container.Content(movies) | Container.Content(albums) | Container.Content(tvshows)]</visible>
+					</control>
+					<control type="label">
+						<include>ListLabel_DetailSmall2</include>
+						<include>detailcolorfocus</include>
+						<include>Animation_ButtonFocusFade2</include><!-- list_bar_mod End -->						
+						<label fallback="-">[UPPERCASE]$INFO[ListItem.Label2][/UPPERCASE]</label>				
+						<visible>!Control.IsVisible(76) + Container.Content(tvshows)</visible>
+					</control>
+					<control type="image">
+						<include>WatchedOverlay</include>
+						<include>detailcolorfocus</include>
+						<colordiffuse>FF585858</colordiffuse>
+						<info>ListItem.Overlay</info>
+						<visible>!Skin.HasSetting(nooverlays) + !IsEmpty(ListItem.Overlay)</visible>
+						<include>Animation_VisibleChange200</include>
 					</control>
 					
 				</focusedlayout>
-				<itemlayout condition="[Window.IsActive(2) + Skin.HasSetting(pictureslistfull)] | [Window.IsActive(25) + Skin.HasSetting(movieslistfull) + !Skin.HasSetting(videotv)] | [[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)] + Skin.HasSetting(musiclistfull)]" height="65">
+				<itemlayout condition="[Window.IsActive(2) + Skin.HasSetting(pictureslistfull)] | [Window.IsActive(25) + Skin.HasSetting(movieslistfull) + Container.Content(movies)] | [Window.IsActive(25) + Skin.HasSetting(tvshowslistfull) + Container.Content(tvshows)] | [Window.IsActive(25) + Container.Content(episodes) + Skin.HasSetting(tvepisodeslistfull)] | [Window.IsActive(502) + Skin.HasSetting(musicalbumslistfull) + Container.Content(albums)] | [Window.IsActive(502) + Skin.HasSetting(musicsongslistfull) + Container.Content(songs)]]" height="65">
 					<control type="image">
 						<posx>12</posx>
 						<posy>64</posy>
 						<height>1</height>
 						<width>739</width>
 						<texture>list/listpanel_line.png</texture>
+						<visible>Skin.HasSetting(darklist)</visible>
+					</control>
+					<control type="image">
+						<posx>12</posx>
+						<posy>64</posy>
+						<height>1</height>
+						<width>739</width>
+						<texture>list/lite/listpanel_line.png</texture>
+						<visible>!Skin.HasSetting(darklist)</visible>
 					</control>
 					<control type="label">
 						<posx>644</posx>
@@ -506,18 +673,55 @@
 						<include>listcolornofocus</include>
 						<label>$INFO[ListItem.TrackNumber]</label>
 						<visible>[Window.IsActive(500) | Window.IsActive(501) | [Window.IsActive(502) + Container.Content(songs)]]</visible>
-					</control>						
+					</control>	
+					<control type="label">
+						<include>ListLabel_Track</include>
+						<include>listcolornofocus</include>
+						<label>$INFO[ListItem.Season].$INFO[ListItem.Episode]</label>
+						<visible>Container.Content(episodes)</visible>
+					</control>					
 					<control type="label">
 						<include>ListLabel_MainMusic</include>
 						<include>listcolornofocus</include>
-						<info>ListItem.Title</info>
-						<visible>[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)]</visible>
+						<info>ListItem.Label</info>
+						<visible>Container.Content(albums)</visible>
 					</control>	
 					<control type="label">
 						<include>ListLabel_Main</include>
 						<include>listcolornofocus</include>
 						<info>ListItem.Label</info>
-						<visible>[![Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)]] | IsEmpty(ListItem.Title)</visible>
+						<visible>[[![Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)]] | !Container.Content(albums) | IsEmpty(ListItem.Title)] + ![Container.Content(songs) | Container.Content(episodes)]</visible>
+					</control>
+					<control type="label">		
+						<posx>45</posx>
+						<posy>0</posy>
+						<width>480</width>
+						<height>41</height>
+						<font>Font_List</font>
+						<aligny>center</aligny>
+						<animation effect="slide" start="60,0" end="60,0" time="0" condition="[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502) | [Window.IsActive(25) + Skin.HasSetting(videotv)]]">Conditional</animation>
+						<include>listcolornofocus</include>
+						<info>ListItem.Title</info>
+						<visible>Container.Content(episodes)</visible>
+					</control>
+					<control type="label">
+						<include>ListLabel_Main</include>
+						<include>listcolornofocus</include>
+						<info>ListItem.Title</info>
+						<visible>Container.Content(songs)</visible>
+					</control>
+					<control type="label">
+						<include>ListLabel_SubTV</include>
+						<include>subcolornofocus</include>	
+						<label>$INFO[ListItem.Episode] $LOCALIZE[31938]</label>
+						<visible>!IsEmpty(ListItem.Episode) + !Container.Content(episodes)</visible>
+					</control>
+					<control type="label">
+						<include>ListLabel_SubTV</include>
+						<include>subcolornofocus</include>	
+						<label>$INFO[ListItem.Plot]</label>
+						<visible>!IsEmpty(ListItem.Plot) + Container.Content(episodes)</visible>
+						<animation effect="slide" start="0,8" end="0,8" time="0" condition="true">Conditional</animation>						
 					</control>
 					<control type="label" id="623">
 						<include>ListLabel_Sub</include>
@@ -541,7 +745,7 @@
 						<include>ListLabel_DetailFull</include>
 						<include>detailcolornofocus</include>
 						<label>[UPPERCASE]$INFO[ListItem.Year][/UPPERCASE]</label>
-						<visible>Container.Content(movies) | Container.Content(albums)</visible>
+						<visible>Container.Content(movies) | Container.Content(albums) | Container.Content(tvshows)</visible>
 					</control>
 					<control type="label">
 						<include>ListLabel_DetailFull</include>
@@ -581,17 +785,33 @@
 						<colordiffuse>dcbdbdbd</colordiffuse>
 						<visible>![Container.Content(artists) | Container.Content(years) | Container.Content(genres)]</visible>
 					</control>
+					<control type="image">
+						<include>WatchedOverlay2</include>
+						<include>detailcolornofocus</include>
+						<info>ListItem.Overlay</info>
+						<visible>!Skin.HasSetting(nooverlays) + !IsEmpty(ListItem.Overlay)</visible>
+						<include>Animation_VisibleChange200</include>
+					</control>
 				</itemlayout>
-				<focusedlayout condition="[Window.IsActive(2) + Skin.HasSetting(pictureslistfull)] | [Window.IsActive(25) + Skin.HasSetting(movieslistfull) + !Skin.HasSetting(videotv)] | [[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)] + Skin.HasSetting(musiclistfull)]" height="65">
+				<focusedlayout condition="[Window.IsActive(2) + Skin.HasSetting(pictureslistfull)] | [Window.IsActive(25) + Skin.HasSetting(movieslistfull)] | [Window.IsActive(25) + Container.Content(tvshows) + Skin.HasSetting(tvshowslistfull)] | [Window.IsActive(25) + Container.Content(episodes) + Skin.HasSetting(tvepisodeslistfull)] |[Window.IsActive(502) + Skin.HasSetting(musicalbumslistfull) + Container.Content(albums)] | [Window.IsActive(502) + Skin.HasSetting(musicsongslistfull) + Container.Content(songs)]]" height="65">
 					<control type="image">
 						<posx>12</posx>
 						<posy>64</posy>
 						<height>1</height>
 						<width>739</width>
 						<texture>list/listpanel_line.png</texture>
+						<visible>Skin.HasSetting(darklist)</visible>
 <include>Animation_ButtonFocusFade_fix2</include><!-- list_bar_mod End -->
 					</control>
 <!-- list_bar_mod End 
+					<control type="image">
+						<posx>12</posx>
+						<posy>64</posy>
+						<height>1</height>
+						<width>739</width>
+						<texture>list/lite/listpanel_line.png</texture>
+						<visible>!Skin.HasSetting(darklist)</visible>
+					</control>
 					<control type="image">
 						<posx>8</posx>
 						<posy>-5</posy>
@@ -618,21 +838,63 @@
 						<include>listcolornofocus</include>
 						<label>$INFO[ListItem.TrackNumber]</label>
 						<visible>[Window.IsActive(500) | Window.IsActive(501) | [Window.IsActive(502) + Container.Content(songs)]]</visible>
-						<include>Animation_ButtonFocusFade_fix2</include><!-- list_bar_mod End -->						
-					</control>						
+						<include>Animation_ButtonFocusFade_fix2</include><!-- list_bar_mod End -->							
+					</control>
+					<control type="label">
+						<include>ListLabel_Track</include>
+						<include>listcolornofocus</include>
+						<label>$INFO[ListItem.Season].$INFO[ListItem.Episode]</label>
+						<visible>Container.Content(episodes)</visible>
+						<include>Animation_ButtonFocusFade_fix2</include><!-- list_bar_mod End -->
+					</control>					
 					<control type="label">
 						<include>ListLabel_MainMusic</include>
 						<include>listcolornofocus</include>
-						<info>ListItem.Title</info>
-						<visible>[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)]</visible>
+						<info>ListItem.Label</info>
+						<visible>Container.Content(albums)</visible>
 						<include>Animation_ButtonFocusFade_fix2</include><!-- list_bar_mod End -->						
 					</control>	
 					<control type="label">
 						<include>ListLabel_Main</include>
 						<include>listcolornofocus</include>
 						<info>ListItem.Label</info>
-						<visible>[![Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)]] | IsEmpty(ListItem.Title)</visible>
+						<visible>[[![Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)]] | !Container.Content(albums) | IsEmpty(ListItem.Title)] + ![Container.Content(songs) | Container.Content(episodes)]</visible>
 						<include>Animation_ButtonFocusFade_fix2</include><!-- list_bar_mod End -->						
+					</control>
+					<control type="label">		
+						<posx>45</posx>
+						<posy>0</posy>
+						<width>480</width>
+						<height>41</height>
+						<font>Font_List</font>
+						<aligny>center</aligny>
+						<animation effect="slide" start="60,0" end="60,0" time="0" condition="[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502) | [Window.IsActive(25) + Skin.HasSetting(videotv)]]">Conditional</animation>
+						<include>listcolornofocus</include>
+						<info>ListItem.Title</info>
+						<visible>Container.Content(episodes)</visible>
+						<include>Animation_ButtonFocusFade_fix2</include><!-- list_bar_mod End -->
+					</control>
+					<control type="label">
+						<include>ListLabel_Main</include>
+						<include>listcolornofocus</include>
+						<info>ListItem.Title</info>
+						<visible>Container.Content(songs)</visible>
+						<include>Animation_ButtonFocusFade_fix2</include><!-- list_bar_mod End -->						
+					</control>
+					<control type="label">
+						<include>ListLabel_SubTV</include>
+						<include>subcolornofocus</include>	
+						<label>$INFO[ListItem.Episode] $LOCALIZE[31938]</label>
+						<visible>!IsEmpty(ListItem.Episode) + !Container.Content(episodes)</visible>
+						<include>Animation_ButtonFocusFade_fix2</include><!-- list_bar_mod End -->
+					</control>
+					<control type="label">
+						<include>ListLabel_SubTV</include>
+						<include>subcolornofocus</include>	
+						<label>$INFO[ListItem.Plot]</label>
+						<include>Animation_ButtonFocusFade_fix2</include><!-- list_bar_mod End -->
+						<visible>!IsEmpty(ListItem.Plot) + Container.Content(episodes)</visible>
+						<animation effect="slide" start="0,8" end="0,8" time="0" condition="true">Conditional</animation>						
 					</control>		
 					<control type="label" id="623">
 						<include>ListLabel_Sub</include>
@@ -659,7 +921,7 @@
 						<include>ListLabel_DetailFull</include>
 						<include>detailcolornofocus</include>
 						<label fallback="-">[UPPERCASE]$INFO[ListItem.Year][/UPPERCASE]</label>
-						<visible>!Control.IsVisible(76) + [Container.Content(movies) | Container.Content(albums)]</visible>
+						<visible>!Control.IsVisible(76) + [Container.Content(movies) | Container.Content(albums) | Container.Content(tvshows)]</visible>
 						<include>Animation_ButtonFocusFade_fix2</include><!-- list_bar_mod End -->						
 					</control>
 					<control type="label">
@@ -711,22 +973,63 @@
 						<include>listcolorfocus</include>
 						<label>$INFO[ListItem.TrackNumber]</label>
 						<visible>[Window.IsActive(500) | Window.IsActive(501) | [Window.IsActive(502) + Container.Content(songs)]]</visible>
-						<include>Animation_ButtonFocusFade2</include><!-- list_bar_mod End -->						
-					</control>						
+						<include>Animation_ButtonFocusFade2</include><!-- list_bar_mod End -->										
+					</control>
+					<control type="label">
+						<include>ListLabel_Track</include>
+						<include>listcolorfocus</include>
+						<label>$INFO[ListItem.Season].$INFO[ListItem.Episode]</label>
+						<visible>Container.Content(episodes)</visible>
+						<include>Animation_ButtonFocusFade2</include><!-- list_bar_mod End -->
+					</control>					
 					<control type="label">
 						<include>ListLabel_MainMusic</include>
 						<include>listcolorfocus</include>
-						<info>ListItem.Title</info>
-						<visible>[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)]</visible>
+						<info>ListItem.Label</info>
+						<visible>Container.Content(albums)</visible>
 						<include>Animation_ButtonFocusFade2</include><!-- list_bar_mod End -->						
 					</control>	
 					<control type="label">
 						<include>ListLabel_Main</include>
 						<include>listcolorfocus</include>
 						<info>ListItem.Label</info>
-						<visible>[![Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)]] | IsEmpty(ListItem.Title)</visible>
+						<visible>[[![Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)]] | !Container.Content(albums) | IsEmpty(ListItem.Title)] + ![Container.Content(songs) | Container.Content(episodes)]</visible>
 						<include>Animation_ButtonFocusFade2</include><!-- list_bar_mod End -->						
-					</control>		
+					</control><control type="label">		
+						<posx>45</posx>
+						<posy>0</posy>
+						<width>480</width>
+						<height>41</height>
+						<font>Font_List</font>
+						<aligny>center</aligny>
+						<animation effect="slide" start="60,0" end="60,0" time="0" condition="[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502) | [Window.IsActive(25) + Skin.HasSetting(videotv)]]">Conditional</animation>
+						<include>listcolorfocus</include>
+						<info>ListItem.Title</info>
+						<visible>Container.Content(episodes)</visible>
+						<include>Animation_ButtonFocusFade2</include><!-- list_bar_mod End -->
+					</control>
+					<control type="label">
+						<include>ListLabel_Main</include>
+						<include>listcolorfocus</include>
+						<info>ListItem.Title</info>
+						<visible>Container.Content(songs)</visible>
+						<include>Animation_ButtonFocusFade2</include><!-- list_bar_mod End -->	
+					</control>
+					<control type="label">
+						<include>ListLabel_SubTV</include>
+						<include>subcolorfocus</include>	
+						<label>$INFO[ListItem.Episode] $LOCALIZE[31938]</label>
+						<visible>!IsEmpty(ListItem.Episode) + !Container.Content(episodes)</visible>
+						<include>Animation_ButtonFocusFade2</include><!-- list_bar_mod End -->
+					</control>
+					<control type="label">
+						<include>ListLabel_SubTV</include>
+						<include>subcolorfocus</include>	
+						<label>$INFO[ListItem.Plot]</label>
+						<include>Animation_ButtonFocusFade2</include><!-- list_bar_mod End -->
+						<visible>!IsEmpty(ListItem.Plot) + Container.Content(episodes)</visible>
+						<animation effect="slide" start="0,8" end="0,8" time="0" condition="true">Conditional</animation>						
+					</control>					
 					<control type="label" id="623">
 						<include>ListLabel_Sub</include>
 						<include>subcolorfocus</include>
@@ -752,7 +1055,7 @@
 						<include>ListLabel_DetailFull</include>
 						<include>detailcolorfocus</include>
 						<label fallback="-">[UPPERCASE]$INFO[ListItem.Year][/UPPERCASE]</label>
-						<visible>!Control.IsVisible(76) + [Container.Content(movies) | Container.Content(albums)]</visible>
+						<visible>!Control.IsVisible(76) + [Container.Content(movies) | Container.Content(albums) | Container.Content(tvshows)]</visible>
 						<include>Animation_ButtonFocusFade2</include><!-- list_bar_mod End -->						
 					</control>
 					<control type="label">
@@ -798,277 +1101,17 @@
 						<visible>![Container.Content(artists) | Container.Content(years) | Container.Content(genres)]</visible>
 						<include>Animation_ButtonFocusFade2</include><!-- list_bar_mod End -->						
 					</control>		
-
+					<control type="image">
+						<include>WatchedOverlay2</include>
+						<include>detailcolorfocus</include>
+						<colordiffuse>FF585858</colordiffuse>
+						<info>ListItem.Overlay</info>
+						<visible>!Skin.HasSetting(nooverlays) + !IsEmpty(ListItem.Overlay)</visible>
+						<include>Animation_VisibleChange200</include>
+					</control>
 					
 				</focusedlayout>
-				<itemlayout condition="[Window.IsActive(25) + Skin.HasSetting(videotv)]" height="85">
-					<control type="image">
-						<posx>12</posx>
-						<posy>84</posy>
-						<height>1</height>
-						<width>739</width>
-						<texture>list/listpanel_line.png</texture>
-					</control>
-					<control type="label">
-						<include>ListLabel_Track</include>
-						<include>listcolornofocus</include>
-						<label>$INFO[ListItem.Season].$INFO[ListItem.Episode]</label>
-						<visible>Container.Content(episodes)</visible>
-					</control>						
-					<control type="label">
-						<include>ListLabel_Main</include>
-						<include>listcolornofocus</include>
-						<info>ListItem.Title</info>
-						<visible>!IsEmpty(ListItem.Title)</visible>
-					</control>	
-					<control type="label">
-						<include>ListLabel_Main</include>
-						<include>listcolornofocus</include>
-						<info>ListItem.Label</info>
-						<visible>IsEmpty(ListItem.Title)</visible>
-					</control>
-					<control type="label">
-						<include>ListLabel_SubTV</include>
-						<include>subcolornofocus</include>	
-						<label>$INFO[ListItem.Episode] $LOCALIZE[31938]</label>
-						<visible>!IsEmpty(ListItem.Episode) + !Container.Content(episodes)</visible>
-					</control>
-					<control type="label">
-						<include>ListLabel_SubTV</include>
-						<include>subcolornofocus</include>	
-						<label>$INFO[ListItem.Writer,$LOCALIZE[31401]: ,]</label>
-						<visible>Container.Content(episodes) + !IsEmpty(ListItem.Writer)</visible>
-					</control>
-					<control type="label">
-						<include>ListLabel_SubTV</include>
-						<include>subcolornofocus</include>	
-						<label>$INFO[ListItem.Plot]</label>
-						<visible>!IsEmpty(ListItem.Plot) + Container.Content(episodes)</visible>
-						<animation effect="slide" start="0,19" end="0,19" time="0" condition="true">Conditional</animation>						
-					</control>
-					<control type="label">
-						<include>ListLabel_SubTV</include>
-						<include>subcolornofocus</include>	
-						<label>$INFO[ListItem.Genre]</label>
-						<visible>!IsEmpty(ListItem.Genre) + Container.Content(tvshows)</visible>
-						<animation effect="slide" start="0,19" end="0,19" time="0" condition="true">Conditional</animation>						
-					</control>						
-					<control type="label">
-						<include>ListLabel_DetailFull</include>
-						<include>detailcolornofocus</include>
-						<label>[UPPERCASE]$INFO[ListItem.Year][/UPPERCASE]</label>
-						<visible>Container.Content(movies) | Container.Content(albums)</visible>
-					</control>
-					<control type="label">
-						<include>ListLabel_DetailTV</include>
-						<include>detailcolornofocus</include>
-						<label>[UPPERCASE]$INFO[ListItem.Premiered][/UPPERCASE]</label>
-					</control>
-					<control type="label">
-						<include>ListLabel_DetailFull</include>
-						<include>detailcolornofocus</include>
-						<label>[UPPERCASE]$INFO[ListItem.Duration][/UPPERCASE]</label>
-						<visible>[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)] + Skin.HasSetting(musiclistfull)</visible>
-					</control>					
-					<control type="image">
-						<description>IMDB rating</description>
-						<posx>623</posx>
-						<posy>46</posy>
-						<width>65</width>
-						<height>13</height>
-						<info>ListItem.StarRating</info>
-						<colordiffuse>FF585858</colordiffuse>
-						<visible>![Container.Content(artists) | Container.Content(years) | Container.Content(genres)]</visible>
-					</control>
-				</itemlayout>
-				<focusedlayout condition="[Window.IsActive(25) + Skin.HasSetting(videotv)]" height="85">
-					<control type="image">
-						<posx>12</posx>
-						<posy>84</posy>
-						<height>1</height>
-						<width>739</width>
-						<texture>list/listpanel_line.png</texture>
-		<include>Animation_ButtonFocusFade_fix2</include><!-- list_bar_mod End -->
-					</control>
-<!-- list_bar_mod End 
-					<control type="image">
-						<posx>8</posx>
-						<posy>-5</posy>
-						<width>743</width>
-						<height>95</height>
-						<texture>list/listpanel_selectbar.png</texture>
-						<include>Animation_ButtonFocusFade</include>
-						<visible>Control.IsVisible(50) | Window.IsActive(106) | Window.IsActive(129) | Window.IsActive(126) | Window.IsActive(601) | Window.IsActive(602) | Window.IsActive(111) | Window.IsActive(2003)</visible>
-					</control>
--->					
-					
-					<control type="label">
-						<include>ListLabel_Track</include>
-						<include>listcolornofocus</include>
-						<include>Animation_ButtonFocusFade_fix2</include><!-- list_bar_mod End -->						
-						<label>$INFO[ListItem.Season].$INFO[ListItem.Episode]</label>
-						<visible>Container.Content(episodes)</visible>
-					</control>						
-					<control type="label">
-						<include>ListLabel_Main</include>
-						<include>listcolornofocus</include>
-						<info>ListItem.Title</info>
-						<include>Animation_ButtonFocusFade_fix2</include><!-- list_bar_mod End -->						
-						<visible>!IsEmpty(ListItem.Title)</visible>
-					</control>	
-					<control type="label">
-						<include>ListLabel_Main</include>
-						<include>listcolornofocus</include>
-						<info>ListItem.Label</info>
-						<include>Animation_ButtonFocusFade_fix2</include><!-- list_bar_mod End -->						
-						<visible>IsEmpty(ListItem.Title)</visible>
-					</control>	
-					<control type="label">
-						<include>ListLabel_SubTV</include>
-						<include>subcolornofocus</include>	
-						<label>$INFO[ListItem.Episode] $LOCALIZE[31938]</label>
-						<include>Animation_ButtonFocusFade_fix2</include><!-- list_bar_mod End -->						
-						<visible>!IsEmpty(ListItem.Episode) + !Container.Content(episodes)</visible>
-					</control>
-					<control type="label">
-						<include>ListLabel_SubTV</include>
-						<include>subcolornofocus</include>	
-						<label>$INFO[ListItem.Writer,$LOCALIZE[31401]: ,]</label>
-						<include>Animation_ButtonFocusFade_fix2</include><!-- list_bar_mod End -->						
-						<visible>Container.Content(episodes) + !IsEmpty(ListItem.Writer)</visible>
-					</control>
-					<control type="label">
-						<include>ListLabel_SubTV</include>
-						<include>subcolornofocus</include>	
-						<label>$INFO[ListItem.Plot]</label>
-						<include>Animation_ButtonFocusFade_fix2</include><!-- list_bar_mod End -->						
-						<visible>!IsEmpty(ListItem.Plot) + Container.Content(episodes)</visible>
-						<animation effect="slide" start="0,19" end="0,19" time="0" condition="true">Conditional</animation>						
-					</control>
-					<control type="label">
-						<include>ListLabel_SubTV</include>
-						<include>subcolornofocus</include>	
-						<label>$INFO[ListItem.Genre]</label>
-						<include>Animation_ButtonFocusFade_fix2</include><!-- list_bar_mod End -->						
-						<visible>!IsEmpty(ListItem.Genre) + Container.Content(tvshows)</visible>
-						<animation effect="slide" start="0,19" end="0,19" time="0" condition="true">Conditional</animation>						
-					</control>						
-					<control type="label">
-						<include>ListLabel_DetailFull</include>
-						<include>detailcolornofocus</include>
-						<include>Animation_ButtonFocusFade_fix2</include><!-- list_bar_mod End -->						
-						<label fallback="-">[UPPERCASE]$INFO[ListItem.Year][/UPPERCASE]</label>
-						<visible>!Control.IsVisible(76) + [Container.Content(movies) | Container.Content(albums)]</visible>
-					</control>
-					<control type="label">
-						<include>ListLabel_DetailTV</include>
-						<include>detailcolornofocus</include>
-						<include>Animation_ButtonFocusFade_fix2</include><!-- list_bar_mod End -->						
-						<label>[UPPERCASE]$INFO[ListItem.Premiered][/UPPERCASE]</label>
-					</control>
-					<control type="label">
-						<include>ListLabel_DetailFull</include>
-						<include>detailcolornofocus</include>
-						<include>Animation_ButtonFocusFade_fix2</include><!-- list_bar_mod End -->						
-						<label>[UPPERCASE]$INFO[ListItem.Duration][/UPPERCASE]</label>
-						<visible>[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)] + Skin.HasSetting(musiclistfull)</visible>
-					</control>						
-					<control type="image">
-						<description>IMDB rating</description>
-						<posx>623</posx>
-						<posy>46</posy>
-						<width>65</width>
-						<height>13</height>
-						<info>ListItem.StarRating</info>
-						<include>Animation_ButtonFocusFade_fix2</include><!-- list_bar_mod End -->						
-						<colordiffuse>FF585858</colordiffuse>
-						<visible>![Container.Content(artists) | Container.Content(years) | Container.Content(genres)]</visible>						
-					</control>					
-					
-					
-					<control type="label">
-						<include>ListLabel_Track</include>
-						<include>listcolorfocus</include>
-						<include>Animation_ButtonFocusFade2</include><!-- list_bar_mod End -->						
-						<label>$INFO[ListItem.Season].$INFO[ListItem.Episode]</label>
-						<visible>Container.Content(episodes)</visible>
-					</control>						
-					<control type="label">
-						<include>ListLabel_Main</include>
-						<include>listcolorfocus</include>
-						<info>ListItem.Title</info>
-						<include>Animation_ButtonFocusFade2</include><!-- list_bar_mod End -->						
-						<visible>!IsEmpty(ListItem.Title)</visible>
-					</control>	
-					<control type="label">
-						<include>ListLabel_Main</include>
-						<include>listcolorfocus</include>
-						<info>ListItem.Label</info>
-						<include>Animation_ButtonFocusFade2</include><!-- list_bar_mod End -->						
-						<visible>IsEmpty(ListItem.Title)</visible>
-					</control>	
-					<control type="label">
-						<include>ListLabel_SubTV</include>
-						<include>subcolorfocus</include>	
-						<label>$INFO[ListItem.Episode,, $LOCALIZE[31938]]</label>
-						<include>Animation_ButtonFocusFade2</include><!-- list_bar_mod End -->						
-						<visible>!IsEmpty(ListItem.Episode) + !Container.Content(episodes)</visible>
-					</control>
-					<control type="label">
-						<include>ListLabel_SubTV</include>
-						<include>subcolorfocus</include>	
-						<label>$INFO[ListItem.Writer,$LOCALIZE[31401]: ,]</label>
-						<include>Animation_ButtonFocusFade2</include><!-- list_bar_mod End -->						
-						<visible>Container.Content(episodes) + !IsEmpty(ListItem.Writer)</visible>
-					</control>
-					<control type="label">
-						<include>ListLabel_SubTV</include>
-						<include>subcolorfocus</include>	
-						<label>$INFO[ListItem.Plot]</label>
-						<include>Animation_ButtonFocusFade2</include><!-- list_bar_mod End -->						
-						<visible>!IsEmpty(ListItem.Plot) + Container.Content(episodes)</visible>
-						<animation effect="slide" start="0,19" end="0,19" time="0" condition="true">Conditional</animation>						
-					</control>
-					<control type="label">
-						<include>ListLabel_SubTV</include>
-						<include>subcolorfocus</include>	
-						<label>$INFO[ListItem.Genre]</label>
-						<include>Animation_ButtonFocusFade2</include><!-- list_bar_mod End -->						
-						<visible>!IsEmpty(ListItem.Genre) + Container.Content(tvshows)</visible>
-						<animation effect="slide" start="0,19" end="0,19" time="0" condition="true">Conditional</animation>						
-					</control>						
-					<control type="label">
-						<include>ListLabel_DetailFull</include>
-						<include>detailcolorfocus</include>
-						<include>Animation_ButtonFocusFade2</include><!-- list_bar_mod End -->						
-						<label fallback="-">[UPPERCASE]$INFO[ListItem.Year][/UPPERCASE]</label>
-						<visible>!Control.IsVisible(76) + [Container.Content(movies) | Container.Content(albums)]</visible>
-					</control>
-					<control type="label">
-						<include>ListLabel_DetailTV</include>
-						<include>detailcolorfocus</include>
-						<include>Animation_ButtonFocusFade2</include><!-- list_bar_mod End -->						
-						<label>[UPPERCASE]$INFO[ListItem.Premiered][/UPPERCASE]</label>
-					</control>
-					<control type="label">
-						<include>ListLabel_DetailFull</include>
-						<include>detailcolorfocus</include>
-						<include>Animation_ButtonFocusFade2</include><!-- list_bar_mod End -->						
-						<label>[UPPERCASE]$INFO[ListItem.Duration][/UPPERCASE]</label>
-						<visible>[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)] + Skin.HasSetting(musiclistfull)</visible>
-					</control>						
-					<control type="image">
-						<description>IMDB rating</description>
-						<posx>623</posx>
-						<posy>46</posy>
-						<width>65</width>
-						<height>13</height>
-						<info>ListItem.StarRating</info>
-						<include>Animation_ButtonFocusFade2</include><!-- list_bar_mod End -->						
-						<colordiffuse>FF585858</colordiffuse>
-						<visible>![Container.Content(artists) | Container.Content(years) | Container.Content(genres)]</visible>						
-					</control>				
-				</focusedlayout>					
+
 			</control>
 
 			<control type="label" id="161">
@@ -1148,17 +1191,17 @@
 				<include>mod_moviegenre_list2</include><!-- <<<<<< Add this -->
 			<control type="largeimage">
 				<width>346</width>
-				<height>511</height>
-				<fadetime>400</fadetime>			
+				<height>511</height>			
 				<texture diffuse="list/list_movieicon_mask.png">$INFO[listitem.path,,movie.tbn]</texture>
-				<visible>!Window.IsActive(24)+Control.IsVisible(102) + Container.Content(movies) +[!Container.Content(genres)|Skin.HasSetting(moviegenre_onoff)]</visible><!-- <<<<<< Add this -->
+				<animation effect="fade" start="0" end="100" time="000">VisibleChange</animation>
+				<visible>Control.IsVisible(102) + Container.Content(movies) +[!Container.Content(genres)|Skin.HasSetting(moviegenre_onoff)]</visible><!-- <<<<<< Add this -->
 			</control>
 			
 			<control type="largeimage">
 				<width>346</width>
-				<height>511</height>
-				<fadetime>400</fadetime>			
+				<height>511</height>			
 				<texture diffuse="list/list_movieicon_mask.png">$INFO[listitem.path,,folder.jpg]</texture>
+				<animation effect="fade" start="0" end="100" time="000">VisibleChange</animation>
 				<visible>!Window.IsActive(24)+Control.IsVisible(102) + Container.Content(tvshows)+ [!Container.Content(genres)|Skin.HasSetting(moviegenre_onoff)]</visible><!-- <<<<<< Add this -->
 			</control>			
 				<include>mod_moviegenre_list1</include> <!--<<<<<< Add this -->
@@ -1187,7 +1230,7 @@
 				<height>511</height>
 				<fadetime>400</fadetime>			
 				<texture diffuse="list/list_movieicon_mask.png">$INFO[listitem.path,,folder.jpg]</texture>
-				<visible>[Container.Content(tvshows) | Container.Content(seasons)] + !Skin.HasSetting(listvideosquare)</visible>				
+				<visible>[Container.Content(tvshows) + !Skin.HasSetting(listvideosquare)] | [Container.Content(seasons) + !Skin.HasSetting(listvideosquare)]</visible>				
 			</control>
 
 			<control type="image">
@@ -1227,9 +1270,9 @@
 				<aspectratio scalediffuse="false">stretch</aspectratio>			
 				<texture diffuse="list/list_musicicon_mask.png">$INFO[ListItem.Icon]</texture>
 				<bordertexture border="-32">list/list_musicicon_frame.png</bordertexture>
-				<visible>Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)</visible>
+				<visible>Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)+ [!Container.Content(genres)|Skin.HasSetting(musicgenre_onoff)]</visible><!-- <<<<<< Add this -->
 			</control>
-			
+<include>mod_musicgenre_list1</include> <!--<<<<<< Add this -->
 			<control type="image">
 				<posy>513</posy>
 				<width>346</width>
@@ -1237,9 +1280,9 @@
 				<fadetime>400</fadetime>
 				<aspectratio scalediffuse="false">stretch</aspectratio>			
 				<texture flipy="true" diffuse="list/list_musicicon_flipmask.png">$INFO[ListItem.Icon]</texture>
-				<visible>Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)</visible>
+				<visible>Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)+ [!Container.Content(genres)|Skin.HasSetting(musicgenre_onoff)]</visible><!-- <<<<<< Add this -->
 			</control>
-
+<include>mod_musicgenre_list2</include> <!--<<<<<< Add this -->
 			<control type="image">
 				<posy>165</posy>			
 				<width>346</width>

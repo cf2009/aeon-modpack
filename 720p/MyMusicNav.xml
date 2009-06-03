@@ -1,0 +1,185 @@
+<window id="502">
+	<defaultcontrol>50</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<controls>
+
+<!-- <<<<< ADD this -->
+	<control type="group">
+		<visible>[!Skin.HasSetting(musicgenre_fanart_onoff)+Container.Content(genres)] | !Container.Content(genres)</visible>
+<!-- ADD End -->
+
+	<control type="multiimage">
+		<include>BackgroundVarsGlobal</include>
+		<include>BackgroundVarsMusic</include>
+	</control>
+
+	<control type="largeimage" id="102">
+		<include>FullscreenDimensions</include>
+        <visible>!Control.IsVisible(103) +[Control.IsVisible(51) | Control.IsVisible(57)] + !IsEmpty(listitem.property(fanart_image)) + !Skin.HasSetting(nomusicfanart)</visible>
+		<fadetime>400</fadetime>
+		<texture>$INFO[listitem.property(fanart_image)]</texture>
+		<include>Animation_FanartFade</include>
+	</control>
+
+	<control type="largeimage" id="103">
+		<include>FullscreenDimensions</include>
+        <visible>[Control.IsVisible(51) | Control.IsVisible(57)] + !IsEmpty(container.property(fanart_image)) + !Skin.HasSetting(nomusicfanart)</visible>
+		<fadetime>400</fadetime>
+		<texture>$INFO[container.property(fanart_image)]</texture>
+		<include>Animation_FanartFade</include>
+	</control>
+<!-- <<<<< ADD this -->
+	</control>
+	 
+	<control type="image">
+		<include>FullscreenDimensions</include>
+		<fadetime>400</fadetime>
+		<texture>musicgenrefanart/$INFO[ListItem.Label].jpg</texture>
+		<visible>[Skin.HasSetting(musicgenre_fanart_onoff)+Container.Content(genres)]</visible>
+	</control>
+<!-- ADD End -->
+	
+	<include>Furniture_WallBackground</include>	
+
+	<control type="group">
+		<include>FullscreenDimensions</include>
+		<include>Animation_OpenCloseZoom</include>
+		<include>Furniture_Time</include>
+		<include>Furniture_MediaPanel</include>
+		<include>Objects_ShowcaseMenuPanel</include>
+
+		<include>Viewtype_Music_Multiplex</include>
+		<include>Viewtype_Wall</include>
+		<include>Furniture_WallTime</include>
+		<include>Furniture_WallRSS</include>
+		
+		<control type="group">
+	
+			<control type="image">
+				<include>Objects_MediaLogo</include>
+				<texture>windows/logo_music.png</texture>
+			</control>	
+	
+			<control type="label">
+				<include>Objects_MediaLabel</include>
+				<label>31037</label>
+			</control>
+
+			<control type="grouplist" id="7000">
+				<include>Animation_MediaMenuSlide</include>
+				<include>Objects_MediaMenuGroup</include>
+
+				<control type="button" id="900">
+					<label>$LOCALIZE[31050] $INFO[Container.ViewMode]</label>
+					<include>Objects_MediaMenuButton</include>
+					<onclick>SetFocus(69)</onclick>
+				</control>
+
+				<include>Objects_FlattenFlowButton</include>
+				
+				<control type="button" id="3">
+					<label>103</label>
+					<include>Objects_MediaMenuButton</include>
+				</control>
+
+				<control type="togglebutton" id="940">
+					<include>Objects_MediaMenuButton</include>				
+					<include>Objects_ListLayoutStrings</include>
+					<usealttexture>Skin.HasSetting(musicalbumslistfull)</usealttexture>
+					<onclick>Skin.SetBool(musicalbumslistfull)</onclick>
+					<altclick>Skin.Reset(musicalbumslistfull)</altclick>
+					<visible>Control.IsVisible(50) + Container.Content(albums)</visible>
+				</control>
+
+				<control type="togglebutton" id="945">
+					<include>Objects_MediaMenuButton</include>				
+					<include>Objects_ListLayoutStrings</include>
+					<usealttexture>Skin.HasSetting(musicsongslistfull)</usealttexture>
+					<onclick>Skin.SetBool(musicsongslistfull)</onclick>
+					<altclick>Skin.Reset(musicsongslistfull)</altclick>
+					<visible>Control.IsVisible(50) + Container.Content(songs)</visible>
+				</control>
+
+				<include>Objects_PanelDensityButton</include>
+				
+				<control type="togglebutton" id="901">
+					<include>Objects_MediaMenuButton</include>				
+					<include>Objects_FanartToggleStrings</include>
+					<usealttexture>Skin.HasSetting(nomusicfanart)</usealttexture>
+					<onclick>Skin.SetBool(nomusicfanart)</onclick>
+					<altclick>Skin.Reset(nomusicfanart)</altclick>
+					<visible>Control.IsVisible(57)</visible>
+				</control>
+						<!--	<include condition="!Skin.HasSetting(nolightnightbuttons)">Objects_LightNightButtons</include>-->
+				
+
+		<control type="togglebutton" id="996">
+			<include>Objects_MediaMenuButton</include>				
+			<label>$LOCALIZE[31042]</label>
+			<altlabel>$LOCALIZE[31043]</altlabel>
+			<usealttexture>Skin.HasSetting(darkshowcase)</usealttexture>
+			<onclick>Skin.ToggleSetting(darkshowcase)</onclick>
+			<onclick>XBMC.ReloadSkin</onclick>
+			<visible>Control.IsVisible(57)+!Skin.HasSetting(nolightnightbuttons)</visible>
+		</control>
+		
+		<control type="togglebutton" id="997">
+			<include>Objects_MediaMenuButton</include>				
+			<label>$LOCALIZE[31042]</label>
+			<altlabel>$LOCALIZE[31043]</altlabel>
+			<usealttexture>Skin.HasSetting(darkmultiplex)</usealttexture>
+			<onclick>Skin.ToggleSetting(darkmultiplex)</onclick>
+			<onclick>XBMC.ReloadSkin</onclick>
+			<visible>Control.IsVisible(52)+!Skin.HasSetting(nolightnightbuttons)</visible>
+		</control>
+		
+		<control type="togglebutton" id="998">
+			<include>Objects_MediaMenuButton</include>				
+			<label>$LOCALIZE[31042]</label>
+			<altlabel>$LOCALIZE[31043]</altlabel>
+			<usealttexture>Skin.HasSetting(darklist)</usealttexture>
+			<onclick>Skin.ToggleSetting(darklist)</onclick>
+			<onclick>XBMC.ReloadSkin</onclick>
+			<visible>Control.IsVisible(50)+!Skin.HasSetting(nolightnightbuttons)</visible>
+		</control>
+
+		<control type="togglebutton" id="999">
+			<include>Objects_MediaMenuButton</include>				
+			<label>$LOCALIZE[31042]</label>
+			<altlabel>$LOCALIZE[31043]</altlabel>
+			<usealttexture>Skin.HasSetting(darklist)</usealttexture>
+			<onclick>Skin.ToggleSetting(darklist)</onclick>
+			<onclick>XBMC.ReloadSkin</onclick>
+			<visible>Control.IsVisible(25)+!Skin.HasSetting(nolightnightbuttons)</visible>
+		</control>		
+
+
+
+
+				<include>Objects_WallGridButton</include>
+				
+				<include>Objects_WallBackdropButton</include>				
+				
+				<control type="button" id="5">
+					<label>31057</label>
+					<include>Objects_MediaMenuButton</include>
+					<onclick>XBMC.ReplaceWindow(MyMusicFiles)</onclick>
+				</control>
+				
+				<include>Objects_MusicSetupButton</include>
+				
+				<include>Objects_MediaDebugButtons</include>
+			</control>
+		</control>
+	
+		<include>Viewtype_Showcase</include>
+		<include>Viewtype_List</include>
+		
+	</control>
+
+	<include>ViewChange</include>
+	<include>Background_ContextBlack</include>
+	<include condition="Skin.HasSetting(debug)">Furniture_Debug</include>
+	
+	</controls>
+</window>

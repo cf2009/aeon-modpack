@@ -1,0 +1,587 @@
+<includes>
+
+	<include name="Music_MultiplexInfoLabel">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>505</width>
+		<height>13</height>
+		<font>Font_MultiplexInfoLabel</font>	
+		<textcolor>abFFFFFF</textcolor>
+	</include>
+	
+	<include name="Music_MultiplexInfoValue">
+		<posx>0</posx>	
+		<posy>17</posy>
+		<width>505</width>		
+		<height>13</height>
+		<font>Font_MultiplexInfoValue</font>
+		<textcolor>FFFFFFFF</textcolor>		
+	</include>
+
+	<include name="Music_MultiplexInfoPane">
+		<control type="group">
+			<posx>0</posx>
+			<posy>65</posy>
+			<width>1280</width>
+			<height>381</height>
+			<visible>Control.IsVisible(51) +[Container.Content(albums)|Container.Content(artists)]</visible>		
+			<animation effect="fade" end="0" time="200">WindowClose</animation>
+			<animation effect="fade" start="0" end="100" time="400">VisibleChange</animation>
+			<animation effect="slide" start="0,0" end="0,-583" time="400" tween="cubic" easing="in" reversible="true" condition="Control.HasFocus(197)">Conditional</animation>
+
+			<control type="image">
+				<posy>-70</posy>
+				<width>1280</width>
+				<height>451</height>
+				<texture>multiplex2/multiplex_full_infotv.png</texture>
+			</control>
+	<!-- Album Info -->
+			<control type="group">
+				<posx>45</posx>
+				<posy>0</posy>
+				<width>695</width>
+				<height>569</height>
+				<visible>Container.Content(albums)</visible>
+
+				<control type="group">
+					<animation effect="fade"  start="0" end="100" time="100" condition="Control.HasFocus(51)">Conditional</animation>
+					<control type="label">
+						<posx>0</posx>
+						<posy>-65</posy>
+						<width>1180</width>
+						<height>71</height>
+						<aligny>center</aligny>
+						<font>Font_MultiplexMainLabel</font>
+						<label>$INFO[Container(51).ListItem.Artist]</label>
+						<include>Music_Animation_HideMultiplex</include>			
+					</control>
+					<control type="image">
+						<posx>-45</posx>
+						<posy>-65</posy>
+						<width>1280</width>
+						<height>56</height>
+						<texture flipy="true">multiplex/multiplex_gradient.png</texture>
+						<include>Music_Animation_HideMultiplex</include>
+						<visible>Control.IsVisible(51)</visible>
+					</control>
+				</control>
+
+				<control type="group">
+					<posy>22</posy>
+					<control type="label">
+						<include>Music_MultiplexInfoLabel</include>
+						<label>$LOCALIZE[515]:</label>
+					</control>	
+					<control type="label">
+						<include>Music_MultiplexInfoValue</include>				
+						<label fallback="31425">$INFO[Container(51).listitem.genre]</label>
+					</control>			
+				</control>
+
+				<control type="group">
+					<posy>72</posy>
+					<control type="label">
+						<include>Music_MultiplexInfoLabel</include>
+						<label>$LOCALIZE[175]:</label>
+					</control>	
+					<control type="label">
+						<include>Music_MultiplexInfoValue</include>				
+						<label fallback="31425">$INFO[Container(51).ListItem.Property(mood)]</label>
+					</control>			
+				</control>
+
+				<control type="group">
+					<posy>122</posy>
+					<control type="label">
+						<include>Music_MultiplexInfoLabel</include>
+						<label>$LOCALIZE[176]:</label>
+					</control>
+					<control type="label">
+						<include>Music_MultiplexInfoValue</include>				
+						<label fallback="31425">$INFO[Container(51).listitem.Property(style)]</label>
+					</control>			
+				</control>
+
+				<control type="group">
+					<posy>172</posy>
+					<control type="label">
+						<include>Music_MultiplexInfoLabel</include>
+						<label>theme:</label>
+					</control>
+					<control type="label">
+						<include>Music_MultiplexInfoValue</include>				
+						<label fallback="31425">$INFO[Container(51).listitem.Property(theme)]</label>
+					</control>			
+				</control>
+
+				<control type="group">
+					<posy>222</posy>
+					<control type="label">
+						<include>Music_MultiplexInfoLabel</include>
+						<label>$LOCALIZE[21899]:</label>
+					</control>
+					<control type="label">
+						<include>Music_MultiplexInfoValue</include>				
+						<label fallback="31425">$INFO[Container(51).listitem.Property(label)]</label>
+					</control>			
+				</control>
+
+				<control type="group">
+					<posy>272</posy>
+					<control type="label">
+						<include>Music_MultiplexInfoLabel</include>
+						<label>$LOCALIZE[562]:</label>
+					</control>
+					<control type="label">
+						<include>Music_MultiplexInfoValue</include>				
+						<label fallback="31425">$INFO[Container(51).listitem.Year]</label>
+					</control>			
+				</control>
+
+				<control type="group">
+					<posy>322</posy>
+					<control type="label">
+						<include>Music_MultiplexInfoLabel</include>
+						<label>$LOCALIZE[563]:</label>
+					</control>
+					<control type="image">
+						<description>IMDB rating</description>
+						<posx>0</posx>
+						<posy>15</posy>
+						<width>201</width>
+						<height>43</height>
+						<info>Container(51).ListItem.StarRating</info>
+						<colordiffuse>dcbdbdbd</colordiffuse>
+					</control>
+					<!--
+					<control type="label">
+						<include>Music_MultiplexInfoValue</include>				
+						<label fallback="31425">$INFO[Container(51).ListItem.Rating]</label>
+					</control>
+					-->
+				</control>
+			
+			</control>
+
+	<!-- Artist Info -->
+			<control type="group">
+				<posx>45</posx>
+				<posy>0</posy>
+				<width>695</width>
+				<height>569</height>
+				<visible>Container.Content(artists)</visible>
+
+				<control type="group">
+					<posy>22</posy>
+					<control type="label">
+						<include>Music_MultiplexInfoLabel</include>
+						<label>Formed:</label>
+					</control>
+					<control type="label">
+						<include>Music_MultiplexInfoValue</include>				
+						<label fallback="31425">$INFO[Container(51).ListItem.Property(Formed)]</label>
+					</control>			
+				</control>
+
+				<control type="group">
+					<posy>72</posy>
+					<control type="label">
+						<include>Music_MultiplexInfoLabel</include>
+						<label>$LOCALIZE[21893] - died:</label>
+					</control>
+					<control type="label">
+						<include>Music_MultiplexInfoValue</include>				
+						<label fallback="31425">$INFO[Container(51).listitem.Property(born)] - $INFO[Container(51).listitem.Property(died)]</label>
+					</control>			
+				</control>
+
+				<control type="group">
+					<posy>122</posy>
+					<control type="label">
+						<include>Music_MultiplexInfoLabel</include>
+						<label>$LOCALIZE[515]:</label>
+					</control>
+					<control type="label">
+						<include>Music_MultiplexInfoValue</include>				
+						<label fallback="31425">$INFO[Container(51).listitem.Property(Genre)]</label>
+					</control>			
+				</control>
+
+				<control type="group">
+					<posy>172</posy>
+					<control type="label">
+						<include>Music_MultiplexInfoLabel</include>
+						<label>$LOCALIZE[176]:</label>
+					</control>
+					<control type="label">
+						<include>Music_MultiplexInfoValue</include>				
+						<label fallback="31425">$INFO[Container(51).listitem.Property(style)]</label>
+					</control>			
+				</control>
+		
+				<control type="group">
+					<posy>222</posy>
+					<control type="label">
+						<include>Music_MultiplexInfoLabel</include>
+						<label>$LOCALIZE[175]:</label>
+					</control>
+					<control type="label">
+						<include>Music_MultiplexInfoValue</include>				
+						<label fallback="31425">$INFO[Container(51).ListItem.Property(mood)]</label>
+					</control>			
+				</control>
+		
+				<control type="group">
+					<posy>272</posy>
+					<control type="label">
+						<include>Music_MultiplexInfoLabel</include>
+						<label>instruments:</label>
+					</control>
+					<control type="label">
+						<include>Music_MultiplexInfoValue</include>				
+						<label fallback="31425">$INFO[Container(51).ListItem.Property(Instruments)]</label>
+					</control>			
+				</control>
+				
+				<control type="group">
+					<posy>322</posy>
+					<control type="label">
+						<include>Music_MultiplexInfoLabel</include>
+						<label>Years Active:</label>
+					</control>
+					<control type="label">
+						<include>Music_MultiplexInfoValue</include>				
+						<label fallback="31425">$INFO[Container(51).ListItem.Property(YearsActive)]</label>
+					</control>			
+				</control>
+
+			</control>
+
+		<!-- ListItem.icon -->		
+
+			<control type="group">
+				<posx>600</posx>
+				<posy>22</posy>
+				<visible>IsEmpty(Container(51).listitem.property(fanart_image))</visible>
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>351</width>
+					<height>351</height>
+					<texture>common/black.png</texture>
+					<colordiffuse>94FFFFFF</colordiffuse>
+					<animation effect="fade" start="50" end="50" time="0" condition="!Skin.HasSetting(darkmultiplex)">Conditional</animation>					
+				</control>				
+				<control type="multiimage">
+					<posx>2</posx>
+					<posy>2</posy>
+					<width>347</width>
+					<height>347</height>
+					<aspectratio>scale</aspectratio>
+					<fadetime>400</fadetime>
+					<timeperimage>4000</timeperimage>					
+					<imagepath>$INFO[Container(51).ListItem.icon]</imagepath>
+				</control>
+			<!-- description -->
+				<control type="image">
+					<posx>355</posx>
+					<posy>0</posy>
+					<width>315</width>
+					<height>351</height>
+					<texture>common/black.png</texture>
+					<colordiffuse>b6FFFFFF</colordiffuse>			
+				</control>
+				<control type="textbox">
+					<visible>!IsEmpty(Container(51).ListItem.Property(description))</visible>
+					<posx>365</posx>
+					<posy>2</posy>
+					<width>305</width>
+					<height>341</height>
+					<font>Font_MultiplexPlot</font>				
+					<label fallback="31425">$INFO[Container(51).ListItem.Property(description)]</label>
+					<textcolor>d0FFFFFF</textcolor>
+					<autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
+				</control>
+				<control type="label">
+					<visible>IsEmpty(Container(51).ListItem.Property(description))</visible>
+					<posx>365</posx>
+					<posy>2</posy>
+					<width>305</width>
+					<height>341</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>Font_MultiplexPlot</font>
+					<textcolor>d0FFFFFF</textcolor>				
+					<label>31425</label>
+				</control>
+			
+			</control>
+
+		<!-- Fanart -->	
+			<control type="group">
+				<posx>625</posx>
+				<posy>22</posy>
+				<visible>!IsEmpty(Container(51).listitem.property(fanart_image))</visible>
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>617</width>
+					<height>351</height>
+					<texture>common/black.png</texture>
+					<colordiffuse>94FFFFFF</colordiffuse>
+					<animation effect="fade" start="50" end="50" time="0" condition="!Skin.HasSetting(darkmultiplex)">Conditional</animation>					
+				</control>				
+				<control type="largeimage">
+					<posx>2</posx>
+					<posy>2</posy>
+					<width>613</width>
+					<height>347</height>
+					<aspectratio>scale</aspectratio>
+					<fadetime>400</fadetime>
+					<texture>$INFO[Container(51).listitem.property(fanart_image)]</texture>
+				</control>
+				<control type="largeimage">
+					<posx>2</posx>
+					<posy>2</posy>
+					<width>613</width>
+					<height>347</height>
+					<aspectratio>scale</aspectratio>
+					<fadetime>400</fadetime>
+					<texture>$INFO[Container(51).property(fanart_image)]</texture>
+				</control>
+		<!-- description -->
+				<control type="image">
+					<posx>2</posx>
+					<posy>194</posy>
+					<width>613</width>
+					<height>155</height>
+					<texture>common/black.png</texture>
+					<colordiffuse>b6FFFFFF</colordiffuse>
+					<visible>!IsEmpty(Container(51).ListItem.Property(description))</visible>			
+				</control>
+				<control type="textbox">
+					<visible>!IsEmpty(Container(51).ListItem.Property(description))</visible>
+					<posx>12</posx>
+					<posy>196</posy>
+					<width>589</width>
+					<height>150</height>
+					<font>Font_MultiplexPlot</font>
+					<info>Container(51).ListItem.Property(description)</info>
+					<textcolor>d0FFFFFF</textcolor>
+					<autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(allowscroll)</autoscroll>					
+				</control>
+			</control>
+
+		</control>	
+	</include>
+	
+	<include name="Music_Animation_HideMultiplex">
+		<animation type="Conditional" reversible="true" condition="Control.HasFocus(197)">
+			<effect type="slide" start="0,0" end="0,283" time="400" tween="cubic" easing="in" />
+		</animation>
+	</include>
+
+	<include name="Music_MultiplexBase">
+		<control type="group">
+			<posx>0</posx>
+			<posy>446</posy>
+			<width>1280</width>
+			<height>253</height>
+			<visible>Control.IsVisible(51)</visible>
+			<include>Music_Animation_HideMultiplex</include>
+
+			<control type="image" id="304">
+				<width>1280</width>
+				<height>274</height>
+				<texture>multiplex2/multiplex_full_base.png</texture>
+			</control>	
+			
+			<control type="image">
+				<posx>56</posx>
+				<posy>105</posy>
+				<width>1166</width>
+				<height>136</height>
+				<texture>multiplex2/multiplex_frame.png</texture>
+				<animation effect="slide" start="0,0" end="0,-15" time="400" easing="inout" tween="cubic" condition="Control.HasFocus(60)">Conditional</animation>				
+				<animation effect="fade" start="50" end="50" time="0" condition="!Skin.HasSetting(darkmultiplex)">Conditional</animation>				
+			</control>
+			
+			<control type="image">
+				<posx>20</posx>
+				<posy>60</posy>
+				<width>19</width>
+				<height>221</height>
+				<texture flipx="true">multiplex2/multiplex_arrow.png</texture>
+				<visible>Control.IsVisible(51)</visible>
+				<animation effect="slide" start="-100" end="0" delay="800" time="400" easing="out" tween="cubic">WindowOpen</animation>
+				<visible>!Control.IsVisible(105)</visible>
+				<include>Animation_CommonFade</include>
+				<animation effect="fade" start="50" end="50" time="0" condition="!Skin.HasSetting(darkmultiplex)">Conditional</animation>					
+			</control>
+			
+			<control type="image">
+				<posx>1241</posx>
+				<posy>60</posy>
+				<width>19</width>
+				<height>221</height>
+				<texture>multiplex2/multiplex_arrow.png</texture>
+				<visible>Control.IsVisible(51)</visible>
+				<animation effect="slide" start="100" end="0" delay="800" time="400" easing="out" tween="cubic">WindowOpen</animation>
+				<visible>!Control.IsVisible(105)</visible>
+				<include>Animation_CommonFade</include>
+				<animation effect="fade" start="50" end="50" time="0" condition="!Skin.HasSetting(darkmultiplex)">Conditional</animation>					
+			</control>				
+		</control>	
+	</include>
+	
+	<include name="Viewtype_Music_Multiplex">
+		<control type="button" id="110">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>0</width>
+			<height>0</height>
+			<texturefocus>-</texturefocus>
+			<texturenofocus>-</texturenofocus>
+			<onleft>51</onleft>
+			<onright>51</onright>
+			<onup>7000</onup>
+			<ondown>51</ondown>
+		</control>
+
+		<include>Music_MultiplexInfoPane</include>
+		<include>Music_MultiplexBase</include>	
+	
+		<control type="wraplist" id="51">
+			<viewtype label="31757">wrap</viewtype>
+			<posx>60</posx>
+			<posy>534</posy>
+			<width>1157</width>
+			<height>169</height>			
+			<pagecontrol>60</pagecontrol>
+			<onleft>51</onleft>
+			<onright>51</onright>
+			<onup>7000</onup>
+			<ondown>60</ondown>
+			<orientation>horizontal</orientation>
+			<focusposition>4</focusposition>
+
+			<scrolltime>200</scrolltime>
+			<include>Music_Animation_HideMultiplex</include>
+
+			<animation effect="slide" start="0,0" end="0,-15" time="400" easing="inout" tween="cubic" condition="Control.HasFocus(60) | Control.HasFocus(197)">Conditional</animation>
+			<itemlayout width="129" height="129">
+				<control type="image">
+					<posx>0</posx>
+					<posy>20</posy>
+					<width>130</width>
+					<height>129</height>	
+					<texture>common/black.png</texture>
+				</control>				
+				<control type="image">
+					<visible>!Container.Content(genres) | Skin.HasSetting(musicgenre_onoff)</visible>
+					<posx>0</posx>
+					<posy>20</posy>
+					<width>130</width>
+					<height>129</height>	
+					<texture>defaultvideobig.png</texture>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<info>ListItem.Icon</info>
+				</control>
+				<include>mod_musicgenre_Multiplex1</include>		
+				<control type="image">
+					<posx>0</posx>
+					<posy>20</posy>
+					<width>130</width>
+					<height>129</height>	
+					<texture>common/black.png</texture>
+					<colordiffuse>58FFFFFF</colordiffuse>
+				</control>					
+			</itemlayout>
+			<focusedlayout width="129" height="129">
+				<control type="image">
+					<posx>0</posx>
+					<posy>20</posy>
+					<width>130</width>
+					<height>129</height>	
+					<texture>common/black.png</texture>
+					<animation effect="zoom" center="45,75" start="100" end="120" time="400" easing="out" tween="cubic" reversible="false">Focus</animation>					
+				</control>
+				<control type="image">
+					<visible>!Container.Content(genres) | Skin.HasSetting(musicgenre_onoff)</visible>
+					<posx>0</posx>
+					<posy>20</posy>
+					<width>130</width>
+					<height>129</height>	
+					<texture>defaultvideobig.png</texture>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<info>ListItem.Icon</info>
+					<bordertexture border="-28">multiplex2/multiplex2_iconframe.png</bordertexture>
+					<animation effect="zoom" center="45,75" start="100" end="120" time="400" easing="out" tween="cubic" reversible="false">Focus</animation>					
+				</control>
+				<include>mod_musicgenre_Multiplex2</include>
+			</focusedlayout>		
+		</control>	
+
+		<control type="group">
+			<control type="label">
+				<posx>50</posx>
+				<posy>447</posy>
+				<width>1180</width>
+				<height>71</height>
+				<aligny>center</aligny>
+				<align>center</align>
+				<font>Font_MultiplexMainLabel</font>
+				<label>$INFO[Container(51).ListItem.Label]</label>
+				<include>Music_Animation_HideMultiplex</include>			
+			</control>		
+			<control type="image">
+				<posx>0</posx>
+				<posy>462</posy>
+				<width>1280</width>
+				<height>56</height>
+				<texture>multiplex/multiplex_gradient.png</texture>
+				<include>Music_Animation_HideMultiplex</include>
+				<visible>Control.IsVisible(51)</visible>
+				<animation effect="fade" start="50" end="50" time="0" condition="!Skin.HasSetting(darkmultiplex)">Conditional</animation>
+			</control>
+		</control>
+		
+		<control type="scrollbar" id="60">
+			<description>My first scroll bar control</description>
+			<posx>67</posx>
+			<posy>673</posy>
+		        <width>1147</width>
+			<height>41</height>
+			<visible allowhiddenfocus="true">Control.IsVisible(51) + Control.HasFocus(60) + !Control.IsVisible(105)</visible>
+		        <texturesliderbackground>stripshow/stripshow_scrollbar.png</texturesliderbackground>
+			<texturesliderbar>-</texturesliderbar>
+			<texturesliderbarfocus>-</texturesliderbarfocus>
+			<textureslidernib>windows/scrollbarnub-nofocus.png</textureslidernib>
+			<textureslidernibfocus>windows/scrollbarnub-focus.png</textureslidernibfocus>
+			<pulseonselect></pulseonselect>
+			<orientation>horizontal</orientation>
+			<showonepage>false</showonepage>
+			<onup>51</onup>
+			<ondown>197</ondown>
+			<onleft>60</onleft>
+			<onright>60</onright>
+			<animation effect="fade" start="0" end="100" time="200">Visible</animation>
+			<include>Music_Animation_HideMultiplex</include>			
+		</control>
+		
+		<control type="button" id="197">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>0</width>
+			<height>0</height>
+			<texturefocus>-</texturefocus>
+			<texturenofocus>-</texturenofocus>
+			<onleft>51</onleft>
+			<onright>51</onright>
+			<onup>51</onup>
+			<ondown>51</ondown>
+		</control>		
+		
+	</include>
+
+</includes>

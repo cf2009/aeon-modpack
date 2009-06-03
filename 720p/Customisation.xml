@@ -294,7 +294,7 @@
 	<!-- ADD this >>>>> -->
 		<control type="radiobutton" id="707">
 			<include>Objects_SettingsDefaultRadioButton</include>
-			<label>genre Mod on/off</label>
+			<label>Movie genre Icons on/off</label>
 			<onclick>Skin.ToggleSetting(moviegenre_onoff)</onclick>
 			<selected>!Skin.HasSetting(moviegenre_onoff)</selected>
 		</control>
@@ -302,15 +302,27 @@
 		<control type="radiobutton" id="708">
 			<visible>!Skin.HasSetting(moviegenre_onoff)</visible>
 			<include>Objects_SettingsDefaultRadioButton</include>
-			<label>Genre fallback image on/off</label>
+			<label>Movie Genre fallback image on/off</label>
 			<onclick>Skin.ToggleSetting(moviegenre_default_onoff)</onclick>
 			<selected>!Skin.HasSetting(moviegenre_default_onoff)</selected>
 		</control>
 		<control type="radiobutton" id="709">
 			<include>Objects_SettingsDefaultRadioButton</include>
-			<label>Genre fanart image on/off</label>
+			<label>Movie Genre fanart image on/off</label>
 			<onclick>Skin.ToggleSetting(genre_fanart_onoff)</onclick>
 			<selected>skin.HasSetting(genre_fanart_onoff)</selected>
+		</control>			
+		<control type="radiobutton" id="710">
+			<include>Objects_SettingsDefaultRadioButton</include>
+			<label>music genre Icons on/off</label>
+			<onclick>Skin.ToggleSetting(musicgenre_onoff)</onclick>
+			<selected>!Skin.HasSetting(musicgenre_onoff)</selected>
+		</control>
+		<control type="radiobutton" id="711">
+			<include>Objects_SettingsDefaultRadioButton</include>
+			<label>music Genre fanart image on/off</label>
+			<onclick>Skin.ToggleSetting(musicgenre_fanart_onoff)</onclick>
+			<selected>skin.HasSetting(musicgenre_fanart_onoff)</selected>
 		</control>			
 	<!-- <<<<< ADD this -->
 	</control>

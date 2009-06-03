@@ -19,7 +19,7 @@
 	</control>
 	 
 	<control type="image">
-		<include>Background_ImageFolder</include>
+		<include>FullscreenDimensions</include>
 		<fadetime>400</fadetime>
 		<texture>genrefanart/$INFO[ListItem.Label].jpg</texture>
 		<visible>[Skin.HasSetting(genre_fanart_onoff)+Container.Content(genres)]</visible>
@@ -44,7 +44,7 @@
 		<include>Conditions_HiddenByInfoPages</include>
 		<include>Furniture_MediaPanel</include>
 		<include>Objects_ShowcaseMenuPanel</include>
-
+		<include>ListFade</include>
 		<include>Viewtype_Wall</include>
 		<include>Furniture_WallTime</include>
 		<include>Furniture_WallRSS</include>		
@@ -121,8 +121,52 @@
 				
 				<include condition="!Skin.HasSetting(nomediaflagsbutton)">Objects_FlagsButton</include>
 
-				<include condition="!Skin.HasSetting(nolightnightbuttons)">Objects_LightNightButtons</include>
+			<!--	<include condition="!Skin.HasSetting(nolightnightbuttons)">Objects_LightNightButtons</include>-->
 				
+
+		<control type="togglebutton" id="996">
+			<include>Objects_MediaMenuButton</include>				
+			<label>$LOCALIZE[31042]</label>
+			<altlabel>$LOCALIZE[31043]</altlabel>
+			<usealttexture>Skin.HasSetting(darkshowcase)</usealttexture>
+			<onclick>Skin.ToggleSetting(darkshowcase)</onclick>
+			<onclick>XBMC.ReloadSkin</onclick>
+			<visible>Control.IsVisible(57)+!Skin.HasSetting(nolightnightbuttons)</visible>
+		</control>
+		
+		<control type="togglebutton" id="997">
+			<include>Objects_MediaMenuButton</include>				
+			<label>$LOCALIZE[31042]</label>
+			<altlabel>$LOCALIZE[31043]</altlabel>
+			<usealttexture>Skin.HasSetting(darkmultiplex)</usealttexture>
+			<onclick>Skin.ToggleSetting(darkmultiplex)</onclick>
+			<onclick>XBMC.ReloadSkin</onclick>
+			<visible>Control.IsVisible(52)+!Skin.HasSetting(nolightnightbuttons)</visible>
+		</control>
+		
+		<control type="togglebutton" id="998">
+			<include>Objects_MediaMenuButton</include>				
+			<label>$LOCALIZE[31042]</label>
+			<altlabel>$LOCALIZE[31043]</altlabel>
+			<usealttexture>Skin.HasSetting(darklist)</usealttexture>
+			<onclick>Skin.ToggleSetting(darklist)</onclick>
+			<onclick>XBMC.ReloadSkin</onclick>
+			<visible>Control.IsVisible(50)+!Skin.HasSetting(nolightnightbuttons)</visible>
+		</control>
+
+		<control type="togglebutton" id="999">
+			<include>Objects_MediaMenuButton</include>				
+			<label>$LOCALIZE[31042]</label>
+			<altlabel>$LOCALIZE[31043]</altlabel>
+			<usealttexture>Skin.HasSetting(darklist)</usealttexture>
+			<onclick>Skin.ToggleSetting(darklist)</onclick>
+			<onclick>XBMC.ReloadSkin</onclick>
+			<visible>Control.IsVisible(25)+!Skin.HasSetting(nolightnightbuttons)</visible>
+		</control>		
+
+
+
+
 				<include>Objects_WallGridButton</include>
 				
 				<include>Objects_WallBackdropButton</include>
@@ -165,10 +209,12 @@
 		
 		<include>Viewtype_Showcase</include>
 		<include>Viewtype_List</include>
-		<include>Viewtype_Multiplex</include>		
+		<include condition="!Skin.HasSetting(oldmultiplex)">Viewtype_Multiplex</include>
+		<include condition="Skin.HasSetting(oldmultiplex)">Viewtype_MultiplexOld</include>
 		
 	</control>
 
+	<include condition="Skin.HasSetting(videomovies)">Furniture_ShowcaseMediaFlags</include>	
 	<include>ViewChange</include>
 	<include>Background_ContextBlack</include>
 	<include condition="Skin.HasSetting(debug)">Furniture_Debug</include>
