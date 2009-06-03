@@ -10,7 +10,44 @@
 	<controls>
 
 	<!-- Background_Wallpaper -->
+		<control type="multiimage">
+			<include>FullscreenDimensions</include>
+			<imagepath>backdrops/winter</imagepath>
+			<info>Skin.String(CustomWeather)</info>
+			<visible>!Skin.String(CustomWeatherFolder)</visible>
+			<visible>System.Date(12-21,03-21)</visible>
+		</control>
+		
+		<control type="multiimage">
+			<include>FullscreenDimensions</include>
+			<imagepath>backdrops/spring</imagepath>
+			<info>Skin.String(CustomWeather)</info>
+			<visible>!Skin.String(CustomWeatherFolder)</visible>
+			<visible>System.Date(03-21,06-21)</visible>
+		</control>
 
+		<control type="multiimage">
+			<include>FullscreenDimensions</include>
+			<imagepath>backdrops/summer</imagepath>
+			<info>Skin.String(CustomWeather)</info>
+			<visible>!Skin.String(CustomWeatherFolder)</visible>
+			<visible>System.Date(06-21,09-23)</visible>
+		</control>		
+		
+		<control type="multiimage">
+			<include>FullscreenDimensions</include>
+			<imagepath>backdrops/autumn</imagepath>
+			<info>Skin.String(CustomWeather)</info>
+			<visible>!Skin.String(CustomWeatherFolder)</visible>
+			<visible>System.Date(09-23,12-21)</visible>
+		</control>
+
+		<control type="multiimage">
+			<include>BackgroundVarsGlobal</include>
+			<info>Skin.String(CustomWeatherFolder)</info>
+			<visible>Skin.String(CustomWeatherFolder)</visible>
+			<visible>!Skin.HasSetting(CustomWeatherConditions)</visible>
+		</control>
 
 		<control type="multiimage">
 			

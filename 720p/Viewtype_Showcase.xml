@@ -45,7 +45,7 @@
     <include name="MovieShowcaseThumb">
         <include>MovieShowcaseThumbDimensions</include>
         <align>center</align>
-        <texture diffuse="thumbs/movieposter_mask.png">defaultvideobigposter.png</texture>
+        <texture background="true" diffuse="thumbs/movieposter_mask.png">defaultvideobigposter.png</texture>
         <aspectratio scalediffuse="false">stretch</aspectratio>
 <visible>!Container.Content(genres)|Skin.HasSetting(moviegenre_onoff)</visible><!-- <<<<<< Add this -->
     </include>

@@ -1,7 +1,5 @@
 <window id="0">
-	<!-- <defaultcontrol always="true">300</defaultcontrol> <<<<<< Old -->
-	<defaultcontrol always="true">323</defaultcontrol><!-- <<<<<< Add this -->
-
+	<defaultcontrol always="true">300</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
 	<controls>
 
@@ -40,6 +38,7 @@
 	<include>Objects_WeatherPopup</include>
 	<include>Furniture_Time</include>
 	<include>Furniture_HomeRSS</include>
+	<include>Submenu</include>
 	
 	<control type="group">
 		<posx>0</posx>
@@ -58,7 +57,6 @@
 			<height>150</height>
 			<texture>home/homemenu_back.png</texture>
 			<include>Animation_CommonFade</include>
-			<include>homesubmenu_animation2</include><!-- <<<<<< Add this -->
 		</control>
 
 		<control type="group">
@@ -67,9 +65,7 @@
 			<width>1280</width>
 			<height>61</height>
 			<defaultcontrol>300</defaultcontrol>
-			<include>homesubmenu</include><!-- <<<<<< Add this -->
 			<include>MainMenu</include>
-			<include>homesubmenu_main_fix</include><!-- <<<<<< Add this -->
 		</control>
 		
 		<control type="image">

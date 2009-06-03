@@ -57,7 +57,7 @@
 		<onfocus>SetFocus(940)</onfocus>
 		<visible>Container(300).HasFocus(6)</visible>
 	</control>
-
+	
 	<control type="button" id="351">
 		<onfocus>SetFocus(942)</onfocus>
 		<visible>Container(300).HasFocus(7)</visible>
