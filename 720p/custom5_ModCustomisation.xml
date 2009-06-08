@@ -116,7 +116,7 @@
 		<control type="button" id="3">
 			<description>Purge</description>
 			<posy>116</posy>
-			<label>31240</label>
+			<label>Dialogs</label>
 			<include>Objects_SettingsSectionMenuButton</include>
 			<onup>2</onup>
 			<ondown>4</ondown>
@@ -127,7 +127,7 @@
 		<control type="button" id="3">
 			<description>Purge</description>
 			<posy>116</posy>
-			<label>31240</label>
+			<label>Dialogs</label>
 			<include>Objects_SettingsSectionMenuButtonFocused</include>
 			<onup>2</onup>
 			<ondown>4</ondown>
@@ -270,9 +270,9 @@
 
 		<control type="radiobutton" id="800">
 			<include>Objects_SettingsDefaultRadioButton</include>
-			<label>31288</label>
-			<onclick>Skin.ToggleSetting(nomenumoviesearch)</onclick>
-			<selected>!Skin.HasSetting(nomenumoviesearch)</selected>
+			<label>Open Dialogs at the top of the screen</label>
+			<onclick>Skin.ToggleSetting(Dialogs_Top)</onclick>
+			<selected>Skin.HasSetting(Dialogs_Top)</selected>
 		</control>		
 		
 	</control>

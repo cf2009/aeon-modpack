@@ -44,6 +44,13 @@
 
 
 		<control type="multiimage">
+			<include>BackgroundVarsGlobal</include>
+			<info>Skin.String(CustomWeatherFolder)</info>
+			<visible>Skin.String(CustomWeatherFolder)</visible>
+			<visible>!Skin.HasSetting(CustomWeatherConditions)</visible>
+		</control>
+
+		<control type="multiimage">
 			
 		<include>BackgroundVarsGlobal</include>
 			<imagepath>$INFO[Skin.String(CustomWeatherFolder)]$INFO[Weather.FanartCode]</imagepath>
