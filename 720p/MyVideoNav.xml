@@ -27,13 +27,14 @@
 
 	<control type="largeimage" id="102">
 		<include>FullscreenDimensions</include>
-        <visible>[Control.IsVisible(50) | Control.IsVisible(57) | Control.IsVisible(52)] + [[Container.Content(movies) + !Skin.HasSetting(nomoviefanart)] | [Container.Content(tvshows) + !Skin.HasSetting(notvfanart)]] + !IsEmpty(listitem.property(fanart_image))</visible>
+        <visible>[Control.IsVisible(50) | Control.IsVisible(57) | Control.IsVisible(52)] + [[Container.Content(movies) + !Skin.HasSetting(nomoviefanart)] | [[Container.Content(tvshows)|Container.Content(seasons)|Container.Content(episodes)] + !Skin.HasSetting(notvfanart)]] + !IsEmpty(listitem.property(fanart_image))</visible>
 		<fadetime>400</fadetime>
 		<texture>$INFO[listitem.property(fanart_image)]</texture>
 		<include>Animation_FanartFade</include>
 	</control>
 	
 	<include condition="Skin.HasSetting(videotv)">MediaBackdropsTVFanart</include>
+	<include>MediaBackdropsMultiplex</include>	
 
 	<include>Furniture_WallBackground</include>
 	
@@ -121,7 +122,8 @@
 				
 				<include condition="!Skin.HasSetting(nomediaflagsbutton)">Objects_FlagsButton</include>
 
-			<!--	<include condition="!Skin.HasSetting(nolightnightbuttons)">Objects_LightNightButtons</include>-->
+			<!--	<include condition="!Skin.HasSetting(nolightnightbuttons)">Objects_LightNightButtons</include>
+				
 				
 
 		<control type="togglebutton" id="996">
@@ -163,13 +165,18 @@
 			<onclick>XBMC.ReloadSkin</onclick>
 			<visible>Control.IsVisible(25)+!Skin.HasSetting(nolightnightbuttons)</visible>
 		</control>		
-
+-->
 
 
 
 				<include>Objects_WallGridButton</include>
 				
 				<include>Objects_WallBackdropButton</include>
+			
+
+				<include>Objects_CurtainsButton</include>
+				
+				<include>Objects_LightNightButtons</include>
 
 				<control type="togglebutton" id="14">
 					<description>Watched Toggle Button</description>
@@ -215,6 +222,8 @@
 	</control>
 
 	<include condition="Skin.HasSetting(videomovies)">Furniture_ShowcaseMediaFlags</include>	
+	
+	<include>Furniture_DarkGradient</include>
 	<include>ViewChange</include>
 	<include>Background_ContextBlack</include>
 	<include condition="Skin.HasSetting(debug)">Furniture_Debug</include>
