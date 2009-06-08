@@ -23,8 +23,10 @@
 	<control type="grouplist" id="213">
 		<width>850</width><!-- added a stop button -->
 		<posx>249</posx><!-- added a stop button -->
+		<!-- old
 		<include condition="VideoPlayer.HasMenu">Objects_OSDButtonGroup10</include>
 		<include condition="!VideoPlayer.HasMenu">Objects_OSDButtonGroup9</include>
+		-->
 		<posy>60</posy>
 		<height>96</height>
 		<itemgap>-10</itemgap>
@@ -59,7 +61,6 @@
 		</control>
 <!-- added a stop button -->
 		<control type="button" id="20">
-			<visible>!VideoPlayer.HasMenu</visible>
 			<include>Objects_OSDButton</include>
 			<onclick>XBMC.PlayerControl(Stop)</onclick>
 		</control>
@@ -85,8 +86,10 @@
 	<control type="grouplist" id="214">
 		<width>850</width><!-- added a stop button -->
 		<posx>249</posx><!-- added a stop button -->
+		<!-- old
 		<include condition="VideoPlayer.HasMenu">Objects_OSDButtonGroup10</include>
-		<include condition="!VideoPlayer.HasMenu">Objects_OSDButtonGroup9</include>		
+		<include condition="!VideoPlayer.HasMenu">Objects_OSDButtonGroup9</include>
+		-->		
 		<posy>60</posy>
 		<height>96</height>
 		<itemgap>-10</itemgap>
@@ -125,7 +128,6 @@
 		</control>
 <!-- added a stop button -->
 		<control type="button">
-			<visible>!VideoPlayer.HasMenu</visible>
 			<include>Objects_OSDButtonTop</include>
 			<texturenofocus>osd/osd_button_stop.png</texturenofocus>
 			<animation effect="fade" start="100" end="50" time="200" condition="!Control.HasFocus(20)">Conditional</animation>				

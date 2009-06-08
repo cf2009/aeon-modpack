@@ -26,6 +26,7 @@
 			<visible>System.Date(03-21,06-21)</visible>
 		</control>
 
+
 		<control type="multiimage">
 			<include>FullscreenDimensions</include>
 			<imagepath>backdrops/summer</imagepath>
@@ -41,6 +42,7 @@
 			<visible>!Skin.String(CustomWeatherFolder)</visible>
 			<visible>System.Date(09-23,12-21)</visible>
 		</control>
+
 
 		<control type="multiimage">
 			<include>BackgroundVarsGlobal</include>
