@@ -43,6 +43,8 @@
 	</include>
 	
 	<include name="Dialogs_VolumeIcon">
+		<animation effect="slide" end="0,-600" time="0" easing="inout" tween="circle" condition="!Skin.HasSetting(Dialogs_Top)+[Window.IsVisible(2005) | Window.IsVisible(2006) | Window.IsVisible(2007)]">Conditional</animation>	
+		<animation effect="slide" end="0,600" time="0" easing="inout" tween="circle" condition="Skin.HasSetting(Dialogs_Top)+[Window.IsVisible(2005) | Window.IsVisible(2006) | Window.IsVisible(2007)]">Conditional</animation>
 		<control type="image">
 			<posx>6</posx>
 			<posy>4</posy>
