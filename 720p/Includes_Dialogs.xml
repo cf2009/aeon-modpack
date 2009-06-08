@@ -1,23 +1,15 @@
 <includes>
 
-	<include name="Dialogs_animation">
-		<posy>600</posy>
-		<animation effect="slide" end="0,-225" time="400" easing="inout" tween="cubic" condition="Window.IsActive(Home) + Skin.HasSetting(lowermainmenu)">Conditional</animation>
-		<animation effect="slide" end="0,-400" time="200" easing="inout" tween="circle" condition="Control.IsVisible(57)">Conditional</animation>
-		<animation effect="slide" end="0,600" time="400" easing="inout" tween="circle" condition="Window.IsVisible(2005) | Window.IsVisible(2006) | Window.IsVisible(2007)">Conditional</animation>	
-	</include>
-
-	<include name="Dialogs_animation2">
-		<posy>40</posy>
-		<animation effect="slide" end="0,-600" time="400" easing="inout" tween="circle" condition="Window.IsVisible(2005) | Window.IsVisible(2006) | Window.IsVisible(2007)">Conditional</animation>
-	</include>
-
 	<include name="Dialogs_Group">
 		<posx>386</posx>
+		<posy>600</posy>
 		<width>509</width>
-		<height>91</height>	
-		<include condition="!Skin.HasSetting(Dialogs_Top)">Dialogs_animation</include>
-		<include condition="Skin.HasSetting(Dialogs_Top)">Dialogs_animation2</include>
+		<height>91</height>
+		<animation effect="slide" end="0,-560" time="0" easing="inout" tween="cubic" condition="Skin.HasSetting(Dialogs_Top)">Conditional</animation>
+		<animation effect="slide" end="0,-225" time="400" easing="inout" tween="cubic" condition="!Skin.HasSetting(Dialogs_Top)+Window.IsActive(Home) + Skin.HasSetting(lowermainmenu)">Conditional</animation>
+		<animation effect="slide" end="0,-400" time="200" easing="inout" tween="circle" condition="!Skin.HasSetting(Dialogs_Top)+Control.IsVisible(57)">Conditional</animation>
+		<animation effect="slide" end="0,600" time="400" easing="inout" tween="circle" condition="!Skin.HasSetting(Dialogs_Top)+[Window.IsVisible(2005) | Window.IsVisible(2006) | Window.IsVisible(2007)]">Conditional</animation>	
+		<animation effect="slide" end="0,-600" time="400" easing="inout" tween="circle" condition="Skin.HasSetting(Dialogs_Top)+[Window.IsVisible(2005) | Window.IsVisible(2006) | Window.IsVisible(2007)]">Conditional</animation>
 	</include>
 
 	<include name="Dialogs_Tablet">
