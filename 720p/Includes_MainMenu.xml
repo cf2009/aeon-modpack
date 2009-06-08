@@ -42,7 +42,7 @@
 
 <!--Weather Backdrop by Current Weather Conditions -->
 	<include name="BackgroundVarsWeather2">
-		<thumb>$INFO[Skin.String(CustomWeatherFolder)]$INFO[Weather.FanartCode]</thumb>		
+		<thumb>$INFO[Skin.String(CustomWeather)]$INFO[Weather.FanartCode]</thumb>		
 	</include>
 <!-- End-->
 
