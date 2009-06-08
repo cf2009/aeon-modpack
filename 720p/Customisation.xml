@@ -86,6 +86,13 @@
 			<label>USE LEGACY 'DARK' MULTIPLEX</label>
 			<onclick>Skin.ToggleSetting(oldmultiplex)</onclick>
 			<selected>Skin.HasSetting(oldmultiplex)</selected>
+		</control>
+
+		<control type="radiobutton" id="408">
+			<include>Objects_SettingsDefaultRadioButton</include>
+			<label>Open Dialogs at the top of the screen</label>
+			<onclick>Skin.ToggleSetting(Dialogs_Top)</onclick>
+			<selected>Skin.HasSetting(Dialogs_Top)</selected>
 		</control>		
 		
 	</control>

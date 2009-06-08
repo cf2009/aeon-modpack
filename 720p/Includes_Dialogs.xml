@@ -1,13 +1,23 @@
 <includes>
 
-	<include name="Dialogs_Group">
-		<posx>386</posx>
+	<include name="Dialogs_animation">
 		<posy>600</posy>
-		<width>509</width>
-		<height>91</height>	
 		<animation effect="slide" end="0,-225" time="400" easing="inout" tween="cubic" condition="Window.IsActive(Home) + Skin.HasSetting(lowermainmenu)">Conditional</animation>
 		<animation effect="slide" end="0,-400" time="200" easing="inout" tween="circle" condition="Control.IsVisible(57)">Conditional</animation>
 		<animation effect="slide" end="0,600" time="400" easing="inout" tween="circle" condition="Window.IsVisible(2005) | Window.IsVisible(2006) | Window.IsVisible(2007)">Conditional</animation>	
+	</include>
+
+	<include name="Dialogs_animation2">
+		<posy>40</posy>
+		<animation effect="slide" end="0,-600" time="400" easing="inout" tween="circle" condition="Window.IsVisible(2005) | Window.IsVisible(2006) | Window.IsVisible(2007)">Conditional</animation>
+	</include>
+
+	<include name="Dialogs_Group">
+		<posx>386</posx>
+		<width>509</width>
+		<height>91</height>	
+		<include condition="!Skin.HasSetting(Dialogs_Top)">Dialogs_animation</include>
+		<include condition="Skin.HasSetting(Dialogs_Top)">Dialogs_animation2</include>
 	</include>
 
 	<include name="Dialogs_Tablet">
