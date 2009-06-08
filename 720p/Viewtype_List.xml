@@ -169,9 +169,10 @@
 	</include>
 	
 	<include name="List_NowPlaying">
-		<posx>860</posx>
-		<width>336</width>
+		<posx>960</posx>
+		<width>200</width>
 		<height>18</height>
+		<scroll>false</scroll>
 		<font>Font_ListPlaying</font>
 	</include>
 	
@@ -1293,33 +1294,8 @@
 			</control>
 		</control>
 
-		<control type="group">
-			<animation effect="fade" delay="1500" start="0" end="100" time="400">Visible</animation>
-			<animation effect="fade" start="100" end="0" time="100">Hidden</animation>
-			<visible>Control.IsVisible(50) + Player.HasAudio</visible>
-			<control type="progress" id="20">
-				<description>Progressbar</description>
-				<posx>855</posx>
-				<posy>630</posy>
-				<width>346</width>
-				<height>18</height>
-				<texturebg>list/progress_back.png</texturebg>
-				<lefttexture>list/progress_left.png</lefttexture>
-				<midtexture>list/progress_mid.png</midtexture>
-				<righttexture>list/progress_right.png</righttexture>
-				<overlaytexture>-</overlaytexture>
-				<info>Player.Progress</info>
-			</control>
+	<include>Furniture_NowPlayingWidget</include>
 
-			<control type="label">
-				<include>List_NowPlaying</include>
-				<posy>655</posy>
-				<textcolor>8f000000</textcolor>
-				<scroll>true</scroll>
-				<label>[UPPERCASE]$INFO[MusicPlayer.Artist] - "$INFO[MusicPlayer.Title]"[/UPPERCASE]</label>
-			</control>
-		</control>
-		
 	<control type="group">
 		<animation effect="fade" delay="500" start="0" end="100" time="1000" condition="Control.IsVisible(50)">Conditional</animation>
 		<animation effect="fade" delay="1500" start="100" end="0" time="200" condition="Player.HasAudio">Conditional</animation>		
