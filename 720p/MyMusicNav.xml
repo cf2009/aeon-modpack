@@ -101,7 +101,13 @@
 				</control>
 
 				<include>Objects_PanelDensityButton</include>
-				
+			<!-- Party Mod -->
+				<control type="button" id="915">
+					<label>589</label>
+					<include>Objects_MediaMenuButton</include>
+					<onclick>PlayerControl(Partymode(music))</onclick>
+				</control>
+			<!-- End -->
 				<control type="togglebutton" id="901">
 					<include>Objects_MediaMenuButton</include>				
 					<include>Objects_FanartToggleStrings</include>
