@@ -172,7 +172,15 @@
 				<include>Objects_WallGridButton</include>
 				
 				<include>Objects_WallBackdropButton</include>
-			
+
+				<control type="togglebutton" id="991">
+					<include>Objects_MediaMenuButton</include>				
+					<label>$LOCALIZE[31066]: $LOCALIZE[31077]</label>
+					<altlabel>$LOCALIZE[31066]: $LOCALIZE[31078]</altlabel>
+					<usealttexture>Skin.HasSetting(nooverlays)</usealttexture>
+					<onclick>Skin.ToggleSetting(nooverlays)</onclick>
+					<visible>Window.IsActive(25) + Skin.HasSetting(videotv)</visible>
+				</control>				
 
 				<include>Objects_CurtainsButton</include>
 				
@@ -186,15 +194,6 @@
 					<visible>[Skin.HasSetting(videomovies) + !Skin.HasSetting(nomenumoviewatched)] | [Skin.HasSetting(videotv) + !Skin.HasSetting(nomenutvwatched)]</visible>
 				</control>
 				
-				<control type="togglebutton" id="991">
-					<include>Objects_MediaMenuButton</include>				
-					<label>$LOCALIZE[31066]: $LOCALIZE[31077]</label>
-					<altlabel>$LOCALIZE[31066]: $LOCALIZE[31078]</altlabel>
-					<usealttexture>Skin.HasSetting(nooverlays)</usealttexture>
-					<onclick>Skin.ToggleSetting(nooverlays)</onclick>
-					<visible>[Window.IsActive(25) + Skin.HasSetting(videotv)] | [Window.IsActive(25) + Skin.HasSetting(videomovies)]</visible>
-				</control>				
-
 				<control type="button" id="8">
 					<label>137</label>
 					<include>Objects_MediaMenuButton</include>
@@ -225,7 +224,7 @@
 	
 	<include>Furniture_DarkGradient</include>
 	<include>ViewChange</include>
-	<include>Background_ContextBlack</include>
+	<!--<include>Background_ContextBlack</include>-->
 	<include condition="Skin.HasSetting(debug)">Furniture_Debug</include>
 	
 </controls>	

@@ -110,7 +110,7 @@
 					<altclick>Skin.Reset(nomusicfanart)</altclick>
 					<visible>Control.IsVisible(57)</visible>
 				</control>
-						<!--	<include condition="!Skin.HasSetting(nolightnightbuttons)">Objects_LightNightButtons</include>-->
+						<!--	<include condition="!Skin.HasSetting(nolightnightbuttons)">Objects_LightNightButtons</include>
 				
 
 		<control type="togglebutton" id="996">
@@ -153,7 +153,7 @@
 			<visible>Control.IsVisible(25)+!Skin.HasSetting(nolightnightbuttons)</visible>
 		</control>		
 
-
+-->
 
 
 				<include>Objects_WallGridButton</include>
@@ -177,8 +177,9 @@
 		
 	</control>
 
+	<include>Furniture_DarkGradient</include>	
 	<include>ViewChange</include>
-	<include>Background_ContextBlack</include>
+	<!--<include>Background_ContextBlack</include>-->
 	<include condition="Skin.HasSetting(debug)">Furniture_Debug</include>
 	
 	</controls>
