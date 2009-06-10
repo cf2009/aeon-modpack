@@ -15,7 +15,7 @@
 
 	<control type="largeimage" id="102">
 		<include>FullscreenDimensions</include>
-        <visible>!Control.IsVisible(103) +[Control.IsVisible(51) | Control.IsVisible(57)] + !IsEmpty(listitem.property(fanart_image)) + !Skin.HasSetting(nomusicfanart)</visible>
+        <visible>!Control.IsVisible(103) +[Control.IsVisible(51) | Control.IsVisible(50) | Control.IsVisible(57)] + !IsEmpty(listitem.property(fanart_image)) + !Skin.HasSetting(nomusicfanart)</visible>
 		<fadetime>400</fadetime>
 		<texture>$INFO[listitem.property(fanart_image)]</texture>
 		<include>Animation_FanartFade</include>
@@ -23,7 +23,7 @@
 
 	<control type="largeimage" id="103">
 		<include>FullscreenDimensions</include>
-        <visible>[Control.IsVisible(51) | Control.IsVisible(57)] + !IsEmpty(container.property(fanart_image)) + !Skin.HasSetting(nomusicfanart)</visible>
+        <visible>[Control.IsVisible(51) | Control.IsVisible(50) | Control.IsVisible(57)] + !IsEmpty(container.property(fanart_image)) + !Skin.HasSetting(nomusicfanart)</visible>
 		<fadetime>400</fadetime>
 		<texture>$INFO[container.property(fanart_image)]</texture>
 		<include>Animation_FanartFade</include>
@@ -88,7 +88,7 @@
 					<usealttexture>Skin.HasSetting(musicalbumslistfull)</usealttexture>
 					<onclick>Skin.SetBool(musicalbumslistfull)</onclick>
 					<altclick>Skin.Reset(musicalbumslistfull)</altclick>
-					<visible>Control.IsVisible(50) + Container.Content(albums)</visible>
+					<visible>Control.IsVisible(50) + !Window.IsActive(MyMusic) + Container.Content(albums)</visible>
 				</control>
 
 				<control type="togglebutton" id="945">
@@ -97,7 +97,7 @@
 					<usealttexture>Skin.HasSetting(musicsongslistfull)</usealttexture>
 					<onclick>Skin.SetBool(musicsongslistfull)</onclick>
 					<altclick>Skin.Reset(musicsongslistfull)</altclick>
-					<visible>Control.IsVisible(50) + Container.Content(songs)</visible>
+					<visible>Control.IsVisible(50) + !Window.IsActive(MyMusic) + Container.Content(songs)</visible>
 				</control>
 
 				<include>Objects_PanelDensityButton</include>
@@ -114,57 +114,16 @@
 					<usealttexture>Skin.HasSetting(nomusicfanart)</usealttexture>
 					<onclick>Skin.SetBool(nomusicfanart)</onclick>
 					<altclick>Skin.Reset(nomusicfanart)</altclick>
-					<visible>Control.IsVisible(57)</visible>
+					<visible>Control.IsVisible(50) | Control.IsVisible(57) | Control.IsVisible(52)</visible>
 				</control>
-						<!--	<include condition="!Skin.HasSetting(nolightnightbuttons)">Objects_LightNightButtons</include>-->
-				
-
-		<control type="togglebutton" id="996">
-			<include>Objects_MediaMenuButton</include>				
-			<label>$LOCALIZE[31042]</label>
-			<altlabel>$LOCALIZE[31043]</altlabel>
-			<usealttexture>Skin.HasSetting(darkshowcase)</usealttexture>
-			<onclick>Skin.ToggleSetting(darkshowcase)</onclick>
-			<onclick>XBMC.ReloadSkin</onclick>
-			<visible>Control.IsVisible(57)+!Skin.HasSetting(nolightnightbuttons)</visible>
-		</control>
-		
-		<control type="togglebutton" id="997">
-			<include>Objects_MediaMenuButton</include>				
-			<label>$LOCALIZE[31042]</label>
-			<altlabel>$LOCALIZE[31043]</altlabel>
-			<usealttexture>Skin.HasSetting(darkmultiplex)</usealttexture>
-			<onclick>Skin.ToggleSetting(darkmultiplex)</onclick>
-			<onclick>XBMC.ReloadSkin</onclick>
-			<visible>Control.IsVisible(52)+!Skin.HasSetting(nolightnightbuttons)</visible>
-		</control>
-		
-		<control type="togglebutton" id="998">
-			<include>Objects_MediaMenuButton</include>				
-			<label>$LOCALIZE[31042]</label>
-			<altlabel>$LOCALIZE[31043]</altlabel>
-			<usealttexture>Skin.HasSetting(darklist)</usealttexture>
-			<onclick>Skin.ToggleSetting(darklist)</onclick>
-			<onclick>XBMC.ReloadSkin</onclick>
-			<visible>Control.IsVisible(50)+!Skin.HasSetting(nolightnightbuttons)</visible>
-		</control>
-
-		<control type="togglebutton" id="999">
-			<include>Objects_MediaMenuButton</include>				
-			<label>$LOCALIZE[31042]</label>
-			<altlabel>$LOCALIZE[31043]</altlabel>
-			<usealttexture>Skin.HasSetting(darklist)</usealttexture>
-			<onclick>Skin.ToggleSetting(darklist)</onclick>
-			<onclick>XBMC.ReloadSkin</onclick>
-			<visible>Control.IsVisible(25)+!Skin.HasSetting(nolightnightbuttons)</visible>
-		</control>		
-
-
-
 
 				<include>Objects_WallGridButton</include>
 				
-				<include>Objects_WallBackdropButton</include>				
+				<include>Objects_WallBackdropButton</include>
+
+				<include>Objects_CurtainsButton</include>
+
+				<include>Objects_LightNightButtons</include>				
 				
 				<control type="button" id="5">
 					<label>31057</label>
@@ -183,9 +142,8 @@
 		
 	</control>
 
-	<include>Furniture_DarkGradient</include>	
 	<include>ViewChange</include>
-	<!--<include>Background_ContextBlack</include>-->
+	<include>Background_ContextBlack</include>
 	<include condition="Skin.HasSetting(debug)">Furniture_Debug</include>
 	
 	</controls>
