@@ -1,5 +1,21 @@
 <includes>
 
+	<include name="ListNight">
+		<texture>list/listpanel_back.png</texture>
+	</include>
+	
+	<include name="ListLight">
+		<texture>list/lite/listpanel_back.png</texture>
+	</include>
+
+	<include name="ListSpotNight">
+		<texture>list/list_spot.png</texture>
+	</include>
+	
+	<include name="ListSpotLight">
+		<texture>list/lite/list_spot.png</texture>
+	</include>
+	
 	<include name="listfade">
 		<control type="image" id="102">
 			<posx>0</posx>
@@ -288,7 +304,8 @@
 			<height>137</height>
 			<posx>693</posx>
 			<posy>583</posy>
-			<texture>list/list_spot.png</texture>
+			<include condition="!Skin.HasSetting(darkshowcase)">ListSpotLight</include>
+			<include condition="Skin.HasSetting(darkshowcase)">ListSpotNight</include>
 			<visible>Control.IsVisible(50)</visible>				
 		</control>
 	
@@ -459,9 +476,8 @@
 					<control type="image">
 						<include>WatchedOverlay</include>
 						<include>detailcolornofocus</include>
-						<info>ListItem.Overlay</info>
 						<visible>!Skin.HasSetting(nooverlays) + !IsEmpty(ListItem.Overlay)</visible>
-						<include>Animation_VisibleChange200</include>
+						<info>ListItem.Overlay</info>
 					</control>					
 				</itemlayout>
 				<focusedlayout condition="Window.IsActive(1) | Window.IsActive(20) | [Window.IsActive(2) + !Skin.HasSetting(pictureslistfull)] | Window.IsActive(24) | [Window.IsActive(25) + !Container.Content(movies)+ !Container.Content(tvshows)+ !Container.Content(episodes)] | [Window.IsActive(25) + !Skin.HasSetting(movieslistfull) + Container.Content(movies)] | [Window.IsActive(25) + Container.Content(tvshows) + !Skin.HasSetting(tvshowslistfull)] | [Window.IsActive(25) + Container.Content(episodes) + !Skin.HasSetting(tvepisodeslistfull)] | [Window.IsActive(500) | Window.IsActive(501) | [Window.IsActive(502) + !Container.Content(albums)+!Container.Content(songs)] | [Window.IsActive(502) + !Skin.HasSetting(musicalbumslistfull) + Container.Content(albums)] | [Window.IsActive(502) + !Skin.HasSetting(musicsongslistfull) + Container.Content(songs)]]" height="40">
@@ -533,6 +549,13 @@
 						<include>Animation_ButtonFocusFade_fix2</include><!-- list_bar_mod End -->						
 						<label>$INFO[ListItem.Artist] - $INFO[ListItem.Title]</label>
 						<visible>[Window.IsActive(500) | Window.IsActive(501) | Container.Content(songs)] + !IsEmpty(ListItem.Artist)</visible>
+					</control>					
+					<control type="label">
+						<include>ListLabel_Track</include>
+						<include>listcolornofocus</include>
+						<include>Animation_ButtonFocusFade_fix2</include>						
+						<label>$INFO[ListItem.TrackNumber]</label>
+						<visible>[Window.IsActive(500) | Window.IsActive(501) | Container.Content(songs)]</visible>
 					</control>
 					<control type="label">
 						<include>ListLabel_Track</include>
@@ -540,6 +563,13 @@
 						<include>Animation_ButtonFocusFade_fix2</include><!-- list_bar_mod End -->
 						<label>$INFO[ListItem.Season].$INFO[ListItem.Episode]</label>
 						<visible>Container.Content(episodes)</visible>
+					</control>					
+					<control type="label">
+						<include>ListLabel_MainSmall</include>
+						<include>listcolornofocus</include>
+						<info>ListItem.Label</info>
+						<include>Animation_ButtonFocusFade_fix2</include>						
+						<visible>[[![Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)]] | [[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)] + IsEmpty(ListItem.Artist)] | Container.Content(artists)] + !Container.Content(episodes)</visible>
 					</control>
 					
 
@@ -587,9 +617,13 @@
 						<label>$INFO[ListItem.Artist] - $INFO[ListItem.Title]</label>
 						<visible>[Window.IsActive(500) | Window.IsActive(501) | Container.Content(songs)] + !IsEmpty(ListItem.Artist)</visible>
 					</control>					
-
-
-
+					<control type="label">
+						<include>ListLabel_Track</include>
+						<include>listcolorfocus</include>
+						<include>Animation_ButtonFocusFade2</include>						
+						<label>$INFO[ListItem.TrackNumber]</label>
+						<visible>[Window.IsActive(500) | Window.IsActive(501) | Container.Content(songs)]</visible>
+					</control>
 					<control type="label">
 						<include>ListLabel_Track</include>
 						<include>listcolorfocus</include>				
@@ -597,7 +631,12 @@
 						<label>$INFO[ListItem.Season].$INFO[ListItem.Episode]</label>
 						<visible>Container.Content(episodes)</visible>
 					</control>					
-
+					<control type="label">
+						<include>ListLabel_MainSmall</include>
+						<include>listcolorfocus</include>
+						<info>ListItem.Label</info>
+						<include>Animation_ButtonFocusFade2</include>						<visible>[[![Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)]] | [[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502)] + IsEmpty(ListItem.Artist)] | Container.Content(artists)] + !Container.Content(episodes)</visible>
+					</control>
 					<control type="label">
 						<include>ListLabel_MainSmall</include>
 						<include>listcolorfocus</include>
@@ -636,10 +675,8 @@
 					<control type="image">
 						<include>WatchedOverlay</include>
 						<include>detailcolorfocus</include>
-						<colordiffuse>FF585858</colordiffuse>
-						<info>ListItem.Overlay</info>
 						<visible>!Skin.HasSetting(nooverlays) + !IsEmpty(ListItem.Overlay)</visible>
-						<include>Animation_VisibleChange200</include>
+						<info>ListItem.Overlay</info>
 					</control>
 					
 				</focusedlayout>
@@ -650,7 +687,7 @@
 						<height>1</height>
 						<width>739</width>
 						<texture>list/listpanel_line.png</texture>
-						<visible>Skin.HasSetting(darklist)</visible>
+						<visible>Skin.HasSetting(darkshowcase)</visible>
 					</control>
 					<control type="image">
 						<posx>12</posx>
@@ -658,19 +695,8 @@
 						<height>1</height>
 						<width>739</width>
 						<texture>list/lite/listpanel_line.png</texture>
-						<visible>!Skin.HasSetting(darklist)</visible>
+						<visible>!Skin.HasSetting(darkshowcase)</visible>
 					</control>
-					<control type="label">
-						<posx>644</posx>
-						<posy>0</posy>
-						<height>61</height>
-						<width>75</width>
-						<align>center</align>
-						<aligny>center</aligny>
-						<label>Z</label>
-						<font>Font_ListPlay</font>
-						<include>playsymbol</include>
-					</control>					
 					<control type="label">
 						<include>ListLabel_Track</include>
 						<include>listcolornofocus</include>
@@ -1107,10 +1133,8 @@
 					<control type="image">
 						<include>WatchedOverlay2</include>
 						<include>detailcolorfocus</include>
-						<colordiffuse>FF585858</colordiffuse>
-						<info>ListItem.Overlay</info>
 						<visible>!Skin.HasSetting(nooverlays) + !IsEmpty(ListItem.Overlay)</visible>
-						<include>Animation_VisibleChange200</include>
+						<info>ListItem.Overlay</info>
 					</control>
 					
 				</focusedlayout>

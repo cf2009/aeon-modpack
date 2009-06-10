@@ -99,7 +99,25 @@
 					<altclick>Skin.Reset(movieslistfull)</altclick>
 					<visible>Window.IsActive(25) + Skin.HasSetting(videomovies) + Control.IsVisible(50)</visible>
 				</control>
+<!--New List Buttons-->
+				<control type="togglebutton" id="3006">
+					<include>Objects_MediaMenuButton</include>				
+					<include>Objects_ListLayoutStrings</include>
+					<usealttexture>Skin.HasSetting(tvshowslistfull)</usealttexture>
+					<onclick>Skin.SetBool(tvshowslistfull)</onclick>
+					<altclick>Skin.Reset(tvshowslistfull)</altclick>
+					<visible>[Window.IsActive(25) + Skin.HasSetting(videotv) + Control.IsVisible(50) + Container.Content(tvshows)]</visible>
+				</control>
 				
+				<control type="togglebutton" id="3007">
+					<include>Objects_MediaMenuButton</include>				
+					<include>Objects_ListLayoutStrings</include>
+					<usealttexture>Skin.HasSetting(tvepisodeslistfull)</usealttexture>
+					<onclick>Skin.SetBool(tvepisodeslistfull)</onclick>
+					<altclick>Skin.Reset(tvepisodeslistfull)</altclick>
+					<visible>[Window.IsActive(25) + Skin.HasSetting(videotv) + Control.IsVisible(50) + Container.Content(episodes)]</visible>
+				</control>
+<!--End-->				
 				<include>Objects_PanelDensityButton</include>				
 				
 				<control type="togglebutton" id="901">
@@ -122,53 +140,6 @@
 				
 				<include condition="!Skin.HasSetting(nomediaflagsbutton)">Objects_FlagsButton</include>
 
-			<!--	<include condition="!Skin.HasSetting(nolightnightbuttons)">Objects_LightNightButtons</include>
-				
-				
-
-		<control type="togglebutton" id="996">
-			<include>Objects_MediaMenuButton</include>				
-			<label>$LOCALIZE[31042]</label>
-			<altlabel>$LOCALIZE[31043]</altlabel>
-			<usealttexture>Skin.HasSetting(darkshowcase)</usealttexture>
-			<onclick>Skin.ToggleSetting(darkshowcase)</onclick>
-			<onclick>XBMC.ReloadSkin</onclick>
-			<visible>Control.IsVisible(57)+!Skin.HasSetting(nolightnightbuttons)</visible>
-		</control>
-		
-		<control type="togglebutton" id="997">
-			<include>Objects_MediaMenuButton</include>				
-			<label>$LOCALIZE[31042]</label>
-			<altlabel>$LOCALIZE[31043]</altlabel>
-			<usealttexture>Skin.HasSetting(darkmultiplex)</usealttexture>
-			<onclick>Skin.ToggleSetting(darkmultiplex)</onclick>
-			<onclick>XBMC.ReloadSkin</onclick>
-			<visible>Control.IsVisible(52)+!Skin.HasSetting(nolightnightbuttons)</visible>
-		</control>
-		
-		<control type="togglebutton" id="998">
-			<include>Objects_MediaMenuButton</include>				
-			<label>$LOCALIZE[31042]</label>
-			<altlabel>$LOCALIZE[31043]</altlabel>
-			<usealttexture>Skin.HasSetting(darklist)</usealttexture>
-			<onclick>Skin.ToggleSetting(darklist)</onclick>
-			<onclick>XBMC.ReloadSkin</onclick>
-			<visible>Control.IsVisible(50)+!Skin.HasSetting(nolightnightbuttons)</visible>
-		</control>
-
-		<control type="togglebutton" id="999">
-			<include>Objects_MediaMenuButton</include>				
-			<label>$LOCALIZE[31042]</label>
-			<altlabel>$LOCALIZE[31043]</altlabel>
-			<usealttexture>Skin.HasSetting(darklist)</usealttexture>
-			<onclick>Skin.ToggleSetting(darklist)</onclick>
-			<onclick>XBMC.ReloadSkin</onclick>
-			<visible>Control.IsVisible(25)+!Skin.HasSetting(nolightnightbuttons)</visible>
-		</control>		
--->
-
-
-
 				<include>Objects_WallGridButton</include>
 				
 				<include>Objects_WallBackdropButton</include>
@@ -179,8 +150,8 @@
 					<altlabel>$LOCALIZE[31066]: $LOCALIZE[31078]</altlabel>
 					<usealttexture>Skin.HasSetting(nooverlays)</usealttexture>
 					<onclick>Skin.ToggleSetting(nooverlays)</onclick>
-					<visible>Window.IsActive(25) + Skin.HasSetting(videotv)</visible>
-				</control>				
+					<visible>Window.IsActive(25) + [Skin.HasSetting(videotv) | Skin.HasSetting(videomovies)]</visible>
+				</control>
 
 				<include>Objects_CurtainsButton</include>
 				
@@ -224,7 +195,7 @@
 	
 	<include>Furniture_DarkGradient</include>
 	<include>ViewChange</include>
-	<!--<include>Background_ContextBlack</include>-->
+	<include>Background_ContextBlack</include>
 	<include condition="Skin.HasSetting(debug)">Furniture_Debug</include>
 	
 </controls>	
