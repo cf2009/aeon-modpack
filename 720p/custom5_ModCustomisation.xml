@@ -210,8 +210,19 @@
 			<label>Weather Backdrop by Current Weather Conditions</label>
 			<onclick>Skin.ToggleSetting(CustomWeatherConditions)</onclick>
 			<selected>Skin.HasSetting(CustomWeatherConditions)</selected>
-		</control>			
-		<control type="radiobutton" id="501">
+		</control>
+
+		<control type="togglebutton" id="501">
+			<label>Set Weather Icons</label>
+			<include>homesubmenu_Plugins_Defaultbutton2</include>
+			<onclick>Skin.SetPath(CustomWeatherIcon)</onclick>
+
+			<usealttexture>Skin.String(CustomWeatherIcon)</usealttexture>
+			<altlabel>Clear Weather Icons: [COLOR FF262728]$INFO[Skin.String(CustomWeatherIcon)][/COLOR]</altlabel>
+			<altonclick>Skin.Reset(CustomWeatherIcon)</altonclick>
+		</control>
+			
+		<control type="radiobutton" id="502">
 			<include>Objects_SettingsDefaultRadioButton</include>
 			<label>Home menu slide animation $LOCALIZE[31077]/$LOCALIZE[351]...</label>
 			<onclick>Skin.ToggleSetting(CustomMenuanimation)</onclick>
