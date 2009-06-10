@@ -150,6 +150,17 @@
 		</control>			
 <!-- END MOD: Lock Home Menu -->
 
+		<control type="togglebutton" id="505">
+			<label>Set Weather Icons</label>
+			<include>Objects_SettingsDefaultRadioButton</include>
+			<onclick>Skin.SetPath(CustomWeatherIcon)</onclick>
+
+			<usealttexture>Skin.String(CustomWeatherIcon)</usealttexture>
+			<altlabel>Clear Weather Icons: [COLOR FF262728]$INFO[Skin.String(CustomWeatherIcon)][/COLOR]</altlabel>
+			<altonclick>Skin.Reset(CustomWeatherIcon)</altonclick>
+		</control>
+
+
 		
 		
 	</control>
