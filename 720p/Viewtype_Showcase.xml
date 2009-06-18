@@ -239,6 +239,7 @@
         <include condition="Skin.HasSetting(darkshowcase)">Colour_ShowcaseLabelNightShade</include>		
 		<visible>!ControlGroup(7000).HasFocus()</visible>
         <animation effect="slide" end="0,-11" time="200" condition="[!Control.IsVisible(72) | IsEmpty(Control.GetLabel(72))] | Window.IsActive(24)">Conditional</animation>
+		<animation effect="slide" end="0,11" time="200" condition="Container.Content(seasons)">Conditional</animation>
     </include>
 
     <include name="ShowcaseItemsLabel">
