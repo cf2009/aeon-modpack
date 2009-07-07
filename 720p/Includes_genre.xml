@@ -19,237 +19,163 @@
 		<align>center</align>
 		<aspectratio scalediffuse="false">scale</aspectratio>
 		<visible>!Control.HasFocus(85)+Container.Content(genres)+!Skin.HasSetting(moviegenre_onoff)</visible>
+		<visible>Window.IsActive(25)</visible>
 	</include>
 	<include name="music_genre_Showcase_image_mod">
 		<include>music_ShowcaseThumbDimensions_mod</include>
 		<align>center</align>
 		<aspectratio scalediffuse="false">scale</aspectratio>
 		<visible>!Control.HasFocus(85)+Container.Content(genres)+!Skin.HasSetting(musicgenre_onoff)</visible>
-	</include>
-
-
-	<include name="movie_genre_Showcase_default_mod">
-		<control type="image">
-			<visible>!Skin.HasSetting(moviegenre_default_onoff)</visible>
-			<include>movie_genre_Showcase_image_mod</include>
-	        	<texture diffuse="thumbs/movieposter_mask.png">moviegenre/default.jpg</texture>
-		</control>
-	</include>
-	<include name="music_genre_Showcase_default_mod">
-		<control type="image">
-			<visible>Window.IsActive(502)</visible>
-			<include>music_genre_Showcase_image_mod</include>
-			<texture diffuse="thumbs/cdcover_mask.png">defaultAlbumCover.png</texture>
-		</control>
+		<visible>Window.IsActive(502)</visible>
 	</include>
 
 
 	<include name="genre_Showcase_1">
-		<include condition="Window.IsActive(25)">movie_genre_Showcase_default_mod</include>
-		<include condition="Window.IsActive(502)">music_genre_Showcase_default_mod</include>
 		<control type="image">
-			<visible>Window.IsActive(25)</visible>
 			<include>movie_genre_Showcase_image_mod</include>
-			<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem(-6).Label].jpg</texture>
+			<texture diffuse="thumbs/movieposter_mask.png" fallback="moviegenre/default.jpg">moviegenre/$INFO[ListItem(-6).Label].jpg</texture>
 		</control>
 		<control type="image">
-			<visible>Window.IsActive(502)</visible>
 			<include>music_genre_Showcase_image_mod</include>
 			<texture diffuse="thumbs/cdcover_mask.png">musicgenre/$INFO[ListItem(-6).Label].jpg</texture>
 		</control>
 	</include>
 	<include name="genre_Showcase_2">
-		<include condition="Window.IsActive(25)">movie_genre_Showcase_default_mod</include>
-		<include condition="Window.IsActive(502)">music_genre_Showcase_default_mod</include>
 		<control type="image">
-			<visible>Window.IsActive(25)</visible>
 			<include>movie_genre_Showcase_image_mod</include>
-			<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem(-5).Label].jpg</texture>
+			<texture diffuse="thumbs/movieposter_mask.png" fallback="moviegenre/default.jpg">moviegenre/$INFO[ListItem(-5).Label].jpg</texture>
 		</control>
 		<control type="image">
-			<visible>Window.IsActive(502)</visible>
 			<include>music_genre_Showcase_image_mod</include>
 			<texture diffuse="thumbs/cdcover_mask.png">musicgenre/$INFO[ListItem(-5).Label].jpg</texture>
 		</control>
 	</include>
 	<include name="genre_Showcase_3">
-		<include condition="Window.IsActive(25)">movie_genre_Showcase_default_mod</include>
-		<include condition="Window.IsActive(502)">music_genre_Showcase_default_mod</include>
 		<control type="image">
-			<visible>Window.IsActive(25)</visible>
 			<include>movie_genre_Showcase_image_mod</include>
-			<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem(-4).Label].jpg</texture>
+			<texture diffuse="thumbs/movieposter_mask.png" fallback="moviegenre/default.jpg">moviegenre/$INFO[ListItem(-4).Label].jpg</texture>
 		</control>
 		<control type="image">
-			<visible>Window.IsActive(502)</visible>
 			<include>music_genre_Showcase_image_mod</include>
 			<texture diffuse="thumbs/cdcover_mask.png">musicgenre/$INFO[ListItem(-4).Label].jpg</texture>
 		</control>
 	</include>
 	<include name="genre_Showcase_4">
-		<include condition="Window.IsActive(25)">movie_genre_Showcase_default_mod</include>
-		<include condition="Window.IsActive(502)">music_genre_Showcase_default_mod</include>
 		<control type="image">
-			<visible>Window.IsActive(25)</visible>
 			<include>movie_genre_Showcase_image_mod</include>
-			<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem(-3).Label].jpg</texture>
+			<texture diffuse="thumbs/movieposter_mask.png" fallback="moviegenre/default.jpg">moviegenre/$INFO[ListItem(-3).Label].jpg</texture>
 		</control>
 		<control type="image">
-			<visible>Window.IsActive(502)</visible>
 			<include>music_genre_Showcase_image_mod</include>
 			<texture diffuse="thumbs/cdcover_mask.png">musicgenre/$INFO[ListItem(-3).Label].jpg</texture>
 		</control>
 	</include>>
 	<include name="genre_Showcase_5">
-		<include condition="Window.IsActive(25)">movie_genre_Showcase_default_mod</include>
-		<include condition="Window.IsActive(502)">music_genre_Showcase_default_mod</include>
 		<control type="image">
-			<visible>Window.IsActive(25)</visible>
 			<include>movie_genre_Showcase_image_mod</include>
-			<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem(-2).Label].jpg</texture>
+			<texture diffuse="thumbs/movieposter_mask.png" fallback="moviegenre/default.jpg">moviegenre/$INFO[ListItem(-2).Label].jpg</texture>
 		</control>
 		<control type="image">
-			<visible>Window.IsActive(502)</visible>
 			<include>music_genre_Showcase_image_mod</include>
 			<texture diffuse="thumbs/cdcover_mask.png">musicgenre/$INFO[ListItem(-2).Label].jpg</texture>
 		</control>
 	</include>
 	<include name="genre_Showcase_6">
-		<include condition="Window.IsActive(25)">movie_genre_Showcase_default_mod</include>
-		<include condition="Window.IsActive(502)">music_genre_Showcase_default_mod</include>
 		<control type="image">
-			<visible>Window.IsActive(25)</visible>
 			<include>movie_genre_Showcase_image_mod</include>
-			<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem(-1).Label].jpg</texture>
+			<texture diffuse="thumbs/movieposter_mask.png" fallback="moviegenre/default.jpg">moviegenre/$INFO[ListItem(-1).Label].jpg</texture>
 		</control>
 		<control type="image">
-			<visible>Window.IsActive(502)</visible>
 			<include>music_genre_Showcase_image_mod</include>
 			<texture diffuse="thumbs/cdcover_mask.png">musicgenre/$INFO[ListItem(-1).Label].jpg</texture>
 		</control>
 	</include>
 	<include name="genre_Showcase_7">
-		<include condition="Window.IsActive(25)">movie_genre_Showcase_default_mod</include>
-		<include condition="Window.IsActive(502)">music_genre_Showcase_default_mod</include>
 		<control type="image">
-			<visible>Window.IsActive(25)</visible>
 			<include>movie_genre_Showcase_image_mod</include>
-			<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem(0).Label].jpg</texture>
+			<texture diffuse="thumbs/movieposter_mask.png" fallback="moviegenre/default.jpg">moviegenre/$INFO[ListItem(0).Label].jpg</texture>
 		</control>
 		<control type="image">
-			<visible>Window.IsActive(502)</visible>
 			<include>music_genre_Showcase_image_mod</include>
 			<texture diffuse="thumbs/cdcover_mask.png">musicgenre/$INFO[ListItem(0).Label].jpg</texture>
 		</control>
 	</include>
 	<include name="genre_Showcase_8">
-		<include condition="Window.IsActive(25)">movie_genre_Showcase_default_mod</include>
-		<include condition="Window.IsActive(502)">music_genre_Showcase_default_mod</include>
 		<control type="image">
-			<visible>Window.IsActive(25)</visible>
 			<include>movie_genre_Showcase_image_mod</include>
-			<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem(1).Label].jpg</texture>
+			<texture diffuse="thumbs/movieposter_mask.png" fallback="moviegenre/default.jpg">moviegenre/$INFO[ListItem(1).Label].jpg</texture>
 		</control>
 		<control type="image">
-			<visible>Window.IsActive(502)</visible>
 			<include>music_genre_Showcase_image_mod</include>
 			<texture diffuse="thumbs/cdcover_mask.png">musicgenre/$INFO[ListItem(1).Label].jpg</texture>
 		</control>
 	</include>
 	<include name="genre_Showcase_9">
-		<include condition="Window.IsActive(25)">movie_genre_Showcase_default_mod</include>
-		<include condition="Window.IsActive(502)">music_genre_Showcase_default_mod</include>
 		<control type="image">
-			<visible>Window.IsActive(25)</visible>
 			<include>movie_genre_Showcase_image_mod</include>
-			<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem(2).Label].jpg</texture>
+			<texture diffuse="thumbs/movieposter_mask.png" fallback="moviegenre/default.jpg">moviegenre/$INFO[ListItem(2).Label].jpg</texture>
 		</control>
 		<control type="image">
-			<visible>Window.IsActive(502)</visible>
 			<include>music_genre_Showcase_image_mod</include>
 			<texture diffuse="thumbs/cdcover_mask.png">musicgenre/$INFO[ListItem(2).Label].jpg</texture>
 		</control>
 	</include>
 	<include name="genre_Showcase_10">
-		<include condition="Window.IsActive(25)">movie_genre_Showcase_default_mod</include>
-		<include condition="Window.IsActive(502)">music_genre_Showcase_default_mod</include>
 		<control type="image">
-			<visible>Window.IsActive(25)</visible>
 			<include>movie_genre_Showcase_image_mod</include>
-			<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem(3).Label].jpg</texture>
+			<texture diffuse="thumbs/movieposter_mask.png" fallback="moviegenre/default.jpg">moviegenre/$INFO[ListItem(3).Label].jpg</texture>
 		</control>
 		<control type="image">
-			<visible>Window.IsActive(502)</visible>
 			<include>music_genre_Showcase_image_mod</include>
 			<texture diffuse="thumbs/cdcover_mask.png">musicgenre/$INFO[ListItem(3).Label].jpg</texture>
 		</control>
 	</include>
 	<include name="genre_Showcase_11">
-		<include condition="Window.IsActive(25)">movie_genre_Showcase_default_mod</include>
-		<include condition="Window.IsActive(502)">music_genre_Showcase_default_mod</include>
 		<control type="image">
-			<visible>Window.IsActive(25)</visible>
 			<include>movie_genre_Showcase_image_mod</include>
-			<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem(4).Label].jpg</texture>
+			<texture diffuse="thumbs/movieposter_mask.png" fallback="moviegenre/default.jpg">moviegenre/$INFO[ListItem(4).Label].jpg</texture>
 		</control>
 		<control type="image">
-			<visible>Window.IsActive(502)</visible>
 			<include>music_genre_Showcase_image_mod</include>
 			<texture diffuse="thumbs/cdcover_mask.png">musicgenre/$INFO[ListItem(4).Label].jpg</texture>
 		</control>
 	</include>
 	<include name="genre_Showcase_12">
-		<include condition="Window.IsActive(25)">movie_genre_Showcase_default_mod</include>
-		<include condition="Window.IsActive(502)">music_genre_Showcase_default_mod</include>
 		<control type="image">
-			<visible>Window.IsActive(25)</visible>
 			<include>movie_genre_Showcase_image_mod</include>
-			<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem(5).Label].jpg</texture>
+			<texture diffuse="thumbs/movieposter_mask.png" fallback="moviegenre/default.jpg">moviegenre/$INFO[ListItem(5).Label].jpg</texture>
 		</control>
 		<control type="image">
-			<visible>Window.IsActive(502)</visible>
 			<include>music_genre_Showcase_image_mod</include>
 			<texture diffuse="thumbs/cdcover_mask.png">musicgenre/$INFO[ListItem(5).Label].jpg</texture>
 		</control>
 	</include>
 	<include name="genre_Showcase_13">
-		<include condition="Window.IsActive(25)">movie_genre_Showcase_default_mod</include>
-		<include condition="Window.IsActive(502)">music_genre_Showcase_default_mod</include>
 		<control type="image">
-			<visible>Window.IsActive(25)</visible>
 			<include>movie_genre_Showcase_image_mod</include>
-			<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem(6).Label].jpg</texture>
+			<texture diffuse="thumbs/movieposter_mask.png" fallback="moviegenre/default.jpg">moviegenre/$INFO[ListItem(6).Label].jpg</texture>
 		</control>
 		<control type="image">
-			<visible>Window.IsActive(502)</visible>
 			<include>music_genre_Showcase_image_mod</include>
 			<texture diffuse="thumbs/cdcover_mask.png">musicgenre/$INFO[ListItem(6).Label].jpg</texture>
 		</control>
 	</include>
 	<include name="genre_Showcase_14">
-		<include condition="Window.IsActive(25)">movie_genre_Showcase_default_mod</include>
-		<include condition="Window.IsActive(502)">music_genre_Showcase_default_mod</include>
 		<control type="image">
-			<visible>Window.IsActive(25)</visible>
 			<include>movie_genre_Showcase_image_mod</include>
-			<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem(7).Label].jpg</texture>
+			<texture diffuse="thumbs/movieposter_mask.png" fallback="moviegenre/default.jpg">moviegenre/$INFO[ListItem(7).Label].jpg</texture>
 		</control>
 		<control type="image">
-			<visible>Window.IsActive(502)</visible>
 			<include>music_genre_Showcase_image_mod</include>
 			<texture diffuse="thumbs/cdcover_mask.png">musicgenre/$INFO[ListItem(7).Label].jpg</texture>
 		</control>
 	</include>
 	<include name="genre_Showcase_15">
-		<include condition="Window.IsActive(25)">movie_genre_Showcase_default_mod</include>
-		<include condition="Window.IsActive(502)">music_genre_Showcase_default_mod</include>
 		<control type="image">
-			<visible>Window.IsActive(25)</visible>
 			<include>movie_genre_Showcase_image_mod</include>
-			<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem(-7).Label].jpg</texture>
+			<texture diffuse="thumbs/movieposter_mask.png" fallback="moviegenre/default.jpg">moviegenre/$INFO[ListItem(-7).Label].jpg</texture>
 		</control>
 		<control type="image">
-			<visible>Window.IsActive(502)</visible>
 			<include>music_genre_Showcase_image_mod</include>
 			<texture diffuse="thumbs/cdcover_mask.png">musicgenre/$INFO[ListItem(-7).Label].jpg</texture>
 		</control>
@@ -259,15 +185,7 @@
 	<include name="genre_Showcase_20">
 		<control type="image">
 			<include>movie_genre_Showcase_image_mod</include>
-			<texture diffuse="thumbs/movieposter_mask.png">moviegenre/default.jpg</texture>
-			<visible>Skin.HasSetting(flattenshowcase) + !Control.IsVisible(6000)+Container.Content(genres)+!Skin.HasSetting(moviegenre_onoff)</visible>
-			<visible>!Skin.HasSetting(moviegenre_default_onoff)</visible>
-			<animation effect="zoom" start="100" end="120" center="135,230" time="400" easing="out" reversible="false" tween="cubic">Focus</animation>
-			<animation effect="zoom" start="120" end="100" center="135,230" time="400" easing="out" reversible="false" tween="cubic" condition="!Control.HasFocus(57) + Skin.HasSetting(flattenshowcase)">Unfocus</animation>
-		</control>
-		<control type="image">
-			<include>movie_genre_Showcase_image_mod</include>
-			<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem.Label].jpg</texture>
+			<texture diffuse="thumbs/movieposter_mask.png" fallback="moviegenre/default.jpg">moviegenre/$INFO[ListItem.Label].jpg</texture>
 			<visible>Skin.HasSetting(flattenshowcase) + !Control.IsVisible(6000)+Container.Content(genres)+!Skin.HasSetting(moviegenre_onoff)</visible>
 			<animation effect="zoom" start="100" end="120" center="135,230" time="400" easing="out" reversible="false" tween="cubic">Focus</animation>
 			<animation effect="zoom" start="120" end="100" center="135,230" time="400" easing="out" reversible="false" tween="cubic" condition="!Control.HasFocus(57) + Skin.HasSetting(flattenshowcase)">Unfocus</animation>
@@ -276,13 +194,7 @@
 	<include name="genre_Showcase_21">
 		<control type="image">
 			<include>movie_genre_Showcase_image_mod</include>
-			<texture diffuse="thumbs/movieposter_mask.png">moviegenre/default.jpg</texture>
-			<visible>Skin.HasSetting(flattenshowcase) + !Control.IsVisible(6000)+Container.Content(genres)+!Skin.HasSetting(moviegenre_onoff)</visible>
-			<visible>!Skin.HasSetting(moviegenre_default_onoff)</visible>
-		</control>
-		<control type="image">
-			<include>movie_genre_Showcase_image_mod</include>
-			<texture diffuse="thumbs/movieposter_mask.png">moviegenre/$INFO[ListItem.Label].jpg</texture>
+			<texture diffuse="thumbs/movieposter_mask.png" fallback="moviegenre/default.jpg">moviegenre/$INFO[ListItem.Label].jpg</texture>
 			<visible>Skin.HasSetting(flattenshowcase) + !Control.IsVisible(6000)+Container.Content(genres)+!Skin.HasSetting(moviegenre_onoff)</visible>
 		</control>
 	</include>
@@ -325,130 +237,112 @@
         	<colordiffuse>d0FFFFFF</colordiffuse>
         	<aspectratio scalediffuse="false">scale</aspectratio>
 		<visible>Container.Content(genres)+!Skin.HasSetting(moviegenre_onoff)</visible>
+		<visible>Window.IsActive(25)</visible>
 	</include>
 	<include name="music_genre_Showcase_image_ref_mod">
 		<include>music_ShowcaseThumbDimensions_ref_mod</include>
 		<colordiffuse>d0FFFFFF</colordiffuse>
 		<visible>Container.Content(genres)+!Skin.HasSetting(musicgenre_onoff)</visible>
+		<visible>Window.IsActive(502)</visible>
 	</include>
 
 
 	<include name="genre_Showcase_ref_1">
 		<control type="image">
-			<visible>Window.IsActive(25)</visible>
 			<include>movie_genre_Showcase_image_ref_mod</include>
-			<texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png">moviegenre/$INFO[ListItem(-6).Label].jpg</texture>
+			<texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="moviegenre/default.jpg">moviegenre/$INFO[ListItem(-6).Label].jpg</texture>
 		</control>
 		<control type="image">
-			<visible>Window.IsActive(502)</visible>
 			<include>music_genre_Showcase_image_ref_mod</include>
 			<texture  flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">musicgenre/$INFO[ListItem(-6).Label].jpg</texture>
 		</control>
 	</include>
 	<include name="genre_Showcase_ref_2">
 		<control type="image">
-			<visible>Window.IsActive(25)</visible>
 			<include>movie_genre_Showcase_image_ref_mod</include>
-			<texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png">moviegenre/$INFO[ListItem(-5).Label].jpg</texture>
+			<texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="moviegenre/default.jpg">moviegenre/$INFO[ListItem(-5).Label].jpg</texture>
 		</control>
 		<control type="image">
-			<visible>Window.IsActive(502)</visible>
 			<include>music_genre_Showcase_image_ref_mod</include>
 			<texture  flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">musicgenre/$INFO[ListItem(-5).Label].jpg</texture>
 		</control>
 	</include>
 	<include name="genre_Showcase_ref_3">
 		<control type="image">
-			<visible>Window.IsActive(25)</visible>
 			<include>movie_genre_Showcase_image_ref_mod</include>
-			<texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png">moviegenre/$INFO[ListItem(-4).Label].jpg</texture>
+			<texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="moviegenre/default.jpg">moviegenre/$INFO[ListItem(-4).Label].jpg</texture>
 		</control>
 		<control type="image">
-			<visible>Window.IsActive(502)</visible>
 			<include>music_genre_Showcase_image_ref_mod</include>
 			<texture  flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">musicgenre/$INFO[ListItem(-4).Label].jpg</texture>
 		</control>
 	</include>
 	<include name="genre_Showcase_ref_4">
 		<control type="image">
-			<visible>Window.IsActive(25)</visible>
 			<include>movie_genre_Showcase_image_ref_mod</include>
-			<texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png">moviegenre/$INFO[ListItem(-3).Label].jpg</texture>
+			<texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="moviegenre/default.jpg">moviegenre/$INFO[ListItem(-3).Label].jpg</texture>
 		</control>
 		<control type="image">
-			<visible>Window.IsActive(502)</visible>
 			<include>music_genre_Showcase_image_ref_mod</include>
 			<texture  flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">musicgenre/$INFO[ListItem(-3).Label].jpg</texture>
 		</control>
 	</include>
 	<include name="genre_Showcase_ref_5">
 		<control type="image">
-			<visible>Window.IsActive(25)</visible>
 			<include>movie_genre_Showcase_image_ref_mod</include>
-			<texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png">moviegenre/$INFO[ListItem(-2).Label].jpg</texture>
+			<texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="moviegenre/default.jpg">moviegenre/$INFO[ListItem(-2).Label].jpg</texture>
 		</control>
 		<control type="image">
-			<visible>Window.IsActive(502)</visible>
 			<include>music_genre_Showcase_image_ref_mod</include>
 			<texture  flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">musicgenre/$INFO[ListItem(-2).Label].jpg</texture>
 		</control>
 	</include>
 	<include name="genre_Showcase_ref_6">
 		<control type="image">
-			<visible>Window.IsActive(25)</visible>
 			<include>movie_genre_Showcase_image_ref_mod</include>
-			<texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png">moviegenre/$INFO[ListItem(-1).Label].jpg</texture>
+			<texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="moviegenre/default.jpg">moviegenre/$INFO[ListItem(-1).Label].jpg</texture>
 		</control>
 		<control type="image">
-			<visible>Window.IsActive(502)</visible>
 			<include>music_genre_Showcase_image_ref_mod</include>
 			<texture  flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">musicgenre/$INFO[ListItem(-1).Label].jpg</texture>
 		</control>
 	</include>
 	<include name="genre_Showcase_ref_7">
 		<control type="image">
-			<visible>Window.IsActive(25)</visible>
 			<include>movie_genre_Showcase_image_ref_mod</include>
-			<texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png">moviegenre/$INFO[ListItem(0).Label].jpg</texture>
+			<texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="moviegenre/default.jpg">moviegenre/$INFO[ListItem(0).Label].jpg</texture>
 		</control>
 		<control type="image">
-			<visible>Window.IsActive(502)</visible>
 			<include>music_genre_Showcase_image_ref_mod</include>
 			<texture  flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">musicgenre/$INFO[ListItem(0).Label].jpg</texture>
 		</control>
 	</include>
 	<include name="genre_Showcase_ref_8">
 		<control type="image">
-			<visible>Window.IsActive(25)</visible>
 			<include>movie_genre_Showcase_image_ref_mod</include>
-			<texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png">moviegenre/$INFO[ListItem(1).Label].jpg</texture>
+			<texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="moviegenre/default.jpg">moviegenre/$INFO[ListItem(1).Label].jpg</texture>
 		</control>
 		<control type="image">
-			<visible>Window.IsActive(502)</visible>
 			<include>music_genre_Showcase_image_ref_mod</include>
 			<texture  flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">musicgenre/$INFO[ListItem(1).Label].jpg</texture>
 		</control>
 	</include>
 	<include name="genre_Showcase_ref_9">
 		<control type="image">
-			<visible>Window.IsActive(25)</visible>
 			<include>movie_genre_Showcase_image_ref_mod</include>
-			<texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png">moviegenre/$INFO[ListItem(2).Label].jpg</texture>
+			<texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="moviegenre/default.jpg">moviegenre/$INFO[ListItem(2).Label].jpg</texture>
 		</control>
 		<control type="image">
-			<visible>Window.IsActive(502)</visible>
 			<include>music_genre_Showcase_image_ref_mod</include>
 			<texture  flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">musicgenre/$INFO[ListItem(2).Label].jpg</texture>
 		</control>
 	</include>
 	<include name="genre_Showcase_ref_10">
 		<control type="image">
-			<visible>Window.IsActive(25)</visible>
 			<include>movie_genre_Showcase_image_ref_mod</include>
-			<texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png">moviegenre/$INFO[ListItem(3).Label].jpg</texture>
+			<texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="moviegenre/default.jpg">moviegenre/$INFO[ListItem(3).Label].jpg</texture>
 		</control>
 		<control type="image">
-			<visible>Window.IsActive(502)</visible>
 			<include>music_genre_Showcase_image_ref_mod</include>
 			<texture  flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">musicgenre/$INFO[ListItem(3).Label].jpg</texture>
 		</control>
@@ -456,121 +350,84 @@
 
 	<include name="genre_Showcase_ref_11">
 		<control type="image">
-			<visible>Window.IsActive(25)</visible>
 			<include>movie_genre_Showcase_image_ref_mod</include>
-			<texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png">moviegenre/$INFO[ListItem(4).Label].jpg</texture>
+			<texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="moviegenre/default.jpg">moviegenre/$INFO[ListItem(4).Label].jpg</texture>
 		</control>
 		<control type="image">
-			<visible>Window.IsActive(502)</visible>
 			<include>music_genre_Showcase_image_ref_mod</include>
 			<texture  flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">musicgenre/$INFO[ListItem(4).Label].jpg</texture>
 		</control>
 	</include>
 	<include name="genre_Showcase_ref_12">
 		<control type="image">
-			<visible>Window.IsActive(25)</visible>
 			<include>movie_genre_Showcase_image_ref_mod</include>
-			<texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png">moviegenre/$INFO[ListItem(5).Label].jpg</texture>
+			<texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="moviegenre/default.jpg">moviegenre/$INFO[ListItem(5).Label].jpg</texture>
 		</control>
 		<control type="image">
-			<visible>Window.IsActive(502)</visible>
 			<include>music_genre_Showcase_image_ref_mod</include>
 			<texture  flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">musicgenre/$INFO[ListItem(5).Label].jpg</texture>
 		</control>
 	</include>
 	<include name="genre_Showcase_ref_13">
 		<control type="image">
-			<visible>Window.IsActive(25)</visible>
 			<include>movie_genre_Showcase_image_ref_mod</include>
-			<texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png">moviegenre/$INFO[ListItem(6).Label].jpg</texture>
+			<texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="moviegenre/default.jpg">moviegenre/$INFO[ListItem(6).Label].jpg</texture>
 		</control>
 		<control type="image">
-			<visible>Window.IsActive(502)</visible>
 			<include>music_genre_Showcase_image_ref_mod</include>
 			<texture  flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">musicgenre/$INFO[ListItem(6).Label].jpg</texture>
 		</control>
 	</include>
 	<include name="genre_Showcase_ref_14">
 		<control type="image">
-			<visible>Window.IsActive(25)</visible>
 			<include>movie_genre_Showcase_image_ref_mod</include>
-			<texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png">moviegenre/$INFO[ListItem(7).Label].jpg</texture>
+			<texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="moviegenre/default.jpg">moviegenre/$INFO[ListItem(7).Label].jpg</texture>
 		</control>
 		<control type="image">
-			<visible>Window.IsActive(502)</visible>
 			<include>music_genre_Showcase_image_ref_mod</include>
 			<texture  flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">musicgenre/$INFO[ListItem(7).Label].jpg</texture>
 		</control>
 	</include>
 	<include name="genre_Showcase_ref_15">
 		<control type="image">
-			<visible>Window.IsActive(25)</visible>
 			<include>movie_genre_Showcase_image_ref_mod</include>
-			<texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png">moviegenre/$INFO[ListItem(-7).Label].jpg</texture>
+			<texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="moviegenre/default.jpg">moviegenre/$INFO[ListItem(-7).Label].jpg</texture>
 		</control>
 		<control type="image">
-			<visible>Window.IsActive(502)</visible>
 			<include>music_genre_Showcase_image_ref_mod</include>
 			<texture  flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">musicgenre/$INFO[ListItem(-7).Label].jpg</texture>
 		</control>
 	</include>
 
 
-<include name="genre_Showcase_ref_20">
-	<control type="image">
-		<posx>49</posx>
-        	<posy>260</posy>
-        	<width>173</width>
-       		<height>254</height>
-		<align>center</align>
-		<aspectratio scalediffuse="false">scale</aspectratio>
-        	<texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png">moviegenre/$INFO[ListItem.Label].jpg</texture>
-		<visible>!Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenshowcase) + !Control.IsVisible(6000)+Container.Content(genres)+!Skin.HasSetting(moviegenre_onoff)</visible>
-		<animation effect="zoom" start="100" end="120" center="135,230" time="400" easing="out" reversible="false" tween="cubic">Focus</animation>
-		<animation effect="zoom" start="120" end="100" center="135,230" time="400" easing="out" reversible="false" tween="cubic" condition="!Control.HasFocus(57) + Skin.HasSetting(flattenshowcase)">Unfocus</animation>
-	</control>
-	<control type="image">
-		<posx>49</posx>
-        	<posy>260</posy>
-        	<width>173</width>
-       		<height>254</height>
-		<align>center</align>
-		<aspectratio scalediffuse="false">scale</aspectratio>
-		<texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png">moviegenre/$INFO[ListItem.Label].jpg</texture>
-		<visible>Skin.HasSetting(alternativerender) + Skin.HasSetting(flattenshowcase) + !Control.IsVisible(6000)+Container.Content(genres)+!Skin.HasSetting(moviegenre_onoff)</visible>
-		<animation effect="zoom" start="100" end="130" center="135,230" time="400" easing="out" reversible="false" tween="cubic">Focus</animation>
-		<animation effect="zoom" start="120" end="100" center="135,230" time="400" easing="out" reversible="false" tween="cubic" condition="!Control.HasFocus(57) + Skin.HasSetting(flattenshowcase)">Unfocus</animation>						
-	</control>
-</include>
-
-<include name="genre_Showcase_ref_21">
-	<control type="image">
-		<posx>49</posx>
-        	<posy>260</posy>
-        	<width>173</width>
-       		<height>254</height>
-		<align>center</align>
-		<aspectratio scalediffuse="false">scale</aspectratio>
-        	<texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png">moviegenre/$INFO[ListItem.Label].jpg</texture>
-		<visible>Skin.HasSetting(flattenshowcase) + !Control.IsVisible(6000)+Container.Content(genres)+!Skin.HasSetting(moviegenre_onoff)</visible>
-	</control>
-</include>
+	<include name="genre_Showcase_ref_20">
+		<control type="image">
+			<include>movie_ShowcaseThumbDimensions_ref_mod</include>
+			<align>center</align>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+        		<texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="moviegenre/default.jpg">moviegenre/$INFO[ListItem.Label].jpg</texture>
+			<visible>Skin.HasSetting(flattenshowcase) + !Control.IsVisible(6000)+Container.Content(genres)+!Skin.HasSetting(moviegenre_onoff)</visible>
+			<animation effect="zoom" start="100" end="120" center="135,230" time="400" easing="out" reversible="false" tween="cubic">Focus</animation>
+			<animation effect="zoom" start="120" end="100" center="135,230" time="400" easing="out" reversible="false" tween="cubic" condition="!Control.HasFocus(57) + Skin.HasSetting(flattenshowcase)">Unfocus</animation>
+		</control>
+	</include>
+	<include name="genre_Showcase_ref_21">
+		<control type="image">
+			<include>movie_ShowcaseThumbDimensions_ref_mod</include>
+			<align>center</align>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="moviegenre/default.jpg">moviegenre/$INFO[ListItem.Label].jpg</texture>
+			<visible>Skin.HasSetting(flattenshowcase) + !Control.IsVisible(6000)+Container.Content(genres)+!Skin.HasSetting(moviegenre_onoff)</visible>
+		</control>
+	</include>
 <!-- Showcase reflection End -->
 
 <!-- wall -->
 <include name="mod_moviegenre_wall_1">
 	<control type="image">
 		<visible>Container.Content(genres)+!Skin.HasSetting(moviegenre_onoff)</visible>
-		<visible>!Skin.HasSetting(moviegenre_default_onoff)</visible>
 		<include>WallIconMovieDimensions</include>
-		<texture diffuse="wall/wall_mask.png">moviegenre/default.jpg</texture>
-		<aspectratio scalediffuse="false">scale</aspectratio>
-		<animation effect="zoom" center="62,90" start="100" end="160" time="400" easing="out" tween="cubic" reversible="false">Focus</animation>
-	</control>
-	<control type="image">
-		<visible>Container.Content(genres)+!Skin.HasSetting(moviegenre_onoff)</visible>
-		<include>WallIconMovieDimensions</include>
-		<texture diffuse="wall/wall_mask.png">moviegenre/$INFO[ListItem.Label].jpg</texture>
+		<texture diffuse="wall/wall_mask.png" fallback="moviegenre/default.jpg">moviegenre/$INFO[ListItem.Label].jpg</texture>
 		<aspectratio scalediffuse="false">scale</aspectratio>
 		<animation effect="zoom" center="62,90" start="100" end="160" time="400" easing="out" tween="cubic" reversible="false">Focus</animation>
 	</control>
@@ -578,16 +435,8 @@
 <include name="mod_moviegenre_wall_2">
 	<control type="image">
 		<visible>Container.Content(genres)+!Skin.HasSetting(moviegenre_onoff)</visible>
-		<visible>!Skin.HasSetting(moviegenre_default_onoff)</visible>
 		<include>WallIconMovieDimensionsSmall</include>
-		<texture diffuse="wall/wall_mask.png">moviegenre/default.jpg</texture>
-		<aspectratio scalediffuse="false">scale</aspectratio>
-		<animation effect="zoom" center="44,71" start="100" end="160" time="400" easing="out" tween="cubic" reversible="false">Focus</animation>
-	</control>
-	<control type="image">
-		<visible>Container.Content(genres)+!Skin.HasSetting(moviegenre_onoff)</visible>
-		<include>WallIconMovieDimensionsSmall</include>
-		<texture diffuse="wall/wall_mask.png">moviegenre/$INFO[ListItem.Label].jpg</texture>
+		<texture diffuse="wall/wall_mask.png" fallback="moviegenre/default.jpg">moviegenre/$INFO[ListItem.Label].jpg</texture>
 		<aspectratio scalediffuse="false">scale</aspectratio>
 		<animation effect="zoom" center="44,71" start="100" end="160" time="400" easing="out" tween="cubic" reversible="false">Focus</animation>
 	</control>
@@ -595,45 +444,24 @@
 <!-- wall End -->
 <!-- List -->
 	<include name="mod_moviegenre_list1">
-
-        	<control type="image">
-			<visible>Container.Content(genres)+!Window.IsActive(502)+!Skin.HasSetting(moviegenre_onoff)</visible>
-			<visible>!Skin.HasSetting(moviegenre_default_onoff)</visible>
-			<width>346</width>
-			<height>511</height>
-			<fadetime>400</fadetime>
-			<aspectratio scalediffuse="false">scale</aspectratio>
-			<texture diffuse="list/list_movieicon_mask.png">moviegenre/default.jpg</texture>
-			<bordertexture border="-28">list/list_movieicon_frame.png</bordertexture>
-		</control>
 		<control type="image">
-			<visible>Control.IsVisible(102)+Container.Content(genres)+!Window.IsActive(502)+!Skin.HasSetting(moviegenre_onoff)</visible>
+			<visible>Container.Content(genres)+!Window.IsActive(502)+!Skin.HasSetting(moviegenre_onoff)</visible>
 			<width>346</width>
 			<height>511</height>
 			<fadetime>400</fadetime>
 			<aspectratio scalediffuse="false">scale</aspectratio>
-			<texture diffuse="list/list_movieicon_mask.png">moviegenre/$INFO[ListItem(0).Label].jpg</texture>
+			<texture diffuse="list/list_movieicon_mask.png" fallback="moviegenre/default.jpg">moviegenre/$INFO[ListItem(0).Label].jpg</texture>
 			<bordertexture border="-28">list/list_movieicon_frame.png</bordertexture>
 		</control>
-
 	</include>
 	<include name="mod_moviegenre_list2">
-        	<control type="image">
-			<visible>Container.Content(genres)+!Window.IsActive(502)+!Skin.HasSetting(moviegenre_onoff)</visible>
-			<visible>!Skin.HasSetting(moviegenre_default_onoff)</visible>
-			<posy>513</posy>
-			<width>346</width>
-			<height>511</height>
-			<fadetime>400</fadetime>
-			<texture  flipy="true" diffuse="list/list_movieicon_flipmask.png">moviegenre/default.jpg</texture>
-		</control>
 		<control type="image">
-			<visible>Control.IsVisible(102)+Container.Content(genres)+!Window.IsActive(502)+!Skin.HasSetting(moviegenre_onoff)</visible>
+			<visible>Container.Content(genres)+!Window.IsActive(502)+!Skin.HasSetting(moviegenre_onoff)</visible>
 			<posy>513</posy>
 			<width>346</width>
 			<height>511</height>
 			<fadetime>400</fadetime>
-			<texture  flipy="true" diffuse="list/list_movieicon_flipmask.png">moviegenre/$INFO[ListItem(0).Label].jpg</texture>
+			<texture  flipy="true" diffuse="list/list_movieicon_flipmask.png" fallback="moviegenre/default.jpg">moviegenre/$INFO[ListItem(0).Label].jpg</texture>
 		</control>
 	</include>
 <!-- list End -->
