@@ -23,6 +23,7 @@
             <textcolor>FF323232</textcolor>
             <align>left</align>
             <font>Font_ProgressLabel</font>
+			<scroll>true</scroll>
         </control>
     
         <control type="button" id="10">

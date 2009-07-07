@@ -759,6 +759,8 @@
 		<texturenofocus>dialogs/context_nofocus.png</texturenofocus>
 		<texturefocus>dialogs/context_highlight.png</texturefocus>
 		<alttexturefocus>dialogs/context_highlight.png</alttexturefocus>
+		<alttexturenofocus>dialogs/context_nofocus.png</alttexturenofocus>
+		<pulseonselect>true</pulseonselect>
 		<align>center</align>
 		<aligny>top</aligny>
 		<font>Font_ContextMenuButton</font>
