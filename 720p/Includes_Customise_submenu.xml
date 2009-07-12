@@ -198,14 +198,14 @@
 				<visible>Container(301).HasFocus(7)</visible>
 				<visible>!Skin.HasSetting(sub_tv_NEWEST)</visible>
 				<description>Recently Added</description>
-				<label>NEWEST</label>
+				<label>$LOCALIZE[31920]</label>
 				<onclick>Skin.SetBool(sub_tv_NEWEST)</onclick>
 			</item>
 			<item id="14">
 				<visible>Container(301).HasFocus(7)</visible>
 				<visible>Skin.HasSetting(sub_tv_NEWEST)</visible>
 				<description>Recently Added</description>
-				<label2>NEWEST</label2>
+				<label2>$LOCALIZE[31920]</label2>
 				<onclick>Skin.Reset(sub_tv_NEWEST)</onclick>
 			</item>
 
@@ -320,14 +320,14 @@
 				<visible>Container(301).HasFocus(6)</visible>
 				<visible>!Skin.HasSetting(sub_movies_NEWEST)</visible>
 				<description>Recently Added</description>
-				<label>NEWEST</label>
+				<label>$LOCALIZE[31920]</label>
 				<onclick>Skin.SetBool(sub_movies_NEWEST)</onclick>
 			</item>
 			<item id="26">
 				<visible>Container(301).HasFocus(6)</visible>
 				<visible>Skin.HasSetting(sub_movies_NEWEST)</visible>
 				<description>Recently Added</description>
-				<label2>NEWEST</label2>
+				<label2>$LOCALIZE[31920]</label2>
 				<onclick>Skin.Reset(sub_movies_NEWEST)</onclick>
 			</item>
 
@@ -501,14 +501,14 @@
 				<visible>Container(301).HasFocus(1)</visible>
 				<visible>!Skin.HasSetting(sub_music_NEWEST)</visible>
 				<description>recently added albums</description>
-				<label>NEWEST</label>
+				<label>$LOCALIZE[31920]</label>
 				<onclick>Skin.SetBool(sub_music_NEWEST)</onclick>
 			</item>
 			<item id="39">
 				<visible>Container(301).HasFocus(1)</visible>
 				<visible>Skin.HasSetting(sub_music_NEWEST)</visible>
 				<description>recently added albums</description>
-				<label2>NEWEST</label2>
+				<label2>$LOCALIZE[31920]</label2>
 				<onclick>Skin.Reset(sub_music_NEWEST)</onclick>
 			</item>
 

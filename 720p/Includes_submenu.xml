@@ -31,7 +31,7 @@
 	<!-- OnUp -->
 	<control type="button" id="324">
 		<visible>Control.IsVisible(330)+!Skin.HasSetting(lowermainmenu)|Control.IsVisible(330)+Skin.HasSetting(CustomMenuanimation)</visible>
-		<visible>Container(300).HasFocus(22) | Container(300).HasFocus(6) | Container(300).HasFocus(7) | Container(300).HasFocus(1)| Container(300).HasFocus(2)</visible>
+		<visible>[Container(300).HasFocus(10) + StringCompare(Weather.Plugin,weather.com plus)] | Container(300).HasFocus(22) | Container(300).HasFocus(6) | Container(300).HasFocus(7) | Container(300).HasFocus(1)| Container(300).HasFocus(2)</visible>
 		<include>homesubmenu_but</include>
 		<onfocus>SetFocus(325)</onfocus>
 		<onfocus>Skin.SetBool(submenu)</onfocus>
@@ -46,7 +46,7 @@
 	<!-- Ondown -->
 	<control type="button" id="322">
 		<visible>Control.IsVisible(330)+Skin.HasSetting(lowermainmenu)|Control.IsVisible(330)+Skin.HasSetting(CustomMenuanimation)</visible>
-		<visible>Container(300).HasFocus(22) | Container(300).HasFocus(6) | Container(300).HasFocus(7) | Container(300).HasFocus(1)| Container(300).HasFocus(2)</visible>
+		<visible>[Container(300).HasFocus(10) + StringCompare(Weather.Plugin,weather.com plus)] | Container(300).HasFocus(22) | Container(300).HasFocus(6) | Container(300).HasFocus(7) | Container(300).HasFocus(1)| Container(300).HasFocus(2)</visible>
 		<include>homesubmenu_but</include>
 		<onfocus>SetFocus(325)</onfocus>
 		<onfocus>Skin.SetBool(submenu)</onfocus>
@@ -224,6 +224,44 @@
 				</control>
 			</focusedlayout>
 			<content>
+			<!-- weather (10) -->
+				<item id="1">
+					<visible>Container(300).HasFocus(10)</visible>
+					<label>4 Days</label>
+					<onclick>Skin.Reset(weatherpopup36hour)</onclick>
+					<onclick>Skin.Reset(weatherpopupweekend)</onclick>
+				</item>
+				<item id="2">
+					<visible>Container(300).HasFocus(10)</visible>
+					<label>36 hours</label>
+					<onclick>Skin.SetBool(weatherpopup36hour)</onclick>
+					<onclick>Skin.Reset(weatherpopupweekend)</onclick>
+				</item>
+				<item id="3">
+					<visible>Container(300).HasFocus(10)</visible>
+					<label>weekend</label>
+					<onclick>Skin.SetBool(weatherpopupweekend)</onclick>
+					<onclick>Skin.Reset(weatherpopup36hour)</onclick>
+				</item>
+				<item id="4">
+					<visible>Container(300).HasFocus(10)</visible>
+					<label>4 Days</label>
+					<onclick>Skin.Reset(weatherpopup36hour)</onclick>
+					<onclick>Skin.Reset(weatherpopupweekend)</onclick>
+				</item>
+				<item id="5">
+					<visible>Container(300).HasFocus(10)</visible>
+					<label>36 hours</label>
+					<onclick>Skin.SetBool(weatherpopup36hour)</onclick>
+					<onclick>Skin.Reset(weatherpopupweekend)</onclick>
+				</item>
+				<item id="6">
+					<visible>Container(300).HasFocus(10)</visible>
+					<label>weekend</label>
+					<onclick>Skin.SetBool(weatherpopupweekend)</onclick>
+					<onclick>Skin.Reset(weatherpopup36hour)</onclick>
+				</item>
+			<!-- weather (10) end -->
 				<!-- TV (7) -->
 				<item id="10">
 					<visible>Container(300).HasFocus(7)</visible>
@@ -581,6 +619,23 @@
 					<onclick>xbmc.activatewindow(134)</onclick>
 				</item>
 	 
+				<item id="55">
+					<description>AlarmClock</description>
+					<label>Alarm</label>
+					<onclick>Skin.SetString(AlarmString)</onclick>
+					<onclick>AlarmClock(Alarm,Notification(Alarm,$INFO[Skin.String(AlarmString)]),)</onclick>
+					<visible>!System.HasAlarm(Alarm)</visible>
+					<visible>Container(300).HasFocus(2)</visible>
+					<visible>!Skin.HasSetting(sub_Programs_AlarmClock)</visible>
+				</item>
+				<item id="55">
+					<description>AlarmClock</description>
+					<label>$LOCALIZE[222] Alarm</label>
+					<onclick>CancelAlarm(Alarm)</onclick>
+					<visible>System.HasAlarm(Alarm)</visible>
+					<visible>Container(300).HasFocus(2)</visible>
+					<visible>!Skin.HasSetting(sub_Programs_AlarmClock)</visible>
+				</item>
 				<!-- Programs scripts -->
 				<item id="258">
 					<visible>Container(300).HasFocus(2)</visible>
@@ -615,77 +670,6 @@
 					<onclick>XBMC.ActivateWindow(1,plugin://programs/$INFO[Skin.String(gamesplugin2path)]/)</onclick>
 				</item>
 				<!-- Programs Plugin End-->
-			<!-- temp fix for focus bug -->
-				<item id="55">
-					<visible>Container(300).HasFocus(2)</visible>
-					<visible>!Skin.HasSetting(sub_Programs_Programs)</visible>
-					<description>Programs</description>
-					<label>$LOCALIZE[0]</label>
-					<onclick>Skin.Reset(submenu)</onclick>
-					<onclick>xbmc.activatewindow(Programs)</onclick>
-				</item>	
-				<item id="56">
-					<visible>Container(300).HasFocus(2)</visible>
-					<visible>!Skin.HasSetting(sub_Programs_scripts)</visible>
-					<description>scripts</description>
-					<label>$LOCALIZE[247]</label>
-					<onclick>Skin.Reset(submenu)</onclick>
-					<onclick>xbmc.activatewindow(20)</onclick>
-				</item>
-				<item id="57">
-					<visible>Container(300).HasFocus(2)</visible>
-					<label>$LOCALIZE[31016]</label>
-					<onclick>Skin.Reset(settingsfade)</onclick>
-					<onclick>Skin.Reset(submenu)</onclick>
-					<onclick>XBMC.ActivateWindow(4)</onclick>
-					<visible>Skin.HasSetting(nosettings)</visible>
-					<visible>!Skin.HasSetting(sub_Programs_settings)</visible>
-					<visible>!Skin.HasSetting(kiosk)</visible>
-				</item>
-				<item id="58">
-					<visible>Container(300).HasFocus(2)</visible>
-					<visible>!Skin.HasSetting(sub_Programs_favourites)</visible>
-					<description>favourite</description>
-					<label>$LOCALIZE[1036]</label>
-					<onclick>xbmc.activatewindow(134)</onclick>
-				</item>
-				<!-- Programs scripts -->
-				<item id="251">
-					<visible>Container(300).HasFocus(2)</visible>
-					<visible>Skin.HasSetting(gamescript1)</visible>
-					<description>scripts</description>
-					<label>$INFO[Skin.String(gamescript1name)]</label>
-					<onclick>Skin.Reset(submenu)</onclick>
-					<onclick>XBMC.RunScript($INFO[Skin.String(gamescript1path)])</onclick>
-				</item>
-				<item id="252">
-					<visible>Container(300).HasFocus(2)</visible>
-					<visible>Skin.HasSetting(gamescript2)</visible>
-					<description>scripts</description>
-					<label>$INFO[Skin.String(gamescript2name)]</label>
-					<onclick>Skin.Reset(submenu)</onclick>
-					<onclick>XBMC.RunScript($INFO[Skin.String(gamescript2path)])</onclick>
-				</item>
-				<!--Programs scripts End -->
-				<!-- Programs Plugin -->
-				<item id="253">
-					<visible>Container(300).HasFocus(2)</visible>
-					<visible>Skin.HasSetting(gamesplugin1)</visible>
-					<description>plugin1</description>
-					<label>$INFO[Skin.String(gamesplugin1name)]</label>
-					<onclick>Skin.Reset(submenu)</onclick>
-					<onclick>XBMC.ActivateWindow(1,plugin://programs/$INFO[Skin.String(gamesplugin1path)]/)</onclick>
-				</item>
-				<item id="254">
-					<visible>Container(300).HasFocus(2)</visible>
-					<visible>Skin.HasSetting(gamesplugin2)</visible>
-					<description>plugin2</description>
-					<label>$INFO[Skin.String(gamesplugin2name)]</label>
-					<onclick>Skin.Reset(submenu)</onclick>
-					<onclick>XBMC.ActivateWindow(1,plugin://programs/$INFO[Skin.String(gamesplugin2path)]/)</onclick>
-				</item>
-				<!-- Programs Plugin End-->
-			<!-- temp fix for focus bug End -->
 				<!-- Programs (2) End -->
 				<!-- Shutdown (22) -->
 				<item id="62">

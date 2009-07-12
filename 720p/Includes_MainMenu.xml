@@ -29,45 +29,7 @@
 		<aligny>center</aligny>
 </include>
 
-<include name="PushForSub">
-	<ondown>Skin.SetBool(lowermainmenu)</ondown>
-	<onup>Skin.Reset(lowermainmenu)</onup>
-</include>
-
-<include name="DownForSub">
-	<onup>Skin.Reset(lowermainmenu)</onup>
-	<ondown>351</ondown>
-</include>
-
-
-<!--Weather Backdrop by Current Weather Conditions -->
-	<include name="BackgroundVarsWeather2">
-		<thumb>$INFO[Skin.String(CustomWeather)]$INFO[Weather.FanartCode]</thumb>		
-	</include>
-<!-- End-->
-
-
 <include name="MainMenu">
-
-	<control type="button" id="351">
-		<onfocus>SetFocus(940)</onfocus>
-		<visible>Container(300).HasFocus(6)</visible>
-	</control>
-	
-	<control type="button" id="351">
-		<onfocus>SetFocus(942)</onfocus>
-		<visible>Container(300).HasFocus(7)</visible>
-	</control>	
-	
-	<control type="button" id="351">
-		<onfocus>SetFocus(941)</onfocus>
-		<visible>Container(300).HasFocus(1)</visible>
-	</control>
-
-	<control type="button" id="351">
-		<onfocus>SetFocus(943)</onfocus>
-		<visible>Container(300).HasFocus(9)</visible>
-	</control>		
 
 	<control type="wraplist" id="300">
 		<posx>0</posx>
@@ -155,7 +117,6 @@
 				<onclick>Skin.Reset(videotv)</onclick>
 				<onclick>XBMC.ActivateWindow(MyVideoLibrary,movietitles,return)</onclick>
 				<visible>!Skin.HasSetting(nomovies)</visible>
-				<visible>[Skin.HasSetting(onetouch) + Skin.HasSetting(nosubmenumovies)] | !Skin.HasSetting(onetouch)</visible>
 			</item>
 			<item id="7">
 				<description>My Videos</description>
@@ -165,7 +126,6 @@
 				<onclick>Skin.Reset(videomovies)</onclick>
 				<onclick>XBMC.ActivateWindow(MyVideoLibrary,tvshowtitles,return)</onclick>
 				<visible>!Skin.HasSetting(notvshows)</visible>
-				<visible>[Skin.HasSetting(onetouch) + Skin.HasSetting(nosubmenutv)] | !Skin.HasSetting(onetouch)</visible>
 			</item>
 			<item id="8">
 				<label>31015</label>
@@ -523,16 +483,16 @@
 			</item>
 			<item id="10">
 				<label>31017</label>
-<include condition="Skin.HasSetting(CustomWeatherConditions)">BackgroundVarsMusicWeather2</include><!--Weather Backdrop by Current Weather Conditions -->
-<include condition="!Skin.HasSetting(CustomWeatherConditions)">BackgroundVarsMusicWeather</include><!--Weather Backdrop by Current Weather Conditions -->				
+<include condition="Skin.HasSetting(CustomWeatherConditions)">BackgroundVarsWeather2</include><!--Weather Backdrop by Current Weather Conditions -->
+<include condition="!Skin.HasSetting(CustomWeatherConditions)">BackgroundVarsWeather</include><!--Weather Backdrop by Current Weather Conditions -->				
 				<onclick>Skin.Reset(weather)</onclick>
 				<visible>Skin.HasSetting(weather)</visible>
 			</item>
 			<item id="10">
 				<description>My Pictures</description>
 				<label2>31017</label2>
-<include condition="Skin.HasSetting(CustomWeatherConditions)">BackgroundVarsMusicWeather2</include><!--Weather Backdrop by Current Weather Conditions -->
-<include condition="!Skin.HasSetting(CustomWeatherConditions)">BackgroundVarsMusicWeather</include><!--Weather Backdrop by Current Weather Conditions -->				
+<include condition="Skin.HasSetting(CustomWeatherConditions)">BackgroundVarsWeather2</include><!--Weather Backdrop by Current Weather Conditions -->
+<include condition="!Skin.HasSetting(CustomWeatherConditions)">BackgroundVarsWeather</include><!--Weather Backdrop by Current Weather Conditions -->				
 				<onclick>Skin.SetBool(weather)</onclick>
 				<visible>!Skin.HasSetting(weather)</visible>
 			</item>

@@ -1,0 +1,263 @@
+<includes>
+
+	<include name="FullScreenDimensions">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1280</width>
+		<height>720</height>
+	</include>
+
+	<include name="VirtualDimensions">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>840</width>
+		<height>471</height>
+	</include>
+
+	<include name="BackgroundVarsGlobal">
+		<include>FullScreenDimensions</include>
+		<timeperimage>20000</timeperimage>
+		<randomize>true</randomize>
+		<fadetime>1000</fadetime>
+		<include>Animation_BackgroundFade</include>
+		<animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(animation_bg)">Conditional</animation>
+		<animation effect="slide" start="-10,-10" end="20,20" time="7000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(animation_bg)">Conditional</animation>
+		<animation effect="rotate" center="360,640" start="-2" end="2" time="11000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(animation_bg)">Conditional</animation>
+		<visible>!Control.IsVisible(52) | [Control.IsVisible(52) + Skin.HasSetting(nocurtains)]</visible>
+	</include>
+	
+	<include name="BackgroundVarsMultiplex">
+		<include>FullScreenDimensions</include>
+		<timeperimage>20000</timeperimage>
+		<randomize>true</randomize>
+		<fadetime>1000</fadetime>
+		<visible>Control.IsVisible(52) + !Skin.HasSetting(nocurtains)</visible>		
+		<include>Animation_BackgroundFade</include>	
+	</include>
+	
+	<include name="BackgroundVarsVirtual">
+		<include>VirtualDimensions</include>
+		<timeperimage>20000</timeperimage>
+		<randomize>true</randomize>
+		<fadetime>1000</fadetime>
+		<include>Animation_BackgroundFade</include>
+	</include>	
+	
+	<include name="Background_ContextBlack">
+		<control type="image" id="909">
+			<description>Darken screen for Context Menu etc.</description>
+			<include>FullScreenDimensions</include>
+			<texture>common/black.png</texture>
+			<colordiffuse>c3FFFFFF</colordiffuse>
+			<include>Animation_CommonFade</include>
+			<visible>Control.IsVisible(218) | Window.IsVisible(130) | Window.IsVisible(109) | Window.IsVisible(111) | Window.IsVisible(600) | Window.IsVisible(402) | Window.IsVisible(2000) | Window.IsVisible(601) | Window.IsVisible(602) | Window.IsVisible(601) | Window.IsVisible(132) | Window.IsVisible(106) | Window.IsVisible(103) | Window.IsVisible(129) | Window.IsVisible(126)</visible>
+		</control>
+	</include>
+
+	<include name="BackgroundVarsMusic">
+		<icon>special://skin/media/backdrops/default_music/default.png</icon>
+		<thumb>$INFO[Skin.String(CustomMusic)]</thumb>
+		<imagepath>special://skin/media/backdrops/default_music/default.png</imagepath>
+		<info>Skin.String(CustomMusic)</info>		
+	</include>
+
+	<include name="BackgroundVarsGames">
+		<icon>special://skin/media/backdrops/default_games/default.png</icon>
+		<thumb>$INFO[Skin.String(CustomGames)]</thumb>
+		<imagepath>special://skin/media/backdrops/default_games/default.png</imagepath>
+			<info>Skin.String(CustomGames)</info>
+	</include>
+
+	<include name="BackgroundVarsPictures">
+		<icon>special://skin/media/backdrops/default_pictures/default.png</icon>
+		<thumb>$INFO[Skin.String(CustomPictures)]</thumb>
+		<imagepath>special://skin/media/backdrops/default_pictures/default.png</imagepath>
+		<info>Skin.String(CustomPictures)</info>		
+	</include>
+
+	<include name="BackgroundVarsMovies">
+		<icon>special://skin/media/backdrops/default_movies/default.png</icon>
+		<thumb>$INFO[Skin.String(CustomMovies)]</thumb>
+		<imagepath>special://skin/media/backdrops/default_movies/default.png</imagepath>
+			<info>Skin.String(CustomMovies)</info>
+	</include>
+
+	<include name="BackgroundVarsCurtains">
+		<icon>special://skin/media/backdrops/multiplex/curtains.png</icon>
+		<thumb>$INFO[Skin.String(CustomCurtains)]</thumb>
+		<imagepath>special://skin/media/backdrops/multiplex/curtains.png</imagepath>
+		<info>Skin.String(CustomCurtains)</info>			
+	</include>	
+
+	<include name="BackgroundVarsTV">
+		<icon>special://skin/media/backdrops/default_tvshows/default.png</icon>
+		<thumb>$INFO[Skin.String(CustomTV)]</thumb>	
+		<imagepath>special://skin/media/backdrops/default_tvshows/default.png</imagepath>
+			<info>Skin.String(CustomTV)</info>
+	</include>
+
+	<include name="BackgroundVarsVideo">
+		<icon>special://skin/media/backdrops/default_movies/default.png</icon>
+		<thumb>$INFO[Skin.String(CustomVideos)]</thumb>	
+		<imagepath>special://skin/media/backdrops/default_movies/default.png</imagepath>
+		<info>Skin.String(CustomVideos)</info>		
+	</include>
+		
+	<include name="BackgroundVarsSettings">
+		<icon>special://skin/media/backdrops/default_settings/default.png</icon>
+		<thumb>$INFO[Skin.String(CustomSettings)]</thumb>
+		<imagepath>special://skin/media/backdrops/default_settings/default.png</imagepath>
+		<info>Skin.String(CustomSettings)</info>
+	</include>
+
+	<include name="BackgroundVarsScripts">
+		<icon>special://skin/media/backdrops/default_scripts/default.png</icon>
+		<thumb>$INFO[Skin.String(CustomScripts)]</thumb>
+		<imagepath>special://skin/media/backdrops/default_scripts/default.png</imagepath>
+		<info>Skin.String(CustomScripts)</info>
+	</include>
+
+	<include name="BackgroundVarsPlayDVD">
+		<icon>special://skin/media/backdrops/default_settings/default.png</icon>
+		<thumb>$INFO[Skin.String(CustomPlayDVD)]</thumb>
+		<imagepath>special://skin/media/backdrops/default_settings/default.png</imagepath>
+			<info>Skin.String(CustomPlayDVD)</info>
+	</include>
+
+	<include name="BackgroundVarsAssistant">
+		<icon>special://skin/media/backdrops/default_settings/default.png</icon>
+		<thumb>$INFO[Skin.String(CustomAssistant)]</thumb>
+		<imagepath>special://skin/media/backdrops/default_settings/default.png</imagepath>
+			<info>Skin.String(CustomAssistant)</info>
+	</include>
+
+	<include name="BackgroundVarsSignOut">
+		<icon>special://skin/media/backdrops/default_settings/default.png</icon>
+		<thumb>$INFO[Skin.String(CustomSignOut)]</thumb>
+		<imagepath>special://skin/media/backdrops/default_settings/default.png</imagepath>
+		<info>Skin.String(CustomSignOut)</info>
+	</include>
+
+	<include name="BackgroundVarsShutdown">
+		<icon>special://skin/media/backdrops/default_settings/default.png</icon>
+		<thumb>$INFO[Skin.String(CustomShutdown)]</thumb>
+		<imagepath>special://skin/media/backdrops/default_settings/default.png</imagepath>
+			<info>Skin.String(CustomShutdown)</info>
+	</include>
+	
+	<include name="BackgroundVarsWeatherSpring">
+		<icon>special://skin/media/backdrops/spring/spring.png</icon>
+		<imagepath>special://skin/media/backdrops/spring/spring.png</imagepath>		
+	</include>
+
+	<include name="BackgroundVarsWeatherSummer">
+		<icon>special://skin/media/backdrops/summer/summer.png</icon>
+		<imagepath>special://skin/media/backdrops/summer/summer.png</imagepath>		
+	</include>
+
+	<include name="BackgroundVarsWeatherWinter">
+		<icon>special://skin/media/backdrops/winter/winter.png</icon>
+		<imagepath>special://skin/media/backdrops/winter/winter.png</imagepath>		
+	</include>
+
+	<include name="BackgroundVarsWeatherAutumn">
+		<icon>special://skin/media/backdrops/autumn/autumn.png</icon>
+		<imagepath>special://skin/media/backdrops/autumn/autumn.png</imagepath>		
+	</include>	
+
+	<include name="BackgroundVarsWeather">
+		<include condition="System.Date(03-21,06-21)">BackgroundVarsWeatherSpring</include>
+		<include condition="System.Date(06-21,09-23)">BackgroundVarsWeatherSummer</include>
+		<include condition="System.Date(12-21,03-21)">BackgroundVarsWeatherWinter</include>
+		<include condition="System.Date(09-23,12-21)">BackgroundVarsWeatherAutumn</include>		
+		<thumb>$INFO[Skin.String(CustomWeather)]</thumb>
+		<info>Skin.String(CustomWeather)</info>
+		<imagepath background="true">$INFO[Skin.String(CustomWeather)]</imagepath>		
+	</include>
+<!--Weather Backdrop by Current Weather Conditions -->
+	<include name="BackgroundVarsWeather2">
+		<thumb>$INFO[Skin.String(CustomWeather)]$INFO[Weather.FanartCode]</thumb>
+		<imagepath background="true">$INFO[Skin.String(CustomWeather)]$INFO[Weather.FanartCode]</imagepath>		
+	</include>
+<!-- End-->	
+		
+	<include name="MediaBackdropsMovies">
+		<control type="multiimage">
+			<include>BackgroundVarsGlobal</include>
+			<include>BackgroundVarsMovies</include>
+		</control>
+	</include>
+		
+	<include name="MediaBackdropsTV">
+		<control type="multiimage">
+			<include>BackgroundVarsGlobal</include>
+			<include>BackgroundVarsTV</include>
+		</control>
+	</include>
+		
+	<include name="MediaBackdropsTVFanart">
+		<control type="largeimage">
+			<include>FullScreenDimensions</include>
+			<info>Fanart.Image</info>
+			<visible>!Skin.HasSetting(notvfanart) + [Container.Content(seasons) | Container.Content(episodes)]</visible>
+		</control>
+	</include>
+
+	<include name="MediaBackdropsMultiplex">
+		<control type="multiimage">
+			<include>BackgroundVarsMultiplex</include>
+			<include>BackgroundVarsCurtains</include>
+		</control>
+	</include>		
+		
+	<include name="Background_Wallpaper">
+
+		<control type="visualisation">
+			<include>FullScreenDimensions</include>
+			<visible>Skin.HasSetting(homevis) + Player.HasMedia</visible>
+		</control>
+		
+		<control type="videowindow">
+			<include>FullScreenDimensions</include>
+			<visible>Skin.HasSetting(videohome) + Player.HasVideo</visible>
+		</control>
+
+		<control type="multiimage">
+			<include>Background_WeatherSingleImage</include>
+			<imagepath>backdrops/winter</imagepath>
+			<info>Skin.String(CustomWeather)</info>
+			<visible>Container(300).HasFocus(10) + Control.IsVisible(300)</visible>
+			<visible>!Skin.String(CustomWeatherFolder)</visible>
+			<visible>System.Date(12-21,03-21)</visible>
+		</control>
+		
+		<control type="multiimage">
+			<include>Background_WeatherSingleImage</include>
+			<imagepath>backdrops/spring</imagepath>
+			<info>Skin.String(CustomWeather)</info>
+			<visible>Container(300).HasFocus(10) + Control.IsVisible(300)</visible>
+			<visible>!Skin.String(CustomWeatherFolder)</visible>
+			<visible>System.Date(03-21,06-21)</visible>
+		</control>
+
+		<control type="multiimage">
+			<include>Background_WeatherSingleImage</include>
+			<imagepath>backdrops/summer</imagepath>
+			<info>Skin.String(CustomWeather)</info>
+			<visible>Container(300).HasFocus(10) + Control.IsVisible(300)</visible>
+			<visible>!Skin.String(CustomWeatherFolder)</visible>
+			<visible>System.Date(06-21,09-23)</visible>
+		</control>
+		
+		<control type="multiimage">
+			<include>Background_WeatherSingleImage</include>
+			<imagepath>backdrops/autumn</imagepath>
+			<info>Skin.String(CustomWeather)</info>
+			<visible>Container(300).HasFocus(10) + Control.IsVisible(300)</visible>
+			<visible>!Skin.String(CustomWeatherFolder)</visible>
+			<visible>System.Date(09-23,12-21)</visible>
+		</control>		
+
+	</include>
+
+</includes>
