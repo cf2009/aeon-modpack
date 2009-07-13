@@ -230,36 +230,42 @@
 					<label>4 Days</label>
 					<onclick>Skin.Reset(weatherpopup36hour)</onclick>
 					<onclick>Skin.Reset(weatherpopupweekend)</onclick>
+					<onclick>Skin.SetBool(weatherpopupweek)</onclick>
 				</item>
 				<item id="2">
 					<visible>Container(300).HasFocus(10)</visible>
 					<label>36 hours</label>
 					<onclick>Skin.SetBool(weatherpopup36hour)</onclick>
 					<onclick>Skin.Reset(weatherpopupweekend)</onclick>
+					<onclick>Skin.Reset(weatherpopupweek)</onclick>
 				</item>
 				<item id="3">
 					<visible>Container(300).HasFocus(10)</visible>
 					<label>weekend</label>
 					<onclick>Skin.SetBool(weatherpopupweekend)</onclick>
 					<onclick>Skin.Reset(weatherpopup36hour)</onclick>
+					<onclick>Skin.Reset(weatherpopupweek)</onclick>
 				</item>
 				<item id="4">
 					<visible>Container(300).HasFocus(10)</visible>
 					<label>4 Days</label>
 					<onclick>Skin.Reset(weatherpopup36hour)</onclick>
 					<onclick>Skin.Reset(weatherpopupweekend)</onclick>
+					<onclick>Skin.SetBool(weatherpopupweek)</onclick>
 				</item>
 				<item id="5">
 					<visible>Container(300).HasFocus(10)</visible>
 					<label>36 hours</label>
 					<onclick>Skin.SetBool(weatherpopup36hour)</onclick>
 					<onclick>Skin.Reset(weatherpopupweekend)</onclick>
+					<onclick>Skin.Reset(weatherpopupweek)</onclick>
 				</item>
 				<item id="6">
 					<visible>Container(300).HasFocus(10)</visible>
 					<label>weekend</label>
 					<onclick>Skin.SetBool(weatherpopupweekend)</onclick>
 					<onclick>Skin.Reset(weatherpopup36hour)</onclick>
+					<onclick>Skin.Reset(weatherpopupweek)</onclick>
 				</item>
 			<!-- weather (10) end -->
 				<!-- TV (7) -->
