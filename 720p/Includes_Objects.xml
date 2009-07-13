@@ -72,6 +72,30 @@
 				<animation effect="fade" start="0" end="100" delay="1500" time="400">Visible</animation>
 				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
 				<visible>[Container(300).HasFocus(10) + !Skin.HasSetting(noweatherpopup)]|Window.IsVisible(2600)</visible>				
+
+				<!--control type="image">
+					<posx>35</posx>
+					<posy>80</posy>
+					<width>210</width>
+					<height>210</height>
+					<texture>$INFO[Window(Weather).Property(Current.ConditionIcon)]</texture>
+					<colordiffuse>abFFFFFF</colordiffuse>
+				</control-->
+
+				<control type="multiimage">
+					<description>Weather image</description>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>283</width>
+					<height>287</height>
+					<imagepath diffuse="home/home_weather_big_mask.png" fallback="$INFO[Window(Weather).Property(Current.ConditionIcon)]">icon/$INFO[Weather.FanartCode]/</imagepath>
+					<timeperimage>175</timeperimage>
+					<randomize>false</randomize>
+					<fadetime>0</fadetime>
+					<colordiffuse>88FFFFFF</colordiffuse>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+				</control>
+
 				<control type="image">
 					<posy>0</posy>
 					<width>283</width>
@@ -90,6 +114,20 @@
 					<scroll>false</scroll>
 					<label>$INFO[Window(Weather).Property(Location)]</label>
 				</control>	
+
+				<control type="label">
+					<visible>Skin.HasSetting(debug)</visible>				
+					<posx>10</posx>
+					<posy>75</posy>
+					<width>280</width>
+					<height>20</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>Font_WeatherLabel</font>
+					<textcolor>ffFFFFFF</textcolor>					
+					<label>Fanart code: $INFO[Weather.FanartCode]</label>
+				</control>
+	
 				<control type="label">
 					<posx>20</posx>
 					<posy>67</posy>
